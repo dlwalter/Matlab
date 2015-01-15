@@ -1,0 +1,8 @@
+INTSTYLE=pa
+INFILE=C:\MATLAB\ZedBoard\hdl_prj\pa_prj\pa_prj.runs\impl_1\system_stub_routed.ncd
+OUTFILE=C:\MATLAB\ZedBoard\hdl_prj\pa_prj\pa_prj.runs\impl_1\system_stub.bit
+FAMILY=Zynq
+PART=xc7z020-1clg484
+WORKINGDIR=C:\MATLAB\ZedBoard\hdl_prj\pa_prj\pa_prj.runs\impl_1
+LICENSE=WebPack
+USER_INFO=210904539_1777501959_0_226
