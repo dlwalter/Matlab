@@ -67,8 +67,6 @@ static const char * c3_p_debug_family_names[3] = { "nargin", "nargout",
 static const char * c3_q_debug_family_names[3] = { "nargin", "nargout",
   "sf_internal_predicateOutput" };
 
-static boolean_T c3_dataWrittenToVector[2];
-
 /* Function Declarations */
 static void initialize_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
   *chartInstance);
@@ -89,6 +87,8 @@ static void c3_set_sim_state_side_effects_c3_PWM_controller
 static void finalize_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
   *chartInstance);
 static void sf_gateway_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
+  *chartInstance);
+static void mdl_start_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
   *chartInstance);
 static void c3_chartstep_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
   *chartInstance);
@@ -134,16 +134,26 @@ static void c3_e_sf_marshallIn(void *chartInstanceVoid, const mxArray
   *c3_mxArrayInData, const char_T *c3_varName, void *c3_outData);
 static const mxArray *c3_f_sf_marshallOut(void *chartInstanceVoid, void
   *c3_inData);
-static const mxArray *c3_i_emlrt_marshallIn(SFc3_PWM_controllerInstanceStruct
+static void c3_i_emlrt_marshallIn(SFc3_PWM_controllerInstanceStruct
+  *chartInstance, const mxArray *c3_b_dataWrittenToVector, const char_T
+  *c3_identifier, boolean_T c3_y[2]);
+static void c3_j_emlrt_marshallIn(SFc3_PWM_controllerInstanceStruct
+  *chartInstance, const mxArray *c3_u, const emlrtMsgIdentifier *c3_parentId,
+  boolean_T c3_y[2]);
+static const mxArray *c3_k_emlrt_marshallIn(SFc3_PWM_controllerInstanceStruct
   *chartInstance, const mxArray *c3_b_setSimStateSideEffectsInfo, const char_T
   *c3_identifier);
-static const mxArray *c3_j_emlrt_marshallIn(SFc3_PWM_controllerInstanceStruct
+static const mxArray *c3_l_emlrt_marshallIn(SFc3_PWM_controllerInstanceStruct
   *chartInstance, const mxArray *c3_u, const emlrtMsgIdentifier *c3_parentId);
 static void c3_updateDataWrittenToVector(SFc3_PWM_controllerInstanceStruct
   *chartInstance, uint32_T c3_vectorIndex);
 static void c3_errorIfDataNotWrittenToFcn(SFc3_PWM_controllerInstanceStruct
-  *chartInstance, uint32_T c3_vectorIndex, uint32_T c3_dataNumber);
+  *chartInstance, uint32_T c3_vectorIndex, uint32_T c3_dataNumber, uint32_T
+  c3_ssIdOfSourceObject, int32_T c3_offsetInSourceObject, int32_T
+  c3_lengthInSourceObject);
 static void init_dsm_address_info(SFc3_PWM_controllerInstanceStruct
+  *chartInstance);
+static void init_simulink_io_address(SFc3_PWM_controllerInstanceStruct
   *chartInstance);
 
 /* Function Definitions */
@@ -248,13 +258,14 @@ static const mxArray *get_sim_state_c3_PWM_controller
   uint8_T c3_d_hoistedGlobal;
   uint8_T c3_d_u;
   const mxArray *c3_e_y = NULL;
-  boolean_T *c3_PWM;
-  c3_PWM = (boolean_T *)ssGetOutputPortSignal(chartInstance->S, 1);
+  int32_T c3_i0;
+  boolean_T c3_e_u[2];
+  const mxArray *c3_f_y = NULL;
   c3_st = NULL;
   c3_st = NULL;
   c3_y = NULL;
-  sf_mex_assign(&c3_y, sf_mex_createcellmatrix(4, 1), false);
-  c3_hoistedGlobal = *c3_PWM;
+  sf_mex_assign(&c3_y, sf_mex_createcellmatrix(5, 1), false);
+  c3_hoistedGlobal = *chartInstance->c3_PWM;
   c3_u = c3_hoistedGlobal;
   c3_b_y = NULL;
   sf_mex_assign(&c3_b_y, sf_mex_create("y", &c3_u, 11, 0U, 0U, 0U, 0), false);
@@ -274,6 +285,13 @@ static const mxArray *get_sim_state_c3_PWM_controller
   c3_e_y = NULL;
   sf_mex_assign(&c3_e_y, sf_mex_create("y", &c3_d_u, 3, 0U, 0U, 0U, 0), false);
   sf_mex_setcell(c3_y, 3, c3_e_y);
+  for (c3_i0 = 0; c3_i0 < 2; c3_i0++) {
+    c3_e_u[c3_i0] = chartInstance->c3_dataWrittenToVector[c3_i0];
+  }
+
+  c3_f_y = NULL;
+  sf_mex_assign(&c3_f_y, sf_mex_create("y", c3_e_u, 11, 0U, 1U, 0U, 1, 2), false);
+  sf_mex_setcell(c3_y, 4, c3_f_y);
   sf_mex_assign(&c3_st, c3_y, false);
   return c3_st;
 }
@@ -282,12 +300,12 @@ static void set_sim_state_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
   *chartInstance, const mxArray *c3_st)
 {
   const mxArray *c3_u;
-  boolean_T *c3_PWM;
-  c3_PWM = (boolean_T *)ssGetOutputPortSignal(chartInstance->S, 1);
+  boolean_T c3_bv0[2];
+  int32_T c3_i1;
   chartInstance->c3_doneDoubleBufferReInit = true;
   c3_u = sf_mex_dup(c3_st);
-  *c3_PWM = c3_emlrt_marshallIn(chartInstance, sf_mex_dup(sf_mex_getcell(c3_u, 0)),
-    "PWM");
+  *chartInstance->c3_PWM = c3_emlrt_marshallIn(chartInstance, sf_mex_dup
+    (sf_mex_getcell(c3_u, 0)), "PWM");
   chartInstance->c3_count = c3_g_emlrt_marshallIn(chartInstance, sf_mex_dup
     (sf_mex_getcell(c3_u, 1)), "count");
   chartInstance->c3_is_active_c3_PWM_controller = c3_e_emlrt_marshallIn
@@ -295,9 +313,15 @@ static void set_sim_state_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
      "is_active_c3_PWM_controller");
   chartInstance->c3_is_c3_PWM_controller = c3_e_emlrt_marshallIn(chartInstance,
     sf_mex_dup(sf_mex_getcell(c3_u, 3)), "is_c3_PWM_controller");
+  c3_i_emlrt_marshallIn(chartInstance, sf_mex_dup(sf_mex_getcell(c3_u, 4)),
+                        "dataWrittenToVector", c3_bv0);
+  for (c3_i1 = 0; c3_i1 < 2; c3_i1++) {
+    chartInstance->c3_dataWrittenToVector[c3_i1] = c3_bv0[c3_i1];
+  }
+
   sf_mex_assign(&chartInstance->c3_setSimStateSideEffectsInfo,
-                c3_i_emlrt_marshallIn(chartInstance, sf_mex_dup(sf_mex_getcell
-    (c3_u, 4)), "setSimStateSideEffectsInfo"), true);
+                c3_k_emlrt_marshallIn(chartInstance, sf_mex_dup(sf_mex_getcell
+    (c3_u, 5)), "setSimStateSideEffectsInfo"), true);
   sf_mex_destroy(&c3_u);
   chartInstance->c3_doSetSimStateSideEffects = 1U;
   c3_update_debugger_state_c3_PWM_controller(chartInstance);
@@ -345,28 +369,27 @@ static void finalize_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
 static void sf_gateway_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
   *chartInstance)
 {
-  boolean_T *c3_PWM;
-  boolean_T *c3_pwm_enable;
-  uint8_T *c3_duty;
-  uint32_T *c3_f_coeff;
-  c3_f_coeff = (uint32_T *)ssGetInputPortSignal(chartInstance->S, 2);
-  c3_duty = (uint8_T *)ssGetInputPortSignal(chartInstance->S, 1);
-  c3_pwm_enable = (boolean_T *)ssGetInputPortSignal(chartInstance->S, 0);
-  c3_PWM = (boolean_T *)ssGetOutputPortSignal(chartInstance->S, 1);
   c3_set_sim_state_side_effects_c3_PWM_controller(chartInstance);
   _SFD_SYMBOL_SCOPE_PUSH(0U, 0U);
   _sfTime_ = sf_get_time(chartInstance->S);
   _SFD_CC_CALL(CHART_ENTER_SFUNCTION_TAG, 0U, chartInstance->c3_sfEvent);
-  _SFD_DATA_RANGE_CHECK_MIN_MAX((real_T)*c3_PWM, 0U, 0.0, 1.0);
-  _SFD_DATA_RANGE_CHECK_MIN_MAX((real_T)*c3_pwm_enable, 1U, 0.0, 1.0);
+  _SFD_DATA_RANGE_CHECK_MIN_MAX((real_T)*chartInstance->c3_PWM, 0U, 0.0, 1.0);
+  _SFD_DATA_RANGE_CHECK_MIN_MAX((real_T)*chartInstance->c3_pwm_enable, 1U, 0.0,
+    1.0);
   _SFD_DATA_RANGE_CHECK((real_T)chartInstance->c3_count, 2U);
-  _SFD_DATA_RANGE_CHECK((real_T)*c3_duty, 3U);
-  _SFD_DATA_RANGE_CHECK((real_T)*c3_f_coeff, 4U);
+  _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_duty, 3U);
+  _SFD_DATA_RANGE_CHECK((real_T)*chartInstance->c3_f_coeff, 4U);
   chartInstance->c3_sfEvent = CALL_EVENT;
   c3_chartstep_c3_PWM_controller(chartInstance);
   _SFD_SYMBOL_SCOPE_POP();
   _SFD_CHECK_FOR_STATE_INCONSISTENCY(_PWM_controllerMachineNumber_,
     chartInstance->chartNumber, chartInstance->instanceNumber);
+}
+
+static void mdl_start_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
+  *chartInstance)
+{
+  (void)chartInstance;
 }
 
 static void c3_chartstep_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
@@ -405,16 +428,8 @@ static void c3_chartstep_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
   boolean_T c3_d_out;
   real_T c3_j_nargin = 0.0;
   real_T c3_j_nargout = 0.0;
-  uint32_T *c3_f_coeff;
-  uint8_T *c3_duty;
-  boolean_T *c3_PWM;
-  boolean_T *c3_pwm_enable;
   boolean_T guard1 = false;
   boolean_T guard2 = false;
-  c3_f_coeff = (uint32_T *)ssGetInputPortSignal(chartInstance->S, 2);
-  c3_duty = (uint8_T *)ssGetInputPortSignal(chartInstance->S, 1);
-  c3_pwm_enable = (boolean_T *)ssGetInputPortSignal(chartInstance->S, 0);
-  c3_PWM = (boolean_T *)ssGetOutputPortSignal(chartInstance->S, 1);
   _SFD_CC_CALL(CHART_ENTER_DURING_FUNCTION_TAG, 0U, chartInstance->c3_sfEvent);
   switch (chartInstance->c3_is_c3_PWM_controller) {
    case c3_IN_HIGH:
@@ -428,15 +443,15 @@ static void c3_chartstep_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
       c3_b_sf_marshallIn);
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_out, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
-    c3_errorIfDataNotWrittenToFcn(chartInstance, 1U, 2U);
-    c3_u0 = 255ULL * (uint64_T)*c3_f_coeff;
+    c3_errorIfDataNotWrittenToFcn(chartInstance, 1U, 2U, 8U, 1, 5);
+    c3_u0 = 255ULL * (uint64_T)*chartInstance->c3_f_coeff;
     if (CV_SATURATION_EVAL(5, 3, 0, 0, c3_u0 > 4294967295ULL)) {
       c3_u0 = 4294967295ULL;
     }
 
     guard2 = false;
     if (CV_EML_COND(3, 0, 0, chartInstance->c3_count >= (uint32_T)c3_u0)) {
-      if (CV_EML_COND(3, 0, 1, (real_T)*c3_duty < 255.0)) {
+      if (CV_EML_COND(3, 0, 1, (real_T)*chartInstance->c3_duty < 255.0)) {
         CV_EML_MCDC(3, 0, 0, true);
         CV_EML_IF(3, 0, 0, true);
         c3_out = true;
@@ -462,9 +477,9 @@ static void c3_chartstep_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
         c3_b_sf_marshallIn);
       _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_b_nargout, 1U,
         c3_b_sf_marshallOut, c3_b_sf_marshallIn);
-      *c3_PWM = false;
+      *chartInstance->c3_PWM = false;
       c3_updateDataWrittenToVector(chartInstance, 0U);
-      _SFD_DATA_RANGE_CHECK_MIN_MAX((real_T)*c3_PWM, 0U, 0.0, 1.0);
+      _SFD_DATA_RANGE_CHECK_MIN_MAX((real_T)*chartInstance->c3_PWM, 0U, 0.0, 1.0);
       chartInstance->c3_count = 0U;
       c3_updateDataWrittenToVector(chartInstance, 1U);
       _SFD_DATA_RANGE_CHECK((real_T)chartInstance->c3_count, 2U);
@@ -485,7 +500,7 @@ static void c3_chartstep_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
         c3_b_sf_marshallOut, c3_b_sf_marshallIn);
       _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_b_out, 2U, c3_sf_marshallOut,
         c3_sf_marshallIn);
-      c3_b_out = CV_EML_IF(7, 0, 0, (real_T)*c3_pwm_enable == 0.0);
+      c3_b_out = CV_EML_IF(7, 0, 0, (real_T)*chartInstance->c3_pwm_enable == 0.0);
       _SFD_SYMBOL_SCOPE_POP();
       if (c3_b_out) {
         _SFD_CT_CALL(TRANSITION_ACTIVE_TAG, 7U, chartInstance->c3_sfEvent);
@@ -495,9 +510,10 @@ static void c3_chartstep_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
           c3_b_sf_marshallOut, c3_b_sf_marshallIn);
         _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_d_nargout, 1U,
           c3_b_sf_marshallOut, c3_b_sf_marshallIn);
-        *c3_PWM = false;
+        *chartInstance->c3_PWM = false;
         c3_updateDataWrittenToVector(chartInstance, 0U);
-        _SFD_DATA_RANGE_CHECK_MIN_MAX((real_T)*c3_PWM, 0U, 0.0, 1.0);
+        _SFD_DATA_RANGE_CHECK_MIN_MAX((real_T)*chartInstance->c3_PWM, 0U, 0.0,
+          1.0);
         _SFD_SYMBOL_SCOPE_POP();
         chartInstance->c3_tp_HIGH = 0U;
         _SFD_CS_CALL(STATE_INACTIVE_TAG, 0U, chartInstance->c3_sfEvent);
@@ -512,7 +528,7 @@ static void c3_chartstep_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
           c3_b_sf_marshallOut, c3_b_sf_marshallIn);
         _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_e_nargout, 1U,
           c3_b_sf_marshallOut, c3_b_sf_marshallIn);
-        c3_errorIfDataNotWrittenToFcn(chartInstance, 1U, 2U);
+        c3_errorIfDataNotWrittenToFcn(chartInstance, 1U, 2U, 19U, 9, 5);
         c3_u1 = (uint32_T)chartInstance->c3_count + 1U;
         if (CV_SATURATION_EVAL(5, 6, 0, 0, c3_u1 > 65535U)) {
           c3_u1 = 65535U;
@@ -544,9 +560,9 @@ static void c3_chartstep_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
       c3_b_sf_marshallIn);
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_c_out, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
-    c3_errorIfDataNotWrittenToFcn(chartInstance, 1U, 2U);
+    c3_errorIfDataNotWrittenToFcn(chartInstance, 1U, 2U, 7U, 1, 5);
     c3_q0 = 255U;
-    c3_qY = c3_q0 - (uint32_T)*c3_duty;
+    c3_qY = c3_q0 - (uint32_T)*chartInstance->c3_duty;
     if (CV_SATURATION_EVAL(5, 2, 1, 0, c3_qY > c3_q0)) {
       c3_qY = 0U;
     }
@@ -556,14 +572,14 @@ static void c3_chartstep_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
       c3_u2 = 255U;
     }
 
-    c3_u3 = (uint64_T)(uint8_T)c3_u2 * (uint64_T)*c3_f_coeff;
+    c3_u3 = (uint64_T)(uint8_T)c3_u2 * (uint64_T)*chartInstance->c3_f_coeff;
     if (CV_SATURATION_EVAL(5, 2, 0, 0, c3_u3 > 4294967295ULL)) {
       c3_u3 = 4294967295ULL;
     }
 
     guard1 = false;
     if (CV_EML_COND(2, 0, 0, chartInstance->c3_count >= (uint32_T)c3_u3)) {
-      if (CV_EML_COND(2, 0, 1, (real_T)*c3_duty > 0.0)) {
+      if (CV_EML_COND(2, 0, 1, (real_T)*chartInstance->c3_duty > 0.0)) {
         CV_EML_MCDC(2, 0, 0, true);
         CV_EML_IF(2, 0, 0, true);
         c3_c_out = true;
@@ -589,9 +605,9 @@ static void c3_chartstep_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
         c3_b_sf_marshallIn);
       _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_g_nargout, 1U,
         c3_b_sf_marshallOut, c3_b_sf_marshallIn);
-      *c3_PWM = true;
+      *chartInstance->c3_PWM = true;
       c3_updateDataWrittenToVector(chartInstance, 0U);
-      _SFD_DATA_RANGE_CHECK_MIN_MAX((real_T)*c3_PWM, 0U, 0.0, 1.0);
+      _SFD_DATA_RANGE_CHECK_MIN_MAX((real_T)*chartInstance->c3_PWM, 0U, 0.0, 1.0);
       _SFD_SYMBOL_SCOPE_POP();
       chartInstance->c3_tp_LOW = 0U;
       _SFD_CS_CALL(STATE_INACTIVE_TAG, 1U, chartInstance->c3_sfEvent);
@@ -606,7 +622,7 @@ static void c3_chartstep_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
         c3_b_sf_marshallIn);
       _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_h_nargout, 1U,
         c3_b_sf_marshallOut, c3_b_sf_marshallIn);
-      c3_errorIfDataNotWrittenToFcn(chartInstance, 1U, 2U);
+      c3_errorIfDataNotWrittenToFcn(chartInstance, 1U, 2U, 17U, 9, 5);
       c3_u4 = (uint32_T)chartInstance->c3_count + 1U;
       if (CV_SATURATION_EVAL(5, 5, 0, 0, c3_u4 > 65535U)) {
         c3_u4 = 65535U;
@@ -637,7 +653,7 @@ static void c3_chartstep_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
       c3_b_sf_marshallIn);
     _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c3_d_out, 2U, c3_sf_marshallOut,
       c3_sf_marshallIn);
-    c3_d_out = CV_EML_IF(1, 0, 0, (real_T)*c3_pwm_enable == 1.0);
+    c3_d_out = CV_EML_IF(1, 0, 0, (real_T)*chartInstance->c3_pwm_enable == 1.0);
     _SFD_SYMBOL_SCOPE_POP();
     if (c3_d_out) {
       _SFD_CT_CALL(TRANSITION_ACTIVE_TAG, 1U, chartInstance->c3_sfEvent);
@@ -650,9 +666,9 @@ static void c3_chartstep_c3_PWM_controller(SFc3_PWM_controllerInstanceStruct
       chartInstance->c3_count = 0U;
       c3_updateDataWrittenToVector(chartInstance, 1U);
       _SFD_DATA_RANGE_CHECK((real_T)chartInstance->c3_count, 2U);
-      *c3_PWM = false;
+      *chartInstance->c3_PWM = false;
       c3_updateDataWrittenToVector(chartInstance, 0U);
-      _SFD_DATA_RANGE_CHECK_MIN_MAX((real_T)*c3_PWM, 0U, 0.0, 1.0);
+      _SFD_DATA_RANGE_CHECK_MIN_MAX((real_T)*chartInstance->c3_PWM, 0U, 0.0, 1.0);
       _SFD_SYMBOL_SCOPE_POP();
       chartInstance->c3_tp_S1 = 0U;
       _SFD_CS_CALL(STATE_INACTIVE_TAG, 2U, chartInstance->c3_sfEvent);
@@ -839,10 +855,10 @@ static int32_T c3_d_emlrt_marshallIn(SFc3_PWM_controllerInstanceStruct
   *chartInstance, const mxArray *c3_u, const emlrtMsgIdentifier *c3_parentId)
 {
   int32_T c3_y;
-  int32_T c3_i0;
+  int32_T c3_i2;
   (void)chartInstance;
-  sf_mex_import(c3_parentId, sf_mex_dup(c3_u), &c3_i0, 1, 6, 0U, 0, 0U, 0);
-  c3_y = c3_i0;
+  sf_mex_import(c3_parentId, sf_mex_dup(c3_u), &c3_i2, 1, 6, 0U, 0, 0U, 0);
+  c3_y = c3_i2;
   sf_mex_destroy(&c3_u);
   return c3_y;
 }
@@ -1001,7 +1017,34 @@ static const mxArray *c3_f_sf_marshallOut(void *chartInstanceVoid, void
   return c3_mxArrayOutData;
 }
 
-static const mxArray *c3_i_emlrt_marshallIn(SFc3_PWM_controllerInstanceStruct
+static void c3_i_emlrt_marshallIn(SFc3_PWM_controllerInstanceStruct
+  *chartInstance, const mxArray *c3_b_dataWrittenToVector, const char_T
+  *c3_identifier, boolean_T c3_y[2])
+{
+  emlrtMsgIdentifier c3_thisId;
+  c3_thisId.fIdentifier = c3_identifier;
+  c3_thisId.fParent = NULL;
+  c3_j_emlrt_marshallIn(chartInstance, sf_mex_dup(c3_b_dataWrittenToVector),
+                        &c3_thisId, c3_y);
+  sf_mex_destroy(&c3_b_dataWrittenToVector);
+}
+
+static void c3_j_emlrt_marshallIn(SFc3_PWM_controllerInstanceStruct
+  *chartInstance, const mxArray *c3_u, const emlrtMsgIdentifier *c3_parentId,
+  boolean_T c3_y[2])
+{
+  boolean_T c3_bv1[2];
+  int32_T c3_i3;
+  (void)chartInstance;
+  sf_mex_import(c3_parentId, sf_mex_dup(c3_u), c3_bv1, 1, 11, 0U, 1, 0U, 1, 2);
+  for (c3_i3 = 0; c3_i3 < 2; c3_i3++) {
+    c3_y[c3_i3] = c3_bv1[c3_i3];
+  }
+
+  sf_mex_destroy(&c3_u);
+}
+
+static const mxArray *c3_k_emlrt_marshallIn(SFc3_PWM_controllerInstanceStruct
   *chartInstance, const mxArray *c3_b_setSimStateSideEffectsInfo, const char_T
   *c3_identifier)
 {
@@ -1010,13 +1053,13 @@ static const mxArray *c3_i_emlrt_marshallIn(SFc3_PWM_controllerInstanceStruct
   c3_y = NULL;
   c3_thisId.fIdentifier = c3_identifier;
   c3_thisId.fParent = NULL;
-  sf_mex_assign(&c3_y, c3_j_emlrt_marshallIn(chartInstance, sf_mex_dup
+  sf_mex_assign(&c3_y, c3_l_emlrt_marshallIn(chartInstance, sf_mex_dup
     (c3_b_setSimStateSideEffectsInfo), &c3_thisId), false);
   sf_mex_destroy(&c3_b_setSimStateSideEffectsInfo);
   return c3_y;
 }
 
-static const mxArray *c3_j_emlrt_marshallIn(SFc3_PWM_controllerInstanceStruct
+static const mxArray *c3_l_emlrt_marshallIn(SFc3_PWM_controllerInstanceStruct
   *chartInstance, const mxArray *c3_u, const emlrtMsgIdentifier *c3_parentId)
 {
   const mxArray *c3_y = NULL;
@@ -1031,24 +1074,41 @@ static const mxArray *c3_j_emlrt_marshallIn(SFc3_PWM_controllerInstanceStruct
 static void c3_updateDataWrittenToVector(SFc3_PWM_controllerInstanceStruct
   *chartInstance, uint32_T c3_vectorIndex)
 {
-  (void)chartInstance;
-  c3_dataWrittenToVector[(uint32_T)_SFD_EML_ARRAY_BOUNDS_CHECK(0, (int32_T)
-    c3_vectorIndex, 0, 1, 1, 0)] = true;
+  chartInstance->c3_dataWrittenToVector[(uint32_T)_SFD_EML_ARRAY_BOUNDS_CHECK(0U,
+    (int32_T)c3_vectorIndex, 0, 1, 1, 0)] = true;
 }
 
 static void c3_errorIfDataNotWrittenToFcn(SFc3_PWM_controllerInstanceStruct
-  *chartInstance, uint32_T c3_vectorIndex, uint32_T c3_dataNumber)
+  *chartInstance, uint32_T c3_vectorIndex, uint32_T c3_dataNumber, uint32_T
+  c3_ssIdOfSourceObject, int32_T c3_offsetInSourceObject, int32_T
+  c3_lengthInSourceObject)
 {
-  (void)chartInstance;
-  _SFD_DATA_READ_BEFORE_WRITE_CHECK(c3_dataNumber, c3_dataWrittenToVector
-    [(uint32_T)_SFD_EML_ARRAY_BOUNDS_CHECK(0, (int32_T)c3_vectorIndex, 0, 1, 1,
-    0)]);
+  (void)c3_ssIdOfSourceObject;
+  (void)c3_offsetInSourceObject;
+  (void)c3_lengthInSourceObject;
+  if (!chartInstance->c3_dataWrittenToVector[(uint32_T)
+      _SFD_EML_ARRAY_BOUNDS_CHECK(0U, (int32_T)c3_vectorIndex, 0, 1, 1, 0)]) {
+    _SFD_DATA_READ_BEFORE_WRITE_ERROR(c3_dataNumber);
+  }
 }
 
 static void init_dsm_address_info(SFc3_PWM_controllerInstanceStruct
   *chartInstance)
 {
   (void)chartInstance;
+}
+
+static void init_simulink_io_address(SFc3_PWM_controllerInstanceStruct
+  *chartInstance)
+{
+  chartInstance->c3_PWM = (boolean_T *)ssGetOutputPortSignal_wrapper
+    (chartInstance->S, 1);
+  chartInstance->c3_pwm_enable = (boolean_T *)ssGetInputPortSignal_wrapper
+    (chartInstance->S, 0);
+  chartInstance->c3_duty = (uint8_T *)ssGetInputPortSignal_wrapper
+    (chartInstance->S, 1);
+  chartInstance->c3_f_coeff = (uint32_T *)ssGetInputPortSignal_wrapper
+    (chartInstance->S, 2);
 }
 
 /* SFunction Glue Code */
@@ -1074,22 +1134,24 @@ extern void utFree(void*);
 
 void sf_c3_PWM_controller_get_check_sum(mxArray *plhs[])
 {
-  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(999170514U);
-  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(147339814U);
-  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(2410441847U);
-  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(322584534U);
+  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(4127806994U);
+  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1525851688U);
+  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(2062375139U);
+  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(2055593740U);
 }
 
+mxArray* sf_c3_PWM_controller_get_post_codegen_info(void);
 mxArray *sf_c3_PWM_controller_get_autoinheritance_info(void)
 {
   const char *autoinheritanceFields[] = { "checksum", "inputs", "parameters",
-    "outputs", "locals" };
+    "outputs", "locals", "postCodegenInfo" };
 
-  mxArray *mxAutoinheritanceInfo = mxCreateStructMatrix(1,1,5,
+  mxArray *mxAutoinheritanceInfo = mxCreateStructMatrix(1, 1, sizeof
+    (autoinheritanceFields)/sizeof(autoinheritanceFields[0]),
     autoinheritanceFields);
 
   {
-    mxArray *mxChecksum = mxCreateString("ThyoawZQCCt56RqaW1f9B");
+    mxArray *mxChecksum = mxCreateString("6rHY4bsjGnGRaUi1v5ezHC");
     mxSetField(mxAutoinheritanceInfo,0,"checksum",mxChecksum);
   }
 
@@ -1214,6 +1276,11 @@ mxArray *sf_c3_PWM_controller_get_autoinheritance_info(void)
     mxSetField(mxAutoinheritanceInfo,0,"locals",mxData);
   }
 
+  {
+    mxArray* mxPostCodegenInfo = sf_c3_PWM_controller_get_post_codegen_info();
+    mxSetField(mxAutoinheritanceInfo,0,"postCodegenInfo",mxPostCodegenInfo);
+  }
+
   return(mxAutoinheritanceInfo);
 }
 
@@ -1223,10 +1290,49 @@ mxArray *sf_c3_PWM_controller_third_party_uses_info(void)
   return(mxcell3p);
 }
 
+mxArray *sf_c3_PWM_controller_jit_fallback_info(void)
+{
+  const char *infoFields[] = { "fallbackType", "fallbackReason",
+    "incompatibleSymbol", };
+
+  mxArray *mxInfo = mxCreateStructMatrix(1, 1, 3, infoFields);
+  mxArray *fallbackReason = mxCreateString("feature_off");
+  mxArray *incompatibleSymbol = mxCreateString("");
+  mxArray *fallbackType = mxCreateString("early");
+  mxSetField(mxInfo, 0, infoFields[0], fallbackType);
+  mxSetField(mxInfo, 0, infoFields[1], fallbackReason);
+  mxSetField(mxInfo, 0, infoFields[2], incompatibleSymbol);
+  return mxInfo;
+}
+
 mxArray *sf_c3_PWM_controller_updateBuildInfo_args_info(void)
 {
   mxArray *mxBIArgs = mxCreateCellMatrix(1,0);
   return mxBIArgs;
+}
+
+mxArray* sf_c3_PWM_controller_get_post_codegen_info(void)
+{
+  const char* fieldNames[] = { "exportedFunctionsUsedByThisChart",
+    "exportedFunctionsChecksum" };
+
+  mwSize dims[2] = { 1, 1 };
+
+  mxArray* mxPostCodegenInfo = mxCreateStructArray(2, dims, sizeof(fieldNames)/
+    sizeof(fieldNames[0]), fieldNames);
+
+  {
+    mxArray* mxExportedFunctionsChecksum = mxCreateString("");
+    mwSize exp_dims[2] = { 0, 1 };
+
+    mxArray* mxExportedFunctionsUsedByThisChart = mxCreateCellArray(2, exp_dims);
+    mxSetField(mxPostCodegenInfo, 0, "exportedFunctionsUsedByThisChart",
+               mxExportedFunctionsUsedByThisChart);
+    mxSetField(mxPostCodegenInfo, 0, "exportedFunctionsChecksum",
+               mxExportedFunctionsChecksum);
+  }
+
+  return mxPostCodegenInfo;
 }
 
 static const mxArray *sf_get_sim_state_info_c3_PWM_controller(void)
@@ -1235,10 +1341,10 @@ static const mxArray *sf_get_sim_state_info_c3_PWM_controller(void)
 
   mxArray *mxInfo = mxCreateStructMatrix(1, 1, 2, infoFields);
   const char *infoEncStr[] = {
-    "100 S1x4'type','srcId','name','auxInfo'{{M[1],M[10],T\"PWM\",},{M[3],M[16],T\"count\",},{M[8],M[0],T\"is_active_c3_PWM_controller\",},{M[9],M[0],T\"is_c3_PWM_controller\",}}"
+    "100 S1x5'type','srcId','name','auxInfo'{{M[1],M[10],T\"PWM\",},{M[3],M[16],T\"count\",},{M[8],M[0],T\"is_active_c3_PWM_controller\",},{M[9],M[0],T\"is_c3_PWM_controller\",},{M[15],M[0],T\"dataWrittenToVector\",}}"
   };
 
-  mxArray *mxVarInfo = sf_mex_decode_encoded_mx_struct_array(infoEncStr, 4, 10);
+  mxArray *mxVarInfo = sf_mex_decode_encoded_mx_struct_array(infoEncStr, 5, 10);
   mxArray *mxChecksum = mxCreateDoubleMatrix(1, 4, mxREAL);
   sf_c3_PWM_controller_get_check_sum(&mxChecksum);
   mxSetField(mxInfo, 0, infoFields[0], mxChecksum);
@@ -1276,7 +1382,7 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
            &(chartInstance->instanceNumber),
            (void *)S);
 
-        /* Each instance must initialize ist own list of scripts */
+        /* Each instance must initialize its own list of scripts */
         init_script_number_translation(_PWM_controllerMachineNumber_,
           chartInstance->chartNumber,chartInstance->instanceNumber);
         if (chartAlreadyPresent==0) {
@@ -1391,22 +1497,11 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
           (MexFcnForType)c3_d_sf_marshallOut,(MexInFcnForType)NULL);
         _SFD_SET_DATA_COMPILED_PROPS(4,SF_UINT32,0,NULL,0,0,0,0.0,1.0,0,0,
           (MexFcnForType)c3_f_sf_marshallOut,(MexInFcnForType)NULL);
-
-        {
-          boolean_T *c3_PWM;
-          boolean_T *c3_pwm_enable;
-          uint8_T *c3_duty;
-          uint32_T *c3_f_coeff;
-          c3_f_coeff = (uint32_T *)ssGetInputPortSignal(chartInstance->S, 2);
-          c3_duty = (uint8_T *)ssGetInputPortSignal(chartInstance->S, 1);
-          c3_pwm_enable = (boolean_T *)ssGetInputPortSignal(chartInstance->S, 0);
-          c3_PWM = (boolean_T *)ssGetOutputPortSignal(chartInstance->S, 1);
-          _SFD_SET_DATA_VALUE_PTR(0U, c3_PWM);
-          _SFD_SET_DATA_VALUE_PTR(1U, c3_pwm_enable);
-          _SFD_SET_DATA_VALUE_PTR(2U, &chartInstance->c3_count);
-          _SFD_SET_DATA_VALUE_PTR(3U, c3_duty);
-          _SFD_SET_DATA_VALUE_PTR(4U, c3_f_coeff);
-        }
+        _SFD_SET_DATA_VALUE_PTR(0U, chartInstance->c3_PWM);
+        _SFD_SET_DATA_VALUE_PTR(1U, chartInstance->c3_pwm_enable);
+        _SFD_SET_DATA_VALUE_PTR(2U, &chartInstance->c3_count);
+        _SFD_SET_DATA_VALUE_PTR(3U, chartInstance->c3_duty);
+        _SFD_SET_DATA_VALUE_PTR(4U, chartInstance->c3_f_coeff);
       }
     } else {
       sf_debug_reset_current_state_configuration(sfGlobalDebugInstanceStruct,
@@ -1418,7 +1513,7 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
 
 static const char* sf_get_instance_specialization(void)
 {
-  return "9yNy260DnjEoJDVvzSnoU";
+  return "NkpPlddy0nde26nAHHrKrB";
 }
 
 static void sf_opaque_initialize_c3_PWM_controller(void *chartInstanceVar)
@@ -1448,65 +1543,21 @@ static void sf_opaque_gateway_c3_PWM_controller(void *chartInstanceVar)
     chartInstanceVar);
 }
 
-extern const mxArray* sf_internal_get_sim_state_c3_PWM_controller(SimStruct* S)
-{
-  ChartRunTimeInfo * crtInfo = (ChartRunTimeInfo *)(ssGetUserData(S));
-  ChartInfoStruct * chartInfo = (ChartInfoStruct *)(crtInfo->instanceInfo);
-  mxArray *plhs[1] = { NULL };
-
-  mxArray *prhs[4];
-  int mxError = 0;
-  prhs[0] = mxCreateString("chart_simctx_raw2high");
-  prhs[1] = mxCreateDoubleScalar(ssGetSFuncBlockHandle(S));
-  prhs[2] = (mxArray*) get_sim_state_c3_PWM_controller
-    ((SFc3_PWM_controllerInstanceStruct*)chartInfo->chartInstance);/* raw sim ctx */
-  prhs[3] = (mxArray*) sf_get_sim_state_info_c3_PWM_controller();/* state var info */
-  mxError = sf_mex_call_matlab(1, plhs, 4, prhs, "sfprivate");
-  mxDestroyArray(prhs[0]);
-  mxDestroyArray(prhs[1]);
-  mxDestroyArray(prhs[2]);
-  mxDestroyArray(prhs[3]);
-  if (mxError || plhs[0] == NULL) {
-    sf_mex_error_message("Stateflow Internal Error: \nError calling 'chart_simctx_raw2high'.\n");
-  }
-
-  return plhs[0];
-}
-
-extern void sf_internal_set_sim_state_c3_PWM_controller(SimStruct* S, const
-  mxArray *st)
-{
-  ChartRunTimeInfo * crtInfo = (ChartRunTimeInfo *)(ssGetUserData(S));
-  ChartInfoStruct * chartInfo = (ChartInfoStruct *)(crtInfo->instanceInfo);
-  mxArray *plhs[1] = { NULL };
-
-  mxArray *prhs[3];
-  int mxError = 0;
-  prhs[0] = mxCreateString("chart_simctx_high2raw");
-  prhs[1] = mxDuplicateArray(st);      /* high level simctx */
-  prhs[2] = (mxArray*) sf_get_sim_state_info_c3_PWM_controller();/* state var info */
-  mxError = sf_mex_call_matlab(1, plhs, 3, prhs, "sfprivate");
-  mxDestroyArray(prhs[0]);
-  mxDestroyArray(prhs[1]);
-  mxDestroyArray(prhs[2]);
-  if (mxError || plhs[0] == NULL) {
-    sf_mex_error_message("Stateflow Internal Error: \nError calling 'chart_simctx_high2raw'.\n");
-  }
-
-  set_sim_state_c3_PWM_controller((SFc3_PWM_controllerInstanceStruct*)
-    chartInfo->chartInstance, mxDuplicateArray(plhs[0]));
-  mxDestroyArray(plhs[0]);
-}
-
 static const mxArray* sf_opaque_get_sim_state_c3_PWM_controller(SimStruct* S)
 {
-  return sf_internal_get_sim_state_c3_PWM_controller(S);
+  ChartRunTimeInfo * crtInfo = (ChartRunTimeInfo *)(ssGetUserData(S));
+  ChartInfoStruct * chartInfo = (ChartInfoStruct *)(crtInfo->instanceInfo);
+  return get_sim_state_c3_PWM_controller((SFc3_PWM_controllerInstanceStruct*)
+    chartInfo->chartInstance);         /* raw sim ctx */
 }
 
 static void sf_opaque_set_sim_state_c3_PWM_controller(SimStruct* S, const
   mxArray *st)
 {
-  sf_internal_set_sim_state_c3_PWM_controller(S, st);
+  ChartRunTimeInfo * crtInfo = (ChartRunTimeInfo *)(ssGetUserData(S));
+  ChartInfoStruct * chartInfo = (ChartInfoStruct *)(crtInfo->instanceInfo);
+  set_sim_state_c3_PWM_controller((SFc3_PWM_controllerInstanceStruct*)
+    chartInfo->chartInstance, st);
 }
 
 static void sf_opaque_terminate_c3_PWM_controller(void *chartInstanceVar)
@@ -1521,9 +1572,9 @@ static void sf_opaque_terminate_c3_PWM_controller(void *chartInstanceVar)
 
     finalize_c3_PWM_controller((SFc3_PWM_controllerInstanceStruct*)
       chartInstanceVar);
-    utFree((void *)chartInstanceVar);
+    utFree(chartInstanceVar);
     if (crtInfo != NULL) {
-      utFree((void *)crtInfo);
+      utFree(crtInfo);
     }
 
     ssSetUserData(S,NULL);
@@ -1600,10 +1651,10 @@ static void mdlSetWorkWidths_c3_PWM_controller(SimStruct *S)
   }
 
   ssSetOptions(S,ssGetOptions(S)|SS_OPTION_WORKS_WITH_CODE_REUSE);
-  ssSetChecksum0(S,(1609818123U));
-  ssSetChecksum1(S,(744793786U));
-  ssSetChecksum2(S,(2766163624U));
-  ssSetChecksum3(S,(660429183U));
+  ssSetChecksum0(S,(2747720606U));
+  ssSetChecksum1(S,(1134723572U));
+  ssSetChecksum2(S,(883573728U));
+  ssSetChecksum3(S,(2197236558U));
   ssSetmdlDerivatives(S, NULL);
   ssSetExplicitFCSSCtrl(S,1);
   ssSupportsMultipleExecInstances(S,1);
@@ -1655,12 +1706,17 @@ static void mdlStart_c3_PWM_controller(SimStruct *S)
   chartInstance->chartInfo.restoreLastMajorStepConfiguration = NULL;
   chartInstance->chartInfo.restoreBeforeLastMajorStepConfiguration = NULL;
   chartInstance->chartInfo.storeCurrentConfiguration = NULL;
+  chartInstance->chartInfo.callAtomicSubchartUserFcn = NULL;
+  chartInstance->chartInfo.callAtomicSubchartAutoFcn = NULL;
   chartInstance->chartInfo.debugInstance = sfGlobalDebugInstanceStruct;
   chartInstance->S = S;
+  crtInfo->checksum = SF_RUNTIME_INFO_CHECKSUM;
   crtInfo->instanceInfo = (&(chartInstance->chartInfo));
   crtInfo->isJITEnabled = false;
+  crtInfo->compiledInfo = NULL;
   ssSetUserData(S,(void *)(crtInfo));  /* register the chart instance with simstruct */
   init_dsm_address_info(chartInstance);
+  init_simulink_io_address(chartInstance);
   if (!sim_mode_is_rtw_gen(S)) {
   }
 

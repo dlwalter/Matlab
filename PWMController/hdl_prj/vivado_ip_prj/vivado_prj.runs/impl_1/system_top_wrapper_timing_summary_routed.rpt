@@ -1,0 +1,505 @@
+Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2013.4 (win64) Build 353583 Mon Dec  9 17:49:19 MST 2013
+| Date         : Thu Jan 15 17:54:06 2015
+| Host         : maclab3-PC running 64-bit Service Pack 1  (build 7601)
+| Command      : report_timing_summary -file system_top_wrapper_timing_summary_routed.rpt -pb system_top_wrapper_timing_summary_routed.pb
+| Design       : system_top_wrapper
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.09 2013-11-22
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Check Timing
+| ------------
+------------------------------------------------------------------------------------------------
+
+
+Checking 'no_clock'.
+ There are 0 register/latch pins with no clock.
+ There are 2 register/latch pins with constant_clock.
+
+Checking 'unconstrained_internal_endpoints'.
+ There are 0 pins that are not constrained for maximum delay.
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+Checking 'no_input_delay'.
+ There are 0 input ports with no input delay specified.
+
+Checking 'no_output_delay'.
+ There are 2 ports with no output delay specified.
+
+Checking 'multiple_clock'.
+ There are 0 register/latch pins with related clocks.
+ There are 0 register/latch pins with exclusive clocks.
+
+Checking 'generated_clocks'.
+ There are 0 generated clocks that are not connected to a clock source.
+
+Checking 'loops'.
+ There are 0 combinational loops in the design.
+
+Checking 'partial_input_delay'.
+ There are 0 input ports with partial input delay specified.
+
+Checking 'partial_output_delay'.
+ There are 0 ports with partial output delay specified.
+
+Checking 'unexpandable_clocks'.
+ There are 0 related clock pairs.
+ There are 0 User Ignored clock pairs.
+
+Checking 'latch_loops'.
+ There are 0 combinational latch loops in the design through latch input
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      5.315        0.000                      0                 1361        0.042        0.000                      0                 1361        7.845        0.000                       0                   705  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock                              Waveform(ns)       Period(ns)      Frequency(MHz)
+-----                              ------------       ----------      --------------
+clk_fpga_0                         {0.000 5.000}      10.000          100.000         
+system_top_i/clk_wiz_0/U0/clk_in1  {0.000 5.000}      10.000          100.000         
+  CLKFBOUT                         {0.000 5.000}      10.000          100.000         
+  CLKOUT0                          {0.000 10.000}     20.000          50.000          
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock                                  WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----                                  -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk_fpga_0                                                                                                                                                                           7.845        0.000                       0                     1  
+system_top_i/clk_wiz_0/U0/clk_in1                                                                                                                                                    8.751        0.000                       0                     3  
+  CLKFBOUT                                                                                                                                                                           7.845        0.000                       0                     3  
+  CLKOUT0                                5.315        0.000                      0                 1319        0.042        0.000                      0                 1319        9.020        0.000                       0                   700  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group         From Clock         To Clock               WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------         ----------         --------               -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+**async_default**  CLKOUT0            CLKOUT0                 15.220        0.000                      0                   42        0.640        0.000                      0                   42  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_fpga_0
+  To Clock:  clk_fpga_0
+
+Setup :               Failing Endpoints,  Worst Slack               ,  Total Violation             
+Hold  :               Failing Endpoints,  Worst Slack               ,  Total Violation             
+PW    :            0  Failing Endpoints,  Worst Slack        7.845ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_fpga_0
+Waveform:           { 0 5 }
+Period:             10.000
+Sources:            { system_top_i/processing_system7_0/U0/PS7_i/FCLKCLK[0] }
+
+Check Type  Corner  Lib Pin  Reference Pin  Required  Actual  Slack  Location        Pin
+Min Period  n/a     BUFG/I   n/a            2.155     10.000  7.845  BUFGCTRL_X0Y16  system_top_i/processing_system7_0/U0/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/I
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  system_top_i/clk_wiz_0/U0/clk_in1
+  To Clock:  system_top_i/clk_wiz_0/U0/clk_in1
+
+Setup :               Failing Endpoints,  Worst Slack               ,  Total Violation             
+Hold  :               Failing Endpoints,  Worst Slack               ,  Total Violation             
+PW    :            0  Failing Endpoints,  Worst Slack        8.751ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         system_top_i/clk_wiz_0/U0/clk_in1
+Waveform:           { 0 5 }
+Period:             10.000
+Sources:            { system_top_i/clk_wiz_0/U0/clk_in1 }
+
+Check Type  Corner  Lib Pin              Reference Pin  Required  Actual  Slack   Location         Pin
+Min Period  n/a     MMCME2_ADV/CLKFBOUT  n/a            1.249     10.000  8.751   MMCME2_ADV_X1Y0  system_top_i/clk_wiz_0/U0/mmcm_adv_inst/CLKFBOUT
+Max Period  n/a     MMCME2_ADV/CLKIN1    n/a            100.000   10.000  90.000  MMCME2_ADV_X1Y0  system_top_i/clk_wiz_0/U0/mmcm_adv_inst/CLKIN1
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  CLKFBOUT
+  To Clock:  CLKFBOUT
+
+Setup :               Failing Endpoints,  Worst Slack               ,  Total Violation             
+Hold  :               Failing Endpoints,  Worst Slack               ,  Total Violation             
+PW    :            0  Failing Endpoints,  Worst Slack        7.845ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         CLKFBOUT
+Waveform:           { 0 5 }
+Period:             10.000
+Sources:            { system_top_i/clk_wiz_0/U0/mmcm_adv_inst/CLKFBOUT }
+
+Check Type  Corner  Lib Pin             Reference Pin  Required  Actual  Slack   Location         Pin
+Min Period  n/a     BUFG/I              n/a            2.155     10.000  7.845   BUFGCTRL_X0Y1    system_top_i/clk_wiz_0/U0/clkf_buf/I
+Max Period  n/a     MMCME2_ADV/CLKFBIN  n/a            100.000   10.000  90.000  MMCME2_ADV_X1Y0  system_top_i/clk_wiz_0/U0/mmcm_adv_inst/CLKFBIN
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  CLKOUT0
+  To Clock:  CLKOUT0
+
+Setup :            0  Failing Endpoints,  Worst Slack        5.315ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.042ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        9.020ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             5.315ns  (required time - arrival time)
+  Source:                 system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_axi_lite_inst/u_PWM_controller_PWM_Controller_ipcore_addr_decoder_inst/write_reg_duty_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by CLKOUT0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_dut_inst/u_PWM_Controller/u_Chart/count_reg[1]/CE
+                            (rising edge-triggered cell FDRE clocked by CLKOUT0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             CLKOUT0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (CLKOUT0 rise@20.000ns - CLKOUT0 rise@0.000ns)
+  Data Path Delay:        14.287ns  (logic 7.954ns (55.672%)  route 6.333ns (44.328%))
+  Logic Levels:           12  (CARRY4=3 DSP48E1=2 LUT1=1 LUT3=1 LUT4=1 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.109ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.477ns = ( 21.477 - 20.000 ) 
+    Source Clock Delay      (SCD):    1.700ns
+    Clock Pessimism Removal (CPR):    0.114ns
+  Clock Uncertainty:      0.084ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.152ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock CLKOUT0 rise edge)    0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  system_top_i/processing_system7_0/U0/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.806     1.806    system_top_i/clk_wiz_0/U0/clk_in1
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.793    -1.987 r  system_top_i/clk_wiz_0/U0/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.889    -0.098    system_top_i/clk_wiz_0/U0/CLKOUT0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     0.003 r  system_top_i/clk_wiz_0/U0/clkout1_buf/O
+                         net (fo=699, routed)         1.697     1.700    system_top_i/PWM_controller_PWM_Controller_ipcore_0/AXI4_Lite_ACLK
+    SLICE_X31Y85                                                      r  system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_axi_lite_inst/u_PWM_controller_PWM_Controller_ipcore_addr_decoder_inst/write_reg_duty_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X31Y85         FDCE (Prop_fdce_C_Q)         0.456     2.156 f  system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_axi_lite_inst/u_PWM_controller_PWM_Controller_ipcore_addr_decoder_inst/write_reg_duty_reg[1]/Q
+                         net (fo=3, routed)           1.142     3.298    system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/duty[1]
+    SLICE_X35Y71         LUT1 (Prop_lut1_I0_O)        0.124     3.422 r  system_top_i/PWM_controller_PWM_Controller_ipcore_0/cast_02_i_7/O
+                         net (fo=2, routed)           0.733     4.155    system_top_i/PWM_controller_PWM_Controller_ipcore_0/n_0_cast_02_i_7
+    DSP48_X2Y26          DSP48E1 (Prop_dsp48e1_B[1]_PCOUT[47])
+                                                      3.851     8.006 r  system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_dut_inst/u_PWM_Controller/u_Chart/cast_02/PCOUT[47]
+                         net (fo=1, routed)           0.002     8.008    system_top_i/PWM_controller_PWM_Controller_ipcore_0/n_106_U0/u_PWM_controller_PWM_Controller_ipcore_dut_inst/u_PWM_Controller/u_Chart/cast_02
+    DSP48_X2Y27          DSP48E1 (Prop_dsp48e1_PCIN[47]_P[16])
+                                                      1.518     9.526 r  system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_dut_inst/u_PWM_Controller/u_Chart/cast_02__0/P[16]
+                         net (fo=1, routed)           1.138    10.664    system_top_i/PWM_controller_PWM_Controller_ipcore_0/cast_02[33]
+    SLICE_X34Y68         LUT6 (Prop_lut6_I0_O)        0.124    10.788 r  system_top_i/PWM_controller_PWM_Controller_ipcore_0/PmodJA1[3]_INST_0_i_141/O
+                         net (fo=1, routed)           0.457    11.245    system_top_i/PWM_controller_PWM_Controller_ipcore_0/n_0_PmodJA1[3]_INST_0_i_141
+    SLICE_X36Y69         LUT3 (Prop_lut3_I2_O)        0.124    11.369 r  system_top_i/PWM_controller_PWM_Controller_ipcore_0/PmodJA1[3]_INST_0_i_70/O
+                         net (fo=19, routed)          0.636    12.006    system_top_i/PWM_controller_PWM_Controller_ipcore_0/cast_01
+    SLICE_X36Y66         LUT5 (Prop_lut5_I4_O)        0.124    12.130 r  system_top_i/PWM_controller_PWM_Controller_ipcore_0/PmodJA1[3]_INST_0_i_139/O
+                         net (fo=1, routed)           0.000    12.130    system_top_i/PWM_controller_PWM_Controller_ipcore_0/n_0_PmodJA1[3]_INST_0_i_139
+    SLICE_X36Y66         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533    12.663 r  system_top_i/PWM_controller_PWM_Controller_ipcore_0/PmodJA1[3]_INST_0_i_61/CO[3]
+                         net (fo=1, routed)           0.000    12.663    system_top_i/PWM_controller_PWM_Controller_ipcore_0/n_0_PmodJA1[3]_INST_0_i_61
+    SLICE_X36Y67         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    12.780 r  system_top_i/PWM_controller_PWM_Controller_ipcore_0/PmodJA1[3]_INST_0_i_31/CO[3]
+                         net (fo=1, routed)           0.000    12.780    system_top_i/PWM_controller_PWM_Controller_ipcore_0/n_0_PmodJA1[3]_INST_0_i_31
+    SLICE_X36Y68         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.229    13.009 f  system_top_i/PWM_controller_PWM_Controller_ipcore_0/PmodJA1[3]_INST_0_i_14/CO[2]
+                         net (fo=2, routed)           0.637    13.646    system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_dut_inst/u_PWM_Controller/u_Chart/is_Chart_next24_in
+    SLICE_X35Y74         LUT4 (Prop_lut4_I0_O)        0.304    13.950 f  system_top_i/PWM_controller_PWM_Controller_ipcore_0/FSM_onehot_is_Chart[2]_i_5/O
+                         net (fo=3, routed)           0.481    14.431    system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_dut_inst/u_PWM_Controller/u_Chart/is_Chart_next1
+    SLICE_X34Y73         LUT6 (Prop_lut6_I0_O)        0.326    14.757 r  system_top_i/PWM_controller_PWM_Controller_ipcore_0/count[15]_i_5/O
+                         net (fo=1, routed)           0.304    15.061    system_top_i/PWM_controller_PWM_Controller_ipcore_0/n_0_count[15]_i_5
+    SLICE_X33Y73         LUT6 (Prop_lut6_I2_O)        0.124    15.185 r  system_top_i/PWM_controller_PWM_Controller_ipcore_0/count[15]_i_1/O
+                         net (fo=16, routed)          0.803    15.987    system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_dut_inst/u_PWM_Controller/u_Chart/count0
+    SLICE_X33Y67         FDRE                                         r  system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_dut_inst/u_PWM_Controller/u_Chart/count_reg[1]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CLKOUT0 rise edge)   20.000    20.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000    20.000 r  system_top_i/processing_system7_0/U0/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.612    21.612    system_top_i/clk_wiz_0/U0/clk_in1
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.425    18.187 r  system_top_i/clk_wiz_0/U0/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.725    19.912    system_top_i/clk_wiz_0/U0/CLKOUT0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    20.003 r  system_top_i/clk_wiz_0/U0/clkout1_buf/O
+                         net (fo=699, routed)         1.474    21.477    system_top_i/PWM_controller_PWM_Controller_ipcore_0/IPCORE_CLK
+    SLICE_X33Y67                                                      r  system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_dut_inst/u_PWM_Controller/u_Chart/count_reg[1]/C
+                         clock pessimism              0.114    21.591    
+                         clock uncertainty           -0.084    21.507    
+    SLICE_X33Y67         FDRE (Setup_fdre_C_CE)      -0.205    21.302    system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_dut_inst/u_PWM_Controller/u_Chart/count_reg[1]
+  -------------------------------------------------------------------
+                         required time                         21.302    
+                         arrival time                         -15.987    
+  -------------------------------------------------------------------
+                         slack                                  5.315    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.042ns  (arrival time - required time)
+  Source:                 system_top_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar_pipe/m_payload_i_reg[52]/C
+                            (rising edge-triggered cell FDRE clocked by CLKOUT0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            system_top_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.ar_channel_0/s_arid_r_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by CLKOUT0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             CLKOUT0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (CLKOUT0 rise@0.000ns - CLKOUT0 rise@0.000ns)
+  Data Path Delay:        0.472ns  (logic 0.141ns (29.887%)  route 0.331ns (70.113%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.354ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.935ns
+    Source Clock Delay      (SCD):    0.576ns
+    Clock Pessimism Removal (CPR):    0.005ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock CLKOUT0 rise edge)    0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  system_top_i/processing_system7_0/U0/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.597     0.597    system_top_i/clk_wiz_0/U0/clk_in1
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.149    -0.553 r  system_top_i/clk_wiz_0/U0/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.529    -0.024    system_top_i/clk_wiz_0/U0/CLKOUT0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.002 r  system_top_i/clk_wiz_0/U0/clkout1_buf/O
+                         net (fo=699, routed)         0.574     0.576    system_top_i/axi_interconnect_0/s00_couplers/auto_pc/aclk
+    SLICE_X27Y91                                                      r  system_top_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar_pipe/m_payload_i_reg[52]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y91         FDRE (Prop_fdre_C_Q)         0.141     0.717 r  system_top_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar_pipe/m_payload_i_reg[52]/Q
+                         net (fo=1, routed)           0.331     1.047    system_top_i/axi_interconnect_0/s00_couplers/auto_pc/s_arid[2]
+    SLICE_X31Y101        FDRE                                         r  system_top_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.ar_channel_0/s_arid_r_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CLKOUT0 rise edge)    0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  system_top_i/processing_system7_0/U0/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.864     0.864    system_top_i/clk_wiz_0/U0/clk_in1
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.467    -0.603 r  system_top_i/clk_wiz_0/U0/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.576    -0.027    system_top_i/clk_wiz_0/U0/CLKOUT0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.002 r  system_top_i/clk_wiz_0/U0/clkout1_buf/O
+                         net (fo=699, routed)         0.933     0.935    system_top_i/axi_interconnect_0/s00_couplers/auto_pc/aclk
+    SLICE_X31Y101                                                     r  system_top_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.ar_channel_0/s_arid_r_reg[2]/C
+                         clock pessimism             -0.005     0.930    
+    SLICE_X31Y101        FDRE (Hold_fdre_C_D)         0.075     1.005    system_top_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.ar_channel_0/s_arid_r_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -1.005    
+                         arrival time                           1.047    
+  -------------------------------------------------------------------
+                         slack                                  0.042    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         CLKOUT0
+Waveform:           { 0 10 }
+Period:             20.000
+Sources:            { system_top_i/clk_wiz_0/U0/mmcm_adv_inst/CLKOUT0 }
+
+Check Type        Corner  Lib Pin             Reference Pin  Required  Actual  Slack    Location         Pin
+Min Period        n/a     BUFG/I              n/a            2.155     20.000  17.845   BUFGCTRL_X0Y0    system_top_i/clk_wiz_0/U0/clkout1_buf/I
+Max Period        n/a     MMCME2_ADV/CLKOUT0  n/a            213.360   20.000  193.360  MMCME2_ADV_X1Y0  system_top_i/clk_wiz_0/U0/mmcm_adv_inst/CLKOUT0
+Low Pulse Width   Slow    SRLC32E/CLK         n/a            0.980     10.000  9.020    SLICE_X38Y92     system_top_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][10]_srl32/CLK
+High Pulse Width  Fast    SRLC32E/CLK         n/a            0.980     10.000  9.020    SLICE_X36Y93     system_top_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][0]_srl32/CLK
+
+
+
+---------------------------------------------------------------------------------------------------
+Path Group:  **async_default**
+From Clock:  CLKOUT0
+  To Clock:  CLKOUT0
+
+Setup :            0  Failing Endpoints,  Worst Slack       15.220ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.640ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             15.220ns  (required time - arrival time)
+  Source:                 system_top_i/proc_sys_reset_0/U0/ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by CLKOUT0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_axi_lite_inst/u_PWM_controller_PWM_Controller_ipcore_axi_lite_module_inst/waddr_reg[12]/CLR
+                            (recovery check against rising-edge clock CLKOUT0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             **async_default**
+  Path Type:              Recovery (Max at Slow Process Corner)
+  Requirement:            20.000ns  (CLKOUT0 rise@20.000ns - CLKOUT0 rise@0.000ns)
+  Data Path Delay:        4.123ns  (logic 0.580ns (14.067%)  route 3.543ns (85.933%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Path Skew:        -0.168ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.531ns = ( 21.531 - 20.000 ) 
+    Source Clock Delay      (SCD):    1.713ns
+    Clock Pessimism Removal (CPR):    0.014ns
+  Clock Uncertainty:      0.084ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.152ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock CLKOUT0 rise edge)    0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  system_top_i/processing_system7_0/U0/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.806     1.806    system_top_i/clk_wiz_0/U0/clk_in1
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.793    -1.987 r  system_top_i/clk_wiz_0/U0/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.889    -0.098    system_top_i/clk_wiz_0/U0/CLKOUT0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     0.003 r  system_top_i/clk_wiz_0/U0/clkout1_buf/O
+                         net (fo=699, routed)         1.710     1.713    system_top_i/proc_sys_reset_0/U0/slowest_sync_clk
+    SLICE_X56Y86                                                      r  system_top_i/proc_sys_reset_0/U0/ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X56Y86         FDRE (Prop_fdre_C_Q)         0.456     2.169 r  system_top_i/proc_sys_reset_0/U0/ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn_reg[0]/Q
+                         net (fo=4, routed)           1.895     4.064    system_top_i/PWM_controller_PWM_Controller_ipcore_0/AXI4_Lite_ARESETN
+    SLICE_X34Y91         LUT1 (Prop_lut1_I0_O)        0.124     4.188 f  system_top_i/PWM_controller_PWM_Controller_ipcore_0/AXI4_Lite_RDATA_tmp[31]_i_3/O
+                         net (fo=27, routed)          1.648     5.836    system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_axi_lite_inst/u_PWM_controller_PWM_Controller_ipcore_axi_lite_module_inst/reset
+    SLICE_X28Y96         FDCE                                         f  system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_axi_lite_inst/u_PWM_controller_PWM_Controller_ipcore_axi_lite_module_inst/waddr_reg[12]/CLR
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CLKOUT0 rise edge)   20.000    20.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000    20.000 r  system_top_i/processing_system7_0/U0/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.612    21.612    system_top_i/clk_wiz_0/U0/clk_in1
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.425    18.187 r  system_top_i/clk_wiz_0/U0/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.725    19.912    system_top_i/clk_wiz_0/U0/CLKOUT0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    20.003 r  system_top_i/clk_wiz_0/U0/clkout1_buf/O
+                         net (fo=699, routed)         1.528    21.531    system_top_i/PWM_controller_PWM_Controller_ipcore_0/AXI4_Lite_ACLK
+    SLICE_X28Y96                                                      r  system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_axi_lite_inst/u_PWM_controller_PWM_Controller_ipcore_axi_lite_module_inst/waddr_reg[12]/C
+                         clock pessimism              0.014    21.545    
+                         clock uncertainty           -0.084    21.461    
+    SLICE_X28Y96         FDCE (Recov_fdce_C_CLR)     -0.405    21.056    system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_axi_lite_inst/u_PWM_controller_PWM_Controller_ipcore_axi_lite_module_inst/waddr_reg[12]
+  -------------------------------------------------------------------
+                         required time                         21.056    
+                         arrival time                          -5.836    
+  -------------------------------------------------------------------
+                         slack                                 15.220    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.640ns  (arrival time - required time)
+  Source:                 system_top_i/proc_sys_reset_0/U0/ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by CLKOUT0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_axi_lite_inst/u_PWM_controller_PWM_Controller_ipcore_addr_decoder_inst/write_reg_direction_reg/CLR
+                            (removal check against rising-edge clock CLKOUT0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             **async_default**
+  Path Type:              Removal (Min at Fast Process Corner)
+  Requirement:            0.000ns  (CLKOUT0 rise@0.000ns - CLKOUT0 rise@0.000ns)
+  Data Path Delay:        0.815ns  (logic 0.186ns (22.817%)  route 0.629ns (77.183%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.242ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.824ns
+    Source Clock Delay      (SCD):    0.577ns
+    Clock Pessimism Removal (CPR):    0.005ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock CLKOUT0 rise edge)    0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  system_top_i/processing_system7_0/U0/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.597     0.597    system_top_i/clk_wiz_0/U0/clk_in1
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.149    -0.553 r  system_top_i/clk_wiz_0/U0/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.529    -0.024    system_top_i/clk_wiz_0/U0/CLKOUT0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.002 r  system_top_i/clk_wiz_0/U0/clkout1_buf/O
+                         net (fo=699, routed)         0.575     0.577    system_top_i/proc_sys_reset_0/U0/slowest_sync_clk
+    SLICE_X56Y86                                                      r  system_top_i/proc_sys_reset_0/U0/ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X56Y86         FDRE (Prop_fdre_C_Q)         0.141     0.718 r  system_top_i/proc_sys_reset_0/U0/ACTIVE_LOW_PR_OUT_DFF[0].peripheral_aresetn_reg[0]/Q
+                         net (fo=4, routed)           0.489     1.207    system_top_i/PWM_controller_PWM_Controller_ipcore_0/AXI4_Lite_ARESETN
+    SLICE_X34Y86         LUT2 (Prop_lut2_I0_O)        0.045     1.252 f  system_top_i/PWM_controller_PWM_Controller_ipcore_0/write_reg_direction_i_2/O
+                         net (fo=16, routed)          0.140     1.392    system_top_i/PWM_controller_PWM_Controller_ipcore_0/n_0_write_reg_direction_i_2
+    SLICE_X32Y86         FDCE                                         f  system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_axi_lite_inst/u_PWM_controller_PWM_Controller_ipcore_addr_decoder_inst/write_reg_direction_reg/CLR
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CLKOUT0 rise edge)    0.000     0.000 r  
+    BUFGCTRL_X0Y16       BUFG                         0.000     0.000 r  system_top_i/processing_system7_0/U0/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.864     0.864    system_top_i/clk_wiz_0/U0/clk_in1
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.467    -0.603 r  system_top_i/clk_wiz_0/U0/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.576    -0.027    system_top_i/clk_wiz_0/U0/CLKOUT0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     0.002 r  system_top_i/clk_wiz_0/U0/clkout1_buf/O
+                         net (fo=699, routed)         0.822     0.824    system_top_i/PWM_controller_PWM_Controller_ipcore_0/AXI4_Lite_ACLK
+    SLICE_X32Y86                                                      r  system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_axi_lite_inst/u_PWM_controller_PWM_Controller_ipcore_addr_decoder_inst/write_reg_direction_reg/C
+                         clock pessimism             -0.005     0.819    
+    SLICE_X32Y86         FDCE (Remov_fdce_C_CLR)     -0.067     0.752    system_top_i/PWM_controller_PWM_Controller_ipcore_0/U0/u_PWM_controller_PWM_Controller_ipcore_axi_lite_inst/u_PWM_controller_PWM_Controller_ipcore_addr_decoder_inst/write_reg_direction_reg
+  -------------------------------------------------------------------
+                         required time                         -0.752    
+                         arrival time                           1.392    
+  -------------------------------------------------------------------
+                         slack                                  0.640    
+
+
+
+
+

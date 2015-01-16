@@ -26,8 +26,13 @@ typedef struct {
   uint8_T c3_is_active_c3_PWM_controller;
   uint8_T c3_is_c3_PWM_controller;
   uint16_T c3_count;
+  boolean_T c3_dataWrittenToVector[2];
   uint8_T c3_doSetSimStateSideEffects;
   const mxArray *c3_setSimStateSideEffectsInfo;
+  boolean_T *c3_PWM;
+  boolean_T *c3_pwm_enable;
+  uint8_T *c3_duty;
+  uint32_T *c3_f_coeff;
 } SFc3_PWM_controllerInstanceStruct;
 
 #endif                                 /*typedef_SFc3_PWM_controllerInstanceStruct*/
@@ -35,6 +40,7 @@ typedef struct {
 /* Named Constants */
 
 /* Variable Declarations */
+extern struct SfDebugInstanceStruct *sfGlobalDebugInstanceStruct;
 
 /* Variable Definitions */
 

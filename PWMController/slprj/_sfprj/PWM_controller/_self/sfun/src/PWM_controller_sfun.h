@@ -5,7 +5,9 @@
 #define S_FUNCTION_NAME                sf_sfun
 #include "sf_runtime/sfc_sf.h"
 #include "sf_runtime/sfc_mex.h"
+#include "sf_runtime/sf_runtime_errors.h"
 #include "rtwtypes.h"
+#include "simtarget/slClientServerAPIBridge.h"
 #include "multiword_types.h"
 #include "sf_runtime/sfcdebug.h"
 #define rtInf                          (mxGetInf())

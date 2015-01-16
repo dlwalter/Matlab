@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DARoots Version="1" Minor="30">
+  <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../component.xml">
+      <FileInfo SFType="IPXACT">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../hdl/vhdl/PWM_Controller_pkg.vhd">
+      <FileInfo>
+        <Attr Name="UsedInSynthesis" Val="0"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../hdl/vhdl/Chart.vhd">
+      <FileInfo>
+        <Attr Name="UsedInSynthesis" Val="0"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../hdl/vhdl/Calculate_f_coeff.vhd">
+      <FileInfo>
+        <Attr Name="UsedInSynthesis" Val="0"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../hdl/vhdl/PWM_controller_PWM_Controller_ipcore_axi_lite_module.vhd">
+      <FileInfo>
+        <Attr Name="UsedInSynthesis" Val="0"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../hdl/vhdl/PWM_controller_PWM_Controller_ipcore_addr_decoder.vhd">
+      <FileInfo>
+        <Attr Name="UsedInSynthesis" Val="0"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../hdl/vhdl/PWM_Controller.vhd">
+      <FileInfo>
+        <Attr Name="UsedInSynthesis" Val="0"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../hdl/vhdl/PWM_controller_PWM_Controller_ipcore_dut.vhd">
+      <FileInfo>
+        <Attr Name="UsedInSynthesis" Val="0"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../hdl/vhdl/PWM_controller_PWM_Controller_ipcore_axi_lite.vhd">
+      <FileInfo>
+        <Attr Name="UsedInSynthesis" Val="0"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../hdl/vhdl/PWM_controller_PWM_Controller_ipcore.vhd">
+      <FileInfo>
+        <Attr Name="UsedInSynthesis" Val="0"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="PWM_controller_PWM_Controller_ipcore"/>
+      <Option Name="TopRTLFile" Val="$PPRDIR/../hdl/vhdl/PWM_controller_PWM_Controller_ipcore.vhd"/>
+      <Option Name="IPRepoPath" Val="$PPRDIR/../../../ipcore"/>
+    </Config>
+  </FileSet>
+</DARoots>

@@ -36,6 +36,12 @@ unsigned int sf_PWM_controller_method_dispatcher(SimStruct *simstructPtr,
   return 0;
 }
 
+extern void sf_PWM_controller_uses_exported_functions(int nlhs, mxArray * plhs[],
+  int nrhs, const mxArray * prhs[])
+{
+  plhs[0] = mxCreateLogicalScalar(0);
+}
+
 unsigned int sf_PWM_controller_process_check_sum_call( int nlhs, mxArray * plhs[],
   int nrhs, const mxArray * prhs[] )
 {
@@ -56,20 +62,20 @@ unsigned int sf_PWM_controller_process_check_sum_call( int nlhs, mxArray * plhs[
     mxGetString(prhs[1], commandName,sizeof(commandName)/sizeof(char));
     commandName[(sizeof(commandName)/sizeof(char)-1)] = '\0';
     if (!strcmp(commandName,"machine")) {
-      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(1458352429U);
-      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(803598614U);
-      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(143537938U);
-      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(44924204U);
+      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3910857300U);
+      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(450783246U);
+      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(1898774318U);
+      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3925416952U);
     } else if (!strcmp(commandName,"exportedFcn")) {
       ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(0U);
       ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(0U);
       ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(0U);
       ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(0U);
     } else if (!strcmp(commandName,"makefile")) {
-      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(4120036474U);
-      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(2213924122U);
-      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(53878344U);
-      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(114435271U);
+      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2880872941U);
+      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(2649167484U);
+      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3356504108U);
+      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3796860266U);
     } else if (nrhs==3 && !strcmp(commandName,"chart")) {
       unsigned int chartFileNumber;
       chartFileNumber = (unsigned int)mxGetScalar(prhs[2]);
@@ -88,18 +94,18 @@ unsigned int sf_PWM_controller_process_check_sum_call( int nlhs, mxArray * plhs[
         ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(0.0);
       }
     } else if (!strcmp(commandName,"target")) {
-      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(1030549820U);
-      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1377744497U);
-      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(1017720234U);
-      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(1886995848U);
+      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(4068767119U);
+      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(3392068275U);
+      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(1201380556U);
+      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3575564813U);
     } else {
       return 0;
     }
   } else {
-    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(444897746U);
-    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(636687953U);
-    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(1659102860U);
-    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(160021774U);
+    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(4106242874U);
+    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1032442720U);
+    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(2939509552U);
+    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(1870326332U);
   }
 
   return 1;
@@ -137,7 +143,7 @@ unsigned int sf_PWM_controller_autoinheritance_info( int nlhs, mxArray * plhs[],
     switch (chartFileNumber) {
      case 3:
       {
-        if (strcmp(aiChksum, "ThyoawZQCCt56RqaW1f9B") == 0) {
+        if (strcmp(aiChksum, "6rHY4bsjGnGRaUi1v5ezHC") == 0) {
           extern mxArray *sf_c3_PWM_controller_get_autoinheritance_info(void);
           plhs[0] = sf_c3_PWM_controller_get_autoinheritance_info();
           break;
@@ -230,9 +236,46 @@ unsigned int sf_PWM_controller_third_party_uses_info( int nlhs, mxArray * plhs[]
     switch (chartFileNumber) {
      case 3:
       {
-        if (strcmp(tpChksum, "9yNy260DnjEoJDVvzSnoU") == 0) {
+        if (strcmp(tpChksum, "NkpPlddy0nde26nAHHrKrB") == 0) {
           extern mxArray *sf_c3_PWM_controller_third_party_uses_info(void);
           plhs[0] = sf_c3_PWM_controller_third_party_uses_info();
+          break;
+        }
+      }
+
+     default:
+      plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
+    }
+  }
+
+  return 1;
+}
+
+unsigned int sf_PWM_controller_jit_fallback_info( int nlhs, mxArray * plhs[],
+  int nrhs, const mxArray * prhs[] )
+{
+  char commandName[64];
+  char tpChksum[64];
+  if (nrhs<3 || !mxIsChar(prhs[0]))
+    return 0;
+
+  /* Possible call to get the jit_fallback_info */
+  mxGetString(prhs[0], commandName,sizeof(commandName)/sizeof(char));
+  commandName[(sizeof(commandName)/sizeof(char)-1)] = '\0';
+  mxGetString(prhs[2], tpChksum,sizeof(tpChksum)/sizeof(char));
+  tpChksum[(sizeof(tpChksum)/sizeof(char)-1)] = '\0';
+  if (strcmp(commandName,"get_jit_fallback_info"))
+    return 0;
+
+  {
+    unsigned int chartFileNumber;
+    chartFileNumber = (unsigned int)mxGetScalar(prhs[1]);
+    switch (chartFileNumber) {
+     case 3:
+      {
+        if (strcmp(tpChksum, "NkpPlddy0nde26nAHHrKrB") == 0) {
+          extern mxArray *sf_c3_PWM_controller_jit_fallback_info(void);
+          plhs[0] = sf_c3_PWM_controller_jit_fallback_info();
           break;
         }
       }
@@ -267,7 +310,7 @@ unsigned int sf_PWM_controller_updateBuildInfo_args_info( int nlhs, mxArray *
     switch (chartFileNumber) {
      case 3:
       {
-        if (strcmp(tpChksum, "9yNy260DnjEoJDVvzSnoU") == 0) {
+        if (strcmp(tpChksum, "NkpPlddy0nde26nAHHrKrB") == 0) {
           extern mxArray *sf_c3_PWM_controller_updateBuildInfo_args_info(void);
           plhs[0] = sf_c3_PWM_controller_updateBuildInfo_args_info();
           break;
@@ -280,6 +323,31 @@ unsigned int sf_PWM_controller_updateBuildInfo_args_info( int nlhs, mxArray *
   }
 
   return 1;
+}
+
+void sf_PWM_controller_get_post_codegen_info( int nlhs, mxArray * plhs[], int
+  nrhs, const mxArray * prhs[] )
+{
+  unsigned int chartFileNumber = (unsigned int) mxGetScalar(prhs[0]);
+  char tpChksum[64];
+  mxGetString(prhs[1], tpChksum,sizeof(tpChksum)/sizeof(char));
+  tpChksum[(sizeof(tpChksum)/sizeof(char)-1)] = '\0';
+  switch (chartFileNumber) {
+   case 3:
+    {
+      if (strcmp(tpChksum, "NkpPlddy0nde26nAHHrKrB") == 0) {
+        extern mxArray *sf_c3_PWM_controller_get_post_codegen_info(void);
+        plhs[0] = sf_c3_PWM_controller_get_post_codegen_info();
+        return;
+      }
+    }
+    break;
+
+   default:
+    break;
+  }
+
+  plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
 }
 
 void PWM_controller_debug_initialize(struct SfDebugInstanceStruct* debugInstance)

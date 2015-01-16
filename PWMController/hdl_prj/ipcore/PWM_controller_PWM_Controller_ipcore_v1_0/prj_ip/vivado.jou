@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2013.4 (64-bit)
+# SW Build 353583 on Mon Dec  9 17:49:19 MST 2013
+# IP Build 208076 on Mon Dec  2 12:38:17 MST 2013
+# Start of session at: Thu Jan 15 17:48:45 2015
+# Process ID: 488
+# Log file: C:/MATLAB/quadcopter/PWMController/hdl_prj/ipcore/PWM_controller_PWM_Controller_ipcore_v1_0/prj_ip/vivado.log
+# Journal file: C:/MATLAB/quadcopter/PWMController/hdl_prj/ipcore/PWM_controller_PWM_Controller_ipcore_v1_0/prj_ip\vivado.jou
+#-----------------------------------------------------------
+source vivado_ip_package.tcl

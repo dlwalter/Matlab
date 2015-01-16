@@ -11,7 +11,7 @@ CHART_SRCS   = c3_PWM_controller.c
 MACHINE_SRC  = PWM_controller_sfun.c
 MACHINE_REG = PWM_controller_sfun_registry.c
 MAKEFILE    = PWM_controller_sfun.mak
-MATLAB_ROOT  = C:\Program Files\MATLAB\R2014a
+MATLAB_ROOT  = C:\Program Files\MATLAB\R2014b
 BUILDARGS   =
 
 #--------------------------- Tool Specifications ------------------------------
@@ -30,11 +30,11 @@ LIBCMD = lib.exe
 USER_INCLUDES   = 
 AUX_INCLUDES   = 
 MLSLSF_INCLUDES = \
-    /I "C:\Program Files\MATLAB\R2014a\extern\include" \
-    /I "C:\Program Files\MATLAB\R2014a\simulink\include" \
-    /I "C:\Program Files\MATLAB\R2014a\stateflow\c\mex\include" \
-    /I "C:\Program Files\MATLAB\R2014a\rtw\c\src" \
-    /I "c:\MATLAB\ZedBoard\slprj\_sfprj\PWM_controller\_self\sfun\src" 
+    /I "C:\Program Files\MATLAB\R2014b\extern\include" \
+    /I "C:\Program Files\MATLAB\R2014b\simulink\include" \
+    /I "C:\Program Files\MATLAB\R2014b\stateflow\c\mex\include" \
+    /I "C:\Program Files\MATLAB\R2014b\rtw\c\src" \
+    /I "C:\MATLAB\quadcopter\PWMController\slprj\_sfprj\PWM_controller\_self\sfun\src" 
 
 COMPILER_INCLUDES = /I "$(MSVC_ROOT)\include"
 
@@ -63,7 +63,7 @@ SFCLIB =
 AUX_LNK_OBJS =     
 USER_LIBS = 
 LINK_MACHINE_LIBS = 
-BLAS_LIBS = "C:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libmwblas.lib" 
+BLAS_LIBS = "C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwblas.lib" 
 THIRD_PARTY_LIBS = 
 
 #--------------------------------- Rules --------------------------------------
@@ -73,7 +73,7 @@ MEX_FILE_NAME = $(MEX_FILE_NAME_WO_EXT).mexw64
 MEX_FILE_CSF =
 all : $(MEX_FILE_NAME) $(MEX_FILE_CSF)
 
-TMWLIB = "C:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\sf_runtime.lib" "C:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libmx.lib" "C:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libmex.lib" "C:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libmat.lib" "C:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libfixedpoint.lib" "C:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libut.lib" "C:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libmwmathutil.lib" "C:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libemlrt.lib" "C:\Program Files\MATLAB\R2014a\extern\lib\win64\microsoft\libmwsl_log_load_blocks.lib" "C:\Program Files\MATLAB\R2014a\lib\win64\libippmwipt.lib" 
+TMWLIB = "C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\sf_runtime.lib" "C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmx.lib" "C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmex.lib" "C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmat.lib" "C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libfixedpoint.lib" "C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libut.lib" "C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwmathutil.lib" "C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libemlrt.lib" "C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwsl_log_load_blocks.lib" "C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwsimulink.lib" "C:\Program Files\MATLAB\R2014b\lib\win64\libmwipp.lib" 
 
 $(MEX_FILE_NAME) : $(MAKEFILE) $(OBJS) $(SFCLIB) $(AUX_LNK_OBJS) $(USER_LIBS) $(THIRD_PARTY_LIBS)
  @echo ### Linking ...

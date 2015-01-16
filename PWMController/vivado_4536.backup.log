@@ -1,0 +1,51 @@
+#-----------------------------------------------------------
+# Vivado v2013.4 (64-bit)
+# SW Build 353583 on Mon Dec  9 17:49:19 MST 2013
+# IP Build 208076 on Mon Dec  2 12:38:17 MST 2013
+# Start of session at: Thu Jan 15 17:10:02 2015
+# Process ID: 6644
+# Log file: C:/MATLAB/quadcopter/PWMController/vivado.log
+# Journal file: C:/MATLAB/quadcopter/PWMController\vivado.jou
+#-----------------------------------------------------------
+Attempting to get a license: Implementation
+WARNING: [Common 17-301] Failed to get a license: Implementation
+WARNING: [Vivado 15-19] WARNING: No 'Implementation' license found. This message may be safely ignored if a Vivado WebPACK or device-locked license, common for board kits, will be used during implementation.
+
+Attempting to get a license: Synthesis
+WARNING: [Common 17-301] Failed to get a license: Synthesis
+Loading parts and site information from C:/Xilinx/Vivado/2013.4/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/Vivado/2013.4/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/Vivado/2013.4/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+source vivado_download.tcl
+# set CHAINPOSITION 1
+# connect_hw_server -host localhost -port 60001
+INFO: [Xicom 50-2] Connecting to hw_server...
+INFO: [Xicom 50-1] Attempting to launch hw_server...
+INFO: [#UNDEF] 
+****** Xilinx hw_server v2013.4
+  **** Build date : Dec  9 2013-17:47:52
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: hw_server application started
+INFO: Use Ctrl-C to exit hw_server application
+
+INFO: [Labtools 27-109] Started Vivado Cse Server instance on port: 60001
+INFO: [Labtools 27-147] vcse_server: Connecting to hw_server...
+INFO: [Labtools 27-147] vcse_server: Connection established.
+INFO: [Labtools 27-147] vcse_server: Connecting to hw_server...
+INFO: [Labtools 27-147] vcse_server: Connection established.
+# current_hw_target [get_hw_targets *]
+# open_hw_target
+INFO: [Labtools 27-147] vcse_server: Connecting to hw_server...
+INFO: [Labtools 27-147] vcse_server: Connection established.
+# current_hw_device [lindex [get_hw_devices] $CHAINPOSITION]
+# refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] $CHAINPOSITION]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+# set_property PROGRAM.FILE {./hdl_prj/vivado_ip_prj/vivado_prj.runs/impl_1/system_top_wrapper.bit} [lindex [get_hw_devices] $CHAINPOSITION]
+# program_hw_devices [lindex [get_hw_devices] $CHAINPOSITION]
+INFO: [Labtools 27-2154] Reading 4045663 bytes from file ./hdl_prj/vivado_ip_prj/vivado_prj.runs/impl_1/system_top_wrapper.bit...
+INFO: [Labtools 27-32] Done pin status: HIGH
+# close_hw_target [get_hw_targets *]
+# disconnect_hw_server localhost
+# exit
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 15 17:10:14 2015...

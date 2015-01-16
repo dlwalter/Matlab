@@ -36,7 +36,7 @@ PWM_controller
 Model version
 </td>
 <td align="right" valign="top" style="border-style: none">
-1.12
+1.15
 </td>
 
 </tr>
@@ -45,7 +45,7 @@ Model version
 HDL Coder version
 </td>
 <td align="right" valign="top" style="border-style: none">
-3.4
+3.5
 </td>
 
 </tr>
@@ -54,7 +54,7 @@ HDL Coder version
 HDL code generated on
 </td>
 <td align="right" valign="top" style="border-style: none">
-2014-10-15 17:50:17
+2015-01-15 17:48:41
 </td>
 
 </tr>
@@ -111,10 +111,28 @@ PWM_controller/PWM Controller
 </tr>
 <tr style="background-color: #ffffff">
 <td align="left" valign="top" style="border-style: none">
+ReferenceDesign
+</td>
+<td align="right" valign="top" style="border-style: none">
+Default system (Vivado 2013.4)
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+SyncMode
+</td>
+<td align="right" valign="top" style="border-style: none">
+Free running
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
 SynthesisTool
 </td>
 <td align="right" valign="top" style="border-style: none">
-Xilinx ISE
+Xilinx Vivado
 </td>
 
 </tr>
@@ -163,6 +181,24 @@ hdl_prj\hdlsrc
 </td>
 
 </tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+TargetPlatform
+</td>
+<td align="right" valign="top" style="border-style: none">
+ZedBoard
+</td>
+
+</tr>
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+Workflow
+</td>
+<td align="right" valign="top" style="border-style: none">
+IP Core Generation
+</td>
+
+</tr>
 
 </table>
 <br /><br /><a name="Non-default block properties">
@@ -174,7 +210,172 @@ Non-default block properties
 </font>
 
 </a>
-<br /><br />No blocks found with non-default properties.<br />
+<br /><br /><b>
+Block Parameters for: <a href="matlab:Simulink.ID.hilite('PWM_controller:34')" name="code2model" class="code2model">
+enable
+</a>
+
+</b>
+<b>
+<i>
+ (Architecture: default)
+</i>
+
+</b>
+<br /><br /><table width="100%" border="1">
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+IOInterface
+</td>
+<td align="right" valign="top" style="border-style: none">
+AXI4-Lite
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+IOInterfaceMapping
+</td>
+<td align="right" valign="top" style="border-style: none">
+x"100"
+</td>
+
+</tr>
+
+</table>
+<br /><br /><b>
+Block Parameters for: <a href="matlab:Simulink.ID.hilite('PWM_controller:35')" name="code2model" class="code2model">
+duty
+</a>
+
+</b>
+<b>
+<i>
+ (Architecture: default)
+</i>
+
+</b>
+<br /><br /><table width="100%" border="1">
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+IOInterface
+</td>
+<td align="right" valign="top" style="border-style: none">
+AXI4-Lite
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+IOInterfaceMapping
+</td>
+<td align="right" valign="top" style="border-style: none">
+x"104"
+</td>
+
+</tr>
+
+</table>
+<br /><br /><b>
+Block Parameters for: <a href="matlab:Simulink.ID.hilite('PWM_controller:36')" name="code2model" class="code2model">
+direction
+</a>
+
+</b>
+<b>
+<i>
+ (Architecture: default)
+</i>
+
+</b>
+<br /><br /><table width="100%" border="1">
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+IOInterface
+</td>
+<td align="right" valign="top" style="border-style: none">
+AXI4-Lite
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+IOInterfaceMapping
+</td>
+<td align="right" valign="top" style="border-style: none">
+x"108"
+</td>
+
+</tr>
+
+</table>
+<br /><br /><b>
+Block Parameters for: <a href="matlab:Simulink.ID.hilite('PWM_controller:37')" name="code2model" class="code2model">
+PWM
+</a>
+
+</b>
+<b>
+<i>
+ (Architecture: default)
+</i>
+
+</b>
+<br /><br /><table width="100%" border="1">
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+IOInterface
+</td>
+<td align="right" valign="top" style="border-style: none">
+Pmod Connector JA1 [0:7]
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+IOInterfaceMapping
+</td>
+<td align="right" valign="top" style="border-style: none">
+[3]
+</td>
+
+</tr>
+
+</table>
+<br /><br /><b>
+Block Parameters for: <a href="matlab:Simulink.ID.hilite('PWM_controller:38')" name="code2model" class="code2model">
+DIR
+</a>
+
+</b>
+<b>
+<i>
+ (Architecture: default)
+</i>
+
+</b>
+<br /><br /><table width="100%" border="1">
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+IOInterface
+</td>
+<td align="right" valign="top" style="border-style: none">
+Pmod Connector JA1 [0:7]
+</td>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+IOInterfaceMapping
+</td>
+<td align="right" valign="top" style="border-style: none">
+[0]
+</td>
+
+</tr>
+
+</table>
+<br /><br /><br />
 </body>
 
 </html>

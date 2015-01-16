@@ -1,7 +1,7 @@
-// Copyright 2007-2013 The MathWorks, Inc.
+// Copyright 2007-2014 The MathWorks, Inc.
 
 // Class RTW_Hash ------------------------------------------------------------
-// Innternal web browser doesn't change window.location.hash if the link points
+// Internal web browser doesn't change window.location.hash if the link points
 // to the same page.
 // RTW_Hash remembers the hash value when the page is loaded in the first time 
 // or a link is clicked.
@@ -29,6 +29,7 @@ RTW_Hash.instance = null;
 function RTW_TraceInfo(aFileLinks) {
   this.fFileLinks = aFileLinks;
   this.fLines = new Array();
+  this.fTotalLines = 0; // total number of highlighted lines
   this.fNumLines = new Array();
   this.fFileIdxCache = new Array();
   this.fDisablePanel = false;
@@ -88,20 +89,7 @@ function RTW_TraceInfo(aFileLinks) {
   this.getCurrFileIdx = function() { return this.fCurrFileIdx; }
   this.setNumHighlightedLines = function(aFileIdx, aNumLines) {
     this.fNumLines[aFileIdx] = aNumLines;
-    var parent = this.fFileLinks[aFileIdx].parentNode;
-      if (parent && parent.childNodes && parent.childNodes.length > 1) {
-          var spanNodes = parent.getElementsByTagName('span');
-          var len = spanNodes.length;
-          if (len > 0) {
-              if (aNumLines > 0) {
-                  /* display number of matches */
-                  spanNodes.item(len-1).innerHTML = "&nbsp;("+aNumLines+")";
-              } else {
-                  /* clear number of matches */
-                  spanNodes.item(len-1).innerHTML = "";
-              }
-          }
-      }
+    updateNumHighlightedLines(this.fFileLinks[aFileIdx], aNumLines);
   }
   this.getNumLines = function(aFileIdx) {
     return this.fNumLines[aFileIdx] != null ? this.fNumLines[aFileIdx] : 0;
@@ -115,23 +103,23 @@ function RTW_TraceInfo(aFileLinks) {
       return sum;
   }
   this.getPrevButton = function() {
-      var aFrame = rtwTocFrame();
+      var aFrame = getNavFrame();
       if (typeof aFrame !== "undefined" && aFrame !== null)
-          return rtwTocFrame().document.getElementById("rtwIdButtonPrev");
+          return aFrame.document.getElementById("rtwIdButtonPrev");
       else
           return document.getElementById("rtwIdButtonPrev");
   }
   this.getNextButton = function() {
-      var aFrame = rtwTocFrame();
+      var aFrame = getNavFrame();
       if (typeof aFrame !== "undefined" && aFrame !== null)
-          return rtwTocFrame().document.getElementById("rtwIdButtonNext");
+          return aFrame.document.getElementById("rtwIdButtonNext");
       else
           return document.getElementById("rtwIdButtonNext");
   }
   this.getPanel = function() {
-      var aFrame = rtwTocFrame();
+      var aFrame = getNavFrame();
       if (typeof aFrame !== "undefined" && aFrame !== null)
-          return rtwTocFrame().document.getElementById("rtwIdTracePanel");
+          return aFrame.document.getElementById("rtwIdTracePanel");
       else
           return document.getElementById("rtwIdTracePanel");
   }
@@ -152,6 +140,10 @@ function RTW_TraceInfo(aFileLinks) {
     this.fCurrFileIdx = 0;
     this.fCurrLineIdx = 0;
   }
+  this.setCurrLineIdx = function(aLineIdx) {
+    this.fCurrLineIdx = aLineIdx;
+  }
+  this.getCurrLineIdx = function() { return this.fCurrLineIdx; }
   this.setCurrent = function(aFileIdx, aLineIdx) {
     this.fCurrFileIdx = aFileIdx;
     var numLines = this.getNumLines(aFileIdx);
@@ -181,8 +173,36 @@ function RTW_TraceInfo(aFileLinks) {
         return i;
     return null;
   }
+  // update the navigation bar state
+  this.updateNavState = function() {
+      if (this.getPrevButton())
+          this.getPrevButton().disabled = !this.hasPrev();
+      if (this.getNextButton())
+          this.getNextButton().disabled = !this.hasNext();
+      setTraceNumber();
+  }
   this.hasPrev = function() {
     return this.getPrevFileIdx() != null;
+  }
+  this.getFirstFileIdx = function() {
+      for (var i = 0; i < this.getNumFileLinks(); ++i)
+          if (this.fNumLines[i] > 0)
+              return i;
+  }
+  this.getLastFileIdx = function() {
+      for (var i = this.getNumFileLinks(); i >= 0; --i)
+          if (this.fNumLines[i] > 0)
+              return i;
+  }
+  this.goFirst = function() {
+    this.fCurrFileIdx = this.getFirstFileIdx();
+    this.fCurrLineIdx = 0;
+    this.updateNavState();
+  }
+  this.goLast = function() {
+    this.fCurrFileIdx = this.getLastFileIdx();;
+    this.fCurrLineIdx = this.getNumLines(this.fCurrFileIdx) - 1;
+    this.updateNavState();
   }
   this.goPrev = function() {
     var fileIdx = this.getPrevFileIdx();
@@ -194,10 +214,7 @@ function RTW_TraceInfo(aFileLinks) {
       this.fCurrFileIdx = fileIdx;
       this.fCurrLineIdx = this.getNumLines(fileIdx) - 1;
     }
-    if (this.getPrevButton())
-      this.getPrevButton().disabled = !this.hasPrev();
-    if (this.getNextButton())
-      this.getNextButton().disabled = !this.hasNext();
+    this.updateNavState();
   }
   this.getNextFileIdx = function() {
     if (this.fCurrLineIdx < this.getNumLines(this.fCurrFileIdx) - 1 && this.getNumLines(this.fCurrFileIdx) > 0)
@@ -220,11 +237,12 @@ function RTW_TraceInfo(aFileLinks) {
       this.fCurrFileIdx = fileIdx;
       this.fCurrLineIdx = 0;
     }
-    if (this.getNextButton())
-      this.getNextButton().disabled = !this.hasNext();
-    if (this.getPrevButton())
-      this.getPrevButton().disabled = !this.hasPrev();
+    this.updateNavState();
   }
+  this.setTotalLines = function(num) {
+      this.fTotalLines = num;
+  }
+  this.getTotalLines = function() { return this.fTotalLines;}
   this.setLines = function(aFile, aLines) {
     this.fLines[aFile] = aLines;
     var index = this.getFileIdx(aFile);
@@ -234,26 +252,34 @@ function RTW_TraceInfo(aFileLinks) {
   this.getLines = function(aFile) {
     return this.fLines[aFile];
   }
+  // get current on focus line number
+  this.getCurrLine = function() {
+      var file = this.getHtmlFileName(this.getCurrFileIdx());
+      var lines = this.fLines[file];
+      var line = null;
+      if (lines) {
+          var line = lines[this.fCurrLineIdx];
+      }
+      return line;
+  }
   this.getHRef = function(aFileIdx, aLineIdx, offset) {
-    if (offset == undefined)
-      offset = 10;
     var file = this.getHtmlFileName(aFileIdx);
     var lines = this.fLines[file];
     if (lines) {
       var line = lines[aLineIdx];
-      if (offset > 0)
-        line = (line > offset ? line - offset : 1);
+      line = offset_line(line, offset);
       file = file+"#"+line;
     }
     return file;
   }
+    
   this.getCurrentHRef = function(offset) {
-    return this.getHRef(this.fCurrFileIdx, this.fCurrLineIdx,offset);
+      return this.getHRef(this.fCurrFileIdx, this.fCurrLineIdx, offset);
   }
   this.setInitLocation = function(aFile, aLine) {
     var fileIdx = this.getFileIdx(aFile);
     var lineIdx = null;
-    if (fileIdx != null) {
+    if (fileIdx != null && aLine) {
       var lines = this.getLines(aFile);
       for (var i = 0; i < lines.length; ++i) {
         if (lines[i] == aLine) {
@@ -304,6 +330,11 @@ RTW_TraceArgs = function(aHash) {
   this.fBlock = null;  
   this.fUseExternalBrowser = true;
   this.fModel2CodeSrc = null;
+  this.fInCodeTrace = false;
+  this.fTraceData = null;
+  this.fFileIdx = []; // filename to fileId
+  this.fRows = []; // highlighted rows indexed by fileId
+  this.fIDs = []; // highlighted IDs indexed by fileId
 
   this.hasSid = function() {
       return !(this.fSID == null);
@@ -347,11 +378,18 @@ RTW_TraceArgs = function(aHash) {
                 case "useexternalbrowser":
                   this.fUseExternalBrowser = (opt=="true");
                   break;
+                case "incodetrace":
+                  this.fInCodeTrace = (opt=="true");
+                  break;
+                case "tracedata":
+                  this.fTraceData = decodeURI(opt);
+                  break;
               }
           }
       }    
   }
   this.parseUrlHash = function(aHash) {
+      var rows;
       if (aHash) {
           args = aHash.split('&');
           for (var i = 0; i < args.length; ++i) {
@@ -360,9 +398,14 @@ RTW_TraceArgs = function(aHash) {
               if (sep != -1) {
                   var fileLines = arg.split(':');
                   var htmlFileName = RTW_TraceArgs.toHtmlFileName(fileLines[0]);
+                  this.fFileIdx[htmlFileName] = i;
                   this.fFiles.push(htmlFileName);
-                  if (fileLines[1])
-                      this.fLines.push(fileLines[1].split(','));
+                  if (fileLines[1]) {
+                      rows = fileLines[1].split(',');
+                      rows = uniqueRows(rows);
+                      this.fLines.push(rows);
+                      this.fRows[i] = rows;
+                  }
               }
           }
           if (this.fInitFile == null && this.fFiles.length > 0) {
@@ -371,20 +414,71 @@ RTW_TraceArgs = function(aHash) {
           }
       }
   }
-  
+  this.parseUrlHash2 = function(aHash) {
+      aHash = decodeURI(aHash);    
+      var rows;
+      var ids;
+      if (aHash && aHash.length > 0 && aHash[0] === "[") {
+          var input = eval(aHash);  
+          var i;
+          var j;
+          // set highlight files from url
+          for (i=0; i<input.length;i++) {
+              rows = new Array();
+              ids = new Array();
+              this.fFileIdx[input[i].file] = i;
+              this.fFiles.push(input[i].file);
+              ids = input[i].id;
+              for (j=0; j<ids.length;j++) {
+                  // get row number
+                  if (ids[j].indexOf("c") !== -1)
+                      rows.push(Number(ids[j].substring(0,ids[j].indexOf("c")))); 
+                  else
+                      rows.push(Number(ids[j]));
+              }
+              rows = uniqueRows(rows);
+              this.fRows[i] = rows;
+              this.fIDs[i] = ids;
+          }
+      } else {
+          // reset all states
+          this.fFiles = [];
+          this.fRows = [];
+          this.fIDs = [];
+      }
+      return;
+  }
+  this.getFileIdx = function(aFileName) {
+      if (aFileName) {
+          return this.fFileIdx[aFileName];
+      } else {
+          // return the fileIdx of the current display file
+          var pathname = top.rtwreport_document_frame.location.pathname;
+          pathname = pathname.substr(pathname.lastIndexOf("/")+1);
+          // find the highlight file name
+          return this.getFileIdx(pathname);
+      }
+  }
+
   this.getColor = function() { return this.fColor; }
   this.getFontSize = function() { return this.fFontSize; }
   this.getInitFile = function() { return this.fInitFile; }
   this.getInitLine = function() { return this.fInitLine; }
   this.getNumFiles = function() { return this.fFiles.length; }
   this.getSID = function() { return this.fSID; }
-  this.getFile = function(aIdx) { return this.fFiles[aIdx]; }
+  this.getFile = function(aIdx) { if (isNaN(aIdx)) return this.fFiles; return this.fFiles[aIdx];}
   this.getLines = function(aIdx) { return this.fLines[aIdx]; } 
   this.getUseExternalBrowser = function() { return this.fUseExternalBrowser; } 
+  this.getInCodeTrace = function() { return this.fInCodeTrace; } 
+  this.getTraceData = function() { return this.fTraceData; } 
   this.getModel2CodeSrc = function() { return this.fModel2CodeSrc; }
   this.setUseExternalBrowser = function(val) { this.fUseExternalBrowser = val; } 
+  this.setInCodeTrace = function(val) { this.fInCodeTrace = val; } 
+  this.setTraceData = function(val) { this.fTraceData = val; } 
   this.setModel2CodeSrc = function(val) { this.fModel2CodeSrc = val; }
-
+  this.getRows = function(aIdx) { return this.fRows[aIdx];}
+  this.getIDs = function(aIdx) { return this.fIDs[aIdx]; }
+  this.getBlock = function() { return this.fBlock; }
   // constructor
   this.parseCommand(aHash);
 }
@@ -454,13 +548,21 @@ function getCodeNode() {
     return rtwSrcFrame().document.getElementById("RTWcode");
 }
 
+function rtwMidFrame() {
+    return top.document.getElementById('rtw_midFrame');
+}
 function rtwSrcFrame() {
   return top.rtwreport_document_frame;
 }
 function rtwTocFrame() {
   return top.rtwreport_contents_frame;
 }
-
+function rtwNavToolbarFrame() {
+  return top.rtwreport_navToolbar_frame; // return rtwTocFrame();
+}
+function rtwInspectFrame() {
+  return top.rtwreport_inspect_frame; // return rtwTocFrame();
+}
 function rtwGetFileName(url) {
   var slashIdx = url.lastIndexOf('/');
   var hashIdx  = url.indexOf('#', slashIdx);
@@ -580,10 +682,10 @@ function removeHiliteByHash(winObj) {
 
 // Highlight the filename Element in TOC frame based on the URL's filename
 function hiliteByFileName(aHref) {       
-    var status = false;;
+    var status = false;
     if (!top.rtwreport_contents_frame)
         return status;
-    var hiliteColor = "#ffff99";  
+    var hiliteColor = GlobalConfig.fileLinkHiliteColor;
     var fileName = rtwGetFileName(aHref);    
     if (top.rtwreport_contents_frame.document) {
         removeHiliteFileList(top.rtwreport_contents_frame);
@@ -611,7 +713,7 @@ function removeHiliteFileList(winObj) {
 
 // Highlight TOC hyperlinks by their Ids.
 function tocHiliteById(id) {
-    hiliteColor = "#ffff99";    
+    hiliteColor = GlobalConfig.fileLinkHiliteColor;    
     if (top && top.rtwreport_contents_frame && top.rtwreport_contents_frame.document) {
         removeHiliteCodeNav(top.rtwreport_contents_frame);
         setBGColorByElementId(top.rtwreport_contents_frame.document, id, hiliteColor);
@@ -620,14 +722,17 @@ function tocHiliteById(id) {
 
 // onClick function to highlight the link itself
 function tocHiliteMe(winObj, linkObj, bCleanTrace) {
-    hiliteColor = "#ffff99";
+    hiliteColor = GlobalConfig.fileLinkHiliteColor;
     // remove the trace info (previous highlighted source code and the navigate
     // panel)
     // Clean Trace info only when links in TOC clicked. Links of filenames won't
     // clean trace info. 
-    if (bCleanTrace && RTW_TraceInfo.instance) {
-        RTW_TraceInfo.instance.setDisablePanel(true);
-        rtwRemoveHighlighting();
+    if (bCleanTrace) {
+        if (RTW_TraceInfo.instance) {
+            RTW_TraceInfo.instance.setDisablePanel(true);
+            rtwRemoveHighlighting();
+        }
+        closeInspectWindow();        
     }        
     removeHiliteCodeNav(winObj);
     if (linkObj.parentNode) {
@@ -695,44 +800,110 @@ function rtwFileOnLoad(docObj) {
         codeNode.style.fontSize = fontSize;
     }
     RTW_TraceInfo.instance.highlightLines(codeNode,hiliteColor);
-    RTW_TraceInfo.instance.highlightFileLink(fileIdx,"#ffff99");
+    RTW_TraceInfo.instance.highlightFileLink(fileIdx, GlobalConfig.fileLinkHiliteColor);
   }
 }
 
+function Nav(fileIdx1, fileIdx2) {
+    var filename = top.rtwreport_document_frame.location.pathname.split(/\//);
+    filename = filename[filename.length-1];
+    var currentFileIdx = RTW_TraceInfo.instance.getFileIdx(filename);
+    if (fileIdx1 === currentFileIdx) {
+        top.rtwreport_document_frame.document.location.href = RTW_TraceInfo.instance.getCurrentHRef();
+        top.initLine = top.rtwreport_document_frame.document.location.hash.substr(1);
+        addTagToCurrentLine();
+        if (top.rtwreport_contents_frame) {            
+            if (hiliteByFileName(top.rtwreport_document_frame.location.href))
+                removeHiliteTOC(top.rtwreport_contents_frame);
+        }
+    } else {
+        var aUrl = RTW_TraceInfo.instance.getCurrentHRef();
+        if (hasWebviewFrame()) {
+            top.rtwreport_document_frame.document.location.href=aUrl;
+        } else {
+            top.rtwreport_document_frame.document.location.href=aUrl + "+newPage";
+        }
+    }
+}
 // Callback for "Prev" button
 function rtwGoPrev() {
   if (RTW_TraceInfo.instance && top.rtwreport_document_frame) {
     var prevfileIdx = RTW_TraceInfo.instance.getPrevFileIdx();
     var currfileIdx = RTW_TraceInfo.instance.fCurrFileIdx;
+    rmTagToCurrentLine();
     RTW_TraceInfo.instance.goPrev();
-    top.rtwreport_document_frame.document.location.href=RTW_TraceInfo.instance.getCurrentHRef();
-    if (prevfileIdx == currfileIdx) {
-        if (top.rtwreport_contents_frame) {            
-            if (hiliteByFileName(top.rtwreport_document_frame.location.href))
-                removeHiliteTOC(top.rtwreport_contents_frame);
-        }
-    }
+    Nav(prevfileIdx, currfileIdx);
   }
 }
+// Callback for "First" button
+function rtwGoFirst() {
+  if (RTW_TraceInfo.instance && top.rtwreport_document_frame) {
+    var prevfileIdx = RTW_TraceInfo.instance.getFirstFileIdx();
+    var currfileIdx = RTW_TraceInfo.instance.fCurrFileIdx;
+    rmTagToCurrentLine();
+    RTW_TraceInfo.instance.goFirst();
+    Nav(prevfileIdx, currfileIdx);
+  }
+}
+
+// Callback for navigation button onclick
+var navButtonStatus = (function() {
+    var isclicked = false;
+    return {
+        clicked: function () {
+            isclicked = true;
+            return false;
+        },
+        reset: function () {
+            isclicked = false;
+        },
+        isClicked: function () {
+            return isclicked;
+        }
+    };
+})();
 
 // Callback for "Next" button
 function rtwGoNext() {
   if (RTW_TraceInfo.instance && top.rtwreport_document_frame) {
     var nextfileIdx = RTW_TraceInfo.instance.getNextFileIdx();
     var currfileIdx = RTW_TraceInfo.instance.fCurrFileIdx;
+    rmTagToCurrentLine();
     RTW_TraceInfo.instance.goNext();
-    top.rtwreport_document_frame.document.location.href=RTW_TraceInfo.instance.getCurrentHRef();
-    if (nextfileIdx == currfileIdx) {
-        if (top.rtwreport_contents_frame) {     
-            // remove TOC highlighted node only if hiliteByFileName successfully
-            // hilights source filename node 
-            if (hiliteByFileName(top.rtwreport_document_frame.location.href))
-                removeHiliteTOC(top.rtwreport_contents_frame);
-        }
-    }
+    Nav(nextfileIdx, currfileIdx);
+  }
+}
+// Callback for "Last" button
+function rtwGoLast() {
+  if (RTW_TraceInfo.instance && top.rtwreport_document_frame) {
+    var nextfileIdx = RTW_TraceInfo.instance.getLastFileIdx();
+    var currfileIdx = RTW_TraceInfo.instance.fCurrFileIdx;
+    rmTagToCurrentLine();
+    RTW_TraceInfo.instance.goLast();
+    Nav(nextfileIdx, currfileIdx);
   }
 }
 
+function addTagToCurrentLine() {
+    rmHiliteClickedToken();
+    tagCurrentLine(true);
+}
+function rmTagToCurrentLine() {
+    tagCurrentLine(false);
+}
+// tag current line by changing the bacgkround color of the line 
+function tagCurrentLine(addColor) {
+    if (RTW_TraceInfo.instance) {
+        var o = top.rtwreport_document_frame.document.getElementById(RTW_TraceInfo.instance.getCurrLine());
+        if (o) {
+            if (addColor) {
+                o.className = "hiliteCurrentLine";            
+            } else {
+                o.className = "hilite";
+            }
+        }
+    }
+}
 // Helper function for main document load callback
 function rtwMainOnLoadFcn(topDocObj,aLoc,aPanel,forceReload) {
   var loc;
@@ -756,8 +927,17 @@ function rtwMainOnLoadFcn(topDocObj,aLoc,aPanel,forceReload) {
       if (RTW_TraceArgs.instance)
           lastArgs = RTW_TraceArgs.instance;
   }
+
   // parse URL hash value
   RTW_TraceArgs.instance = new RTW_TraceArgs(aHash);
+  // load metrics
+  load_metrics();
+  // use incode traceability
+  if (RTW_TraceArgs.instance.getInCodeTrace()) {
+      RTW_TraceArgs.instance.parseUrlHash2(RTW_TraceArgs.instance.getTraceData());
+      inCodeTraceOnload();
+      return;
+  }
   if (lastArgs !== null) {
       RTW_TraceArgs.instance.setUseExternalBrowser(lastArgs.getUseExternalBrowser());
       RTW_TraceArgs.instance.setModel2CodeSrc(lastArgs.getModel2CodeSrc());
@@ -783,7 +963,7 @@ function rtwMainOnLoadFcn(topDocObj,aLoc,aPanel,forceReload) {
 
   // hide web view frameset if model2code_src is model
   if (RTW_TraceArgs.instance.getModel2CodeSrc() === "model") {
-      var o = top.document.getElementById('rtw_midFrame');
+      var o = top.document.getElementById('rtw_webviewMidFrame');
       if (o) {
           o.rows = "100%,0%";
       }
@@ -808,17 +988,24 @@ function rtwMainOnLoadFcn(topDocObj,aLoc,aPanel,forceReload) {
   if (RTW_TraceArgs.instance.getNumFiles()) {
     var fileLinks = RTW_TraceInfo.getFileLinks(tocDocObj);
     RTW_TraceInfo.instance = new RTW_TraceInfo(fileLinks);
-    RTW_TraceInfo.instance.removeHighlighting();
+    RTW_TraceInfo.instance.removeHighlighting()
     var numFiles = RTW_TraceArgs.instance.getNumFiles();
+    var tLines = 0;
     for (var i = 0; i < numFiles; ++i) {
       RTW_TraceInfo.instance.setLines(RTW_TraceArgs.instance.getFile(i),RTW_TraceArgs.instance.getLines(i));
+        tLines += RTW_TraceArgs.instance.getLines(i).length;
     }
+    RTW_TraceInfo.instance.setTotalLines(tLines);
     if (aPanel == false) {
       RTW_TraceInfo.instance.setDisablePanel(true);
     }
     var initFile = RTW_TraceArgs.instance.getInitFile();
     RTW_TraceInfo.instance.setInitLocation(initFile,RTW_TraceArgs.instance.getInitLine());
-    initPage = RTW_TraceInfo.instance.getCurrentHRef();
+    if (!hasInCodeTrace()) {
+        initPage = RTW_TraceInfo.instance.getCurrentHRef();
+    } else {
+        initPage = initFile;
+    }
   } else {
       // catch error that document frame is in another domain
       try {
@@ -874,11 +1061,16 @@ function isSamePage(href1, href2) {
 // Callback for main document loading
 function rtwMainOnLoad() {    
     rtwMainOnLoadFcn(document,null,true, false);
+    var newUrl;
     // modify history state to avoid reload from pressing back 
     if (RTW_TraceArgs.instance && !RTW_TraceArgs.instance.getUseExternalBrowser() && 
         typeof window.history.replaceState === "function") {
         if (window.location.search.length > 0) {
-            newUrl = document.location.pathname + window.location.search + '&loaded=true';
+            if (window.location.search.indexOf("loaded=true") === -1) {
+                newUrl = document.location.pathname + window.location.search + '&loaded=true';
+            } else {
+                newUrl = document.location.pathname + window.location.search;
+            }
         } else {
             newUrl = document.location.pathname + window.location.search + '?loaded=true';
         }
@@ -902,8 +1094,12 @@ function rtwMainReloadNoPanel(location) {
 function rtwRemoveHighlighting() {
   if (RTW_TraceInfo.instance)
     RTW_TraceInfo.instance.removeHighlighting();
-  if (rtwSrcFrame())
-    rtwSrcFrame().focus();
+    if (rtwSrcFrame()) {
+        rtwSrcFrame().focus();
+    }
+    if (hasInCodeTrace()) {
+        removeInCodeTraceHighlight();
+    }
 }
 
 // Display diagnostic message in document frame
@@ -981,10 +1177,10 @@ function updateHyperlinks() {
 function update_modelref_report_link(docObj) {
     if (docObj.getElementsByName) {
       var arg = "";
-      if (!RTW_TraceArgs.instance.getUseExternalBrowser()) {
+      if (RTW_TraceArgs.instance && !RTW_TraceArgs.instance.getUseExternalBrowser()) {
           arg = "?useExternalBrowser=false";
       }
-      if (RTW_TraceArgs.instance.getModel2CodeSrc() != null) {
+      if (RTW_TraceArgs && RTW_TraceArgs.instance && RTW_TraceArgs.instance.getModel2CodeSrc() != null) {
           if (arg.length > 0)
               arg = arg + "&model2code_src=" + RTW_TraceArgs.instance.getModel2CodeSrc();
           else
@@ -1018,7 +1214,8 @@ function rtwChangeSysCallback(sid) {
         return false;
     urlHash = RTW_Sid2UrlHash.instance.getUrlHash(sid);
     if (urlHash != undefined) {
-        if (!RTW_TraceArgs.instance.getUseExternalBrowser())
+        if (RTW_TraceArgs && RTW_TraceArgs.instance && 
+            !RTW_TraceArgs.instance.getUseExternalBrowser())
             urlHash = (urlHash == "")? "?useExternalBrowser=false" : 
                       urlHash+"&useExternalBrowser=false";
         rtwMainReload(urlHash, true);
@@ -1069,7 +1266,7 @@ function emlLineOnClick(docObj,sid,line) {
 }
 
 function updateCode2ModelLinks(docObj) {
-    var webviewFrame = top.document.getElementById('rtw_midFrame');
+    var webviewFrame = top.document.getElementById('rtw_webviewMidFrame');
     if (webviewFrame) {
         if (RTW_TraceArgs.instance && 
             (RTW_TraceArgs.instance.getModel2CodeSrc() !== "model" ||
@@ -1125,3 +1322,529 @@ function str2StrVar(str) {
 }
 window.onload=rtwMainOnLoad;
 
+// handle incode traceability highlighting
+function inCodeTraceOnload() {  
+    var tocDocObj = top.rtwreport_contents_frame.document;
+    if (!top.RTW_TraceArgs.instance) {
+        var summaryPage = tocDocObj.getElementById("rtwIdSummaryPage");			
+	top.rtwreport_document_frame.location.href = summaryPage.href;	
+	return;
+    }
+
+    var files = top.RTW_TraceArgs.instance.getFile();
+    if (files.length === 0) {
+        if (top.RTW_TraceArgs.instance) {
+          var block = top.RTW_TraceArgs.instance.getBlock();
+            block = block.replace("<", "&lt;").replace(">", "&gt;");
+        }
+	top.rtwreport_document_frame.document.write("<pre>No traceability information for block " + block + ".</pre>");
+	return;
+    };
+
+    var fileLinks = RTW_TraceInfo.getFileLinks(tocDocObj);
+    RTW_TraceInfo.instance = new RTW_TraceInfo(fileLinks);
+
+    // update filelist with num of highlighted lines
+    var tocDoc = top.rtwreport_contents_frame.document;
+    var tLines = 0;
+    for (var i=0; i<files.length;i++) {
+        var fileIdx = top.RTW_TraceArgs.instance.getFileIdx(files[i]);
+        if (typeof fileIdx !== "undefined") {
+            var rows = top.RTW_TraceArgs.instance.getRows(fileIdx);
+            var linkNode =  tocDoc.getElementById(files[i]);
+            updateNumHighlightedLines(linkNode, rows.length);
+            RTW_TraceInfo.instance.setLines(files[i], rows);
+            tLines += rows.length;
+        }
+    }
+    // set number of total lines
+    RTW_TraceInfo.instance.setTotalLines(tLines);
+    // update highligthed from
+    var node = tocDoc.getElementById("rtwIdTraceBlock");
+    if (node) node.textContent = RTW_TraceArgs.instance.getBlock();
+    // set the initial file and line
+    fileIdx = top.RTW_TraceArgs.instance.getFileIdx(files[0]);
+    rows = top.RTW_TraceArgs.instance.getRows(fileIdx);
+    RTW_TraceInfo.instance.setInitLocation(files[0],rows[0]);
+
+    // highlight first file
+    top.rtwreport_document_frame.location.href = files[0];
+    return;
+}
+
+function updateNumHighlightedLines(linkObj, aNumLines) {
+    var parent = linkObj.parentNode;
+    if (parent && parent.childNodes && parent.childNodes.length > 1) {
+        var spanNodes = parent.getElementsByTagName('span');
+        var len = spanNodes.length;
+        if (len > 0) {
+            if (aNumLines > 0) {
+                /* display number of matches */
+                spanNodes.item(len-1).innerHTML = "&nbsp;("+aNumLines+")";
+            } else {
+                /* clear number of matches */
+                spanNodes.item(len-1).innerHTML = "";
+            }
+        }
+    }
+}
+
+function toggleNavSideBar(val) {
+    if (top.main) {
+        var tmp = top.main.cols.split(",");    
+
+        if (val === "on") {
+            tmp[tmp.length-1] = "15px";        
+        } else {
+            tmp[tmp.length-1] = "0";        
+        }
+        top.main.cols = tmp.join();    
+        if (top.rtwreport_nav_frame) 
+            top.rtwreport_nav_frame.location.href = "nav.html";    
+    }
+};
+
+function toggleNavToolBar(val) 
+{    
+    var midFrame = rtwMidFrame();
+    if (midFrame) {
+        var tmp1 = midFrame.rows.split(",");
+        var frameIdx = getNavToolbarFrameIdx();
+        if (val === "on") {
+            tmp1[frameIdx] = "40px";
+        } else {
+            tmp1[frameIdx] = "0";
+        }    
+        midFrame.rows = tmp1.join();
+        if (top.rtwreport_navToolbar_frame) {
+            top.rtwreport_navToolbar_frame.location.href = "navToolbar.html";
+        }
+    }
+};
+
+var GlobalConfig = {
+    navHiliteColor: "#0000ff",
+    fileLinkHiliteColor: "#ffff99",
+    navToolbarBgcolor: "#aaffff",
+    offset: 10,
+    hiliteToken: false
+};
+var NavSideBarState = {
+    calLineHeight: 0, 
+    overLink: false,
+    linkTarget: null,
+    lastLinkTarget: null,
+    linkTargetIdx: 0
+}
+function drawNavSideBar() {
+    var rectHeight = 1;
+    if (!top || !top.rtwreport_document_frame || !top.rtwreport_nav_frame) return;
+    
+    if (!top.RTW_TraceArgs.instance) return;
+    var fileIdx = top.RTW_TraceArgs.instance.getFileIdx();
+    if (fileIdx === undefined) return;
+    var rows = top.RTW_TraceArgs.instance.getRows(fileIdx);                
+    if (rows.length === 0) return; // no highlighted line 
+    
+    var codeTbl = top.rtwreport_document_frame.document.getElementById("codeTbl");
+    if (!codeTbl) return; // no code table
+    
+    var nRows = codeTbl.rows.length + 1;
+    var canvas = top.rtwreport_nav_frame.document.getElementById("canvas");                
+    canvas.width = top.rtwreport_nav_frame.innerWidth;
+    canvas.height = top.rtwreport_nav_frame.innerHeight-2;
+    NavSideBarState.calLineHeight = canvas.height/nRows;
+    if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // fill background 
+        ctx.fillStyle = GlobalConfig.navToolbarBgcolor;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = GlobalConfig.navHiliteColor;
+        for (var i=0;i<rows.length;i++) {
+            ctx.fillRect(0, Number(rows[i])*NavSideBarState.calLineHeight, canvas.width, rectHeight);
+        }
+        if (canvas.addEventListener) { 
+            canvas.addEventListener("mousemove", navBarOnMousemove, false);
+            canvas.addEventListener("click", navBarOnClick, false);
+        } else if (canvas.attachEvent) {
+            canvas.attachEvent("mousemove", navBarOnMousemove);
+            canvas.attachEvent("click", navBarOnClick);
+        }
+    }
+}
+
+function navBarOnMousemove(e) {
+    var y = e.clientY;
+    var tolerable_range = 5;
+    if (!top.RTW_TraceArgs.instance || !top.rtwreport_nav_frame) return;
+    var fileIdx = top.RTW_TraceArgs.instance.getFileIdx();
+    var rows = top.RTW_TraceArgs.instance.getRows(fileIdx);
+    var lineLoc,nextLineLoc;
+    top.rtwreport_nav_frame.document.body.style.cursor="";
+    NavSideBarState.overLink = false;
+    NavSideBarState.linkTarget = null;                 
+    NavSideBarState.linkTargetIdx = null;
+    for (var i=0;i<rows.length;i++) {
+        loc = rows[i]*NavSideBarState.calLineHeight;
+        // if within the tolerable range
+        if (Math.abs(y-loc) <= tolerable_range) {
+            top.rtwreport_nav_frame.document.body.style.cursor="pointer";
+            var canvas = top.rtwreport_nav_frame.document.getElementById("canvas");                
+            canvas.title = "navigate to line " + rows[i];
+            NavSideBarState.overLink = true;
+            NavSideBarState.linkTarget = rows[i];
+            NavSideBarState.linkTargetIdx = i;
+            break;
+        } 
+    }
+}
+
+function navBarOnClick(e) {
+    if (NavSideBarState.overLink && top.rtwreport_document_frame) {
+        rmTagToCurrentLine(); // remove current line tag
+        top.RTW_TraceInfo.instance.setCurrLineIdx(NavSideBarState.linkTargetIdx);
+        top.rtwreport_document_frame.document.location.href=RTW_TraceInfo.instance.getCurrentHRef();
+        top.addTagToCurrentLine(); // add current line tag
+        RTW_TraceInfo.instance.updateNavState();
+    }                
+}
+
+function removeInCodeTraceHighlight() {
+    var docObj = top.rtwreport_document_frame.document;
+    toggleNavSideBar("off");
+    toggleNavToolBar("off");
+    var nodes = docObj.getElementsByClassName("hilite");
+    // nodes is a live nodeList. Changing className modifies the list.
+    while(nodes.length) {
+        nodes[0].className = nodes[0].className.replace("hilite", "");
+    }
+    var nodes = docObj.getElementsByClassName("hiliteCurrentLine");
+    // nodes is a live nodeList. Changing className modifies the list.
+    while(nodes.length) {
+        nodes[0].className = nodes[0].className.replace("hiliteCurrentLine", "");
+    }
+    // reset RTW_TraceArgs.instance
+    RTW_TraceArgs.instance = null;
+    // remove highlight in content panel except the filelink
+    if (RTW_TraceInfo && RTW_TraceInfo.instance) {
+        var currFileIdx = RTW_TraceInfo.instance.getCurrFileIdx();
+        RTW_TraceInfo.instance.removeHighlighting();
+        RTW_TraceInfo.instance.highlightFileLink(currFileIdx);
+    }
+}
+
+function getInspectWindow() {
+    var divObj = document.createElement("div");
+    divObj.id = "popup_window";
+    return divObj;    
+}
+function getInspectData(file, anchorObj) {   
+    var metricsData = null;
+    var propObj = null;
+    var type = null;
+    var size = null;
+    var cm; 
+    if (top.rtwreport_nav_frame && top.rtwreport_nav_frame.CodeMetrics && 
+        top.rtwreport_nav_frame.CodeMetrics.instance && 
+        top.RTW_TraceArgs && top.RTW_TraceArgs.instance && 
+        !top.RTW_TraceArgs.instance.getUseExternalBrowser()) {
+        cm = top.rtwreport_nav_frame.CodeMetrics.instance;
+    }
+    if (cm && cm.getMetrics) {
+        metricsData = cm.getMetrics(anchorObj.text);
+        if (!metricsData) {
+            // try static token
+            metricsData =  cm.getMetrics(RTW_TraceInfo.toSrcFileName(file) + ":" + anchorObj.text);
+        }
+        if (metricsData) {            
+            type = metricsData.type;
+            if (type === "var") {
+                type = "Global Variable";
+                size = "(" + metricsData.size + " byte)";
+            } else if (type === "fcn") {
+                type = "Function";
+                size = "(stack: " + metricsData.stack + " byte, total stack: "
+                      + metricsData.stackTotal + " byte)";
+            }            
+        }
+    }    
+    if (type === null) {
+        var defObj = top.CodeDefine.instance.def[anchorObj.text];
+        if (defObj) {
+            type = defObj.type;
+            if (type === "var") {
+                type = "Variable";
+            } else if (type === "fcn") {
+                type = "Function";
+            } else if (type === "type") {
+                type = "Type";
+            }
+            size = "";
+        }
+    }   
+    var propObj = document.createElement("div");
+    propObj.id = "token_property";
+    
+    var ulObj = document.createElement("ul");
+    ulObj.className = "popup_attrib_list";
+    ulObj.innerHTML = "<li>" + type + ": <var>" + anchorObj.text + "</var></li><li>"+
+                    size + "</li>";
+    propObj.appendChild(ulObj);   
+    
+    return propObj;
+}
+function getInspectLink(file, pathname, anchorObj) {
+    var model = top.reportModel;
+    var tokenId = anchorObj.id;
+    var navObj = document.createElement("div");
+    navObj.id = "token_usage_nav";
+    ulObj = document.createElement("ul");
+    ulObj.id = "token_nav_links";
+    ulObj.className="popup_attrib_list";
+    var defObj = top.CodeDefine.instance.def[anchorObj.text];
+    var line = anchorObj.id.substring(0,anchorObj.id.indexOf("c"));
+    // link to model
+    if (top.TraceInfoFlag && top.TraceInfoFlag.instance && 
+        top.TraceInfoFlag.instance.traceFlag[RTW_TraceInfo.toSrcFileName(file)+":"+anchorObj.id]) {
+        ulObj.innerHTML +=  "<li><a href=\"matlab:rtw.report.code2model(\'" + top.reportModel 
+            + "\',\'"+pathname+"\',\'" + tokenId + "');\">Navigate to model</a></li>";
+    }
+    // link to def/decl
+    if (defObj) {
+        var filename = defObj.file.split(/\//);
+        filename = filename[filename.length-1];
+        ulObj.innerHTML += "<li><i>" + anchorObj.text + "</i> defined at <a target='rtwreport_document_frame' onclick=\"top.tokenLinkOnClick(event)\" href='" + defObj.file + "#" + defObj.line +
+            "'>" + RTW_TraceInfo.toSrcFileName(filename) + " line " + defObj.line + "</a></li>";
+    }
+    navObj.appendChild(ulObj);
+    return navObj;
+}
+
+var LastHiliteTokenId = null;
+function rmHiliteClickedToken() {
+   if (LastHiliteTokenId) {
+        var o = top.rtwreport_document_frame.document.getElementById(LastHiliteTokenId);
+        if (o) {
+            o.className = o.className.replace("hiliteToken", "");
+        }
+    }
+}
+function hiliteClickedToken(elem) {
+    rmHiliteClickedToken();
+    LastHiliteTokenId = elem.id;
+    elem.className += " hiliteToken";
+}
+
+var initLine = null;
+function scrollToInitLine() {
+    if (initLine) {
+        var lineElem = top.rtwreport_document_frame.document.getElementById(initLine);
+        if (lineElem) {
+            lineElem.scrollIntoView();
+        }
+    }
+}
+
+function scrollToLineBasedOnHash(hashValue) {
+    // move to the current highlight line if the hash is not empty
+    if (hashValue === "") {
+        if (top.RTW_TraceInfo.instance && top.RTW_TraceInfo.instance.getCurrLine() !== null) {
+            top.rtwreport_document_frame.document.location.href=top.RTW_TraceInfo.instance.getCurrentHRef();
+            top.initLine = top.rtwreport_document_frame.document.location.hash.substr(1);
+        }
+    } else {
+        // scroll and hilite line
+        hashValue = hashValue.substr(1);
+        if (isNaN(hashValue)) {
+            // #fcn_name
+            var pattern = "+newPage";
+            if (hashValue.indexOf(pattern) != -1) {
+                hashValue = hashValue.replace(pattern, '');
+                var lineElem = top.rtwreport_document_frame.document.getElementById(hashValue);
+                initLine = hashValue; // save initLine in case the dom is updated later by anootation
+                if (lineElem) {
+                    lineElem.scrollIntoView(); 
+                    addTagToCurrentLine();
+                }
+
+            } else {
+                var token = null;
+                pattern = ["var_", "fcn_", "type_"];
+                for (var i =0; i < pattern.length; i++) {
+                    if (hashValue.indexOf(pattern[i]) === 0) {
+                        token = hashValue.substr(pattern[i].length);
+                        break;
+                    }
+                }
+                if (token !== null && top.CodeDefine && top.CodeDefine.instance) {
+                    var addr = top.CodeDefine.instance.def[token];
+                    if (addr) {
+                        hilite_line(addr.line);
+                    }
+                } else { // token id like #line"c"#col
+		    if (hashValue.indexOf("c") !== -1) {
+			hilite_line(hashValue.substr(0, hashValue.indexOf("c")), hashValue);
+		    }
+		}
+            }
+        } else { // #line
+            hilite_line(hashValue);
+        }
+    }
+    return false;
+    // hilite line number and scroll with an offset
+    function hilite_line(line, tokenId) {
+        if (isNaN(line)) return;
+	if (!tokenId) {
+	    tokenId = line;
+	}
+	var elem = top.rtwreport_document_frame.document.getElementById(tokenId);		
+        hiliteClickedToken(elem);
+        initLine = offset_line(line);
+        scrollToInitLine();
+    }
+}
+
+function tokenLinkOnClick(event) {
+    var alink = event.currentTarget;
+    if (alink.pathname === top.rtwreport_document_frame.location.pathname) {
+        event.preventDefault();
+        scrollToLineBasedOnHash(alink.hash);
+    }
+    return false;
+}
+function inspectToken(file, pathname, event) {
+    var height = "70px";
+    // show inspect data
+    if (top.rtwreport_inspect_frame) { 
+        var windowObj = getInspectWindow();
+        var propObj = getInspectData(file, event.currentTarget);
+        var navObj = getInspectLink(file, pathname, event.currentTarget);
+        if (propObj === null) {
+            height = "50px";
+        } else {
+            windowObj.appendChild(propObj);
+        }
+        windowObj.appendChild(navObj);
+        var data = top.rtwreport_inspect_frame.document.getElementById("popup_window");
+        if (data) {
+            data.parentNode.replaceChild(windowObj.cloneNode(true), data);
+        }
+    }
+    setInspectWindow(height);
+    return false;
+}
+function setInspectWindow(height) {
+    // show inspect code frame
+    var midFrame = rtwMidFrame();
+    var tmp = midFrame.rows.split(",");
+    tmp[getInspectFrameIdx()] = height;    
+    midFrame.rows = tmp.join();
+}
+function closeInspectWindow() {
+    setInspectWindow(0);
+    return false;
+}
+
+// set the trace number in the navigation toolbar
+function setTraceNumber() {
+    if (RTW_TraceInfo.instance) {
+        var aFrame = rtwNavToolbarFrame();
+        if (aFrame) {
+            var node = aFrame.document.getElementById("rtwIdTraceNumber");
+            // calculate current line index over total highlighted lines
+            var currNum = RTW_TraceInfo.instance.getCurrLineIdx();
+            for (var idx=0;idx<RTW_TraceInfo.instance.getCurrFileIdx();idx++) {
+                currNum += RTW_TraceInfo.instance.getNumLines(idx);
+            }
+            if (node) {
+                node.innerHTML = String(currNum+1) + " of " + String(RTW_TraceInfo.instance.getTotalLines());
+            }
+        }
+    }
+}
+
+function offset_line(line, offset) {
+    if (offset == undefined)
+        offset = GlobalConfig.offset;
+    if (offset > 0)
+        line = (line > GlobalConfig.offset ? line - GlobalConfig.offset : 1);
+    return line;
+}
+
+function load_js(frame, file) {
+    var h = frame.document.getElementsByTagName("head")[0];
+    var o = h.getElementsByTagName('script');
+    for (var i=0;i<o.length;++i) {
+        if (o[i].getAttribute("src") === file) {
+            h.removeChild(o[i]);
+        }
+    }
+    var s = top.document.createElement("script");
+    s.type = "text/javascript";
+    s.src = file;
+    h.appendChild(s);
+}
+
+function reqOnClick(event) {
+    top.hiliteClickedToken(event.currentTarget);
+    return true;
+}
+function resize_NavToolbar_frame() {
+    resize_frame(getNavToolbarFrameIdx(), rtwNavToolbarFrame().document.height);
+}
+function resize_Inspect_frame() {
+    resize_frame(getInspectFrameIdx(), rtwInspectFrame().document.height);
+}
+function resize_frame(id, height) {
+    if (height) {
+        var midFrame = top.rtwMidFrame();
+        var tmp = midFrame.rows.split(",");
+        if (tmp[id] !== "0%" && tmp[id] !== "0") {
+            tmp[id] = "" + height - 8 + "px";
+            midFrame.rows = tmp.join();
+        }
+    }
+}
+function getNavToolbarFrameIdx() {
+    return 0;
+}
+function getInspectFrameIdx() {
+    return 2;
+}
+function load_metrics() {
+    var alink = top.document.createElement("a");
+    alink.href = "metrics.js";
+    if (top.RTW_TraceArgs && top.RTW_TraceArgs.instance && !top.RTW_TraceArgs.instance.getUseExternalBrowser()) {
+        try {
+            load_js(top.rtwreport_nav_frame, alink.href);
+        } catch (err) {};
+    }
+}
+
+function getNavFrame() {
+    if (hasWebviewFrame()) {
+        return rtwTocFrame();
+    } else {
+        return rtwNavToolbarFrame();
+    }
+}
+
+function hasWebviewFrame() {
+    if (top.document.getElementById('rtw_webviewMidFrame')) {
+        return true;
+    } else {
+        return  false;
+    }
+}
+function hasInCodeTrace() {
+    return (typeof(Html2SrcLink) === "function") && !hasWebviewFrame();
+}
+function uniqueRows(rows) {
+    return rows.sort(function(a,b) {return a-b}).filter(
+        function(el,idx, arr) {
+            if (idx===arr.indexOf(el)) return true; return false;
+        }
+    );
+}
