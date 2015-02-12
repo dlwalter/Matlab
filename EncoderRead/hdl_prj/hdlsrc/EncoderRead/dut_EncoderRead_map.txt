@@ -1,0 +1,4 @@
+ --> dut_EncoderRead_pkg
+EncoderRead/dut_EncoderRead/Channel A Interrupt --> Channel_A_Interrupt
+EncoderRead/dut_EncoderRead/Channel B Interrupt --> Channel_B_Interrupt
+EncoderRead/dut_EncoderRead --> dut_EncoderRead
