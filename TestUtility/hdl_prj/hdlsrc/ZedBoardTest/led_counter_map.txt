@@ -1,0 +1,1 @@
+ZedBoardTest/led_counter --> led_counter

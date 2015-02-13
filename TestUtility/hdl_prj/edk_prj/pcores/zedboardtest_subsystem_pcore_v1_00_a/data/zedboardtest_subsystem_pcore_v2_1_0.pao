@@ -1,0 +1,12 @@
+##############################################################################
+## File Name:         hdl_prj\ipcore\zedboardtest_subsystem_pcore_v1_00_a\data\zedboardtest_subsystem_pcore_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Created:           2015-02-12 14:24:02
+##############################################################################
+
+lib zedboardtest_subsystem_pcore_v1_00_a Subsystem vhdl
+lib zedboardtest_subsystem_pcore_v1_00_a zedboardtest_subsystem_pcore_dut vhdl
+lib zedboardtest_subsystem_pcore_v1_00_a zedboardtest_subsystem_pcore_axi_lite_module vhdl
+lib zedboardtest_subsystem_pcore_v1_00_a zedboardtest_subsystem_pcore_addr_decoder vhdl
+lib zedboardtest_subsystem_pcore_v1_00_a zedboardtest_subsystem_pcore_axi_lite vhdl
+lib zedboardtest_subsystem_pcore_v1_00_a zedboardtest_subsystem_pcore vhdl

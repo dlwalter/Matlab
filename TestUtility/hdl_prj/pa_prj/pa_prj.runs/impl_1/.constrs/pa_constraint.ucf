@@ -1,0 +1,40 @@
+# ZedBoard
+
+
+# Timing Specifications Constrain
+
+
+# FPGA Pin Location Constrain
+
+NET "zedboardtest_led_counter_pcore_0_GPLEDs_pin[0]" LOC = T22;
+NET "zedboardtest_led_counter_pcore_0_GPLEDs_pin[0]" IOSTANDARD = LVCMOS33;
+NET "zedboardtest_led_counter_pcore_0_GPLEDs_pin[1]" LOC = T21;
+NET "zedboardtest_led_counter_pcore_0_GPLEDs_pin[1]" IOSTANDARD = LVCMOS33;
+NET "zedboardtest_led_counter_pcore_0_GPLEDs_pin[2]" LOC = U22;
+NET "zedboardtest_led_counter_pcore_0_GPLEDs_pin[2]" IOSTANDARD = LVCMOS33;
+NET "zedboardtest_led_counter_pcore_0_GPLEDs_pin[3]" LOC = U21;
+NET "zedboardtest_led_counter_pcore_0_GPLEDs_pin[3]" IOSTANDARD = LVCMOS33;
+NET "zedboardtest_led_counter_pcore_0_GPLEDs_pin[4]" LOC = V22;
+NET "zedboardtest_led_counter_pcore_0_GPLEDs_pin[4]" IOSTANDARD = LVCMOS33;
+NET "zedboardtest_led_counter_pcore_0_GPLEDs_pin[5]" LOC = W22;
+NET "zedboardtest_led_counter_pcore_0_GPLEDs_pin[5]" IOSTANDARD = LVCMOS33;
+NET "zedboardtest_led_counter_pcore_0_GPLEDs_pin[6]" LOC = U19;
+NET "zedboardtest_led_counter_pcore_0_GPLEDs_pin[6]" IOSTANDARD = LVCMOS33;
+NET "zedboardtest_led_counter_pcore_0_GPLEDs_pin[7]" LOC = U14;
+NET "zedboardtest_led_counter_pcore_0_GPLEDs_pin[7]" IOSTANDARD = LVCMOS33;
+NET "zedboardtest_led_counter_pcore_0_PmodJA1_pin[0]" LOC = Y11;
+NET "zedboardtest_led_counter_pcore_0_PmodJA1_pin[0]" IOSTANDARD = LVCMOS33;
+NET "zedboardtest_led_counter_pcore_0_PmodJA1_pin[1]" LOC = AA11;
+NET "zedboardtest_led_counter_pcore_0_PmodJA1_pin[1]" IOSTANDARD = LVCMOS33;
+NET "zedboardtest_led_counter_pcore_0_PmodJA1_pin[2]" LOC = Y10;
+NET "zedboardtest_led_counter_pcore_0_PmodJA1_pin[2]" IOSTANDARD = LVCMOS33;
+NET "zedboardtest_led_counter_pcore_0_PmodJA1_pin[3]" LOC = AA9;
+NET "zedboardtest_led_counter_pcore_0_PmodJA1_pin[3]" IOSTANDARD = LVCMOS33;
+NET "zedboardtest_led_counter_pcore_0_PmodJA1_pin[4]" LOC = AB11;
+NET "zedboardtest_led_counter_pcore_0_PmodJA1_pin[4]" IOSTANDARD = LVCMOS33;
+NET "zedboardtest_led_counter_pcore_0_PmodJA1_pin[5]" LOC = AB10;
+NET "zedboardtest_led_counter_pcore_0_PmodJA1_pin[5]" IOSTANDARD = LVCMOS33;
+NET "zedboardtest_led_counter_pcore_0_PmodJA1_pin[6]" LOC = AB9;
+NET "zedboardtest_led_counter_pcore_0_PmodJA1_pin[6]" IOSTANDARD = LVCMOS33;
+NET "zedboardtest_led_counter_pcore_0_PmodJA1_pin[7]" LOC = AA8;
+NET "zedboardtest_led_counter_pcore_0_PmodJA1_pin[7]" IOSTANDARD = LVCMOS33;

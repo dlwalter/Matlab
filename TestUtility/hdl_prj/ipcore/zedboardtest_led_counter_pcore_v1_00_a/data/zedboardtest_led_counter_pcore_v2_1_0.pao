@@ -1,0 +1,12 @@
+##############################################################################
+## File Name:         hdl_prj\ipcore\zedboardtest_led_counter_pcore_v1_00_a\data\zedboardtest_led_counter_pcore_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Created:           2015-02-12 16:24:52
+##############################################################################
+
+lib zedboardtest_led_counter_pcore_v1_00_a led_counter vhdl
+lib zedboardtest_led_counter_pcore_v1_00_a zedboardtest_led_counter_pcore_dut vhdl
+lib zedboardtest_led_counter_pcore_v1_00_a zedboardtest_led_counter_pcore_axi_lite_module vhdl
+lib zedboardtest_led_counter_pcore_v1_00_a zedboardtest_led_counter_pcore_addr_decoder vhdl
+lib zedboardtest_led_counter_pcore_v1_00_a zedboardtest_led_counter_pcore_axi_lite vhdl
+lib zedboardtest_led_counter_pcore_v1_00_a zedboardtest_led_counter_pcore vhdl

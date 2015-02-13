@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="439" delta="new" >"C:\Projects\Quadcopter\TestUtility\hdl_prj\edk_prj\synthesis\parallel_run\hdl\system_zedboardtest_subsystem_pcore_0_wrapper.vhd" Line 67: Formal port <arg fmt="%s" index="1">pmodja1</arg> of mode <arg fmt="%s" index="2">in</arg> cannot be associated with actual port <arg fmt="%s" index="3">pmodja1</arg> of mode <arg fmt="%s" index="4">out</arg>
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">PmodJA1</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Projects/Quadcopter/TestUtility/hdl_prj/edk_prj/pcores/zedboardtest_subsystem_pcore_v1_00_a/hdl/vhdl/zedboardtest_subsystem_pcore.vhd</arg>&quot; line <arg fmt="%s" index="2">156</arg>: Output port &lt;<arg fmt="%s" index="3">ce_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_zedboardtest_subsystem_pcore_dut_inst</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">rd_enb</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">AXI4_Lite_WSTRB</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">waddr_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">zedboardtest_subsystem_pcore_axi_lite_module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">waddr_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">zedboardtest_subsystem_pcore_axi_lite_module</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">Delay2_out1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">Subsystem</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Delay4_out1&gt; &lt;Delay6_out1&gt; &lt;Delay_out1&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">Delay2_out1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Subsystem</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">Delay1_out1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Subsystem</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">Delay3_out1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Subsystem</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">Delay5_out1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Subsystem</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">Delay7_out1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Subsystem</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="2042" delta="new" >Unit <arg fmt="%s" index="1">zedboardtest_subsystem_pcore_addr_decoder</arg>: <arg fmt="%d" index="2">32</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/soft_reset</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wr_enb_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_addr_decoder_inst/write_reg_axi_enable</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_31</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">system_zedboardtest_subsystem_pcore_0_wrapper</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">30 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_30&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_29&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_28&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_27&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_26&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_25&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_24&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_23&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_22&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_21&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_20&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_19&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_18&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_17&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_16&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_15&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_14&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_13&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_12&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_11&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_10&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_9&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_8&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_7&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_6&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_5&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_4&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_3&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_2&gt; &lt;zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2169" delta="new" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+</msg>
+
+</messages>
+

@@ -1,0 +1,556 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:\Projects\Quadcopter\TestUtility\hdl_prj\edk_prj\synthesis\xst_temp_dir\
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> 
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input Format                       : MIXED
+Input File Name                    : "system_zedboardtest_subsystem_pcore_0_wrapper_xst.prj"
+Verilog Include Directory          : {"C:\Projects\Quadcopter\TestUtility\hdl_prj\edk_prj\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+
+---- Target Parameters
+Target Device                      : xc7z020clg484-1
+Output File Name                   : "system_zedboardtest_subsystem_pcore_0_wrapper.ngc"
+
+---- Source Options
+Top Module Name                    : system_zedboardtest_subsystem_pcore_0_wrapper
+
+---- Target Options
+Add IO Buffers                     : NO
+
+---- General Options
+Optimization Goal                  : speed
+Netlist Hierarchy                  : as_optimized
+Optimization Effort                : 1
+Hierarchy Separator                : /
+
+---- Other Options
+Cores Search Directories           : {./}
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:/Projects/Quadcopter/TestUtility/hdl_prj/edk_prj/pcores/zedboardtest_subsystem_pcore_v1_00_a/hdl/vhdl/Subsystem.vhd" into library zedboardtest_subsystem_pcore_v1_00_a
+Parsing entity <Subsystem>.
+Parsing architecture <rtl> of entity <subsystem>.
+Parsing VHDL file "C:/Projects/Quadcopter/TestUtility/hdl_prj/edk_prj/pcores/zedboardtest_subsystem_pcore_v1_00_a/hdl/vhdl/zedboardtest_subsystem_pcore_dut.vhd" into library zedboardtest_subsystem_pcore_v1_00_a
+Parsing entity <zedboardtest_subsystem_pcore_dut>.
+Parsing architecture <rtl> of entity <zedboardtest_subsystem_pcore_dut>.
+Parsing VHDL file "C:/Projects/Quadcopter/TestUtility/hdl_prj/edk_prj/pcores/zedboardtest_subsystem_pcore_v1_00_a/hdl/vhdl/zedboardtest_subsystem_pcore_axi_lite_module.vhd" into library zedboardtest_subsystem_pcore_v1_00_a
+Parsing entity <zedboardtest_subsystem_pcore_axi_lite_module>.
+Parsing architecture <rtl> of entity <zedboardtest_subsystem_pcore_axi_lite_module>.
+Parsing VHDL file "C:/Projects/Quadcopter/TestUtility/hdl_prj/edk_prj/pcores/zedboardtest_subsystem_pcore_v1_00_a/hdl/vhdl/zedboardtest_subsystem_pcore_addr_decoder.vhd" into library zedboardtest_subsystem_pcore_v1_00_a
+Parsing entity <zedboardtest_subsystem_pcore_addr_decoder>.
+Parsing architecture <rtl> of entity <zedboardtest_subsystem_pcore_addr_decoder>.
+Parsing VHDL file "C:/Projects/Quadcopter/TestUtility/hdl_prj/edk_prj/pcores/zedboardtest_subsystem_pcore_v1_00_a/hdl/vhdl/zedboardtest_subsystem_pcore_axi_lite.vhd" into library zedboardtest_subsystem_pcore_v1_00_a
+Parsing entity <zedboardtest_subsystem_pcore_axi_lite>.
+Parsing architecture <rtl> of entity <zedboardtest_subsystem_pcore_axi_lite>.
+Parsing VHDL file "C:/Projects/Quadcopter/TestUtility/hdl_prj/edk_prj/pcores/zedboardtest_subsystem_pcore_v1_00_a/hdl/vhdl/zedboardtest_subsystem_pcore.vhd" into library zedboardtest_subsystem_pcore_v1_00_a
+Parsing entity <zedboardtest_subsystem_pcore>.
+Parsing architecture <rtl> of entity <zedboardtest_subsystem_pcore>.
+Parsing VHDL file "C:\Projects\Quadcopter\TestUtility\hdl_prj\edk_prj\synthesis\parallel_run\hdl\system_zedboardtest_subsystem_pcore_0_wrapper.vhd" into library work
+Parsing entity <system_zedboardtest_subsystem_pcore_0_wrapper>.
+Parsing architecture <STRUCTURE> of entity <system_zedboardtest_subsystem_pcore_0_wrapper>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <system_zedboardtest_subsystem_pcore_0_wrapper> (architecture <STRUCTURE>) from library <work>.
+WARNING:HDLCompiler:439 - "C:\Projects\Quadcopter\TestUtility\hdl_prj\edk_prj\synthesis\parallel_run\hdl\system_zedboardtest_subsystem_pcore_0_wrapper.vhd" Line 67: Formal port pmodja1 of mode in cannot be associated with actual port pmodja1 of mode out
+INFO:HDLCompiler:1408 - "C:/Projects/Quadcopter/TestUtility/hdl_prj/edk_prj/pcores/zedboardtest_subsystem_pcore_v1_00_a/hdl/vhdl/zedboardtest_subsystem_pcore.vhd" Line 32. pmodja1 is declared here
+
+Elaborating entity <zedboardtest_subsystem_pcore> (architecture <rtl>) from library <zedboardtest_subsystem_pcore_v1_00_a>.
+
+Elaborating entity <zedboardtest_subsystem_pcore_axi_lite> (architecture <rtl>) from library <zedboardtest_subsystem_pcore_v1_00_a>.
+
+Elaborating entity <zedboardtest_subsystem_pcore_addr_decoder> (architecture <rtl>) from library <zedboardtest_subsystem_pcore_v1_00_a>.
+
+Elaborating entity <zedboardtest_subsystem_pcore_axi_lite_module> (architecture <rtl>) from library <zedboardtest_subsystem_pcore_v1_00_a>.
+
+Elaborating entity <zedboardtest_subsystem_pcore_dut> (architecture <rtl>) from library <zedboardtest_subsystem_pcore_v1_00_a>.
+
+Elaborating entity <Subsystem> (architecture <rtl>) from library <zedboardtest_subsystem_pcore_v1_00_a>.
+INFO:HDLCompiler:1408 - "C:/Projects/Quadcopter/TestUtility/hdl_prj/edk_prj/pcores/zedboardtest_subsystem_pcore_v1_00_a/hdl/vhdl/zedboardtest_subsystem_pcore.vhd" Line 32. pmodja1 is declared here
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <system_zedboardtest_subsystem_pcore_0_wrapper>.
+    Related source file is "C:\Projects\Quadcopter\TestUtility\hdl_prj\edk_prj\synthesis\parallel_run\hdl\system_zedboardtest_subsystem_pcore_0_wrapper.vhd".
+WARNING:Xst:653 - Signal <PmodJA1> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <system_zedboardtest_subsystem_pcore_0_wrapper> synthesized.
+
+Synthesizing Unit <zedboardtest_subsystem_pcore>.
+    Related source file is "C:/Projects/Quadcopter/TestUtility/hdl_prj/edk_prj/pcores/zedboardtest_subsystem_pcore_v1_00_a/hdl/vhdl/zedboardtest_subsystem_pcore.vhd".
+INFO:Xst:3210 - "C:/Projects/Quadcopter/TestUtility/hdl_prj/edk_prj/pcores/zedboardtest_subsystem_pcore_v1_00_a/hdl/vhdl/zedboardtest_subsystem_pcore.vhd" line 156: Output port <ce_out> of the instance <u_zedboardtest_subsystem_pcore_dut_inst> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <zedboardtest_subsystem_pcore> synthesized.
+
+Synthesizing Unit <zedboardtest_subsystem_pcore_axi_lite>.
+    Related source file is "C:/Projects/Quadcopter/TestUtility/hdl_prj/edk_prj/pcores/zedboardtest_subsystem_pcore_v1_00_a/hdl/vhdl/zedboardtest_subsystem_pcore_axi_lite.vhd".
+    Summary:
+	no macro.
+Unit <zedboardtest_subsystem_pcore_axi_lite> synthesized.
+
+Synthesizing Unit <zedboardtest_subsystem_pcore_addr_decoder>.
+    Related source file is "C:/Projects/Quadcopter/TestUtility/hdl_prj/edk_prj/pcores/zedboardtest_subsystem_pcore_v1_00_a/hdl/vhdl/zedboardtest_subsystem_pcore_addr_decoder.vhd".
+WARNING:Xst:647 - Input <rd_enb> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <write_reg_axi_enable>.
+    Found 1-bit tristate buffer for signal <const_z<31>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<30>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<29>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<28>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<27>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<26>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<25>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<24>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<23>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<22>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<21>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<20>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<19>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<18>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<17>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<16>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<15>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<14>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<13>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<12>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<11>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<10>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<9>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<8>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<7>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<6>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<5>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<4>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<3>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<2>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<1>> created at line 49
+    Found 1-bit tristate buffer for signal <const_z<0>> created at line 49
+    Summary:
+	inferred   1 D-type flip-flop(s).
+	inferred  32 Tristate(s).
+Unit <zedboardtest_subsystem_pcore_addr_decoder> synthesized.
+
+Synthesizing Unit <zedboardtest_subsystem_pcore_axi_lite_module>.
+    Related source file is "C:/Projects/Quadcopter/TestUtility/hdl_prj/edk_prj/pcores/zedboardtest_subsystem_pcore_v1_00_a/hdl/vhdl/zedboardtest_subsystem_pcore_axi_lite_module.vhd".
+WARNING:Xst:647 - Input <AXI4_Lite_WSTRB> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit register for signal <axi_lite_rstate>.
+    Found 8-bit register for signal <axi_lite_wstate>.
+    Found 32-bit register for signal <AXI4_Lite_RDATA_tmp>.
+    Found 32-bit register for signal <wdata>.
+    Found 16-bit register for signal <waddr>.
+    Found 1-bit register for signal <wr_enb_1>.
+    Found 1-bit register for signal <soft_reset>.
+    Found finite state machine <FSM_0> for signal <axi_lite_rstate>.
+    -----------------------------------------------------------------------
+    | States             | 2                                              |
+    | Transitions        | 4                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | AXI4_Lite_ARESETN (negative)                   |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00000000                                       |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <axi_lite_wstate>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | AXI4_Lite_ARESETN (negative)                   |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00000000                                       |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred  82 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+	inferred   2 Finite State Machine(s).
+Unit <zedboardtest_subsystem_pcore_axi_lite_module> synthesized.
+
+Synthesizing Unit <zedboardtest_subsystem_pcore_dut>.
+    Related source file is "C:/Projects/Quadcopter/TestUtility/hdl_prj/edk_prj/pcores/zedboardtest_subsystem_pcore_v1_00_a/hdl/vhdl/zedboardtest_subsystem_pcore_dut.vhd".
+    Summary:
+	no macro.
+Unit <zedboardtest_subsystem_pcore_dut> synthesized.
+
+Synthesizing Unit <Subsystem>.
+    Related source file is "C:/Projects/Quadcopter/TestUtility/hdl_prj/edk_prj/pcores/zedboardtest_subsystem_pcore_v1_00_a/hdl/vhdl/Subsystem.vhd".
+    Found 1-bit register for signal <Delay1_out1>.
+    Found 1-bit register for signal <Delay2_out1>.
+    Found 1-bit register for signal <Delay3_out1>.
+    Found 1-bit register for signal <Delay4_out1>.
+    Found 1-bit register for signal <Delay5_out1>.
+    Found 1-bit register for signal <Delay6_out1>.
+    Found 1-bit register for signal <Delay7_out1>.
+    Found 1-bit register for signal <Delay_out1>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <Subsystem> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 14
+ 1-bit register                                        : 11
+ 16-bit register                                       : 1
+ 32-bit register                                       : 2
+# Multiplexers                                         : 2
+ 1-bit 2-to-1 multiplexer                              : 1
+ 14-bit 2-to-1 multiplexer                             : 1
+# Tristates                                            : 32
+ 1-bit tristate buffer                                 : 32
+# FSMs                                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <waddr_0> of sequential type is unconnected in block <zedboardtest_subsystem_pcore_axi_lite_module>.
+WARNING:Xst:2677 - Node <waddr_1> of sequential type is unconnected in block <zedboardtest_subsystem_pcore_axi_lite_module>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 89
+ Flip-Flops                                            : 89
+# Multiplexers                                         : 14
+ 1-bit 2-to-1 multiplexer                              : 14
+# FSMs                                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <Delay2_out1> in Unit <Subsystem> is equivalent to the following 3 FFs/Latches, which will be removed : <Delay4_out1> <Delay6_out1> <Delay_out1> 
+WARNING:Xst:1710 - FF/Latch <Delay2_out1> (without init value) has a constant value of 0 in block <Subsystem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Delay1_out1> (without init value) has a constant value of 0 in block <Subsystem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Delay3_out1> (without init value) has a constant value of 0 in block <Subsystem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Delay5_out1> (without init value) has a constant value of 0 in block <Subsystem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Delay7_out1> (without init value) has a constant value of 0 in block <Subsystem>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/FSM_0> on signal <axi_lite_rstate[1:1]> with sequential encoding.
+----------------------
+ State    | Encoding
+----------------------
+ 00000000 | 0
+ 00000001 | 1
+----------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/FSM_1> on signal <axi_lite_wstate[1:2]> with sequential encoding.
+----------------------
+ State    | Encoding
+----------------------
+ 00000000 | 00
+ 00000001 | 01
+ 00000010 | 10
+----------------------
+WARNING:Xst:2042 - Unit zedboardtest_subsystem_pcore_addr_decoder: 32 internal tristates are replaced by logic (pull-up yes): const_z<0>, const_z<10>, const_z<11>, const_z<12>, const_z<13>, const_z<14>, const_z<15>, const_z<16>, const_z<17>, const_z<18>, const_z<19>, const_z<1>, const_z<20>, const_z<21>, const_z<22>, const_z<23>, const_z<24>, const_z<25>, const_z<26>, const_z<27>, const_z<28>, const_z<29>, const_z<2>, const_z<30>, const_z<31>, const_z<3>, const_z<4>, const_z<5>, const_z<6>, const_z<7>, const_z<8>, const_z<9>.
+
+Optimizing unit <system_zedboardtest_subsystem_pcore_0_wrapper> ...
+
+Optimizing unit <zedboardtest_subsystem_pcore_axi_lite_module> ...
+
+Optimizing unit <zedboardtest_subsystem_pcore_addr_decoder> ...
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/soft_reset> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wr_enb_1> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_31> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_30> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_29> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_28> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_27> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_26> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_25> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_24> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_23> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_22> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_21> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_20> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_19> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_18> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_17> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_16> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_15> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_14> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_13> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_12> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_11> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_10> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_9> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_8> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_7> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_6> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_5> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_4> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_3> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_2> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_1> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/wdata_0> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_15> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_14> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_13> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_12> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_11> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_10> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_9> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_8> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_7> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_6> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_5> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_4> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_3> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/waddr_2> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_addr_decoder_inst/write_reg_axi_enable> of sequential type is unconnected in block <system_zedboardtest_subsystem_pcore_0_wrapper>.
+INFO:Xst:2261 - The FF/Latch <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_1> in Unit <system_zedboardtest_subsystem_pcore_0_wrapper> is equivalent to the following FF/Latch, which will be removed : <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_0> 
+INFO:Xst:2261 - The FF/Latch <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_31> in Unit <system_zedboardtest_subsystem_pcore_0_wrapper> is equivalent to the following 30 FFs/Latches, which will be removed : <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_30> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_29> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_28> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_27>
+   <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_26> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_25> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_24> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_23> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_22> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_21>
+   <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_20> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_19> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_18> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_17> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_16> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_15>
+   <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_14> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_13> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_12> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_11> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_10> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_9>
+   <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_8> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_7> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_6> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_5> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_4> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_3>
+   <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_2> <zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_1>
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block system_zedboardtest_subsystem_pcore_0_wrapper, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 4
+ Flip-Flops                                            : 4
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : system_zedboardtest_subsystem_pcore_0_wrapper.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 8
+#      GND                         : 1
+#      INV                         : 2
+#      LUT2                        : 1
+#      LUT3                        : 2
+#      LUT4                        : 2
+# FlipFlops/Latches                : 4
+#      FDC                         : 4
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7z020clg484-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:               4  out of  106400     0%  
+ Number of Slice LUTs:                    7  out of  53200     0%  
+    Number used as Logic:                 7  out of  53200     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     11
+   Number with an unused Flip Flop:       7  out of     11    63%  
+   Number with an unused LUT:             4  out of     11    36%  
+   Number of fully used LUT-FF pairs:     0  out of     11     0%  
+   Number of unique control sets:         1
+
+IO Utilization: 
+ Number of IOs:                         134
+ Number of bonded IOBs:                   0  out of    200     0%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                                                                                                                                         | Load  |
+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+AXI4_Lite_ACLK                     | NONE(zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd1)| 4     |
+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 0.845ns (Maximum Frequency: 1183.432MHz)
+   Minimum input arrival time before clock: 0.811ns
+   Maximum output required time after clock: 0.834ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'AXI4_Lite_ACLK'
+  Clock period: 0.845ns (frequency: 1183.432MHz)
+  Total number of paths / destination ports: 7 / 4
+-------------------------------------------------------------------------
+Delay:               0.845ns (Levels of Logic = 1)
+  Source:            zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd1 (FF)
+  Destination:       zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd1 (FF)
+  Source Clock:      AXI4_Lite_ACLK rising
+  Destination Clock: AXI4_Lite_ACLK rising
+
+  Data Path: zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd1 to zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.282   0.499  zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd1 (zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd1)
+     LUT4:I2->O            1   0.053   0.000  zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd2-In1 (zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd2-In)
+     FDC:D                     0.011          zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd2
+    ----------------------------------------
+    Total                      0.845ns (0.346ns logic, 0.499ns route)
+                                       (40.9% logic, 59.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'AXI4_Lite_ACLK'
+  Total number of paths / destination ports: 11 / 8
+-------------------------------------------------------------------------
+Offset:              0.811ns (Levels of Logic = 1)
+  Source:            AXI4_Lite_ARESETN (PAD)
+  Destination:       zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd1 (FF)
+  Destination Clock: AXI4_Lite_ACLK rising
+
+  Data Path: AXI4_Lite_ARESETN to zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     INV:I->O              4   0.067   0.419  zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_ARESETN_inv1_INV_0 (zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/AXI4_Lite_ARESETN_inv)
+     FDC:CLR                   0.325          zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd1
+    ----------------------------------------
+    Total                      0.811ns (0.392ns logic, 0.419ns route)
+                                       (48.3% logic, 51.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'AXI4_Lite_ACLK'
+  Total number of paths / destination ports: 38 / 37
+-------------------------------------------------------------------------
+Offset:              0.834ns (Levels of Logic = 1)
+  Source:            zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd2 (FF)
+  Destination:       AXI4_Lite_AWREADY (PAD)
+  Source Clock:      AXI4_Lite_ACLK rising
+
+  Data Path: zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd2 to AXI4_Lite_AWREADY
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.282   0.499  zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd2 (zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd2)
+     LUT2:I0->O            0   0.053   0.000  zedboardtest_subsystem_pcore_0/u_zedboardtest_subsystem_pcore_axi_lite_inst/u_zedboardtest_subsystem_pcore_axi_lite_module_inst/axi_lite_wstate_axi_lite_output.out01 (AXI4_Lite_AWREADY)
+    ----------------------------------------
+    Total                      0.834ns (0.335ns logic, 0.499ns route)
+                                       (40.2% logic, 59.8% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock AXI4_Lite_ACLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AXI4_Lite_ACLK |    0.845|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.73 secs
+ 
+--> 
+
+Total memory usage is 449056 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   61 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
+
