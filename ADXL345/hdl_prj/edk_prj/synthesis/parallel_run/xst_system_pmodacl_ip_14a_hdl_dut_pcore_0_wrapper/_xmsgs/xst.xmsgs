@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:/Projects/Quadcopter/ADXL345/hdl_prj/edk_prj/pcores/pmodacl_ip_14a_hdl_dut_pcore_v1_00_a/hdl/vhdl/pmodacl_ip_14a_hdl_dut_pcore.vhd</arg>&quot; line <arg fmt="%s" index="2">169</arg>: Output port &lt;<arg fmt="%s" index="3">ce_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">rd_enb</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">AXI4_Lite_WSTRB</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">waddr_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">waddr_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/wdata_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/wdata_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/wdata_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/wdata_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/wdata_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/wdata_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/wdata_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/wdata_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/wdata_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/wdata_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/wdata_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/wdata_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/wdata_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/wdata_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/wdata_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/wdata_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/wdata_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/write_reg_CMD_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/count_8</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/count_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/count_6</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/count_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/count_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/count_8</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/count_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/count_6</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/count_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/count_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/clock_cnt_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_31</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">15 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_30&gt; &lt;pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_29&gt; &lt;pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_28&gt; &lt;pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_27&gt; &lt;pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_26&gt; &lt;pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_25&gt; &lt;pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_24&gt; &lt;pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_23&gt; &lt;pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_22&gt; &lt;pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_21&gt; &lt;pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_20&gt; &lt;pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_19&gt; &lt;pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_18&gt; &lt;pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_17&gt; &lt;pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_16&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/CSn_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/XYZ_Valid_reg&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="3203" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/SCK_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">system_pmodacl_ip_14a_hdl_dut_pcore_0_wrapper</arg>&gt; is the opposite to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_XYZ_shiftRegister/u_rising_edge_detect/Unit_Delay1_out1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2169" delta="new" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+</msg>
+
+</messages>
+

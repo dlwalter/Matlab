@@ -1,0 +1,53 @@
+CC     = "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\bin\lcc64.exe"
+LD     = "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\bin\lcclnk64.exe"
+LIBCMD = "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\bin\lcclib64.exe"
+CFLAGS = -dll -noregistrylookup  -c -Zp8 -DLCC_WIN64 -DMATLAB_MEX_FILE -DMX_COMPAT_32 -nodeclspec 
+LDFLAGS = -s -dll -L"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\lib64" -entry LibMain -map sfun.map 
+LIBFLAGS = 
+
+OBJECTS = \
+	"hdlsllib_sfun.obj"\
+	"c6_18poecr3DvUei9MWhdPjDD_hdlsllib.obj"\
+	"c6_XZF8kJML5VgBBpfwrIutsC_hdlsllib.obj"\
+	"c6_XZzpRJ28QaTLUZYSRsEeND_hdlsllib.obj"\
+	"c6_cZVGjs0KImVo2u9sipbkkG_hdlsllib.obj"\
+	"c6_e1Hi4ChPrNXuCLfaX2T4eH_hdlsllib.obj"\
+	"c6_k9LAYxhP9ttLrWBQWHdq4B_hdlsllib.obj"\
+	"c6_rRo1qewSHYR34Cq2u76CHD_hdlsllib.obj"\
+	"c6_sL4u63ZWPMyaFVPvda6N2G_hdlsllib.obj"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\sf_runtime.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwblas.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmx.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmex.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmat.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libfixedpoint.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libut.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwmathutil.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libemlrt.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwsl_log_load_blocks.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwsimulink.lib"\
+	"C:\Program Files\MATLAB\R2014b\lib\win64\libmwipp.lib"\
+
+INCLUDE_PATH= -I"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\include64"  -I"C:\Program Files\MATLAB\R2014b\extern\include"  -I"C:\Program Files\MATLAB\R2014b\simulink\include"  -I"C:\Program Files\MATLAB\R2014b\stateflow\c\mex\include"  -I"C:\Program Files\MATLAB\R2014b\rtw\c\src"  -I"C:\Projects\Quadcopter\BasicQuadrotor\slprj\_sfprj\ADXL234_read\hdlsllib\sfun\src" 
+ 
+
+hdlsllib_sfun.lib : $(MAKEFILE) $(OBJECTS)
+	$(LIBCMD) $(LIBFLAGS) /OUT:hdlsllib_sfun.lib *.obj
+hdlsllib_sfun.obj :	"hdlsllib_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "hdlsllib_sfun.c"
+c6_18poecr3DvUei9MWhdPjDD_hdlsllib.obj :	"c6_18poecr3DvUei9MWhdPjDD_hdlsllib.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c6_18poecr3DvUei9MWhdPjDD_hdlsllib.c"
+c6_XZF8kJML5VgBBpfwrIutsC_hdlsllib.obj :	"c6_XZF8kJML5VgBBpfwrIutsC_hdlsllib.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c6_XZF8kJML5VgBBpfwrIutsC_hdlsllib.c"
+c6_XZzpRJ28QaTLUZYSRsEeND_hdlsllib.obj :	"c6_XZzpRJ28QaTLUZYSRsEeND_hdlsllib.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c6_XZzpRJ28QaTLUZYSRsEeND_hdlsllib.c"
+c6_cZVGjs0KImVo2u9sipbkkG_hdlsllib.obj :	"c6_cZVGjs0KImVo2u9sipbkkG_hdlsllib.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c6_cZVGjs0KImVo2u9sipbkkG_hdlsllib.c"
+c6_e1Hi4ChPrNXuCLfaX2T4eH_hdlsllib.obj :	"c6_e1Hi4ChPrNXuCLfaX2T4eH_hdlsllib.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c6_e1Hi4ChPrNXuCLfaX2T4eH_hdlsllib.c"
+c6_k9LAYxhP9ttLrWBQWHdq4B_hdlsllib.obj :	"c6_k9LAYxhP9ttLrWBQWHdq4B_hdlsllib.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c6_k9LAYxhP9ttLrWBQWHdq4B_hdlsllib.c"
+c6_rRo1qewSHYR34Cq2u76CHD_hdlsllib.obj :	"c6_rRo1qewSHYR34Cq2u76CHD_hdlsllib.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c6_rRo1qewSHYR34Cq2u76CHD_hdlsllib.c"
+c6_sL4u63ZWPMyaFVPvda6N2G_hdlsllib.obj :	"c6_sL4u63ZWPMyaFVPvda6N2G_hdlsllib.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c6_sL4u63ZWPMyaFVPvda6N2G_hdlsllib.c"

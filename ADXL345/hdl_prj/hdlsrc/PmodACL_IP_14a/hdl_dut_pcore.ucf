@@ -1,0 +1,12 @@
+# ZedBoard
+
+
+# Timing Specifications Constrain
+
+
+# FPGA Pin Location Constrain
+
+NET "PmodJA1_in" LOC = "AA9"  |  IOSTANDARD = LVCMOS33;
+NET "PmodJA1_out<0>" LOC = "Y11"  |  IOSTANDARD = LVCMOS33;
+NET "PmodJA1_out<1>" LOC = "AA11"  |  IOSTANDARD = LVCMOS33;
+NET "PmodJA1_out<2>" LOC = "Y10"  |  IOSTANDARD = LVCMOS33;

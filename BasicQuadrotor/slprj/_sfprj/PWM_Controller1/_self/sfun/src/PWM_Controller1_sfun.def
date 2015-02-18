@@ -1,0 +1,3 @@
+LIBRARY PWM_Controller1_sfun.mexw64
+EXPORTS
+mexFunction

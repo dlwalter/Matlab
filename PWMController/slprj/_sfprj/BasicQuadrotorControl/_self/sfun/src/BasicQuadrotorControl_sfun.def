@@ -1,0 +1,3 @@
+LIBRARY BasicQuadrotorControl_sfun.mexw64
+EXPORTS
+mexFunction

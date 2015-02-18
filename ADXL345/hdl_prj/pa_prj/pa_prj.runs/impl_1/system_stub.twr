@@ -1,0 +1,1778 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -o
+system_stub.twr -v 30 -l 30 system_stub_routed.ncd system_stub.pcf
+
+Design file:              system_stub_routed.ncd
+Physical constraint file: system_stub.pcf
+Device,package,speed:     xc7z020,clg484,C,-1 (PRODUCTION 1.08 2013-10-13)
+Report level:             verbose report, limited to 30 items per constraint
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more 
+   information, see the TSI report.  Please consult the Xilinx Command Line 
+   Tools User Guide for information on generating a TSI report.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_clk_fpga_0 = PERIOD TIMEGRP "clk_fpga_0" 100 MHz HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is   4.000ns.
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk_fpga_0 = PERIOD TIMEGRP "clk_fpga_0" 100 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 6.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 10.000ns
+  Low pulse: 5.000ns
+  Low pulse limit: 2.000ns (Tmmcmpw_CLKIN1_100_150)
+  Physical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_INST/MMCM_ADV_inst/CLKIN1
+  Logical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_INST/MMCM_ADV_inst/CLKIN1
+  Location pin: MMCME2_ADV_X0Y0.CLKIN1
+  Clock network: system_i/PROCESSOR_CLK0
+--------------------------------------------------------------------------------
+Slack: 6.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 10.000ns
+  High pulse: 5.000ns
+  High pulse limit: 2.000ns (Tmmcmpw_CLKIN1_100_150)
+  Physical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_INST/MMCM_ADV_inst/CLKIN1
+  Logical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_INST/MMCM_ADV_inst/CLKIN1
+  Location pin: MMCME2_ADV_X0Y0.CLKIN1
+  Clock network: system_i/PROCESSOR_CLK0
+--------------------------------------------------------------------------------
+Slack: 8.751ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 1.249ns (800.641MHz) (Tmmcmper_CLKIN(Finmax))
+  Physical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_INST/MMCM_ADV_inst/CLKIN1
+  Logical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_INST/MMCM_ADV_inst/CLKIN1
+  Location pin: MMCME2_ADV_X0Y0.CLKIN1
+  Clock network: system_i/PROCESSOR_CLK0
+--------------------------------------------------------------------------------
+Slack: 8.751ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 1.249ns (800.641MHz) (Tmmcmper_CLKFBOUT(Foutmax))
+  Physical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_INST/MMCM_ADV_inst/CLKFBOUT
+  Logical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_INST/MMCM_ADV_inst/CLKFBOUT
+  Location pin: MMCME2_ADV_X0Y0.CLKFBOUT
+  Clock network: system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKFBOUT
+--------------------------------------------------------------------------------
+Slack: 18.751ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.249ns (800.641MHz) (Tmmcmper_CLKOUT(Foutmax))
+  Physical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_INST/MMCM_ADV_inst/CLKOUT0
+  Logical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_INST/MMCM_ADV_inst/CLKOUT0
+  Location pin: MMCME2_ADV_X0Y0.CLKOUT0
+  Clock network: system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKOUT0
+--------------------------------------------------------------------------------
+Slack: 90.000ns (max period limit - period)
+  Period: 10.000ns
+  Max period limit: 100.000ns (10.000MHz) (Tmmcmper_CLKIN(Finmin))
+  Physical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_INST/MMCM_ADV_inst/CLKIN1
+  Logical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_INST/MMCM_ADV_inst/CLKIN1
+  Location pin: MMCME2_ADV_X0Y0.CLKIN1
+  Clock network: system_i/PROCESSOR_CLK0
+--------------------------------------------------------------------------------
+Slack: 193.360ns (max period limit - period)
+  Period: 20.000ns
+  Max period limit: 213.360ns (4.687MHz) (Tmmcmper_CLKOUT(Foutmin))
+  Physical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_INST/MMCM_ADV_inst/CLKOUT0
+  Logical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_INST/MMCM_ADV_inst/CLKOUT0
+  Location pin: MMCME2_ADV_X0Y0.CLKOUT0
+  Clock network: system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKOUT0
+--------------------------------------------------------------------------------
+Slack: 203.360ns (max period limit - period)
+  Period: 10.000ns
+  Max period limit: 213.360ns (4.687MHz) (Tmmcmper_CLKFBOUT(Foutmin))
+  Physical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_INST/MMCM_ADV_inst/CLKFBOUT
+  Logical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_INST/MMCM_ADV_inst/CLKFBOUT
+  Location pin: MMCME2_ADV_X0Y0.CLKFBOUT
+  Clock network: system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKFBOUT
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_axi4_lite_reset_resync_path" TIG;
+
+ 5 paths analyzed, 5 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+Delay:                  3.012ns (data path - clock path skew + uncertainty)
+  Source:               system_i/reset_0/reset_0/Interconnect_aresetn_0 (FF)
+  Destination:          system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2 (FF)
+  Data Path Delay:      2.881ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.057ns (0.847 - 0.904)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/reset_0/reset_0/Interconnect_aresetn_0 to system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y30.AQ      Tcko                  0.518   system_i/reset_0_Interconnect_aresetn
+                                                       system_i/reset_0/reset_0/Interconnect_aresetn_0
+    SLICE_X24Y39.A5      net (fanout=1)        1.018   system_i/reset_0_Interconnect_aresetn
+    SLICE_X24Y39.A       Tilo                  0.124   system_i/axi4_lite/axi4_lite/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/INTERCONNECT_ARESETN_inv
+                                                       system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/INTERCONNECT_ARESETN_inv1_INV_0
+    SLICE_X28Y45.SR      net (fanout=1)        0.816   system_i/axi4_lite/axi4_lite/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/INTERCONNECT_ARESETN_inv
+    SLICE_X28Y45.CLK     Trck                  0.405   system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync[2]
+                                                       system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2
+    -------------------------------------------------  ---------------------------
+    Total                                      2.881ns (1.047ns logic, 1.834ns route)
+                                                       (36.3% logic, 63.7% route)
+
+--------------------------------------------------------------------------------
+Delay:                  3.012ns (data path - clock path skew + uncertainty)
+  Source:               system_i/reset_0/reset_0/Interconnect_aresetn_0 (FF)
+  Destination:          system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1 (FF)
+  Data Path Delay:      2.881ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.057ns (0.847 - 0.904)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/reset_0/reset_0/Interconnect_aresetn_0 to system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y30.AQ      Tcko                  0.518   system_i/reset_0_Interconnect_aresetn
+                                                       system_i/reset_0/reset_0/Interconnect_aresetn_0
+    SLICE_X24Y39.A5      net (fanout=1)        1.018   system_i/reset_0_Interconnect_aresetn
+    SLICE_X24Y39.A       Tilo                  0.124   system_i/axi4_lite/axi4_lite/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/INTERCONNECT_ARESETN_inv
+                                                       system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/INTERCONNECT_ARESETN_inv1_INV_0
+    SLICE_X28Y45.SR      net (fanout=1)        0.816   system_i/axi4_lite/axi4_lite/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/INTERCONNECT_ARESETN_inv
+    SLICE_X28Y45.CLK     Trck                  0.405   system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync[2]
+                                                       system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1
+    -------------------------------------------------  ---------------------------
+    Total                                      2.881ns (1.047ns logic, 1.834ns route)
+                                                       (36.3% logic, 63.7% route)
+
+--------------------------------------------------------------------------------
+Delay:                  3.012ns (data path - clock path skew + uncertainty)
+  Source:               system_i/reset_0/reset_0/Interconnect_aresetn_0 (FF)
+  Destination:          system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0 (FF)
+  Data Path Delay:      2.881ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.057ns (0.847 - 0.904)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/reset_0/reset_0/Interconnect_aresetn_0 to system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y30.AQ      Tcko                  0.518   system_i/reset_0_Interconnect_aresetn
+                                                       system_i/reset_0/reset_0/Interconnect_aresetn_0
+    SLICE_X24Y39.A5      net (fanout=1)        1.018   system_i/reset_0_Interconnect_aresetn
+    SLICE_X24Y39.A       Tilo                  0.124   system_i/axi4_lite/axi4_lite/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/INTERCONNECT_ARESETN_inv
+                                                       system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/INTERCONNECT_ARESETN_inv1_INV_0
+    SLICE_X28Y45.SR      net (fanout=1)        0.816   system_i/axi4_lite/axi4_lite/mi_converter_bank/gen_conv_slot[0].clock_conv_inst/INTERCONNECT_ARESETN_inv
+    SLICE_X28Y45.CLK     Trck                  0.405   system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync[2]
+                                                       system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0
+    -------------------------------------------------  ---------------------------
+    Total                                      2.881ns (1.047ns logic, 1.834ns route)
+                                                       (36.3% logic, 63.7% route)
+
+--------------------------------------------------------------------------------
+Delay:                  1.113ns (data path - clock path skew + uncertainty)
+  Source:               system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1 (FF)
+  Destination:          system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2 (FF)
+  Data Path Delay:      1.039ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1 to system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y45.CQ      Tcko                  0.456   system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync[2]
+                                                       system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1
+    SLICE_X28Y45.DX      net (fanout=1)        0.525   system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync[1]
+    SLICE_X28Y45.CLK     Tdick                 0.058   system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync[2]
+                                                       system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_2
+    -------------------------------------------------  ---------------------------
+    Total                                      1.039ns (0.514ns logic, 0.525ns route)
+                                                       (49.5% logic, 50.5% route)
+
+--------------------------------------------------------------------------------
+Delay:                  1.112ns (data path - clock path skew + uncertainty)
+  Source:               system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0 (FF)
+  Destination:          system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1 (FF)
+  Data Path Delay:      1.038ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0 to system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y45.BQ      Tcko                  0.456   system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync[2]
+                                                       system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_0
+    SLICE_X28Y45.CX      net (fanout=1)        0.521   system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync[0]
+    SLICE_X28Y45.CLK     Tdick                 0.061   system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync[2]
+                                                       system_i/axi4_lite/axi4_lite/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_resync_1
+    -------------------------------------------------  ---------------------------
+    Total                                      1.038ns (0.517ns logic, 0.521ns route)
+                                                       (49.8% logic, 50.2% route)
+
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: 
+TS_system_i_clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0 = PERIOD      
+   TIMEGRP         
+"system_i_clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0"         
+TS_clk_fpga_0 * 0.5 HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 13253 paths analyzed, 1828 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   7.562ns.
+--------------------------------------------------------------------------------
+Slack:                  12.438ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.133ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.355ns (1.380 - 1.735)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y104.BQ     Tcko                  0.456   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1
+    SLICE_X26Y92.C2      net (fanout=7)        1.396   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X26Y84.CX      net (fanout=17)       0.648   system_i/axi4_lite_M_ARVALID
+    SLICE_X26Y84.CMUX    Tcxc                  0.488   system_i/axi4_lite/axi4_lite/mi_register_slice_bank/gen_reg_slot[0].register_slice_inst/reset
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o2
+    SLICE_X27Y80.C2      net (fanout=1)        0.994   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o2
+    SLICE_X27Y80.C       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o3
+    SLICE_X26Y61.C2      net (fanout=17)       1.824   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o
+    SLICE_X26Y61.CLK     Tas                   0.045   system_i/axi4_lite_M_RDATA[7]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid30
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_7
+    -------------------------------------------------  ---------------------------
+    Total                                      7.133ns (1.597ns logic, 5.536ns route)
+                                                       (22.4% logic, 77.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.479ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.095ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.352ns (1.380 - 1.732)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y111.AQ     Tcko                  0.518   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X26Y92.C4      net (fanout=22)       1.296   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X26Y84.CX      net (fanout=17)       0.648   system_i/axi4_lite_M_ARVALID
+    SLICE_X26Y84.CMUX    Tcxc                  0.488   system_i/axi4_lite/axi4_lite/mi_register_slice_bank/gen_reg_slot[0].register_slice_inst/reset
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o2
+    SLICE_X27Y80.C2      net (fanout=1)        0.994   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o2
+    SLICE_X27Y80.C       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o3
+    SLICE_X26Y61.C2      net (fanout=17)       1.824   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o
+    SLICE_X26Y61.CLK     Tas                   0.045   system_i/axi4_lite_M_RDATA[7]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid30
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_7
+    -------------------------------------------------  ---------------------------
+    Total                                      7.095ns (1.659ns logic, 5.436ns route)
+                                                       (23.4% logic, 76.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.483ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_12 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.087ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.356ns (1.379 - 1.735)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y104.BQ     Tcko                  0.456   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1
+    SLICE_X26Y92.C2      net (fanout=7)        1.396   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X27Y82.CX      net (fanout=17)       0.398   system_i/axi4_lite_M_ARVALID
+    SLICE_X27Y82.CMUX    Tcxc                  0.470   system_i/axi4_lite_S_RDATA[8]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o1
+    SLICE_X26Y76.D1      net (fanout=3)        1.216   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o1
+    SLICE_X26Y76.D       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o3
+    SLICE_X27Y62.A1      net (fanout=16)       1.774   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o
+    SLICE_X27Y62.CLK     Tas                   0.095   system_i/axi4_lite_M_RDATA[12]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid4
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_12
+    -------------------------------------------------  ---------------------------
+    Total                                      7.087ns (1.629ns logic, 5.458ns route)
+                                                       (23.0% logic, 77.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.489ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.077ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.360ns (1.375 - 1.735)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y104.BQ     Tcko                  0.456   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1
+    SLICE_X26Y92.C2      net (fanout=7)        1.396   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X28Y83.CX      net (fanout=17)       0.740   system_i/axi4_lite_M_ARVALID
+    SLICE_X28Y83.CMUX    Tcxc                  0.470   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid11
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid111
+    SLICE_X26Y67.C1      net (fanout=9)        1.486   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid11
+    SLICE_X26Y67.CMUX    Tilo                  0.360   system_i/axi4_lite_M_RDATA[2]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid26_SW1
+    SLICE_X26Y67.A1      net (fanout=1)        0.964   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/N54
+    SLICE_X26Y67.CLK     Tas                   0.047   system_i/axi4_lite_M_RDATA[2]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid26
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_3
+    -------------------------------------------------  ---------------------------
+    Total                                      7.077ns (1.817ns logic, 5.260ns route)
+                                                       (25.7% logic, 74.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.517ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_14 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.052ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.357ns (1.378 - 1.735)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_14
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y104.BQ     Tcko                  0.456   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1
+    SLICE_X26Y92.C2      net (fanout=7)        1.396   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X26Y83.CX      net (fanout=17)       0.407   system_i/axi4_lite_M_ARVALID
+    SLICE_X26Y83.CMUX    Tcxc                  0.488   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o2
+    SLICE_X26Y76.B2      net (fanout=1)        1.282   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o2
+    SLICE_X26Y76.B       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o3
+    SLICE_X26Y64.A2      net (fanout=17)       1.694   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o
+    SLICE_X26Y64.CLK     Tas                   0.047   system_i/axi4_lite_M_RDATA[13]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid6
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_14
+    -------------------------------------------------  ---------------------------
+    Total                                      7.052ns (1.599ns logic, 5.453ns route)
+                                                       (22.7% logic, 77.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.524ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_12 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.049ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.353ns (1.379 - 1.732)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y111.AQ     Tcko                  0.518   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X26Y92.C4      net (fanout=22)       1.296   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X27Y82.CX      net (fanout=17)       0.398   system_i/axi4_lite_M_ARVALID
+    SLICE_X27Y82.CMUX    Tcxc                  0.470   system_i/axi4_lite_S_RDATA[8]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o1
+    SLICE_X26Y76.D1      net (fanout=3)        1.216   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o1
+    SLICE_X26Y76.D       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o3
+    SLICE_X27Y62.A1      net (fanout=16)       1.774   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o
+    SLICE_X27Y62.CLK     Tas                   0.095   system_i/axi4_lite_M_RDATA[12]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid4
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_12
+    -------------------------------------------------  ---------------------------
+    Total                                      7.049ns (1.691ns logic, 5.358ns route)
+                                                       (24.0% logic, 76.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.530ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.039ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.357ns (1.375 - 1.732)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y111.AQ     Tcko                  0.518   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X26Y92.C4      net (fanout=22)       1.296   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X28Y83.CX      net (fanout=17)       0.740   system_i/axi4_lite_M_ARVALID
+    SLICE_X28Y83.CMUX    Tcxc                  0.470   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid11
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid111
+    SLICE_X26Y67.C1      net (fanout=9)        1.486   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid11
+    SLICE_X26Y67.CMUX    Tilo                  0.360   system_i/axi4_lite_M_RDATA[2]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid26_SW1
+    SLICE_X26Y67.A1      net (fanout=1)        0.964   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/N54
+    SLICE_X26Y67.CLK     Tas                   0.047   system_i/axi4_lite_M_RDATA[2]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid26
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_3
+    -------------------------------------------------  ---------------------------
+    Total                                      7.039ns (1.879ns logic, 5.160ns route)
+                                                       (26.7% logic, 73.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.530ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_5 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.040ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.356ns (1.379 - 1.735)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y104.BQ     Tcko                  0.456   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1
+    SLICE_X26Y92.C2      net (fanout=7)        1.396   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X27Y82.CX      net (fanout=17)       0.398   system_i/axi4_lite_M_ARVALID
+    SLICE_X27Y82.CMUX    Tcxc                  0.470   system_i/axi4_lite_S_RDATA[8]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o1
+    SLICE_X26Y76.D1      net (fanout=3)        1.216   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o1
+    SLICE_X26Y76.D       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o3
+    SLICE_X26Y62.B1      net (fanout=16)       1.779   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o
+    SLICE_X26Y62.CLK     Tas                   0.043   system_i/axi4_lite_M_RDATA[4]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid28
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_5
+    -------------------------------------------------  ---------------------------
+    Total                                      7.040ns (1.577ns logic, 5.463ns route)
+                                                       (22.4% logic, 77.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.537ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/reset_0/reset_0/Peripheral_aresetn_0 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/is_Read_X_Y_Z_FSM_FFd1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.401ns (Levels of Logic = 1)
+  Clock Path Skew:      0.012ns (0.929 - 0.917)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/reset_0/reset_0/Peripheral_aresetn_0 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/is_Read_X_Y_Z_FSM_FFd1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y42.DQ      Tcko                  0.518   system_i/FPGA_ARESETN
+                                                       system_i/reset_0/reset_0/Peripheral_aresetn_0
+    SLICE_X27Y79.A1      net (fanout=1)        2.530   system_i/FPGA_ARESETN
+    SLICE_X27Y79.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset1
+    SLICE_X5Y35.SR       net (fanout=60)       3.824   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset
+    SLICE_X5Y35.CLK      Trck                  0.405   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/is_Read_X_Y_Z_FSM_FFd2
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/is_Read_X_Y_Z_FSM_FFd1
+    -------------------------------------------------  ---------------------------
+    Total                                      7.401ns (1.047ns logic, 6.354ns route)
+                                                       (14.1% logic, 85.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.544ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/reset_0/reset_0/Peripheral_aresetn_0 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.382ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/reset_0/reset_0/Peripheral_aresetn_0 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y42.DQ      Tcko                  0.518   system_i/FPGA_ARESETN
+                                                       system_i/reset_0/reset_0/Peripheral_aresetn_0
+    SLICE_X27Y79.A1      net (fanout=1)        2.530   system_i/FPGA_ARESETN
+    SLICE_X27Y79.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset1
+    SLICE_X6Y24.SR       net (fanout=60)       3.891   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset
+    SLICE_X6Y24.CLK      Trck                  0.319   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt[2]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt_0
+    -------------------------------------------------  ---------------------------
+    Total                                      7.382ns (0.961ns logic, 6.421ns route)
+                                                       (13.0% logic, 87.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.544ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/reset_0/reset_0/Peripheral_aresetn_0 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.382ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/reset_0/reset_0/Peripheral_aresetn_0 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y42.DQ      Tcko                  0.518   system_i/FPGA_ARESETN
+                                                       system_i/reset_0/reset_0/Peripheral_aresetn_0
+    SLICE_X27Y79.A1      net (fanout=1)        2.530   system_i/FPGA_ARESETN
+    SLICE_X27Y79.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset1
+    SLICE_X6Y24.SR       net (fanout=60)       3.891   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset
+    SLICE_X6Y24.CLK      Trck                  0.319   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt[2]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt_2
+    -------------------------------------------------  ---------------------------
+    Total                                      7.382ns (0.961ns logic, 6.421ns route)
+                                                       (13.0% logic, 87.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.544ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/reset_0/reset_0/Peripheral_aresetn_0 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.382ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/reset_0/reset_0/Peripheral_aresetn_0 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y42.DQ      Tcko                  0.518   system_i/FPGA_ARESETN
+                                                       system_i/reset_0/reset_0/Peripheral_aresetn_0
+    SLICE_X27Y79.A1      net (fanout=1)        2.530   system_i/FPGA_ARESETN
+    SLICE_X27Y79.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset1
+    SLICE_X6Y24.SR       net (fanout=60)       3.891   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset
+    SLICE_X6Y24.CLK      Trck                  0.319   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt[2]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt_1
+    -------------------------------------------------  ---------------------------
+    Total                                      7.382ns (0.961ns logic, 6.421ns route)
+                                                       (13.0% logic, 87.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.547ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt_2 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/Unit_Delay_Enabled1_out1_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.087ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.292ns (1.521 - 1.813)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt_2 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/Unit_Delay_Enabled1_out1_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y24.DQ       Tcko                  0.518   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt[2]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt_2
+    SLICE_X16Y45.A1      net (fanout=16)       2.166   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt[2]
+    SLICE_X16Y45.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/READ_SHIFT_reg
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/is_Read_X_Y_Z_FSM_FFd3-In1_SW2_G
+    SLICE_X16Y45.B5      net (fanout=1)        0.286   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/N78
+    SLICE_X16Y45.B       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/READ_SHIFT_reg
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/Mmux_READ_SHIFT_reg_next11_SW0
+    SLICE_X16Y45.D5      net (fanout=1)        0.503   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/N81
+    SLICE_X16Y45.D       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/READ_SHIFT_reg
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/Mmux_READ_SHIFT_reg_next11
+    SLICE_X33Y62.A1      net (fanout=48)       2.289   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/READ_SHIFT
+    SLICE_X33Y62.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_XYZ_shiftRegister/u_shiftRegister_48/XYZ_int[46]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_XYZ_shiftRegister/u_shiftRegister_48/Mmux_shiftRegister_48_1_output.XYZ_int_temp381
+    SLICE_X28Y65.DX      net (fanout=1)        0.771   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/y_1[3]
+    SLICE_X28Y65.CLK     Tdick                 0.058   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/Unit_Delay_Enabled1_out1[3]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/Unit_Delay_Enabled1_out1_3
+    -------------------------------------------------  ---------------------------
+    Total                                      7.087ns (1.072ns logic, 6.015ns route)
+                                                       (15.1% logic, 84.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.558ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_14 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.014ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.354ns (1.378 - 1.732)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_14
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y111.AQ     Tcko                  0.518   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X26Y92.C4      net (fanout=22)       1.296   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X26Y83.CX      net (fanout=17)       0.407   system_i/axi4_lite_M_ARVALID
+    SLICE_X26Y83.CMUX    Tcxc                  0.488   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o2
+    SLICE_X26Y76.B2      net (fanout=1)        1.282   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o2
+    SLICE_X26Y76.B       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o3
+    SLICE_X26Y64.A2      net (fanout=17)       1.694   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o
+    SLICE_X26Y64.CLK     Tas                   0.047   system_i/axi4_lite_M_RDATA[13]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid6
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_14
+    -------------------------------------------------  ---------------------------
+    Total                                      7.014ns (1.661ns logic, 5.353ns route)
+                                                       (23.7% logic, 76.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.571ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_5 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.002ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.353ns (1.379 - 1.732)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y111.AQ     Tcko                  0.518   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X26Y92.C4      net (fanout=22)       1.296   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X27Y82.CX      net (fanout=17)       0.398   system_i/axi4_lite_M_ARVALID
+    SLICE_X27Y82.CMUX    Tcxc                  0.470   system_i/axi4_lite_S_RDATA[8]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o1
+    SLICE_X26Y76.D1      net (fanout=3)        1.216   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o1
+    SLICE_X26Y76.D       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o3
+    SLICE_X26Y62.B1      net (fanout=16)       1.779   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o
+    SLICE_X26Y62.CLK     Tas                   0.043   system_i/axi4_lite_M_RDATA[4]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid28
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_5
+    -------------------------------------------------  ---------------------------
+    Total                                      7.002ns (1.639ns logic, 5.363ns route)
+                                                       (23.4% logic, 76.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.583ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/reset_0/reset_0/Peripheral_aresetn_0 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/is_Read_X_Y_Z_FSM_FFd2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.355ns (Levels of Logic = 1)
+  Clock Path Skew:      0.012ns (0.929 - 0.917)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/reset_0/reset_0/Peripheral_aresetn_0 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/is_Read_X_Y_Z_FSM_FFd2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y42.DQ      Tcko                  0.518   system_i/FPGA_ARESETN
+                                                       system_i/reset_0/reset_0/Peripheral_aresetn_0
+    SLICE_X27Y79.A1      net (fanout=1)        2.530   system_i/FPGA_ARESETN
+    SLICE_X27Y79.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset1
+    SLICE_X5Y35.SR       net (fanout=60)       3.824   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset
+    SLICE_X5Y35.CLK      Trck                  0.359   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/is_Read_X_Y_Z_FSM_FFd2
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/is_Read_X_Y_Z_FSM_FFd2
+    -------------------------------------------------  ---------------------------
+    Total                                      7.355ns (1.001ns logic, 6.354ns route)
+                                                       (13.6% logic, 86.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.587ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.983ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.356ns (1.379 - 1.735)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y104.BQ     Tcko                  0.456   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1
+    SLICE_X26Y92.C2      net (fanout=7)        1.396   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X26Y84.CX      net (fanout=17)       0.648   system_i/axi4_lite_M_ARVALID
+    SLICE_X26Y84.CMUX    Tcxc                  0.488   system_i/axi4_lite/axi4_lite/mi_register_slice_bank/gen_reg_slot[0].register_slice_inst/reset
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o2
+    SLICE_X27Y80.C2      net (fanout=1)        0.994   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o2
+    SLICE_X27Y80.C       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o3
+    SLICE_X26Y62.C2      net (fanout=17)       1.674   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o
+    SLICE_X26Y62.CLK     Tas                   0.045   system_i/axi4_lite_M_RDATA[4]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid27
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_4
+    -------------------------------------------------  ---------------------------
+    Total                                      6.983ns (1.597ns logic, 5.386ns route)
+                                                       (22.9% logic, 77.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.593ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/reset_0/reset_0/Peripheral_aresetn_0 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/Delay7_out1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.337ns (Levels of Logic = 1)
+  Clock Path Skew:      0.004ns (0.921 - 0.917)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/reset_0/reset_0/Peripheral_aresetn_0 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/Delay7_out1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y42.DQ      Tcko                  0.518   system_i/FPGA_ARESETN
+                                                       system_i/reset_0/reset_0/Peripheral_aresetn_0
+    SLICE_X27Y79.A1      net (fanout=1)        2.530   system_i/FPGA_ARESETN
+    SLICE_X27Y79.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset1
+    SLICE_X3Y27.SR       net (fanout=60)       3.760   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset
+    SLICE_X3Y27.CLK      Trck                  0.405   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/Delay7_out1
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/Delay7_out1
+    -------------------------------------------------  ---------------------------
+    Total                                      7.337ns (1.047ns logic, 6.290ns route)
+                                                       (14.3% logic, 85.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.600ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.971ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.355ns (1.380 - 1.735)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y104.BQ     Tcko                  0.456   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1
+    SLICE_X26Y92.C2      net (fanout=7)        1.396   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X26Y82.CX      net (fanout=17)       0.648   system_i/axi4_lite_M_ARVALID
+    SLICE_X26Y82.CMUX    Tcxc                  0.488   system_i/axi4_lite_S_RDATA[5]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid112
+    SLICE_X27Y80.C1      net (fanout=10)       0.832   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid111
+    SLICE_X27Y80.C       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o3
+    SLICE_X26Y61.C2      net (fanout=17)       1.824   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o
+    SLICE_X26Y61.CLK     Tas                   0.045   system_i/axi4_lite_M_RDATA[7]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid30
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_7
+    -------------------------------------------------  ---------------------------
+    Total                                      6.971ns (1.597ns logic, 5.374ns route)
+                                                       (22.9% logic, 77.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.601ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_8 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.970ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.355ns (1.380 - 1.735)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y104.BQ     Tcko                  0.456   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1
+    SLICE_X26Y92.C2      net (fanout=7)        1.396   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X28Y83.CX      net (fanout=17)       0.740   system_i/axi4_lite_M_ARVALID
+    SLICE_X28Y83.CMUX    Tcxc                  0.470   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid11
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid111
+    SLICE_X26Y61.D1      net (fanout=9)        1.738   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid11
+    SLICE_X26Y61.DMUX    Tilo                  0.387   system_i/axi4_lite_M_RDATA[7]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid31_SW1
+    SLICE_X26Y61.B5      net (fanout=1)        0.582   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/N64
+    SLICE_X26Y61.CLK     Tas                   0.043   system_i/axi4_lite_M_RDATA[7]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid31
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_8
+    -------------------------------------------------  ---------------------------
+    Total                                      6.970ns (1.840ns logic, 5.130ns route)
+                                                       (26.4% logic, 73.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.628ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.945ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.353ns (1.379 - 1.732)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y111.AQ     Tcko                  0.518   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X26Y92.C4      net (fanout=22)       1.296   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X26Y84.CX      net (fanout=17)       0.648   system_i/axi4_lite_M_ARVALID
+    SLICE_X26Y84.CMUX    Tcxc                  0.488   system_i/axi4_lite/axi4_lite/mi_register_slice_bank/gen_reg_slot[0].register_slice_inst/reset
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o2
+    SLICE_X27Y80.C2      net (fanout=1)        0.994   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o2
+    SLICE_X27Y80.C       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o3
+    SLICE_X26Y62.C2      net (fanout=17)       1.674   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o
+    SLICE_X26Y62.CLK     Tas                   0.045   system_i/axi4_lite_M_RDATA[4]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid27
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_4
+    -------------------------------------------------  ---------------------------
+    Total                                      6.945ns (1.659ns logic, 5.286ns route)
+                                                       (23.9% logic, 76.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.631ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.937ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.358ns (1.377 - 1.735)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y104.BQ     Tcko                  0.456   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1
+    SLICE_X26Y92.C2      net (fanout=7)        1.396   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X26Y84.CX      net (fanout=17)       0.648   system_i/axi4_lite_M_ARVALID
+    SLICE_X26Y84.CMUX    Tcxc                  0.488   system_i/axi4_lite/axi4_lite/mi_register_slice_bank/gen_reg_slot[0].register_slice_inst/reset
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o2
+    SLICE_X27Y80.C2      net (fanout=1)        0.994   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o2
+    SLICE_X27Y80.C       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o3
+    SLICE_X26Y65.A1      net (fanout=17)       1.626   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o
+    SLICE_X26Y65.CLK     Tas                   0.047   system_i/axi4_lite_M_RDATA[15]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid12
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_1
+    -------------------------------------------------  ---------------------------
+    Total                                      6.937ns (1.599ns logic, 5.338ns route)
+                                                       (23.1% logic, 76.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.633ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/write_reg_CMD_VLD (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_XYZ_shiftRegister/u_shiftRegister_48/XYZ_int_46 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.205ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.088ns (0.767 - 0.855)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/write_reg_CMD_VLD to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_XYZ_shiftRegister/u_shiftRegister_48/XYZ_int_46
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y76.AQ      Tcko                  0.456   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/write_reg_CMD_VLD
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/write_reg_CMD_VLD
+    SLICE_X0Y49.C5       net (fanout=8)        2.463   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/write_reg_CMD_VLD
+    SLICE_X0Y49.C        Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Control_Signals/Unit_Delay_Enabled_Resettable_zero_delay
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/Switch_out11
+    SLICE_X21Y49.A2      net (fanout=4)        1.465   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/XYZ_Valid_sig
+    SLICE_X21Y49.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/CSn_reg
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/Mmux_XYZ_Valid_reg_next11
+    SLICE_X32Y62.C1      net (fanout=50)       1.872   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/CSn
+    SLICE_X32Y62.C       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/Unit_Delay_Enabled1_out1[7]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_XYZ_shiftRegister/u_shiftRegister_48/Mmux_shiftRegister_48_1_output.XYZ_int_temp411
+    SLICE_X33Y62.DX      net (fanout=1)        0.519   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/y_1[6]
+    SLICE_X33Y62.CLK     Tdick                 0.058   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_XYZ_shiftRegister/u_shiftRegister_48/XYZ_int[46]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_XYZ_shiftRegister/u_shiftRegister_48/XYZ_int_46
+    -------------------------------------------------  ---------------------------
+    Total                                      7.205ns (0.886ns logic, 6.319ns route)
+                                                       (12.3% logic, 87.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.636ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_10 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.933ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.357ns (1.378 - 1.735)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y104.BQ     Tcko                  0.456   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1
+    SLICE_X26Y92.C2      net (fanout=7)        1.396   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X28Y83.CX      net (fanout=17)       0.740   system_i/axi4_lite_M_ARVALID
+    SLICE_X28Y83.CMUX    Tcxc                  0.470   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid11
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid111
+    SLICE_X26Y63.D5      net (fanout=9)        1.531   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid11
+    SLICE_X26Y63.DMUX    Tilo                  0.350   system_i/axi4_lite_M_RDATA[10]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid2_SW1
+    SLICE_X26Y63.C4      net (fanout=1)        0.787   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/N38
+    SLICE_X26Y63.CLK     Tas                   0.045   system_i/axi4_lite_M_RDATA[10]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid2
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_10
+    -------------------------------------------------  ---------------------------
+    Total                                      6.933ns (1.805ns logic, 5.128ns route)
+                                                       (26.0% logic, 74.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.641ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.933ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.352ns (1.380 - 1.732)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y111.AQ     Tcko                  0.518   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X26Y92.C4      net (fanout=22)       1.296   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X26Y82.CX      net (fanout=17)       0.648   system_i/axi4_lite_M_ARVALID
+    SLICE_X26Y82.CMUX    Tcxc                  0.488   system_i/axi4_lite_S_RDATA[5]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid112
+    SLICE_X27Y80.C1      net (fanout=10)       0.832   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid111
+    SLICE_X27Y80.C       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o3
+    SLICE_X26Y61.C2      net (fanout=17)       1.824   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o
+    SLICE_X26Y61.CLK     Tas                   0.045   system_i/axi4_lite_M_RDATA[7]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid30
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_7
+    -------------------------------------------------  ---------------------------
+    Total                                      6.933ns (1.659ns logic, 5.274ns route)
+                                                       (23.9% logic, 76.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.642ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_8 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.932ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.352ns (1.380 - 1.732)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y111.AQ     Tcko                  0.518   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X26Y92.C4      net (fanout=22)       1.296   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X28Y83.CX      net (fanout=17)       0.740   system_i/axi4_lite_M_ARVALID
+    SLICE_X28Y83.CMUX    Tcxc                  0.470   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid11
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid111
+    SLICE_X26Y61.D1      net (fanout=9)        1.738   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid11
+    SLICE_X26Y61.DMUX    Tilo                  0.387   system_i/axi4_lite_M_RDATA[7]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid31_SW1
+    SLICE_X26Y61.B5      net (fanout=1)        0.582   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/N64
+    SLICE_X26Y61.CLK     Tas                   0.043   system_i/axi4_lite_M_RDATA[7]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid31
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_8
+    -------------------------------------------------  ---------------------------
+    Total                                      6.932ns (1.902ns logic, 5.030ns route)
+                                                       (27.4% logic, 72.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.645ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_14 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.924ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.357ns (1.378 - 1.735)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_14
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y104.BQ     Tcko                  0.456   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1
+    SLICE_X26Y92.C2      net (fanout=7)        1.396   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X26Y80.A1      net (fanout=17)       1.123   system_i/axi4_lite_M_ARVALID
+    SLICE_X26Y80.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/top_addr_sel[3]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/mux711
+    SLICE_X26Y76.B4      net (fanout=3)        0.802   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/top_addr_sel[3]
+    SLICE_X26Y76.B       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o3
+    SLICE_X26Y64.A2      net (fanout=17)       1.694   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o
+    SLICE_X26Y64.CLK     Tas                   0.047   system_i/axi4_lite_M_RDATA[13]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid6
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_14
+    -------------------------------------------------  ---------------------------
+    Total                                      6.924ns (1.235ns logic, 5.689ns route)
+                                                       (17.8% logic, 82.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.645ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_15 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.923ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.358ns (1.377 - 1.735)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y104.BQ     Tcko                  0.456   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1
+    SLICE_X26Y92.C2      net (fanout=7)        1.396   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X26Y84.CX      net (fanout=17)       0.648   system_i/axi4_lite_M_ARVALID
+    SLICE_X26Y84.CMUX    Tcxc                  0.488   system_i/axi4_lite/axi4_lite/mi_register_slice_bank/gen_reg_slot[0].register_slice_inst/reset
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o2
+    SLICE_X27Y80.C2      net (fanout=1)        0.994   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o2
+    SLICE_X27Y80.C       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o3
+    SLICE_X26Y65.B1      net (fanout=17)       1.616   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o
+    SLICE_X26Y65.CLK     Tas                   0.043   system_i/axi4_lite_M_RDATA[15]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid7
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_15
+    -------------------------------------------------  ---------------------------
+    Total                                      6.923ns (1.595ns logic, 5.328ns route)
+                                                       (23.0% logic, 77.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.665ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.903ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.358ns (1.377 - 1.735)
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y104.BQ     Tcko                  0.456   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1
+    SLICE_X26Y92.C2      net (fanout=7)        1.396   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d[1]
+    SLICE_X26Y92.CMUX    Tilo                  0.360   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_aw/m_ready_d[1]
+                                                       system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1
+    SLICE_X26Y83.A6      net (fanout=2)        0.674   system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369[1]
+    SLICE_X26Y83.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/axi4_lite/axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1
+    SLICE_X26Y83.CX      net (fanout=17)       0.407   system_i/axi4_lite_M_ARVALID
+    SLICE_X26Y83.CMUX    Tcxc                  0.488   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/waddr[15]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o2
+    SLICE_X26Y76.B2      net (fanout=1)        1.282   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o2
+    SLICE_X26Y76.B       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_Y_INV_3_o
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o3
+    SLICE_X26Y65.A2      net (fanout=17)       1.545   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/decode_sel_XYZ_Valid_INV_5_o
+    SLICE_X26Y65.CLK     Tas                   0.047   system_i/axi4_lite_M_RDATA[15]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid12
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_inst/u_pmodacl_ip_14a_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_1
+    -------------------------------------------------  ---------------------------
+    Total                                      6.903ns (1.599ns logic, 5.304ns route)
+                                                       (23.2% logic, 76.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  12.666ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               system_i/reset_0/reset_0/Peripheral_aresetn_0 (FF)
+  Destination:          system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt_4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      7.260ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         system_i/FPGA_CLK rising at 0.000ns
+  Destination Clock:    system_i/FPGA_CLK rising at 20.000ns
+  Clock Uncertainty:    0.074ns
+
+  Clock Uncertainty:          0.074ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.130ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: system_i/reset_0/reset_0/Peripheral_aresetn_0 to system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y42.DQ      Tcko                  0.518   system_i/FPGA_ARESETN
+                                                       system_i/reset_0/reset_0/Peripheral_aresetn_0
+    SLICE_X27Y79.A1      net (fanout=1)        2.530   system_i/FPGA_ARESETN
+    SLICE_X27Y79.A       Tilo                  0.124   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset1
+    SLICE_X6Y25.SR       net (fanout=60)       3.769   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset
+    SLICE_X6Y25.CLK      Trck                  0.319   system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt[4]
+                                                       system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Read_X_Y_Z/clock_cnt_4
+    -------------------------------------------------  ---------------------------
+    Total                                      7.260ns (0.961ns logic, 6.299ns route)
+                                                       (13.2% logic, 86.8% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_system_i_clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0 = PERIOD
+        TIMEGRP
+        "system_i_clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0"
+        TS_clk_fpga_0 * 0.5 HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 17.845ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.155ns (464.037MHz) (Tbcper_I(Fmax))
+  Physical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_CLKOUT0_BUFG_INST/I0
+  Logical resource: system_i/clock_generator_0/clock_generator_0/MMCM1_CLKOUT0_BUFG_INST/I0
+  Location pin: BUFGCTRL_X0Y0.I0
+  Clock network: system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKOUT0
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.980ns (Tmpw)
+  Physical resource: system_i/reset_0/reset_0/EXT_LPF/asr_lpf_3/CLK
+  Logical resource: system_i/reset_0/reset_0/EXT_LPF/Mshreg_asr_lpf_0/CLK
+  Location pin: SLICE_X6Y11.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.980ns (Tmpw)
+  Physical resource: system_i/reset_0/reset_0/EXT_LPF/asr_lpf_3/CLK
+  Logical resource: system_i/reset_0/reset_0/EXT_LPF/Mshreg_asr_lpf_0/CLK
+  Location pin: SLICE_X6Y11.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.980ns (Tmpw)
+  Physical resource: system_i/reset_0/reset_0/EXT_LPF/srl_time_out/CLK
+  Logical resource: system_i/reset_0/reset_0/EXT_LPF/POR_SRL_I/CLK
+  Location pin: SLICE_X6Y17.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 18.040ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.980ns (Tmpw)
+  Physical resource: system_i/reset_0/reset_0/EXT_LPF/srl_time_out/CLK
+  Logical resource: system_i/reset_0/reset_0/EXT_LPF/POR_SRL_I/CLK
+  Location pin: SLICE_X6Y17.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.500ns (Tcl)
+  Physical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_hot[0]/CLK
+  Logical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_hot_0/CK
+  Location pin: SLICE_X27Y116.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.500ns (Tch)
+  Physical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_hot[0]/CLK
+  Logical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_hot_0/CK
+  Location pin: SLICE_X27Y116.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.000ns (1000.000MHz) (Tcp)
+  Physical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_hot[0]/CLK
+  Logical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_hot_0/CK
+  Location pin: SLICE_X27Y116.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.500ns (Tcl)
+  Physical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt[3]/CLK
+  Logical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt_0/CK
+  Location pin: SLICE_X27Y109.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.500ns (Tch)
+  Physical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt[3]/CLK
+  Logical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt_0/CK
+  Location pin: SLICE_X27Y109.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.000ns (1000.000MHz) (Tcp)
+  Physical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt[3]/CLK
+  Logical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt_0/CK
+  Location pin: SLICE_X27Y109.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.500ns (Tcl)
+  Physical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt[3]/CLK
+  Logical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt_1/CK
+  Location pin: SLICE_X27Y109.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.500ns (Tch)
+  Physical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt[3]/CLK
+  Logical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt_1/CK
+  Location pin: SLICE_X27Y109.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.000ns (1000.000MHz) (Tcp)
+  Physical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt[3]/CLK
+  Logical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt_1/CK
+  Location pin: SLICE_X27Y109.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.500ns (Tcl)
+  Physical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt[3]/CLK
+  Logical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt_2/CK
+  Location pin: SLICE_X27Y109.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.500ns (Tch)
+  Physical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt[3]/CLK
+  Logical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt_2/CK
+  Location pin: SLICE_X27Y109.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.000ns (1000.000MHz) (Tcp)
+  Physical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt[3]/CLK
+  Logical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt_2/CK
+  Location pin: SLICE_X27Y109.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.500ns (Tcl)
+  Physical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt[3]/CLK
+  Logical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt_3/CK
+  Location pin: SLICE_X27Y109.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.500ns (Tch)
+  Physical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt[3]/CLK
+  Logical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt_3/CK
+  Location pin: SLICE_X27Y109.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.000ns (1000.000MHz) (Tcp)
+  Physical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt[3]/CLK
+  Logical resource: system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.gen_decerr.decerr_slave_inst/read_cnt_3/CK
+  Location pin: SLICE_X27Y109.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.500ns (Tcl)
+  Physical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/SDI_reg/CLK
+  Logical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/SCK_reg/CK
+  Location pin: SLICE_X1Y49.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.500ns (Tch)
+  Physical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/SDI_reg/CLK
+  Logical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/SCK_reg/CK
+  Location pin: SLICE_X1Y49.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.000ns (1000.000MHz) (Tcp)
+  Physical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/SDI_reg/CLK
+  Logical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/SCK_reg/CK
+  Location pin: SLICE_X1Y49.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.500ns (Trpw)
+  Physical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/SDI_reg/SR
+  Logical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/SCK_reg/SR
+  Location pin: SLICE_X1Y49.SR
+  Clock network: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.500ns (Tcl)
+  Physical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/SDI_reg/CLK
+  Logical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/Delay5_out1/CK
+  Location pin: SLICE_X1Y49.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.500ns (Tch)
+  Physical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/SDI_reg/CLK
+  Logical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/Delay5_out1/CK
+  Location pin: SLICE_X1Y49.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.000ns (1000.000MHz) (Tcp)
+  Physical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/SDI_reg/CLK
+  Logical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/Delay5_out1/CK
+  Location pin: SLICE_X1Y49.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.500ns (Trpw)
+  Physical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/SDI_reg/SR
+  Logical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/Delay5_out1/SR
+  Location pin: SLICE_X1Y49.SR
+  Clock network: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/reset
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.500ns (Tcl)
+  Physical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/SDI_reg/CLK
+  Logical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/Delay6_out1/CK
+  Location pin: SLICE_X1Y49.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+Slack: 19.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.500ns (Tch)
+  Physical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/u_Write/SDI_reg/CLK
+  Logical resource: system_i/pmodacl_ip_14a_hdl_dut_pcore_0/pmodacl_ip_14a_hdl_dut_pcore_0/u_pmodacl_ip_14a_hdl_dut_pcore_dut_inst/u_hdl_dut/Delay6_out1/CK
+  Location pin: SLICE_X1Y49.CLK
+  Clock network: system_i/FPGA_CLK
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_clk_fpga_0
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_clk_fpga_0                  |     10.000ns|      4.000ns|      3.781ns|            0|            0|            0|        13253|
+| TS_system_i_clock_generator_0_|     20.000ns|      7.562ns|          N/A|            0|            0|        13253|            0|
+| clock_generator_0_SIG_MMCM1_CL|             |             |             |             |             |             |             |
+| KOUT0                         |             |             |             |             |             |             |             |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+No constraints were found to generate data for the Data Sheet Report section.
+Use the Advanced Analysis (-a) option or generate global constraints for each
+clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 13258 paths, 0 nets, and 2212 connections
+
+Design statistics:
+   Minimum period:   7.562ns{1}   (Maximum frequency: 132.240MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Tue Feb 17 15:38:17 2015 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 630 MB
+
+
+

@@ -1,0 +1,16 @@
+# ZedBoard
+
+
+# Timing Specifications Constrain
+
+
+# FPGA Pin Location Constrain
+
+NET "pmodacl_ip_14a_hdl_dut_pcore_0_PmodJA1_in_pin" LOC = AA9;
+NET "pmodacl_ip_14a_hdl_dut_pcore_0_PmodJA1_in_pin" IOSTANDARD = LVCMOS33;
+NET "pmodacl_ip_14a_hdl_dut_pcore_0_PmodJA1_out_pin[0]" LOC = Y11;
+NET "pmodacl_ip_14a_hdl_dut_pcore_0_PmodJA1_out_pin[0]" IOSTANDARD = LVCMOS33;
+NET "pmodacl_ip_14a_hdl_dut_pcore_0_PmodJA1_out_pin[1]" LOC = AA11;
+NET "pmodacl_ip_14a_hdl_dut_pcore_0_PmodJA1_out_pin[1]" IOSTANDARD = LVCMOS33;
+NET "pmodacl_ip_14a_hdl_dut_pcore_0_PmodJA1_out_pin[2]" LOC = Y10;
+NET "pmodacl_ip_14a_hdl_dut_pcore_0_PmodJA1_out_pin[2]" IOSTANDARD = LVCMOS33;

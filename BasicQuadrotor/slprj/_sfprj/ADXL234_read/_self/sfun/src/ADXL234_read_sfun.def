@@ -1,0 +1,3 @@
+LIBRARY ADXL234_read_sfun.mexw64
+EXPORTS
+mexFunction

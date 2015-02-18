@@ -1,0 +1,8 @@
+ --> hdl_dut_pkg
+PmodACL_IP_14a/hdl_dut/Control_Signals --> Control_Signals
+PmodACL_IP_14a/hdl_dut/XYZ_shiftRegister/rising_edge_detect --> rising_edge_detect
+PmodACL_IP_14a/hdl_dut/XYZ_shiftRegister/shiftRegister_48 --> shiftRegister_48
+PmodACL_IP_14a/hdl_dut/XYZ_shiftRegister --> XYZ_shiftRegister
+PmodACL_IP_14a/hdl_dut/Read_X_Y_Z --> Read_X_Y_Z
+PmodACL_IP_14a/hdl_dut/Write --> Write
+PmodACL_IP_14a/hdl_dut --> hdl_dut
