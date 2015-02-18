@@ -1,0 +1,1203 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\synthesis\xst_temp_dir\
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> 
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input Format                       : MIXED
+Input File Name                    : "system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper_xst.prj"
+Verilog Include Directory          : {"C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+
+---- Target Parameters
+Target Device                      : xc7z020clg484-1
+Output File Name                   : "system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper.ngc"
+
+---- Source Options
+Top Module Name                    : system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper
+
+---- Target Options
+Add IO Buffers                     : NO
+
+---- General Options
+Optimization Goal                  : speed
+Netlist Hierarchy                  : as_optimized
+Optimization Effort                : 1
+Hierarchy Separator                : /
+
+---- Other Options
+Cores Search Directories           : {./}
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/hdl_dut_pkg.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing package <hdl_dut_pkg>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/Control_Signals.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <Control_Signals>.
+Parsing architecture <rtl> of entity <control_signals>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/rising_edge_detect.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <rising_edge_detect>.
+Parsing architecture <rtl> of entity <rising_edge_detect>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/shiftRegister_48.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <shiftRegister_48>.
+Parsing architecture <rtl> of entity <shiftregister_48>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/XYZ_shiftRegister.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <XYZ_shiftRegister>.
+Parsing architecture <rtl> of entity <xyz_shiftregister>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/Read_X_Y_Z.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <Read_X_Y_Z>.
+Parsing architecture <rtl> of entity <read_x_y_z>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/Write.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <Write>.
+Parsing architecture <rtl> of entity <write>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/ADXL345_read.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <ADXL345_read>.
+Parsing architecture <rtl> of entity <adxl345_read>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/Calculate_f_coeff.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <Calculate_f_coeff>.
+Parsing architecture <rtl> of entity <calculate_f_coeff>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/Chart.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <Chart>.
+Parsing architecture <rtl> of entity <chart>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/PWM_Motor1.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <PWM_Motor1>.
+Parsing architecture <rtl> of entity <pwm_motor1>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/Calculate_f_coeff_block.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <Calculate_f_coeff_block>.
+Parsing architecture <rtl> of entity <calculate_f_coeff_block>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/PWM_Motor2.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <PWM_Motor2>.
+Parsing architecture <rtl> of entity <pwm_motor2>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/hdl_dut.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <hdl_dut>.
+Parsing architecture <rtl> of entity <hdl_dut>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/basicquadrotorcontrol_hdl_dut_pcore_dut.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <basicquadrotorcontrol_hdl_dut_pcore_dut>.
+Parsing architecture <rtl> of entity <basicquadrotorcontrol_hdl_dut_pcore_dut>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module>.
+Parsing architecture <rtl> of entity <basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/basicquadrotorcontrol_hdl_dut_pcore_addr_decoder.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <basicquadrotorcontrol_hdl_dut_pcore_addr_decoder>.
+Parsing architecture <rtl> of entity <basicquadrotorcontrol_hdl_dut_pcore_addr_decoder>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/basicquadrotorcontrol_hdl_dut_pcore_axi_lite.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <basicquadrotorcontrol_hdl_dut_pcore_axi_lite>.
+Parsing architecture <rtl> of entity <basicquadrotorcontrol_hdl_dut_pcore_axi_lite>.
+Parsing VHDL file "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/basicquadrotorcontrol_hdl_dut_pcore.vhd" into library basicquadrotorcontrol_hdl_dut_pcore_v1_00_a
+Parsing entity <basicquadrotorcontrol_hdl_dut_pcore>.
+Parsing architecture <rtl> of entity <basicquadrotorcontrol_hdl_dut_pcore>.
+Parsing VHDL file "C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\synthesis\parallel_run\hdl\system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper.vhd" into library work
+Parsing entity <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+Parsing architecture <STRUCTURE> of entity <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper> (architecture <STRUCTURE>) from library <work>.
+
+Elaborating entity <basicquadrotorcontrol_hdl_dut_pcore> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+Elaborating entity <basicquadrotorcontrol_hdl_dut_pcore_axi_lite> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+Elaborating entity <basicquadrotorcontrol_hdl_dut_pcore_addr_decoder> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+Elaborating entity <basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+Elaborating entity <basicquadrotorcontrol_hdl_dut_pcore_dut> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+Elaborating entity <hdl_dut> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+Elaborating entity <ADXL345_read> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+Elaborating entity <Write> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+Elaborating entity <Read_X_Y_Z> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+Elaborating entity <Control_Signals> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+Elaborating entity <XYZ_shiftRegister> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+Elaborating entity <rising_edge_detect> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+Elaborating entity <shiftRegister_48> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+Elaborating entity <PWM_Motor1> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+Elaborating entity <Calculate_f_coeff> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+Elaborating entity <Chart> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+Elaborating entity <PWM_Motor2> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+Elaborating entity <Calculate_f_coeff_block> (architecture <rtl>) from library <basicquadrotorcontrol_hdl_dut_pcore_v1_00_a>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+    Related source file is "C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\synthesis\parallel_run\hdl\system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper.vhd".
+    Summary:
+	no macro.
+Unit <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper> synthesized.
+
+Synthesizing Unit <basicquadrotorcontrol_hdl_dut_pcore>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/basicquadrotorcontrol_hdl_dut_pcore.vhd".
+INFO:Xst:3210 - "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/basicquadrotorcontrol_hdl_dut_pcore.vhd" line 193: Output port <ce_out> of the instance <u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <basicquadrotorcontrol_hdl_dut_pcore> synthesized.
+
+Synthesizing Unit <basicquadrotorcontrol_hdl_dut_pcore_axi_lite>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/basicquadrotorcontrol_hdl_dut_pcore_axi_lite.vhd".
+    Summary:
+	no macro.
+Unit <basicquadrotorcontrol_hdl_dut_pcore_axi_lite> synthesized.
+
+Synthesizing Unit <basicquadrotorcontrol_hdl_dut_pcore_addr_decoder>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/basicquadrotorcontrol_hdl_dut_pcore_addr_decoder.vhd".
+WARNING:Xst:647 - Input <rd_enb> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <write_reg_axi_enable>.
+    Found 16-bit register for signal <read_reg_Y>.
+    Found 16-bit register for signal <read_reg_Z>.
+    Found 16-bit register for signal <write_reg_CMD>.
+    Found 16-bit register for signal <read_reg_X>.
+    Found 8-bit register for signal <write_reg_duty_motor1>.
+    Found 8-bit register for signal <write_reg_duty_motor2>.
+    Found 1-bit register for signal <read_reg_XYZ_Valid>.
+    Found 1-bit register for signal <write_reg_CMD_VLD>.
+    Found 1-bit register for signal <write_reg_en_motor1>.
+    Found 1-bit register for signal <write_reg_en_motor2>.
+    Found 1-bit tristate buffer for signal <const_z<31>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<30>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<29>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<28>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<27>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<26>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<25>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<24>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<23>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<22>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<21>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<20>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<19>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<18>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<17>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<16>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<15>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<14>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<13>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<12>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<11>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<10>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<9>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<8>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<7>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<6>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<5>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<4>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<3>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<2>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<1>> created at line 130
+    Found 1-bit tristate buffer for signal <const_z<0>> created at line 130
+    Summary:
+	inferred  85 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+	inferred  32 Tristate(s).
+Unit <basicquadrotorcontrol_hdl_dut_pcore_addr_decoder> synthesized.
+
+Synthesizing Unit <basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module.vhd".
+WARNING:Xst:647 - Input <AXI4_Lite_WSTRB> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit register for signal <axi_lite_rstate>.
+    Found 8-bit register for signal <axi_lite_wstate>.
+    Found 32-bit register for signal <AXI4_Lite_RDATA_tmp>.
+    Found 32-bit register for signal <wdata>.
+    Found 16-bit register for signal <waddr>.
+    Found 1-bit register for signal <wr_enb_1>.
+    Found 1-bit register for signal <soft_reset>.
+    Found finite state machine <FSM_0> for signal <axi_lite_rstate>.
+    -----------------------------------------------------------------------
+    | States             | 2                                              |
+    | Transitions        | 4                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | AXI4_Lite_ARESETN (negative)                   |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00000000                                       |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <axi_lite_wstate>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | AXI4_Lite_ARESETN (negative)                   |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00000000                                       |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred  82 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+	inferred   2 Finite State Machine(s).
+Unit <basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module> synthesized.
+
+Synthesizing Unit <basicquadrotorcontrol_hdl_dut_pcore_dut>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/basicquadrotorcontrol_hdl_dut_pcore_dut.vhd".
+    Summary:
+	no macro.
+Unit <basicquadrotorcontrol_hdl_dut_pcore_dut> synthesized.
+
+Synthesizing Unit <hdl_dut>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/hdl_dut.vhd".
+INFO:Xst:3210 - "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/hdl_dut.vhd" line 162: Output port <DIR_1> of the instance <u_PWM_Motor1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/hdl_dut.vhd" line 174: Output port <DIR_1> of the instance <u_PWM_Motor2> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <hdl_dut> synthesized.
+
+Synthesizing Unit <ADXL345_read>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/ADXL345_read.vhd".
+    Found 16-bit register for signal <Unit_Delay_Enabled1_out1>.
+    Found 16-bit register for signal <Unit_Delay_Enabled2_out1>.
+    Found 16-bit register for signal <Unit_Delay_Enabled3_out1>.
+    Found 14-bit register for signal <Unit_Delay_Enabled_out1>.
+    Found 1-bit register for signal <Delay4_out1>.
+    Found 1-bit register for signal <Delay5_out1>.
+    Found 1-bit register for signal <Delay6_out1>.
+    Found 1-bit register for signal <Delay7_out1>.
+    Summary:
+	inferred  66 D-type flip-flop(s).
+Unit <ADXL345_read> synthesized.
+
+Synthesizing Unit <Write>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/Write.vhd".
+    Found 1-bit register for signal <SCK_reg>.
+    Found 1-bit register for signal <SDI_reg>.
+    Found 1-bit register for signal <CSn_CONV_reg>.
+    Found 5-bit register for signal <clock_cnt>.
+    Found 3-bit register for signal <is_Write>.
+    Found 9-bit register for signal <count>.
+    Found finite state machine <FSM_2> for signal <is_Write>.
+    -----------------------------------------------------------------------
+    | States             | 7                                              |
+    | Transitions        | 21                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | in_idle                                        |
+    | Power Up State     | in_clocking                                    |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 6-bit adder for signal <GND_47_o_GND_47_o_add_35_OUT> created at line 229.
+    Found 10-bit adder for signal <GND_47_o_GND_47_o_add_51_OUT> created at line 272.
+    Found 1-bit 7-to-1 multiplexer for signal <SCK_reg_next> created at line 92.
+    Found 1-bit 16-to-1 multiplexer for signal <_n0116> created at line 98.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  17 D-type flip-flop(s).
+	inferred  28 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <Write> synthesized.
+
+Synthesizing Unit <Read_X_Y_Z>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/Read_X_Y_Z.vhd".
+    Found 1-bit register for signal <SCK_reg>.
+    Found 1-bit register for signal <SDI_reg>.
+    Found 1-bit register for signal <XYZ_Valid_reg>.
+    Found 1-bit register for signal <CSn_reg>.
+    Found 6-bit register for signal <clock_cnt>.
+    Found 3-bit register for signal <is_Read_X_Y_Z>.
+    Found 9-bit register for signal <count>.
+    Found 1-bit register for signal <READ_SHIFT_reg>.
+    Found finite state machine <FSM_3> for signal <is_Read_X_Y_Z>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 26                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | in_idle                                        |
+    | Power Up State     | in_clocking                                    |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 7-bit adder for signal <GND_49_o_GND_49_o_add_74_OUT> created at line 292.
+    Found 10-bit adder for signal <GND_49_o_GND_49_o_add_76_OUT> created at line 300.
+    Found 1-bit 8-to-1 multiplexer for signal <SCK_reg_next> created at line 108.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  20 D-type flip-flop(s).
+	inferred  49 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <Read_X_Y_Z> synthesized.
+
+Synthesizing Unit <Control_Signals>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/Control_Signals.vhd".
+    Found 1-bit register for signal <Unit_Delay_Enabled_Resettable_zero_delay>.
+    Found 1-bit register for signal <Unit_Delay_Enabled_Resettable_switch_delay>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <Control_Signals> synthesized.
+
+Synthesizing Unit <XYZ_shiftRegister>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/XYZ_shiftRegister.vhd".
+    Summary:
+	no macro.
+Unit <XYZ_shiftRegister> synthesized.
+
+Synthesizing Unit <rising_edge_detect>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/rising_edge_detect.vhd".
+    Found 1-bit register for signal <Unit_Delay1_out1>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <rising_edge_detect> synthesized.
+
+Synthesizing Unit <shiftRegister_48>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/shiftRegister_48.vhd".
+    Found 48-bit register for signal <XYZ_int>.
+    Summary:
+	inferred  48 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <shiftRegister_48> synthesized.
+
+Synthesizing Unit <PWM_Motor1>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/PWM_Motor1.vhd".
+    Summary:
+	no macro.
+Unit <PWM_Motor1> synthesized.
+
+Synthesizing Unit <Calculate_f_coeff>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/Calculate_f_coeff.vhd".
+    Found 32-bit adder for signal <Sum_out1> created at line 69.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 Multiplexer(s).
+Unit <Calculate_f_coeff> synthesized.
+
+Synthesizing Unit <div_33u_32u>.
+    Related source file is "".
+    Found 65-bit adder for signal <n3577> created at line 0.
+    Found 65-bit adder for signal <GND_58_o_b[31]_add_1_OUT> created at line 0.
+    Found 64-bit adder for signal <n3581> created at line 0.
+    Found 64-bit adder for signal <GND_58_o_b[31]_add_3_OUT> created at line 0.
+    Found 63-bit adder for signal <n3585> created at line 0.
+    Found 63-bit adder for signal <GND_58_o_b[31]_add_5_OUT> created at line 0.
+    Found 62-bit adder for signal <n3589> created at line 0.
+    Found 62-bit adder for signal <GND_58_o_b[31]_add_7_OUT> created at line 0.
+    Found 61-bit adder for signal <n3593> created at line 0.
+    Found 61-bit adder for signal <GND_58_o_b[31]_add_9_OUT> created at line 0.
+    Found 60-bit adder for signal <n3597> created at line 0.
+    Found 60-bit adder for signal <GND_58_o_b[31]_add_11_OUT> created at line 0.
+    Found 59-bit adder for signal <n3601> created at line 0.
+    Found 59-bit adder for signal <GND_58_o_b[31]_add_13_OUT> created at line 0.
+    Found 58-bit adder for signal <n3605> created at line 0.
+    Found 58-bit adder for signal <GND_58_o_b[31]_add_15_OUT> created at line 0.
+    Found 57-bit adder for signal <n3609> created at line 0.
+    Found 57-bit adder for signal <GND_58_o_b[31]_add_17_OUT> created at line 0.
+    Found 56-bit adder for signal <n3613> created at line 0.
+    Found 56-bit adder for signal <GND_58_o_b[31]_add_19_OUT> created at line 0.
+    Found 55-bit adder for signal <n3617> created at line 0.
+    Found 55-bit adder for signal <GND_58_o_b[31]_add_21_OUT> created at line 0.
+    Found 54-bit adder for signal <n3621> created at line 0.
+    Found 54-bit adder for signal <GND_58_o_b[31]_add_23_OUT> created at line 0.
+    Found 53-bit adder for signal <n3625> created at line 0.
+    Found 53-bit adder for signal <GND_58_o_b[31]_add_25_OUT> created at line 0.
+    Found 52-bit adder for signal <n3629> created at line 0.
+    Found 52-bit adder for signal <GND_58_o_b[31]_add_27_OUT> created at line 0.
+    Found 51-bit adder for signal <n3633> created at line 0.
+    Found 51-bit adder for signal <GND_58_o_b[31]_add_29_OUT> created at line 0.
+    Found 50-bit adder for signal <n3637> created at line 0.
+    Found 50-bit adder for signal <GND_58_o_b[31]_add_31_OUT> created at line 0.
+    Found 49-bit adder for signal <n3641> created at line 0.
+    Found 49-bit adder for signal <GND_58_o_b[31]_add_33_OUT> created at line 0.
+    Found 48-bit adder for signal <n3645> created at line 0.
+    Found 48-bit adder for signal <GND_58_o_b[31]_add_35_OUT> created at line 0.
+    Found 47-bit adder for signal <n3649> created at line 0.
+    Found 47-bit adder for signal <GND_58_o_b[31]_add_37_OUT> created at line 0.
+    Found 46-bit adder for signal <n3653> created at line 0.
+    Found 46-bit adder for signal <GND_58_o_b[31]_add_39_OUT> created at line 0.
+    Found 45-bit adder for signal <n3657> created at line 0.
+    Found 45-bit adder for signal <GND_58_o_b[31]_add_41_OUT> created at line 0.
+    Found 44-bit adder for signal <n3661> created at line 0.
+    Found 44-bit adder for signal <GND_58_o_b[31]_add_43_OUT> created at line 0.
+    Found 43-bit adder for signal <n3665> created at line 0.
+    Found 43-bit adder for signal <GND_58_o_b[31]_add_45_OUT> created at line 0.
+    Found 42-bit adder for signal <n3669> created at line 0.
+    Found 42-bit adder for signal <GND_58_o_b[31]_add_47_OUT> created at line 0.
+    Found 41-bit adder for signal <n3673> created at line 0.
+    Found 41-bit adder for signal <GND_58_o_b[31]_add_49_OUT> created at line 0.
+    Found 40-bit adder for signal <n3677> created at line 0.
+    Found 40-bit adder for signal <GND_58_o_b[31]_add_51_OUT> created at line 0.
+    Found 39-bit adder for signal <n3681> created at line 0.
+    Found 39-bit adder for signal <GND_58_o_b[31]_add_53_OUT> created at line 0.
+    Found 38-bit adder for signal <n3685> created at line 0.
+    Found 38-bit adder for signal <GND_58_o_b[31]_add_55_OUT> created at line 0.
+    Found 37-bit adder for signal <n3689> created at line 0.
+    Found 37-bit adder for signal <GND_58_o_b[31]_add_57_OUT> created at line 0.
+    Found 36-bit adder for signal <n3693> created at line 0.
+    Found 36-bit adder for signal <GND_58_o_b[31]_add_59_OUT> created at line 0.
+    Found 35-bit adder for signal <n3697> created at line 0.
+    Found 35-bit adder for signal <GND_58_o_b[31]_add_61_OUT> created at line 0.
+    Found 34-bit adder for signal <n3701> created at line 0.
+    Found 34-bit adder for signal <GND_58_o_b[31]_add_63_OUT> created at line 0.
+    Found 33-bit adder for signal <n3705> created at line 0.
+    Found 33-bit adder for signal <a[32]_b[31]_add_65_OUT[32:0]> created at line 0.
+    Found 65-bit comparator lessequal for signal <BUS_0001> created at line 0
+    Found 64-bit comparator lessequal for signal <BUS_0002> created at line 0
+    Found 63-bit comparator lessequal for signal <BUS_0003> created at line 0
+    Found 62-bit comparator lessequal for signal <BUS_0004> created at line 0
+    Found 61-bit comparator lessequal for signal <BUS_0005> created at line 0
+    Found 60-bit comparator lessequal for signal <BUS_0006> created at line 0
+    Found 59-bit comparator lessequal for signal <BUS_0007> created at line 0
+    Found 58-bit comparator lessequal for signal <BUS_0008> created at line 0
+    Found 57-bit comparator lessequal for signal <BUS_0009> created at line 0
+    Found 56-bit comparator lessequal for signal <BUS_0010> created at line 0
+    Found 55-bit comparator lessequal for signal <BUS_0011> created at line 0
+    Found 54-bit comparator lessequal for signal <BUS_0012> created at line 0
+    Found 53-bit comparator lessequal for signal <BUS_0013> created at line 0
+    Found 52-bit comparator lessequal for signal <BUS_0014> created at line 0
+    Found 51-bit comparator lessequal for signal <BUS_0015> created at line 0
+    Found 50-bit comparator lessequal for signal <BUS_0016> created at line 0
+    Found 49-bit comparator lessequal for signal <BUS_0017> created at line 0
+    Found 48-bit comparator lessequal for signal <BUS_0018> created at line 0
+    Found 47-bit comparator lessequal for signal <BUS_0019> created at line 0
+    Found 46-bit comparator lessequal for signal <BUS_0020> created at line 0
+    Found 45-bit comparator lessequal for signal <BUS_0021> created at line 0
+    Found 44-bit comparator lessequal for signal <BUS_0022> created at line 0
+    Found 43-bit comparator lessequal for signal <BUS_0023> created at line 0
+    Found 42-bit comparator lessequal for signal <BUS_0024> created at line 0
+    Found 41-bit comparator lessequal for signal <BUS_0025> created at line 0
+    Found 40-bit comparator lessequal for signal <BUS_0026> created at line 0
+    Found 39-bit comparator lessequal for signal <BUS_0027> created at line 0
+    Found 38-bit comparator lessequal for signal <BUS_0028> created at line 0
+    Found 37-bit comparator lessequal for signal <BUS_0029> created at line 0
+    Found 36-bit comparator lessequal for signal <BUS_0030> created at line 0
+    Found 35-bit comparator lessequal for signal <BUS_0031> created at line 0
+    Found 34-bit comparator lessequal for signal <BUS_0032> created at line 0
+    Found 33-bit comparator lessequal for signal <BUS_0033> created at line 0
+    Found 33-bit comparator lessequal for signal <BUS_0034> created at line 0
+    Summary:
+	inferred  66 Adder/Subtractor(s).
+	inferred  34 Comparator(s).
+	inferred 1025 Multiplexer(s).
+Unit <div_33u_32u> synthesized.
+
+Synthesizing Unit <Chart>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/Chart.vhd".
+    Found 2-bit register for signal <is_Chart>.
+    Found 16-bit register for signal <count>.
+    Found 1-bit register for signal <PWM_reg>.
+    Found finite state machine <FSM_4> for signal <is_Chart>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 15                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | in_s1                                          |
+    | Power Up State     | in_high                                        |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 17-bit adder for signal <GND_59_o_GND_59_o_add_24_OUT> created at line 123.
+    Found 8-bit subtractor for signal <GND_59_o_GND_59_o_sub_19_OUT<7:0>> created at line 108.
+    Found 8x32-bit multiplier for signal <PWR_23_o_f_coeff_unsigned[31]_MuLt_7_OUT> created at line 80.
+    Found 8x32-bit multiplier for signal <GND_59_o_f_coeff_unsigned[31]_MuLt_19_OUT> created at line 108.
+    Found 1-bit 4-to-1 multiplexer for signal <PWM_reg_next> created at line 78.
+    Found 32-bit comparator greater for signal <n0013> created at line 86
+    Found 8-bit comparator greater for signal <duty_unsigned[7]_PWR_23_o_LessThan_12_o> created at line 86
+    Found 32-bit comparator greater for signal <n0029> created at line 114
+    Found 8-bit comparator greater for signal <GND_59_o_duty_unsigned[7]_LessThan_24_o> created at line 114
+    Summary:
+	inferred   2 Multiplier(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  17 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+	inferred  11 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <Chart> synthesized.
+
+Synthesizing Unit <PWM_Motor2>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/PWM_Motor2.vhd".
+    Summary:
+	no macro.
+Unit <PWM_Motor2> synthesized.
+
+Synthesizing Unit <Calculate_f_coeff_block>.
+    Related source file is "C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/Calculate_f_coeff_block.vhd".
+    Found 32-bit adder for signal <Sum_out1> created at line 69.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 Multiplexer(s).
+Unit <Calculate_f_coeff_block> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 4
+ 32x8-bit multiplier                                   : 4
+# Adders/Subtractors                                   : 274
+ 10-bit adder                                          : 2
+ 17-bit adder                                          : 2
+ 32-bit adder                                          : 2
+ 33-bit adder                                          : 8
+ 34-bit adder                                          : 8
+ 35-bit adder                                          : 8
+ 36-bit adder                                          : 8
+ 37-bit adder                                          : 8
+ 38-bit adder                                          : 8
+ 39-bit adder                                          : 8
+ 40-bit adder                                          : 8
+ 41-bit adder                                          : 8
+ 42-bit adder                                          : 8
+ 43-bit adder                                          : 8
+ 44-bit adder                                          : 8
+ 45-bit adder                                          : 8
+ 46-bit adder                                          : 8
+ 47-bit adder                                          : 8
+ 48-bit adder                                          : 8
+ 49-bit adder                                          : 8
+ 50-bit adder                                          : 8
+ 51-bit adder                                          : 8
+ 52-bit adder                                          : 8
+ 53-bit adder                                          : 8
+ 54-bit adder                                          : 8
+ 55-bit adder                                          : 8
+ 56-bit adder                                          : 8
+ 57-bit adder                                          : 8
+ 58-bit adder                                          : 8
+ 59-bit adder                                          : 8
+ 6-bit adder                                           : 1
+ 60-bit adder                                          : 8
+ 61-bit adder                                          : 8
+ 62-bit adder                                          : 8
+ 63-bit adder                                          : 8
+ 64-bit adder                                          : 8
+ 65-bit adder                                          : 8
+ 7-bit adder                                           : 1
+ 8-bit subtractor                                      : 2
+# Registers                                            : 44
+ 1-bit register                                        : 24
+ 14-bit register                                       : 1
+ 16-bit register                                       : 10
+ 32-bit register                                       : 2
+ 48-bit register                                       : 1
+ 5-bit register                                        : 1
+ 6-bit register                                        : 1
+ 8-bit register                                        : 2
+ 9-bit register                                        : 2
+# Comparators                                          : 144
+ 32-bit comparator greater                             : 4
+ 33-bit comparator lessequal                           : 8
+ 34-bit comparator lessequal                           : 4
+ 35-bit comparator lessequal                           : 4
+ 36-bit comparator lessequal                           : 4
+ 37-bit comparator lessequal                           : 4
+ 38-bit comparator lessequal                           : 4
+ 39-bit comparator lessequal                           : 4
+ 40-bit comparator lessequal                           : 4
+ 41-bit comparator lessequal                           : 4
+ 42-bit comparator lessequal                           : 4
+ 43-bit comparator lessequal                           : 4
+ 44-bit comparator lessequal                           : 4
+ 45-bit comparator lessequal                           : 4
+ 46-bit comparator lessequal                           : 4
+ 47-bit comparator lessequal                           : 4
+ 48-bit comparator lessequal                           : 4
+ 49-bit comparator lessequal                           : 4
+ 50-bit comparator lessequal                           : 4
+ 51-bit comparator lessequal                           : 4
+ 52-bit comparator lessequal                           : 4
+ 53-bit comparator lessequal                           : 4
+ 54-bit comparator lessequal                           : 4
+ 55-bit comparator lessequal                           : 4
+ 56-bit comparator lessequal                           : 4
+ 57-bit comparator lessequal                           : 4
+ 58-bit comparator lessequal                           : 4
+ 59-bit comparator lessequal                           : 4
+ 60-bit comparator lessequal                           : 4
+ 61-bit comparator lessequal                           : 4
+ 62-bit comparator lessequal                           : 4
+ 63-bit comparator lessequal                           : 4
+ 64-bit comparator lessequal                           : 4
+ 65-bit comparator lessequal                           : 4
+ 8-bit comparator greater                              : 4
+# Multiplexers                                         : 4216
+ 1-bit 16-to-1 multiplexer                             : 1
+ 1-bit 2-to-1 multiplexer                              : 4159
+ 1-bit 4-to-1 multiplexer                              : 2
+ 1-bit 7-to-1 multiplexer                              : 1
+ 1-bit 8-to-1 multiplexer                              : 1
+ 14-bit 2-to-1 multiplexer                             : 1
+ 16-bit 2-to-1 multiplexer                             : 8
+ 32-bit 2-to-1 multiplexer                             : 12
+ 33-bit 2-to-1 multiplexer                             : 8
+ 48-bit 2-to-1 multiplexer                             : 1
+ 5-bit 2-to-1 multiplexer                              : 3
+ 6-bit 2-to-1 multiplexer                              : 5
+ 9-bit 2-to-1 multiplexer                              : 14
+# Tristates                                            : 32
+ 1-bit tristate buffer                                 : 32
+# FSMs                                                 : 6
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <waddr_0> of sequential type is unconnected in block <basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module>.
+WARNING:Xst:2677 - Node <waddr_1> of sequential type is unconnected in block <basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 4
+ 32x8-bit multiplier                                   : 4
+# Adders/Subtractors                                   : 142
+ 10-bit adder                                          : 2
+ 17-bit adder                                          : 2
+ 32-bit adder                                          : 2
+ 33-bit adder carry in                                 : 132
+ 6-bit adder                                           : 1
+ 7-bit adder                                           : 1
+ 8-bit subtractor                                      : 2
+# Registers                                            : 353
+ Flip-Flops                                            : 353
+# Comparators                                          : 144
+ 32-bit comparator greater                             : 4
+ 33-bit comparator lessequal                           : 8
+ 34-bit comparator lessequal                           : 4
+ 35-bit comparator lessequal                           : 4
+ 36-bit comparator lessequal                           : 4
+ 37-bit comparator lessequal                           : 4
+ 38-bit comparator lessequal                           : 4
+ 39-bit comparator lessequal                           : 4
+ 40-bit comparator lessequal                           : 4
+ 41-bit comparator lessequal                           : 4
+ 42-bit comparator lessequal                           : 4
+ 43-bit comparator lessequal                           : 4
+ 44-bit comparator lessequal                           : 4
+ 45-bit comparator lessequal                           : 4
+ 46-bit comparator lessequal                           : 4
+ 47-bit comparator lessequal                           : 4
+ 48-bit comparator lessequal                           : 4
+ 49-bit comparator lessequal                           : 4
+ 50-bit comparator lessequal                           : 4
+ 51-bit comparator lessequal                           : 4
+ 52-bit comparator lessequal                           : 4
+ 53-bit comparator lessequal                           : 4
+ 54-bit comparator lessequal                           : 4
+ 55-bit comparator lessequal                           : 4
+ 56-bit comparator lessequal                           : 4
+ 57-bit comparator lessequal                           : 4
+ 58-bit comparator lessequal                           : 4
+ 59-bit comparator lessequal                           : 4
+ 60-bit comparator lessequal                           : 4
+ 61-bit comparator lessequal                           : 4
+ 62-bit comparator lessequal                           : 4
+ 63-bit comparator lessequal                           : 4
+ 64-bit comparator lessequal                           : 4
+ 65-bit comparator lessequal                           : 4
+ 8-bit comparator greater                              : 4
+# Multiplexers                                         : 4228
+ 1-bit 16-to-1 multiplexer                             : 1
+ 1-bit 2-to-1 multiplexer                              : 4172
+ 1-bit 4-to-1 multiplexer                              : 2
+ 1-bit 7-to-1 multiplexer                              : 1
+ 1-bit 8-to-1 multiplexer                              : 1
+ 16-bit 2-to-1 multiplexer                             : 8
+ 32-bit 2-to-1 multiplexer                             : 12
+ 33-bit 2-to-1 multiplexer                             : 8
+ 48-bit 2-to-1 multiplexer                             : 1
+ 5-bit 2-to-1 multiplexer                              : 3
+ 6-bit 2-to-1 multiplexer                              : 5
+ 9-bit 2-to-1 multiplexer                              : 14
+# FSMs                                                 : 6
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_4> on signal <is_Chart[1:2]> with sequential encoding.
+Optimizing FSM <FSM_4> on signal <is_Chart[1:2]> with sequential encoding.
+---------------------
+ State   | Encoding
+---------------------
+ in_high | 01
+ in_low  | 11
+ in_s1   | 00
+ in_s2   | 10
+---------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/FSM_0> on signal <axi_lite_rstate[1:1]> with sequential encoding.
+----------------------
+ State    | Encoding
+----------------------
+ 00000000 | 0
+ 00000001 | 1
+----------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/FSM_1> on signal <axi_lite_wstate[1:2]> with sequential encoding.
+----------------------
+ State    | Encoding
+----------------------
+ 00000000 | 00
+ 00000001 | 01
+ 00000010 | 10
+----------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Write/FSM_2> on signal <is_Write[1:3]> with user encoding.
+-------------------------------
+ State             | Encoding
+-------------------------------
+ in_clocking       | 000
+ in_end            | 001
+ in_end1           | 010
+ in_idle           | 011
+ in_start_adc_rdwr | 100
+ in_start_conv     | 101
+ in_tconv_delay    | 110
+-------------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/FSM_3> on signal <is_Read_X_Y_Z[1:3]> with user encoding.
+-------------------------------
+ State             | Encoding
+-------------------------------
+ in_clocking       | 000
+ in_end            | 001
+ in_idle           | 010
+ in_read           | 011
+ in_read1          | 100
+ in_start_adc_rdwr | 101
+ in_start_conv     | 110
+ in_tconv_delay    | 111
+-------------------------------
+
+Optimizing unit <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper> ...
+
+Optimizing unit <basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module> ...
+
+Optimizing unit <basicquadrotorcontrol_hdl_dut_pcore_addr_decoder> ...
+
+Optimizing unit <ADXL345_read> ...
+
+Optimizing unit <Write> ...
+
+Optimizing unit <Read_X_Y_Z> ...
+
+Optimizing unit <Control_Signals> ...
+
+Optimizing unit <shiftRegister_48> ...
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_31> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_30> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_29> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_28> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_27> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_26> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_25> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_24> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_23> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_22> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_21> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_20> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_19> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_18> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_17> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_16> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_14> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:2677 - Node <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_CMD_14> of sequential type is unconnected in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>.
+WARNING:Xst:1710 - FF/Latch <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Write/count_8> (without init value) has a constant value of 0 in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Write/count_7> (without init value) has a constant value of 0 in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Write/count_6> (without init value) has a constant value of 0 in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Write/count_5> (without init value) has a constant value of 0 in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Write/count_4> (without init value) has a constant value of 0 in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Write/clock_cnt_4> (without init value) has a constant value of 0 in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/count_8> (without init value) has a constant value of 0 in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/count_7> (without init value) has a constant value of 0 in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/count_6> (without init value) has a constant value of 0 in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/count_5> (without init value) has a constant value of 0 in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/count_4> (without init value) has a constant value of 0 in block <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/CSn_reg> in Unit <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper> is equivalent to the following FF/Latch, which will be removed : <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/XYZ_Valid_reg> 
+INFO:Xst:2261 - The FF/Latch <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_31> in Unit <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper> is equivalent to the following 15 FFs/Latches, which will be removed : <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_30> <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_29> <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_28>
+   <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_27> <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_26> <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_25> <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_24> <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_23>
+   <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_22> <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_21> <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_20> <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_19> <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_18>
+   <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_17> <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_16> 
+INFO:Xst:3203 - The FF/Latch <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/SCK_reg> in Unit <system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper> is the opposite to the following FF/Latch, which will be removed : <basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_XYZ_shiftRegister/u_rising_edge_detect/Unit_Delay1_out1> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 320
+ Flip-Flops                                            : 320
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 613
+#      GND                         : 1
+#      INV                         : 20
+#      LUT1                        : 32
+#      LUT2                        : 75
+#      LUT3                        : 48
+#      LUT4                        : 97
+#      LUT5                        : 69
+#      LUT6                        : 145
+#      MUXCY                       : 86
+#      MUXF7                       : 7
+#      VCC                         : 1
+#      XORCY                       : 32
+# FlipFlops/Latches                : 320
+#      FDC                         : 64
+#      FDCE                        : 211
+#      FDE                         : 34
+#      FDP                         : 4
+#      FDPE                        : 7
+# DSPs                             : 8
+#      DSP48E1                     : 8
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7z020clg484-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             320  out of  106400     0%  
+ Number of Slice LUTs:                  486  out of  53200     0%  
+    Number used as Logic:               486  out of  53200     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    595
+   Number with an unused Flip Flop:     275  out of    595    46%  
+   Number with an unused LUT:           109  out of    595    18%  
+   Number of fully used LUT-FF pairs:   211  out of    595    35%  
+   Number of unique control sets:        19
+
+IO Utilization: 
+ Number of IOs:                         130
+ Number of bonded IOBs:                   0  out of    200     0%  
+
+Specific Feature Utilization:
+ Number of DSP48E1s:                      8  out of    220     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                                                                                                                                                              | Load  |
+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+IPCORE_CLK                         | NONE(basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor1/u_Chart/PWM_reg)                                                  | 185   |
+AXI4_Lite_ACLK                     | NONE(basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/axi_lite_wstate_FSM_FFd1)| 135   |
+-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 3.261ns (Maximum Frequency: 306.654MHz)
+   Minimum input arrival time before clock: 2.755ns
+   Maximum output required time after clock: 10.186ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'IPCORE_CLK'
+  Clock period: 2.926ns (frequency: 341.795MHz)
+  Total number of paths / destination ports: 8916 / 267
+-------------------------------------------------------------------------
+Delay:               2.926ns (Levels of Logic = 3)
+  Source:            basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/count_3 (FF)
+  Destination:       basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/Unit_Delay_Enabled3_out1_15 (FF)
+  Source Clock:      IPCORE_CLK rising
+  Destination Clock: IPCORE_CLK rising
+
+  Data Path: basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/count_3 to basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/Unit_Delay_Enabled3_out1_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             4   0.282   0.655  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/count_3 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/count_3)
+     LUT4:I0->O           15   0.053   0.505  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/count[8]_GND_49_o_equal_15_o<8>1 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/count[8]_GND_49_o_equal_15_o)
+     LUT6:I5->O           51   0.053   0.570  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/Mmux_XYZ_Valid_reg_next11 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/CSn)
+     LUT2:I1->O           48   0.053   0.555  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/enb_XYZ_Valid_AND_38_o1 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/enb_XYZ_Valid_AND_38_o)
+     FDCE:CE                   0.200          basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/Unit_Delay_Enabled2_out1_0
+    ----------------------------------------
+    Total                      2.926ns (0.641ns logic, 2.285ns route)
+                                       (21.9% logic, 78.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'AXI4_Lite_ACLK'
+  Clock period: 3.261ns (frequency: 306.654MHz)
+  Total number of paths / destination ports: 1865 / 219
+-------------------------------------------------------------------------
+Delay:               3.261ns (Levels of Logic = 5)
+  Source:            basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/waddr_10 (FF)
+  Destination:       basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_0 (FF)
+  Source Clock:      AXI4_Lite_ACLK rising
+  Destination Clock: AXI4_Lite_ACLK rising
+
+  Data Path: basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/waddr_10 to basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.282   0.427  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/waddr_10 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/waddr_10)
+     LUT3:I2->O            3   0.053   0.753  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/mux1211 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/top_addr_sel<8>)
+     LUT6:I0->O           17   0.053   0.519  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid112 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid111)
+     LUT6:I5->O           17   0.053   0.519  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o3 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o)
+     LUT5:I4->O            1   0.053   0.485  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid11 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid1)
+     LUT4:I2->O            1   0.053   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid12 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/top_data_read<0>)
+     FDCE:D                    0.011          basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_0
+    ----------------------------------------
+    Total                      3.261ns (0.558ns logic, 2.703ns route)
+                                       (17.1% logic, 82.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'IPCORE_CLK'
+  Total number of paths / destination ports: 435 / 186
+-------------------------------------------------------------------------
+Offset:              1.906ns (Levels of Logic = 3)
+  Source:            IPCORE_RESETN (PAD)
+  Destination:       basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor1/u_Chart/count_15 (FF)
+  Destination Clock: IPCORE_CLK rising
+
+  Data Path: IPCORE_RESETN to basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor1/u_Chart/count_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LUT4:I0->O            1   0.053   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor1/u_Chart/_n0108_inv1_SW1_lut (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor1/u_Chart/_n0108_inv1_SW1_lut)
+     MUXCY:S->O            1   0.454   0.413  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor1/u_Chart/_n0108_inv1_SW1_cy1 (N171)
+     LUT6:I5->O           16   0.053   0.497  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor1/u_Chart/_n0108_inv2 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor1/u_Chart/_n0108_inv)
+     FDE:CE                    0.200          basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor1/u_Chart/count_0
+    ----------------------------------------
+    Total                      1.906ns (0.996ns logic, 0.910ns route)
+                                       (52.3% logic, 47.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'AXI4_Lite_ACLK'
+  Total number of paths / destination ports: 2931 / 281
+-------------------------------------------------------------------------
+Offset:              2.755ns (Levels of Logic = 5)
+  Source:            AXI4_Lite_ARVALID (PAD)
+  Destination:       basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_0 (FF)
+  Destination Clock: AXI4_Lite_ACLK rising
+
+  Data Path: AXI4_Lite_ARVALID to basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LUT3:I0->O            3   0.053   0.753  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/mux1211 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/top_addr_sel<8>)
+     LUT6:I0->O           17   0.053   0.519  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid112 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid111)
+     LUT6:I5->O           17   0.053   0.519  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o3 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o)
+     LUT5:I4->O            1   0.053   0.485  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid11 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid1)
+     LUT4:I2->O            1   0.053   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid12 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/top_data_read<0>)
+     FDCE:D                    0.011          basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_0
+    ----------------------------------------
+    Total                      2.755ns (0.479ns logic, 2.276ns route)
+                                       (17.4% logic, 82.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'AXI4_Lite_ACLK'
+  Total number of paths / destination ports: 244442 / 39
+-------------------------------------------------------------------------
+Offset:              10.186ns (Levels of Logic = 19)
+  Source:            basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor2_7 (FF)
+  Destination:       PmodJB1<2> (PAD)
+  Source Clock:      AXI4_Lite_ACLK rising
+
+  Data Path: basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor2_7 to PmodJB1<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.282   0.413  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor2_7 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor2_7)
+     INV:I->O              1   0.067   0.399  basicquadrotorcontrol_hdl_dut_pcore_0/duty_motor2_sig<7>_inv1_INV_0 (basicquadrotorcontrol_hdl_dut_pcore_0/duty_motor2_sig<7>_inv)
+     DSP48E1:A7->PCOUT47    1   4.036   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mmult_GND_59_o_f_coeff_unsigned[31]_MuLt_19_OUT (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mmult_GND_59_o_f_coeff_unsigned[31]_MuLt_19_OUT_PCOUT_to_basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mmult_GND_59_o_f_coeff_unsigned[31]_MuLt_19_OUT1_PCIN_47)
+     DSP48E1:PCIN47->P17    1   1.518   0.602  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mmult_GND_59_o_f_coeff_unsigned[31]_MuLt_19_OUT1 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/GND_59_o_f_coeff_unsigned[31]_MuLt_19_OUT<34>)
+     LUT3:I0->O            1   0.053   0.413  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/GND_59_o_GND_59_o_not_equal_20_o_SW0 (N146)
+     LUT6:I5->O           20   0.053   0.610  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/GND_59_o_GND_59_o_not_equal_20_o (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/GND_59_o_GND_59_o_not_equal_20_o)
+     LUT2:I0->O            2   0.053   0.641  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mmux_GND_59_o_PWR_23_o_mux_21_OUT11 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/GND_59_o_PWR_23_o_mux_21_OUT<0>)
+     LUT4:I0->O            1   0.053   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_lut<0> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_lut<0>)
+     MUXCY:S->O            1   0.291   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<0> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<1> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<2> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<3> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<4> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<5> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<6> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<7> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<8> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<9> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<9>)
+     MUXCY:CI->O           3   0.015   0.499  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<10> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0029_cy<10>)
+     LUT6:I4->O            1   0.053   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mmux_PWM_reg_next1 (PmodJB1<2>)
+    ----------------------------------------
+    Total                     10.186ns (6.609ns logic, 3.577ns route)
+                                       (64.9% logic, 35.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'IPCORE_CLK'
+  Total number of paths / destination ports: 145 / 5
+-------------------------------------------------------------------------
+Offset:              2.343ns (Levels of Logic = 14)
+  Source:            basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/count_1 (FF)
+  Destination:       PmodJB1<2> (PAD)
+  Source Clock:      IPCORE_CLK rising
+
+  Data Path: basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/count_1 to PmodJB1<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              5   0.282   0.662  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/count_1 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/count_1)
+     LUT4:I0->O            0   0.053   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_lutdi (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_lutdi)
+     MUXCY:DI->O           1   0.278   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<0> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<0>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<1> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<1>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<2> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<2>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<3> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<3>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<4> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<4>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<5> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<5>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<6> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<6>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<7> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<7>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<8> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<8>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<9> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<9>)
+     MUXCY:CI->O           1   0.015   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<10> (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mcompar_n0013_cy<10>)
+     MUXCY:CI->O          20   0.015   0.850  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/PWR_23_o_duty_unsigned[7]_AND_1065_o_cy (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/PWR_23_o_duty_unsigned[7]_AND_1065_o)
+     LUT6:I1->O            1   0.053   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mmux_PWM_reg_next1 (PmodJB1<2>)
+    ----------------------------------------
+    Total                      2.343ns (0.831ns logic, 1.512ns route)
+                                       (35.5% logic, 64.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock AXI4_Lite_ACLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AXI4_Lite_ACLK |    3.261|         |         |         |
+IPCORE_CLK     |    0.692|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock IPCORE_CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+AXI4_Lite_ACLK |   10.990|         |         |         |
+IPCORE_CLK     |    2.926|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 25.00 secs
+Total CPU time to Xst completion: 24.96 secs
+ 
+--> 
+
+Total memory usage is 455196 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   33 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
+
