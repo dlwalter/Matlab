@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'BasicQuadrotorControl_interface'. 
 ## 
 ## Makefile     : BasicQuadrotorControl_interface.mk
-## Generated on : Tue Feb 17 19:20:09 2015
+## Generated on : Wed Feb 18 16:51:40 2015
 ## MATLAB Coder version: 2.7 (R2014b)
 ## 
 ## Build Info:
@@ -194,7 +194,7 @@ BUILD_TYPE = "Top-Level Standalone Executable"
 ## INCLUDE PATHS
 ###########################################################################
 
-INCLUDES_BUILDINFO = -IC:/MATLAB/SupportPackages/R2014b/xilinxzynq7000ec/toolbox/target/supportpackages/zynq/include -I$(START_DIR)/BasicQuadrotorControl_interface_ert_rtw -I$(START_DIR) -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils -IC:/MATLAB/SupportPackages/R2014b/xilinxzynq7000ec/toolbox/target/supportpackages/zynq/@slCustomizer/../include -IC:/MATLAB/SupportPackages/R2014b/armcortexa/toolbox/target/supportpackages/arm_cortex_a/include -I$(MATLAB_ROOT)/toolbox/target/codertarget/rtos/inc
+INCLUDES_BUILDINFO = -IC:/MATLAB/SupportPackages/R2014b/xilinxzynq7000ec/toolbox/target/supportpackages/zynq/include -I$(START_DIR)/BasicQuadrotorControl_interface_ert_rtw -I$(START_DIR) -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils -IC:/MATLAB/SupportPackages/R2014b/xilinxzynq7000ec/toolbox/target/supportpackages/zynq/@slCustomizer/../include -IC:/MATLAB/SupportPackages/R2014b/armcortexa/toolbox/target/supportpackages/arm_cortex_a/include
 
 INCLUDES = $(INCLUDES_BUILDINFO)
 

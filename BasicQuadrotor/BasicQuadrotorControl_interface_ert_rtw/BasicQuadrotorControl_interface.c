@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'BasicQuadrotorControl_interface'.
  *
- * Model version                  : 1.152
+ * Model version                  : 1.153
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Tue Feb 17 19:03:15 2015
+ * C/C++ source code generated on : Wed Feb 18 16:51:35 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -18,16 +18,20 @@
 #include "BasicQuadrotorControl_interface.h"
 #include "BasicQuadrotorControl_interface_private.h"
 #include "BasicQuadrotorControl_interface_dt.h"
-#define BasicQ_RegisterOffset_edis0x25o (288.0)
-#define BasicQu_RegisterOffset_edis0x25 (280.0)
-#define BasicQua_RegisterOffset_edis0x2 (292.0)
-#define BasicQuad_RegisterOffset_edis0x (284.0)
+#define Ba_RegisterOffset_edis0x25o4rmn (288.0)
+#define Bas_RegisterOffset_edis0x25o4rm (280.0)
+#define Basi_RegisterOffset_edis0x25o4r (272.0)
+#define BasicQ_RegisterOffset_edis0x25o (292.0)
+#define BasicQu_RegisterOffset_edis0x25 (284.0)
+#define BasicQua_RegisterOffset_edis0x2 (276.0)
+#define BasicQuad_RegisterOffset_edis0x (268.0)
 #define BasicQuadr_RegisterOffset_edis0 (260.0)
 #define BasicQuadro_RegisterOffset_edis (256.0)
-#define BasicQuadrot_RegisterOffset_edi (272.0)
-#define BasicQuadroto_RegisterOffset_ed (268.0)
-#define BasicQuadrotorCo_RegisterOffset (264.0)
-#define BasicQuadrotor_RegisterOffset_e (276.0)
+#define BasicQuadrot_RegisterOffset_edi (304.0)
+#define BasicQuadroto_RegisterOffset_ed (300.0)
+#define BasicQuadrotorCo_RegisterOffset (296.0)
+#define BasicQuadrotor_RegisterOffset_e (308.0)
+#define Basic_RegisterOffset_edis0x25o4 (264.0)
 
 /* Block signals (auto storage) */
 B_BasicQuadrotorControl_inter_T BasicQuadrotorControl_interfa_B;
@@ -68,7 +72,9 @@ void BasicQuadrotorControl_interface_step(void)
   char_T b[6];
   uint16_T rtb_DataTypeConversion;
   uint8_T rtb_SliderGain;
-  uint8_T rtb_SliderGain_f;
+  uint8_T rtb_SliderGain_b4;
+  uint8_T rtb_SliderGain_b;
+  uint8_T rtb_SliderGain_n;
   uint16_T rtb_AXI4Lite_Read_Y_DTC;
   uint16_T rtb_AXI4Lite_Read_Z_DTC;
   uint32_T rtb_AXI4Lite_Write_CMD_DTC;
@@ -117,6 +123,22 @@ void BasicQuadrotorControl_interface_step(void)
   int32_T exitg22;
   int32_T exitg23;
   int32_T exitg24;
+  int32_T exitg25;
+  int32_T exitg26;
+  int32_T exitg27;
+  int32_T exitg28;
+  int32_T exitg29;
+  int32_T exitg30;
+  int32_T exitg31;
+  int32_T exitg32;
+  int32_T exitg33;
+  int32_T exitg34;
+  int32_T exitg35;
+  int32_T exitg36;
+  int32_T exitg37;
+  int32_T exitg38;
+  int32_T exitg39;
+  int32_T exitg40;
 
   /* FromWorkspace: '<S1>/From Workspace' */
   {
@@ -151,8 +173,8 @@ void BasicQuadrotorControl_interface_step(void)
   }
 
   /* Switch: '<S1>/Switch' incorporates:
-   *  Constant: '<S5>/Constant'
-   *  RelationalOperator: '<S5>/Compare'
+   *  Constant: '<S7>/Constant'
+   *  RelationalOperator: '<S7>/Compare'
    */
   if (rtb_Switch == BasicQuadrotorControl_interfa_P.Constant_Value) {
     /* ManualSwitch: '<S1>/Manual Switch' incorporates:
@@ -206,23 +228,677 @@ void BasicQuadrotorControl_interface_step(void)
     k = 255;
   }
 
-  rtb_SliderGain_f = (uint8_T)k;
+  rtb_SliderGain_b4 = (uint8_T)k;
 
   /* End of Gain: '<S3>/Slider Gain' */
 
-  /* Outputs for Atomic SubSystem: '<Root>/hdl_dut' */
+  /* Gain: '<S4>/Slider Gain' incorporates:
+   *  Constant: '<Root>/Constant4'
+   */
+  k = (int32_T)((uint32_T)BasicQuadrotorControl_interfa_P.SliderGain2_gain *
+                BasicQuadrotorControl_interfa_P.Constant4_Value);
+  if ((uint32_T)k > 255U) {
+    k = 255;
+  }
 
-  /* DataTypeConversion: '<S7>/AXI4Lite_Write_CMD_DTC' */
+  rtb_SliderGain_b = (uint8_T)k;
+
+  /* End of Gain: '<S4>/Slider Gain' */
+
+  /* Gain: '<S5>/Slider Gain' incorporates:
+   *  Constant: '<Root>/Constant5'
+   */
+  k = (int32_T)((uint32_T)BasicQuadrotorControl_interfa_P.SliderGain3_gain *
+                BasicQuadrotorControl_interfa_P.Constant5_Value);
+  if ((uint32_T)k > 255U) {
+    k = 255;
+  }
+
+  rtb_SliderGain_n = (uint8_T)k;
+
+  /* End of Gain: '<S5>/Slider Gain' */
+
+  /* Outputs for Atomic SubSystem: '<Root>/hdl_dut1' */
+
+  /* DataTypeConversion: '<S9>/AXI4Lite_Write_CMD_DTC' */
   rtb_AXI4Lite_Write_CMD_DTC = rtb_DataTypeConversion;
 
-  /* Start for MATLABSystem: '<S12>/AXI4-Interface Write' incorporates:
-   *  MATLABSystem: '<S12>/AXI4-Interface Write'
+  /* Start for MATLABSystem: '<S14>/AXI4-Interface Write' incorporates:
+   *  MATLABSystem: '<S14>/AXI4-Interface Write'
    */
   memcpy(&BasicQuadrotorControl_interfa_B.table[0], &tmp[0], sizeof(char_T) <<
          7U);
   for (k = 0; k < 6; k++) {
     y[k] = BasicQuadrotorControl_interfa_B.table[(uint8_T)
-      BasicQuadrotorControl_interf_DW.obj_a.dTypeIn[k] & 127];
+      BasicQuadrotorControl_interf_DW.obj_ku.dTypeIn[k] & 127];
+    b[k] = tmp_0[k];
+  }
+
+  bool_0 = false;
+  k = 0;
+  do {
+    exitg40 = 0;
+    if (k < 6) {
+      if (y[k] != b[k]) {
+        exitg40 = 1;
+      } else {
+        k++;
+      }
+    } else {
+      bool_0 = true;
+      exitg40 = 1;
+    }
+  } while (exitg40 == 0);
+
+  if (bool_0) {
+    k = 0;
+  } else {
+    for (k = 0; k < 6; k++) {
+      b[k] = tmp_1[k];
+    }
+
+    k = 0;
+    do {
+      exitg39 = 0;
+      if (k < 6) {
+        if (y[k] != b[k]) {
+          exitg39 = 1;
+        } else {
+          k++;
+        }
+      } else {
+        bool_0 = true;
+        exitg39 = 1;
+      }
+    } while (exitg39 == 0);
+
+    if (bool_0) {
+      k = 1;
+    } else {
+      for (k = 0; k < 6; k++) {
+        b[k] = tmp_2[k];
+      }
+
+      k = 0;
+      do {
+        exitg38 = 0;
+        if (k < 6) {
+          if (y[k] != b[k]) {
+            exitg38 = 1;
+          } else {
+            k++;
+          }
+        } else {
+          bool_0 = true;
+          exitg38 = 1;
+        }
+      } while (exitg38 == 0);
+
+      if (bool_0) {
+        k = 5;
+      } else {
+        for (k = 0; k < 6; k++) {
+          b[k] = tmp_3[k];
+        }
+
+        k = 0;
+        do {
+          exitg37 = 0;
+          if (k < 6) {
+            if (y[k] != b[k]) {
+              exitg37 = 1;
+            } else {
+              k++;
+            }
+          } else {
+            bool_0 = true;
+            exitg37 = 1;
+          }
+        } while (exitg37 == 0);
+
+        if (bool_0) {
+          k = 7;
+        } else {
+          k = -1;
+        }
+      }
+    }
+  }
+
+  switch (k) {
+   case 0:
+    k = 1;
+    break;
+
+   case 1:
+    k = 2;
+    break;
+
+   case 2:
+    k = 3;
+    break;
+
+   case 3:
+    k = 4;
+    break;
+
+   case 4:
+    k = 5;
+    break;
+
+   case 5:
+    k = 6;
+    break;
+
+   case 6:
+    k = 7;
+    break;
+
+   case 7:
+    k = 8;
+    break;
+
+   case 8:
+    k = 9;
+    break;
+
+   default:
+    k = 0;
+    break;
+  }
+
+  AXI4LITE_WRITE(&rtb_AXI4Lite_Write_CMD_DTC, (uint32_T)
+                 BasicQuadro_RegisterOffset_edis, 1.0, (uint32_T)(int32_T)
+                 rt_roundd_snf((real_T)k), 0U);
+
+  /* End of Start for MATLABSystem: '<S14>/AXI4-Interface Write' */
+
+  /* DataTypeConversion: '<S9>/AXI4Lite_Write_CMD_VLD_DTC' incorporates:
+   *  Constant: '<Root>/Constant1'
+   */
+  tmp_4 = floor(BasicQuadrotorControl_interfa_P.Constant1_Value);
+  if (rtIsNaN(tmp_4) || rtIsInf(tmp_4)) {
+    tmp_4 = 0.0;
+  } else {
+    tmp_4 = fmod(tmp_4, 4.294967296E+9);
+  }
+
+  rtb_AXI4Lite_Write_CMD_DTC = tmp_4 < 0.0 ? (uint32_T)-(int32_T)(uint32_T)
+    -tmp_4 : (uint32_T)tmp_4;
+
+  /* End of DataTypeConversion: '<S9>/AXI4Lite_Write_CMD_VLD_DTC' */
+
+  /* Start for MATLABSystem: '<S15>/AXI4-Interface Write' incorporates:
+   *  MATLABSystem: '<S15>/AXI4-Interface Write'
+   */
+  memcpy(&BasicQuadrotorControl_interfa_B.table[0], &tmp[0], sizeof(char_T) <<
+         7U);
+  for (k = 0; k < 6; k++) {
+    y[k] = BasicQuadrotorControl_interfa_B.table[(uint8_T)
+      BasicQuadrotorControl_interf_DW.obj_m.dTypeIn[k] & 127];
+    b[k] = tmp_0[k];
+  }
+
+  bool_0 = false;
+  k = 0;
+  do {
+    exitg36 = 0;
+    if (k < 6) {
+      if (y[k] != b[k]) {
+        exitg36 = 1;
+      } else {
+        k++;
+      }
+    } else {
+      bool_0 = true;
+      exitg36 = 1;
+    }
+  } while (exitg36 == 0);
+
+  if (bool_0) {
+    k = 0;
+  } else {
+    for (k = 0; k < 6; k++) {
+      b[k] = tmp_1[k];
+    }
+
+    k = 0;
+    do {
+      exitg35 = 0;
+      if (k < 6) {
+        if (y[k] != b[k]) {
+          exitg35 = 1;
+        } else {
+          k++;
+        }
+      } else {
+        bool_0 = true;
+        exitg35 = 1;
+      }
+    } while (exitg35 == 0);
+
+    if (bool_0) {
+      k = 1;
+    } else {
+      for (k = 0; k < 6; k++) {
+        b[k] = tmp_2[k];
+      }
+
+      k = 0;
+      do {
+        exitg34 = 0;
+        if (k < 6) {
+          if (y[k] != b[k]) {
+            exitg34 = 1;
+          } else {
+            k++;
+          }
+        } else {
+          bool_0 = true;
+          exitg34 = 1;
+        }
+      } while (exitg34 == 0);
+
+      if (bool_0) {
+        k = 5;
+      } else {
+        for (k = 0; k < 6; k++) {
+          b[k] = tmp_3[k];
+        }
+
+        k = 0;
+        do {
+          exitg33 = 0;
+          if (k < 6) {
+            if (y[k] != b[k]) {
+              exitg33 = 1;
+            } else {
+              k++;
+            }
+          } else {
+            bool_0 = true;
+            exitg33 = 1;
+          }
+        } while (exitg33 == 0);
+
+        if (bool_0) {
+          k = 7;
+        } else {
+          k = -1;
+        }
+      }
+    }
+  }
+
+  switch (k) {
+   case 0:
+    k = 1;
+    break;
+
+   case 1:
+    k = 2;
+    break;
+
+   case 2:
+    k = 3;
+    break;
+
+   case 3:
+    k = 4;
+    break;
+
+   case 4:
+    k = 5;
+    break;
+
+   case 5:
+    k = 6;
+    break;
+
+   case 6:
+    k = 7;
+    break;
+
+   case 7:
+    k = 8;
+    break;
+
+   case 8:
+    k = 9;
+    break;
+
+   default:
+    k = 0;
+    break;
+  }
+
+  AXI4LITE_WRITE(&rtb_AXI4Lite_Write_CMD_DTC, (uint32_T)
+                 BasicQuadr_RegisterOffset_edis0, 1.0, (uint32_T)(int32_T)
+                 rt_roundd_snf((real_T)k), 0U);
+
+  /* End of Start for MATLABSystem: '<S15>/AXI4-Interface Write' */
+
+  /* DataTypeConversion: '<S9>/AXI4Lite_Write_en_motor1_DTC' incorporates:
+   *  Constant: '<Root>/Constant'
+   */
+  rtb_AXI4Lite_Write_CMD_DTC = BasicQuadrotorControl_interfa_P.Constant_Value_a;
+
+  /* Start for MATLABSystem: '<S20>/AXI4-Interface Write' incorporates:
+   *  MATLABSystem: '<S20>/AXI4-Interface Write'
+   */
+  memcpy(&BasicQuadrotorControl_interfa_B.table[0], &tmp[0], sizeof(char_T) <<
+         7U);
+  for (k = 0; k < 6; k++) {
+    y[k] = BasicQuadrotorControl_interfa_B.table[(uint8_T)
+      BasicQuadrotorControl_interf_DW.obj_p.dTypeIn[k] & 127];
+    b[k] = tmp_0[k];
+  }
+
+  bool_0 = false;
+  k = 0;
+  do {
+    exitg32 = 0;
+    if (k < 6) {
+      if (y[k] != b[k]) {
+        exitg32 = 1;
+      } else {
+        k++;
+      }
+    } else {
+      bool_0 = true;
+      exitg32 = 1;
+    }
+  } while (exitg32 == 0);
+
+  if (bool_0) {
+    k = 0;
+  } else {
+    for (k = 0; k < 6; k++) {
+      b[k] = tmp_1[k];
+    }
+
+    k = 0;
+    do {
+      exitg31 = 0;
+      if (k < 6) {
+        if (y[k] != b[k]) {
+          exitg31 = 1;
+        } else {
+          k++;
+        }
+      } else {
+        bool_0 = true;
+        exitg31 = 1;
+      }
+    } while (exitg31 == 0);
+
+    if (bool_0) {
+      k = 1;
+    } else {
+      for (k = 0; k < 6; k++) {
+        b[k] = tmp_2[k];
+      }
+
+      k = 0;
+      do {
+        exitg30 = 0;
+        if (k < 6) {
+          if (y[k] != b[k]) {
+            exitg30 = 1;
+          } else {
+            k++;
+          }
+        } else {
+          bool_0 = true;
+          exitg30 = 1;
+        }
+      } while (exitg30 == 0);
+
+      if (bool_0) {
+        k = 5;
+      } else {
+        for (k = 0; k < 6; k++) {
+          b[k] = tmp_3[k];
+        }
+
+        k = 0;
+        do {
+          exitg29 = 0;
+          if (k < 6) {
+            if (y[k] != b[k]) {
+              exitg29 = 1;
+            } else {
+              k++;
+            }
+          } else {
+            bool_0 = true;
+            exitg29 = 1;
+          }
+        } while (exitg29 == 0);
+
+        if (bool_0) {
+          k = 7;
+        } else {
+          k = -1;
+        }
+      }
+    }
+  }
+
+  switch (k) {
+   case 0:
+    k = 1;
+    break;
+
+   case 1:
+    k = 2;
+    break;
+
+   case 2:
+    k = 3;
+    break;
+
+   case 3:
+    k = 4;
+    break;
+
+   case 4:
+    k = 5;
+    break;
+
+   case 5:
+    k = 6;
+    break;
+
+   case 6:
+    k = 7;
+    break;
+
+   case 7:
+    k = 8;
+    break;
+
+   case 8:
+    k = 9;
+    break;
+
+   default:
+    k = 0;
+    break;
+  }
+
+  AXI4LITE_WRITE(&rtb_AXI4Lite_Write_CMD_DTC, (uint32_T)
+                 Basic_RegisterOffset_edis0x25o4, 1.0, (uint32_T)(int32_T)
+                 rt_roundd_snf((real_T)k), 0U);
+
+  /* End of Start for MATLABSystem: '<S20>/AXI4-Interface Write' */
+
+  /* DataTypeConversion: '<S9>/AXI4Lite_Write_duty_motor1_DTC' */
+  rtb_AXI4Lite_Write_CMD_DTC = rtb_SliderGain;
+
+  /* Start for MATLABSystem: '<S16>/AXI4-Interface Write' incorporates:
+   *  MATLABSystem: '<S16>/AXI4-Interface Write'
+   */
+  memcpy(&BasicQuadrotorControl_interfa_B.table[0], &tmp[0], sizeof(char_T) <<
+         7U);
+  for (k = 0; k < 6; k++) {
+    y[k] = BasicQuadrotorControl_interfa_B.table[(uint8_T)
+      BasicQuadrotorControl_interf_DW.obj_c.dTypeIn[k] & 127];
+    b[k] = tmp_0[k];
+  }
+
+  bool_0 = false;
+  k = 0;
+  do {
+    exitg28 = 0;
+    if (k < 6) {
+      if (y[k] != b[k]) {
+        exitg28 = 1;
+      } else {
+        k++;
+      }
+    } else {
+      bool_0 = true;
+      exitg28 = 1;
+    }
+  } while (exitg28 == 0);
+
+  if (bool_0) {
+    k = 0;
+  } else {
+    for (k = 0; k < 6; k++) {
+      b[k] = tmp_1[k];
+    }
+
+    k = 0;
+    do {
+      exitg27 = 0;
+      if (k < 6) {
+        if (y[k] != b[k]) {
+          exitg27 = 1;
+        } else {
+          k++;
+        }
+      } else {
+        bool_0 = true;
+        exitg27 = 1;
+      }
+    } while (exitg27 == 0);
+
+    if (bool_0) {
+      k = 1;
+    } else {
+      for (k = 0; k < 6; k++) {
+        b[k] = tmp_2[k];
+      }
+
+      k = 0;
+      do {
+        exitg26 = 0;
+        if (k < 6) {
+          if (y[k] != b[k]) {
+            exitg26 = 1;
+          } else {
+            k++;
+          }
+        } else {
+          bool_0 = true;
+          exitg26 = 1;
+        }
+      } while (exitg26 == 0);
+
+      if (bool_0) {
+        k = 5;
+      } else {
+        for (k = 0; k < 6; k++) {
+          b[k] = tmp_3[k];
+        }
+
+        k = 0;
+        do {
+          exitg25 = 0;
+          if (k < 6) {
+            if (y[k] != b[k]) {
+              exitg25 = 1;
+            } else {
+              k++;
+            }
+          } else {
+            bool_0 = true;
+            exitg25 = 1;
+          }
+        } while (exitg25 == 0);
+
+        if (bool_0) {
+          k = 7;
+        } else {
+          k = -1;
+        }
+      }
+    }
+  }
+
+  switch (k) {
+   case 0:
+    k = 1;
+    break;
+
+   case 1:
+    k = 2;
+    break;
+
+   case 2:
+    k = 3;
+    break;
+
+   case 3:
+    k = 4;
+    break;
+
+   case 4:
+    k = 5;
+    break;
+
+   case 5:
+    k = 6;
+    break;
+
+   case 6:
+    k = 7;
+    break;
+
+   case 7:
+    k = 8;
+    break;
+
+   case 8:
+    k = 9;
+    break;
+
+   default:
+    k = 0;
+    break;
+  }
+
+  AXI4LITE_WRITE(&rtb_AXI4Lite_Write_CMD_DTC, (uint32_T)
+                 BasicQuad_RegisterOffset_edis0x, 1.0, (uint32_T)(int32_T)
+                 rt_roundd_snf((real_T)k), 0U);
+
+  /* End of Start for MATLABSystem: '<S16>/AXI4-Interface Write' */
+
+  /* DataTypeConversion: '<S9>/AXI4Lite_Write_en_motor2_DTC' incorporates:
+   *  Constant: '<Root>/Constant'
+   */
+  rtb_AXI4Lite_Write_CMD_DTC = BasicQuadrotorControl_interfa_P.Constant_Value_a;
+
+  /* Start for MATLABSystem: '<S21>/AXI4-Interface Write' incorporates:
+   *  MATLABSystem: '<S21>/AXI4-Interface Write'
+   */
+  memcpy(&BasicQuadrotorControl_interfa_B.table[0], &tmp[0], sizeof(char_T) <<
+         7U);
+  for (k = 0; k < 6; k++) {
+    y[k] = BasicQuadrotorControl_interfa_B.table[(uint8_T)
+      BasicQuadrotorControl_interf_DW.obj_h.dTypeIn[k] & 127];
     b[k] = tmp_0[k];
   }
 
@@ -360,34 +1036,22 @@ void BasicQuadrotorControl_interface_step(void)
   }
 
   AXI4LITE_WRITE(&rtb_AXI4Lite_Write_CMD_DTC, (uint32_T)
-                 BasicQuadro_RegisterOffset_edis, 1.0, (uint32_T)(int32_T)
+                 Basi_RegisterOffset_edis0x25o4r, 1.0, (uint32_T)(int32_T)
                  rt_roundd_snf((real_T)k), 0U);
 
-  /* End of Start for MATLABSystem: '<S12>/AXI4-Interface Write' */
+  /* End of Start for MATLABSystem: '<S21>/AXI4-Interface Write' */
 
-  /* DataTypeConversion: '<S7>/AXI4Lite_Write_CMD_VLD_DTC' incorporates:
-   *  Constant: '<Root>/Constant1'
-   */
-  tmp_4 = floor(BasicQuadrotorControl_interfa_P.Constant1_Value);
-  if (rtIsNaN(tmp_4) || rtIsInf(tmp_4)) {
-    tmp_4 = 0.0;
-  } else {
-    tmp_4 = fmod(tmp_4, 4.294967296E+9);
-  }
+  /* DataTypeConversion: '<S9>/AXI4Lite_Write_duty_motor2_DTC' */
+  rtb_AXI4Lite_Write_CMD_DTC = rtb_SliderGain_b4;
 
-  rtb_AXI4Lite_Write_CMD_DTC = tmp_4 < 0.0 ? (uint32_T)-(int32_T)(uint32_T)
-    -tmp_4 : (uint32_T)tmp_4;
-
-  /* End of DataTypeConversion: '<S7>/AXI4Lite_Write_CMD_VLD_DTC' */
-
-  /* Start for MATLABSystem: '<S13>/AXI4-Interface Write' incorporates:
-   *  MATLABSystem: '<S13>/AXI4-Interface Write'
+  /* Start for MATLABSystem: '<S17>/AXI4-Interface Write' incorporates:
+   *  MATLABSystem: '<S17>/AXI4-Interface Write'
    */
   memcpy(&BasicQuadrotorControl_interfa_B.table[0], &tmp[0], sizeof(char_T) <<
          7U);
   for (k = 0; k < 6; k++) {
     y[k] = BasicQuadrotorControl_interfa_B.table[(uint8_T)
-      BasicQuadrotorControl_interf_DW.obj_m.dTypeIn[k] & 127];
+      BasicQuadrotorControl_interf_DW.obj_pv.dTypeIn[k] & 127];
     b[k] = tmp_0[k];
   }
 
@@ -525,24 +1189,24 @@ void BasicQuadrotorControl_interface_step(void)
   }
 
   AXI4LITE_WRITE(&rtb_AXI4Lite_Write_CMD_DTC, (uint32_T)
-                 BasicQuadr_RegisterOffset_edis0, 1.0, (uint32_T)(int32_T)
+                 BasicQua_RegisterOffset_edis0x2, 1.0, (uint32_T)(int32_T)
                  rt_roundd_snf((real_T)k), 0U);
 
-  /* End of Start for MATLABSystem: '<S13>/AXI4-Interface Write' */
+  /* End of Start for MATLABSystem: '<S17>/AXI4-Interface Write' */
 
-  /* DataTypeConversion: '<S7>/AXI4Lite_Write_en_motor1_DTC' incorporates:
+  /* DataTypeConversion: '<S9>/AXI4Lite_Write_en_motor3_DTC' incorporates:
    *  Constant: '<Root>/Constant'
    */
   rtb_AXI4Lite_Write_CMD_DTC = BasicQuadrotorControl_interfa_P.Constant_Value_a;
 
-  /* Start for MATLABSystem: '<S16>/AXI4-Interface Write' incorporates:
-   *  MATLABSystem: '<S16>/AXI4-Interface Write'
+  /* Start for MATLABSystem: '<S22>/AXI4-Interface Write' incorporates:
+   *  MATLABSystem: '<S22>/AXI4-Interface Write'
    */
   memcpy(&BasicQuadrotorControl_interfa_B.table[0], &tmp[0], sizeof(char_T) <<
          7U);
   for (k = 0; k < 6; k++) {
     y[k] = BasicQuadrotorControl_interfa_B.table[(uint8_T)
-      BasicQuadrotorControl_interf_DW.obj_i.dTypeIn[k] & 127];
+      BasicQuadrotorControl_interf_DW.obj_k.dTypeIn[k] & 127];
     b[k] = tmp_0[k];
   }
 
@@ -680,22 +1344,22 @@ void BasicQuadrotorControl_interface_step(void)
   }
 
   AXI4LITE_WRITE(&rtb_AXI4Lite_Write_CMD_DTC, (uint32_T)
-                 BasicQu_RegisterOffset_edis0x25, 1.0, (uint32_T)(int32_T)
+                 Bas_RegisterOffset_edis0x25o4rm, 1.0, (uint32_T)(int32_T)
                  rt_roundd_snf((real_T)k), 0U);
 
-  /* End of Start for MATLABSystem: '<S16>/AXI4-Interface Write' */
+  /* End of Start for MATLABSystem: '<S22>/AXI4-Interface Write' */
 
-  /* DataTypeConversion: '<S7>/AXI4Lite_Write_duty_motor1_DTC' */
-  rtb_AXI4Lite_Write_CMD_DTC = rtb_SliderGain;
+  /* DataTypeConversion: '<S9>/AXI4Lite_Write_duty_motor3_DTC' */
+  rtb_AXI4Lite_Write_CMD_DTC = rtb_SliderGain_b;
 
-  /* Start for MATLABSystem: '<S14>/AXI4-Interface Write' incorporates:
-   *  MATLABSystem: '<S14>/AXI4-Interface Write'
+  /* Start for MATLABSystem: '<S18>/AXI4-Interface Write' incorporates:
+   *  MATLABSystem: '<S18>/AXI4-Interface Write'
    */
   memcpy(&BasicQuadrotorControl_interfa_B.table[0], &tmp[0], sizeof(char_T) <<
          7U);
   for (k = 0; k < 6; k++) {
     y[k] = BasicQuadrotorControl_interfa_B.table[(uint8_T)
-      BasicQuadrotorControl_interf_DW.obj_o.dTypeIn[k] & 127];
+      BasicQuadrotorControl_interf_DW.obj_n.dTypeIn[k] & 127];
     b[k] = tmp_0[k];
   }
 
@@ -833,18 +1497,18 @@ void BasicQuadrotorControl_interface_step(void)
   }
 
   AXI4LITE_WRITE(&rtb_AXI4Lite_Write_CMD_DTC, (uint32_T)
-                 BasicQuad_RegisterOffset_edis0x, 1.0, (uint32_T)(int32_T)
+                 BasicQu_RegisterOffset_edis0x25, 1.0, (uint32_T)(int32_T)
                  rt_roundd_snf((real_T)k), 0U);
 
-  /* End of Start for MATLABSystem: '<S14>/AXI4-Interface Write' */
+  /* End of Start for MATLABSystem: '<S18>/AXI4-Interface Write' */
 
-  /* DataTypeConversion: '<S7>/AXI4Lite_Write_en_motor2_DTC' incorporates:
+  /* DataTypeConversion: '<S9>/AXI4Lite_Write_en_motor4_DTC' incorporates:
    *  Constant: '<Root>/Constant'
    */
   rtb_AXI4Lite_Write_CMD_DTC = BasicQuadrotorControl_interfa_P.Constant_Value_a;
 
-  /* Start for MATLABSystem: '<S17>/AXI4-Interface Write' incorporates:
-   *  MATLABSystem: '<S17>/AXI4-Interface Write'
+  /* Start for MATLABSystem: '<S23>/AXI4-Interface Write' incorporates:
+   *  MATLABSystem: '<S23>/AXI4-Interface Write'
    */
   memcpy(&BasicQuadrotorControl_interfa_B.table[0], &tmp[0], sizeof(char_T) <<
          7U);
@@ -988,22 +1652,22 @@ void BasicQuadrotorControl_interface_step(void)
   }
 
   AXI4LITE_WRITE(&rtb_AXI4Lite_Write_CMD_DTC, (uint32_T)
-                 BasicQ_RegisterOffset_edis0x25o, 1.0, (uint32_T)(int32_T)
+                 Ba_RegisterOffset_edis0x25o4rmn, 1.0, (uint32_T)(int32_T)
                  rt_roundd_snf((real_T)k), 0U);
 
-  /* End of Start for MATLABSystem: '<S17>/AXI4-Interface Write' */
+  /* End of Start for MATLABSystem: '<S23>/AXI4-Interface Write' */
 
-  /* DataTypeConversion: '<S7>/AXI4Lite_Write_duty_motor2_DTC' */
-  rtb_AXI4Lite_Write_CMD_DTC = rtb_SliderGain_f;
+  /* DataTypeConversion: '<S9>/AXI4Lite_Write_duty_motor4_DTC' */
+  rtb_AXI4Lite_Write_CMD_DTC = rtb_SliderGain_n;
 
-  /* Start for MATLABSystem: '<S15>/AXI4-Interface Write' incorporates:
-   *  MATLABSystem: '<S15>/AXI4-Interface Write'
+  /* Start for MATLABSystem: '<S19>/AXI4-Interface Write' incorporates:
+   *  MATLABSystem: '<S19>/AXI4-Interface Write'
    */
   memcpy(&BasicQuadrotorControl_interfa_B.table[0], &tmp[0], sizeof(char_T) <<
          7U);
   for (k = 0; k < 6; k++) {
     y[k] = BasicQuadrotorControl_interfa_B.table[(uint8_T)
-      BasicQuadrotorControl_interf_DW.obj_k.dTypeIn[k] & 127];
+      BasicQuadrotorControl_interf_DW.obj_h2.dTypeIn[k] & 127];
     b[k] = tmp_0[k];
   }
 
@@ -1141,26 +1805,10 @@ void BasicQuadrotorControl_interface_step(void)
   }
 
   AXI4LITE_WRITE(&rtb_AXI4Lite_Write_CMD_DTC, (uint32_T)
-                 BasicQua_RegisterOffset_edis0x2, 1.0, (uint32_T)(int32_T)
+                 BasicQ_RegisterOffset_edis0x25o, 1.0, (uint32_T)(int32_T)
                  rt_roundd_snf((real_T)k), 0U);
 
-  /* End of Start for MATLABSystem: '<S15>/AXI4-Interface Write' */
-
-  /* MATLABSystem: '<S8>/AXI4-Interface Read' incorporates:
-   *  Start for MATLABSystem: '<S8>/AXI4-Interface Read'
-   */
-  rtb_AXI4Lite_Write_CMD_DTC = 0U;
-
-  /* Start for MATLABSystem: '<S8>/AXI4-Interface Read' incorporates:
-   *  MATLABSystem: '<S8>/AXI4-Interface Read'
-   */
-  AXI4LITE_READ(&rtb_AXI4Lite_Write_CMD_DTC, (uint32_T)
-                BasicQuadrotorCo_RegisterOffset, 1.0, 8U, 0U);
-
-  /* DataTypeConversion: '<S6>/AXI4Lite_Read_X_DTC' incorporates:
-   *  MATLABSystem: '<S8>/AXI4-Interface Read'
-   */
-  rtb_DataTypeConversion = (uint16_T)rtb_AXI4Lite_Write_CMD_DTC;
+  /* End of Start for MATLABSystem: '<S19>/AXI4-Interface Write' */
 
   /* MATLABSystem: '<S10>/AXI4-Interface Read' incorporates:
    *  Start for MATLABSystem: '<S10>/AXI4-Interface Read'
@@ -1171,12 +1819,44 @@ void BasicQuadrotorControl_interface_step(void)
    *  MATLABSystem: '<S10>/AXI4-Interface Read'
    */
   AXI4LITE_READ(&rtb_AXI4Lite_Write_CMD_DTC, (uint32_T)
-                BasicQuadroto_RegisterOffset_ed, 1.0, 8U, 0U);
+                BasicQuadrotorCo_RegisterOffset, 1.0, 8U, 0U);
 
-  /* DataTypeConversion: '<S6>/AXI4Lite_Read_Y_DTC' incorporates:
+  /* DataTypeConversion: '<S8>/AXI4Lite_Read_X_DTC' incorporates:
    *  MATLABSystem: '<S10>/AXI4-Interface Read'
    */
+  rtb_DataTypeConversion = (uint16_T)rtb_AXI4Lite_Write_CMD_DTC;
+
+  /* MATLABSystem: '<S12>/AXI4-Interface Read' incorporates:
+   *  Start for MATLABSystem: '<S12>/AXI4-Interface Read'
+   */
+  rtb_AXI4Lite_Write_CMD_DTC = 0U;
+
+  /* Start for MATLABSystem: '<S12>/AXI4-Interface Read' incorporates:
+   *  MATLABSystem: '<S12>/AXI4-Interface Read'
+   */
+  AXI4LITE_READ(&rtb_AXI4Lite_Write_CMD_DTC, (uint32_T)
+                BasicQuadroto_RegisterOffset_ed, 1.0, 8U, 0U);
+
+  /* DataTypeConversion: '<S8>/AXI4Lite_Read_Y_DTC' incorporates:
+   *  MATLABSystem: '<S12>/AXI4-Interface Read'
+   */
   rtb_AXI4Lite_Read_Y_DTC = (uint16_T)rtb_AXI4Lite_Write_CMD_DTC;
+
+  /* MATLABSystem: '<S13>/AXI4-Interface Read' incorporates:
+   *  Start for MATLABSystem: '<S13>/AXI4-Interface Read'
+   */
+  rtb_AXI4Lite_Write_CMD_DTC = 0U;
+
+  /* Start for MATLABSystem: '<S13>/AXI4-Interface Read' incorporates:
+   *  MATLABSystem: '<S13>/AXI4-Interface Read'
+   */
+  AXI4LITE_READ(&rtb_AXI4Lite_Write_CMD_DTC, (uint32_T)
+                BasicQuadrot_RegisterOffset_edi, 1.0, 8U, 0U);
+
+  /* DataTypeConversion: '<S8>/AXI4Lite_Read_Z_DTC' incorporates:
+   *  MATLABSystem: '<S13>/AXI4-Interface Read'
+   */
+  rtb_AXI4Lite_Read_Z_DTC = (uint16_T)rtb_AXI4Lite_Write_CMD_DTC;
 
   /* MATLABSystem: '<S11>/AXI4-Interface Read' incorporates:
    *  Start for MATLABSystem: '<S11>/AXI4-Interface Read'
@@ -1187,25 +1867,9 @@ void BasicQuadrotorControl_interface_step(void)
    *  MATLABSystem: '<S11>/AXI4-Interface Read'
    */
   AXI4LITE_READ(&rtb_AXI4Lite_Write_CMD_DTC, (uint32_T)
-                BasicQuadrot_RegisterOffset_edi, 1.0, 8U, 0U);
-
-  /* DataTypeConversion: '<S6>/AXI4Lite_Read_Z_DTC' incorporates:
-   *  MATLABSystem: '<S11>/AXI4-Interface Read'
-   */
-  rtb_AXI4Lite_Read_Z_DTC = (uint16_T)rtb_AXI4Lite_Write_CMD_DTC;
-
-  /* MATLABSystem: '<S9>/AXI4-Interface Read' incorporates:
-   *  Start for MATLABSystem: '<S9>/AXI4-Interface Read'
-   */
-  rtb_AXI4Lite_Write_CMD_DTC = 0U;
-
-  /* Start for MATLABSystem: '<S9>/AXI4-Interface Read' incorporates:
-   *  MATLABSystem: '<S9>/AXI4-Interface Read'
-   */
-  AXI4LITE_READ(&rtb_AXI4Lite_Write_CMD_DTC, (uint32_T)
                 BasicQuadrotor_RegisterOffset_e, 1.0, 8U, 0U);
 
-  /* End of Outputs for SubSystem: '<Root>/hdl_dut' */
+  /* End of Outputs for SubSystem: '<Root>/hdl_dut1' */
 
   /* DataTypeConversion: '<Root>/Data Type Conversion1' */
   BasicQuadrotorControl_interfa_B.DataTypeConversion1 = (int16_T)
@@ -1266,15 +1930,15 @@ void BasicQuadrotorControl_interface_initialize(void)
   BasicQuadrotorControl_interf_M->Timing.stepSize0 = 0.001;
 
   /* External mode info */
-  BasicQuadrotorControl_interf_M->Sizes.checksums[0] = (2679520925U);
-  BasicQuadrotorControl_interf_M->Sizes.checksums[1] = (1793356409U);
-  BasicQuadrotorControl_interf_M->Sizes.checksums[2] = (1069814306U);
-  BasicQuadrotorControl_interf_M->Sizes.checksums[3] = (2421925669U);
+  BasicQuadrotorControl_interf_M->Sizes.checksums[0] = (3106970222U);
+  BasicQuadrotorControl_interf_M->Sizes.checksums[1] = (3573942916U);
+  BasicQuadrotorControl_interf_M->Sizes.checksums[2] = (1466300935U);
+  BasicQuadrotorControl_interf_M->Sizes.checksums[3] = (1483338184U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;
     static RTWExtModeInfo rt_ExtModeInfo;
-    static const sysRanDType *systemRan[15];
+    static const sysRanDType *systemRan[19];
     BasicQuadrotorControl_interf_M->extModeInfo = (&rt_ExtModeInfo);
     rteiSetSubSystemActiveVectorAddresses(&rt_ExtModeInfo, systemRan);
     systemRan[0] = &rtAlwaysEnabled;
@@ -1292,6 +1956,10 @@ void BasicQuadrotorControl_interface_initialize(void)
     systemRan[12] = &rtAlwaysEnabled;
     systemRan[13] = &rtAlwaysEnabled;
     systemRan[14] = &rtAlwaysEnabled;
+    systemRan[15] = &rtAlwaysEnabled;
+    systemRan[16] = &rtAlwaysEnabled;
+    systemRan[17] = &rtAlwaysEnabled;
+    systemRan[18] = &rtAlwaysEnabled;
     rteiSetModelMappingInfoPtr(BasicQuadrotorControl_interf_M->extModeInfo,
       &BasicQuadrotorControl_interf_M->SpecialInfo.mappingInfo);
     rteiSetChecksumsPtr(BasicQuadrotorControl_interf_M->extModeInfo,
@@ -1349,15 +2017,15 @@ void BasicQuadrotorControl_interface_initialize(void)
       BasicQuadrotorControl_interf_DW.FromWorkspace_IWORK.PrevIndex = 0;
     }
 
-    /* Start for Atomic SubSystem: '<Root>/hdl_dut' */
+    /* Start for Atomic SubSystem: '<Root>/hdl_dut1' */
 
-    /* Start for MATLABSystem: '<S12>/AXI4-Interface Write' */
-    BasicQuadrotorControl_interf_DW.obj_a.isInitialized = false;
-    BasicQuadrotorControl_interf_DW.obj_a.isReleased = false;
-    BasicQuadrotorControl_interf_DW.objisempty_e = true;
-    BasicQuadrotorControl_interf_DW.obj_a.isInitialized = true;
+    /* Start for MATLABSystem: '<S14>/AXI4-Interface Write' */
+    BasicQuadrotorControl_interf_DW.obj_ku.isInitialized = false;
+    BasicQuadrotorControl_interf_DW.obj_ku.isReleased = false;
+    BasicQuadrotorControl_interf_DW.objisempty_k = true;
+    BasicQuadrotorControl_interf_DW.obj_ku.isInitialized = true;
     for (i = 0; i < 6; i++) {
-      BasicQuadrotorControl_interf_DW.obj_a.dTypeIn[i] = tmp[i];
+      BasicQuadrotorControl_interf_DW.obj_ku.dTypeIn[i] = tmp[i];
     }
 
     for (i = 0; i < 13; i++) {
@@ -1367,9 +2035,9 @@ void BasicQuadrotorControl_interface_initialize(void)
     nullTermName[13] = '\x00';
     AXI4LITE_INIT(nullTermName);
 
-    /* End of Start for MATLABSystem: '<S12>/AXI4-Interface Write' */
+    /* End of Start for MATLABSystem: '<S14>/AXI4-Interface Write' */
 
-    /* Start for MATLABSystem: '<S13>/AXI4-Interface Write' */
+    /* Start for MATLABSystem: '<S15>/AXI4-Interface Write' */
     BasicQuadrotorControl_interf_DW.obj_m.isInitialized = false;
     BasicQuadrotorControl_interf_DW.obj_m.isReleased = false;
     BasicQuadrotorControl_interf_DW.objisempty_o = true;
@@ -1385,15 +2053,33 @@ void BasicQuadrotorControl_interface_initialize(void)
     nullTermName[13] = '\x00';
     AXI4LITE_INIT(nullTermName);
 
-    /* End of Start for MATLABSystem: '<S13>/AXI4-Interface Write' */
+    /* End of Start for MATLABSystem: '<S15>/AXI4-Interface Write' */
+
+    /* Start for MATLABSystem: '<S20>/AXI4-Interface Write' */
+    BasicQuadrotorControl_interf_DW.obj_p.isInitialized = false;
+    BasicQuadrotorControl_interf_DW.obj_p.isReleased = false;
+    BasicQuadrotorControl_interf_DW.objisempty_f = true;
+    BasicQuadrotorControl_interf_DW.obj_p.isInitialized = true;
+    for (i = 0; i < 6; i++) {
+      BasicQuadrotorControl_interf_DW.obj_p.dTypeIn[i] = tmp[i];
+    }
+
+    for (i = 0; i < 13; i++) {
+      nullTermName[i] = tmp_0[i];
+    }
+
+    nullTermName[13] = '\x00';
+    AXI4LITE_INIT(nullTermName);
+
+    /* End of Start for MATLABSystem: '<S20>/AXI4-Interface Write' */
 
     /* Start for MATLABSystem: '<S16>/AXI4-Interface Write' */
-    BasicQuadrotorControl_interf_DW.obj_i.isInitialized = false;
-    BasicQuadrotorControl_interf_DW.obj_i.isReleased = false;
-    BasicQuadrotorControl_interf_DW.objisempty_f = true;
-    BasicQuadrotorControl_interf_DW.obj_i.isInitialized = true;
+    BasicQuadrotorControl_interf_DW.obj_c.isInitialized = false;
+    BasicQuadrotorControl_interf_DW.obj_c.isReleased = false;
+    BasicQuadrotorControl_interf_DW.objisempty_b = true;
+    BasicQuadrotorControl_interf_DW.obj_c.isInitialized = true;
     for (i = 0; i < 6; i++) {
-      BasicQuadrotorControl_interf_DW.obj_i.dTypeIn[i] = tmp[i];
+      BasicQuadrotorControl_interf_DW.obj_c.dTypeIn[i] = tmp[i];
     }
 
     for (i = 0; i < 13; i++) {
@@ -1405,13 +2091,13 @@ void BasicQuadrotorControl_interface_initialize(void)
 
     /* End of Start for MATLABSystem: '<S16>/AXI4-Interface Write' */
 
-    /* Start for MATLABSystem: '<S14>/AXI4-Interface Write' */
-    BasicQuadrotorControl_interf_DW.obj_o.isInitialized = false;
-    BasicQuadrotorControl_interf_DW.obj_o.isReleased = false;
-    BasicQuadrotorControl_interf_DW.objisempty_l = true;
-    BasicQuadrotorControl_interf_DW.obj_o.isInitialized = true;
+    /* Start for MATLABSystem: '<S21>/AXI4-Interface Write' */
+    BasicQuadrotorControl_interf_DW.obj_h.isInitialized = false;
+    BasicQuadrotorControl_interf_DW.obj_h.isReleased = false;
+    BasicQuadrotorControl_interf_DW.objisempty_h = true;
+    BasicQuadrotorControl_interf_DW.obj_h.isInitialized = true;
     for (i = 0; i < 6; i++) {
-      BasicQuadrotorControl_interf_DW.obj_o.dTypeIn[i] = tmp[i];
+      BasicQuadrotorControl_interf_DW.obj_h.dTypeIn[i] = tmp[i];
     }
 
     for (i = 0; i < 13; i++) {
@@ -1421,9 +2107,63 @@ void BasicQuadrotorControl_interface_initialize(void)
     nullTermName[13] = '\x00';
     AXI4LITE_INIT(nullTermName);
 
-    /* End of Start for MATLABSystem: '<S14>/AXI4-Interface Write' */
+    /* End of Start for MATLABSystem: '<S21>/AXI4-Interface Write' */
 
     /* Start for MATLABSystem: '<S17>/AXI4-Interface Write' */
+    BasicQuadrotorControl_interf_DW.obj_pv.isInitialized = false;
+    BasicQuadrotorControl_interf_DW.obj_pv.isReleased = false;
+    BasicQuadrotorControl_interf_DW.objisempty_c = true;
+    BasicQuadrotorControl_interf_DW.obj_pv.isInitialized = true;
+    for (i = 0; i < 6; i++) {
+      BasicQuadrotorControl_interf_DW.obj_pv.dTypeIn[i] = tmp[i];
+    }
+
+    for (i = 0; i < 13; i++) {
+      nullTermName[i] = tmp_0[i];
+    }
+
+    nullTermName[13] = '\x00';
+    AXI4LITE_INIT(nullTermName);
+
+    /* End of Start for MATLABSystem: '<S17>/AXI4-Interface Write' */
+
+    /* Start for MATLABSystem: '<S22>/AXI4-Interface Write' */
+    BasicQuadrotorControl_interf_DW.obj_k.isInitialized = false;
+    BasicQuadrotorControl_interf_DW.obj_k.isReleased = false;
+    BasicQuadrotorControl_interf_DW.objisempty_n = true;
+    BasicQuadrotorControl_interf_DW.obj_k.isInitialized = true;
+    for (i = 0; i < 6; i++) {
+      BasicQuadrotorControl_interf_DW.obj_k.dTypeIn[i] = tmp[i];
+    }
+
+    for (i = 0; i < 13; i++) {
+      nullTermName[i] = tmp_0[i];
+    }
+
+    nullTermName[13] = '\x00';
+    AXI4LITE_INIT(nullTermName);
+
+    /* End of Start for MATLABSystem: '<S22>/AXI4-Interface Write' */
+
+    /* Start for MATLABSystem: '<S18>/AXI4-Interface Write' */
+    BasicQuadrotorControl_interf_DW.obj_n.isInitialized = false;
+    BasicQuadrotorControl_interf_DW.obj_n.isReleased = false;
+    BasicQuadrotorControl_interf_DW.objisempty_i = true;
+    BasicQuadrotorControl_interf_DW.obj_n.isInitialized = true;
+    for (i = 0; i < 6; i++) {
+      BasicQuadrotorControl_interf_DW.obj_n.dTypeIn[i] = tmp[i];
+    }
+
+    for (i = 0; i < 13; i++) {
+      nullTermName[i] = tmp_0[i];
+    }
+
+    nullTermName[13] = '\x00';
+    AXI4LITE_INIT(nullTermName);
+
+    /* End of Start for MATLABSystem: '<S18>/AXI4-Interface Write' */
+
+    /* Start for MATLABSystem: '<S23>/AXI4-Interface Write' */
     BasicQuadrotorControl_interf_DW.obj.isInitialized = false;
     BasicQuadrotorControl_interf_DW.obj.isReleased = false;
     BasicQuadrotorControl_interf_DW.objisempty = true;
@@ -1439,15 +2179,15 @@ void BasicQuadrotorControl_interface_initialize(void)
     nullTermName[13] = '\x00';
     AXI4LITE_INIT(nullTermName);
 
-    /* End of Start for MATLABSystem: '<S17>/AXI4-Interface Write' */
+    /* End of Start for MATLABSystem: '<S23>/AXI4-Interface Write' */
 
-    /* Start for MATLABSystem: '<S15>/AXI4-Interface Write' */
-    BasicQuadrotorControl_interf_DW.obj_k.isInitialized = false;
-    BasicQuadrotorControl_interf_DW.obj_k.isReleased = false;
-    BasicQuadrotorControl_interf_DW.objisempty_p = true;
-    BasicQuadrotorControl_interf_DW.obj_k.isInitialized = true;
+    /* Start for MATLABSystem: '<S19>/AXI4-Interface Write' */
+    BasicQuadrotorControl_interf_DW.obj_h2.isInitialized = false;
+    BasicQuadrotorControl_interf_DW.obj_h2.isReleased = false;
+    BasicQuadrotorControl_interf_DW.objisempty_m = true;
+    BasicQuadrotorControl_interf_DW.obj_h2.isInitialized = true;
     for (i = 0; i < 6; i++) {
-      BasicQuadrotorControl_interf_DW.obj_k.dTypeIn[i] = tmp[i];
+      BasicQuadrotorControl_interf_DW.obj_h2.dTypeIn[i] = tmp[i];
     }
 
     for (i = 0; i < 13; i++) {
@@ -1457,27 +2197,13 @@ void BasicQuadrotorControl_interface_initialize(void)
     nullTermName[13] = '\x00';
     AXI4LITE_INIT(nullTermName);
 
-    /* End of Start for MATLABSystem: '<S15>/AXI4-Interface Write' */
-
-    /* Start for MATLABSystem: '<S8>/AXI4-Interface Read' */
-    BasicQuadrotorControl_interf_DW.obj_l.isInitialized = false;
-    BasicQuadrotorControl_interf_DW.obj_l.isReleased = false;
-    BasicQuadrotorControl_interf_DW.objisempty_fl = true;
-    BasicQuadrotorControl_interf_DW.obj_l.isInitialized = true;
-    for (i = 0; i < 13; i++) {
-      nullTermName[i] = tmp_0[i];
-    }
-
-    nullTermName[13] = '\x00';
-    AXI4LITE_INIT(nullTermName);
-
-    /* End of Start for MATLABSystem: '<S8>/AXI4-Interface Read' */
+    /* End of Start for MATLABSystem: '<S19>/AXI4-Interface Write' */
 
     /* Start for MATLABSystem: '<S10>/AXI4-Interface Read' */
-    BasicQuadrotorControl_interf_DW.obj_g.isInitialized = false;
-    BasicQuadrotorControl_interf_DW.obj_g.isReleased = false;
-    BasicQuadrotorControl_interf_DW.objisempty_d = true;
-    BasicQuadrotorControl_interf_DW.obj_g.isInitialized = true;
+    BasicQuadrotorControl_interf_DW.obj_o.isInitialized = false;
+    BasicQuadrotorControl_interf_DW.obj_o.isReleased = false;
+    BasicQuadrotorControl_interf_DW.objisempty_h2 = true;
+    BasicQuadrotorControl_interf_DW.obj_o.isInitialized = true;
     for (i = 0; i < 13; i++) {
       nullTermName[i] = tmp_0[i];
     }
@@ -1487,11 +2213,39 @@ void BasicQuadrotorControl_interface_initialize(void)
 
     /* End of Start for MATLABSystem: '<S10>/AXI4-Interface Read' */
 
+    /* Start for MATLABSystem: '<S12>/AXI4-Interface Read' */
+    BasicQuadrotorControl_interf_DW.obj_d.isInitialized = false;
+    BasicQuadrotorControl_interf_DW.obj_d.isReleased = false;
+    BasicQuadrotorControl_interf_DW.objisempty_ii = true;
+    BasicQuadrotorControl_interf_DW.obj_d.isInitialized = true;
+    for (i = 0; i < 13; i++) {
+      nullTermName[i] = tmp_0[i];
+    }
+
+    nullTermName[13] = '\x00';
+    AXI4LITE_INIT(nullTermName);
+
+    /* End of Start for MATLABSystem: '<S12>/AXI4-Interface Read' */
+
+    /* Start for MATLABSystem: '<S13>/AXI4-Interface Read' */
+    BasicQuadrotorControl_interf_DW.obj_nh.isInitialized = false;
+    BasicQuadrotorControl_interf_DW.obj_nh.isReleased = false;
+    BasicQuadrotorControl_interf_DW.objisempty_fm = true;
+    BasicQuadrotorControl_interf_DW.obj_nh.isInitialized = true;
+    for (i = 0; i < 13; i++) {
+      nullTermName[i] = tmp_0[i];
+    }
+
+    nullTermName[13] = '\x00';
+    AXI4LITE_INIT(nullTermName);
+
+    /* End of Start for MATLABSystem: '<S13>/AXI4-Interface Read' */
+
     /* Start for MATLABSystem: '<S11>/AXI4-Interface Read' */
-    BasicQuadrotorControl_interf_DW.obj_kl.isInitialized = false;
-    BasicQuadrotorControl_interf_DW.obj_kl.isReleased = false;
-    BasicQuadrotorControl_interf_DW.objisempty_px = true;
-    BasicQuadrotorControl_interf_DW.obj_kl.isInitialized = true;
+    BasicQuadrotorControl_interf_DW.obj_i.isInitialized = false;
+    BasicQuadrotorControl_interf_DW.obj_i.isReleased = false;
+    BasicQuadrotorControl_interf_DW.objisempty_j = true;
+    BasicQuadrotorControl_interf_DW.obj_i.isInitialized = true;
     for (i = 0; i < 13; i++) {
       nullTermName[i] = tmp_0[i];
     }
@@ -1501,130 +2255,156 @@ void BasicQuadrotorControl_interface_initialize(void)
 
     /* End of Start for MATLABSystem: '<S11>/AXI4-Interface Read' */
 
-    /* Start for MATLABSystem: '<S9>/AXI4-Interface Read' */
-    BasicQuadrotorControl_interf_DW.obj_i1.isInitialized = false;
-    BasicQuadrotorControl_interf_DW.obj_i1.isReleased = false;
-    BasicQuadrotorControl_interf_DW.objisempty_or = true;
-    BasicQuadrotorControl_interf_DW.obj_i1.isInitialized = true;
-    for (i = 0; i < 13; i++) {
-      nullTermName[i] = tmp_0[i];
-    }
-
-    nullTermName[13] = '\x00';
-    AXI4LITE_INIT(nullTermName);
-
-    /* End of Start for MATLABSystem: '<S9>/AXI4-Interface Read' */
-
-    /* End of Start for SubSystem: '<Root>/hdl_dut' */
+    /* End of Start for SubSystem: '<Root>/hdl_dut1' */
   }
 }
 
 /* Model terminate function */
 void BasicQuadrotorControl_interface_terminate(void)
 {
-  /* Terminate for Atomic SubSystem: '<Root>/hdl_dut' */
+  /* Terminate for Atomic SubSystem: '<Root>/hdl_dut1' */
 
-  /* Start for MATLABSystem: '<S12>/AXI4-Interface Write' incorporates:
-   *  Terminate for MATLABSystem: '<S12>/AXI4-Interface Write'
+  /* Start for MATLABSystem: '<S14>/AXI4-Interface Write' incorporates:
+   *  Terminate for MATLABSystem: '<S14>/AXI4-Interface Write'
    */
-  if (BasicQuadrotorControl_interf_DW.obj_a.isInitialized) {
-    BasicQuadrotorControl_interf_DW.obj_a.isReleased = true;
+  if (BasicQuadrotorControl_interf_DW.obj_ku.isInitialized) {
+    BasicQuadrotorControl_interf_DW.obj_ku.isReleased = true;
     AXI4LITE_TERMINATE();
   }
 
-  /* End of Start for MATLABSystem: '<S12>/AXI4-Interface Write' */
+  /* End of Start for MATLABSystem: '<S14>/AXI4-Interface Write' */
 
-  /* Start for MATLABSystem: '<S13>/AXI4-Interface Write' incorporates:
-   *  Terminate for MATLABSystem: '<S13>/AXI4-Interface Write'
+  /* Start for MATLABSystem: '<S15>/AXI4-Interface Write' incorporates:
+   *  Terminate for MATLABSystem: '<S15>/AXI4-Interface Write'
    */
   if (BasicQuadrotorControl_interf_DW.obj_m.isInitialized) {
     BasicQuadrotorControl_interf_DW.obj_m.isReleased = true;
     AXI4LITE_TERMINATE();
   }
 
-  /* End of Start for MATLABSystem: '<S13>/AXI4-Interface Write' */
+  /* End of Start for MATLABSystem: '<S15>/AXI4-Interface Write' */
+
+  /* Start for MATLABSystem: '<S20>/AXI4-Interface Write' incorporates:
+   *  Terminate for MATLABSystem: '<S20>/AXI4-Interface Write'
+   */
+  if (BasicQuadrotorControl_interf_DW.obj_p.isInitialized) {
+    BasicQuadrotorControl_interf_DW.obj_p.isReleased = true;
+    AXI4LITE_TERMINATE();
+  }
+
+  /* End of Start for MATLABSystem: '<S20>/AXI4-Interface Write' */
 
   /* Start for MATLABSystem: '<S16>/AXI4-Interface Write' incorporates:
    *  Terminate for MATLABSystem: '<S16>/AXI4-Interface Write'
    */
-  if (BasicQuadrotorControl_interf_DW.obj_i.isInitialized) {
-    BasicQuadrotorControl_interf_DW.obj_i.isReleased = true;
+  if (BasicQuadrotorControl_interf_DW.obj_c.isInitialized) {
+    BasicQuadrotorControl_interf_DW.obj_c.isReleased = true;
     AXI4LITE_TERMINATE();
   }
 
   /* End of Start for MATLABSystem: '<S16>/AXI4-Interface Write' */
 
-  /* Start for MATLABSystem: '<S14>/AXI4-Interface Write' incorporates:
-   *  Terminate for MATLABSystem: '<S14>/AXI4-Interface Write'
+  /* Start for MATLABSystem: '<S21>/AXI4-Interface Write' incorporates:
+   *  Terminate for MATLABSystem: '<S21>/AXI4-Interface Write'
    */
-  if (BasicQuadrotorControl_interf_DW.obj_o.isInitialized) {
-    BasicQuadrotorControl_interf_DW.obj_o.isReleased = true;
+  if (BasicQuadrotorControl_interf_DW.obj_h.isInitialized) {
+    BasicQuadrotorControl_interf_DW.obj_h.isReleased = true;
     AXI4LITE_TERMINATE();
   }
 
-  /* End of Start for MATLABSystem: '<S14>/AXI4-Interface Write' */
+  /* End of Start for MATLABSystem: '<S21>/AXI4-Interface Write' */
 
   /* Start for MATLABSystem: '<S17>/AXI4-Interface Write' incorporates:
    *  Terminate for MATLABSystem: '<S17>/AXI4-Interface Write'
    */
-  if (BasicQuadrotorControl_interf_DW.obj.isInitialized) {
-    BasicQuadrotorControl_interf_DW.obj.isReleased = true;
+  if (BasicQuadrotorControl_interf_DW.obj_pv.isInitialized) {
+    BasicQuadrotorControl_interf_DW.obj_pv.isReleased = true;
     AXI4LITE_TERMINATE();
   }
 
   /* End of Start for MATLABSystem: '<S17>/AXI4-Interface Write' */
 
-  /* Start for MATLABSystem: '<S15>/AXI4-Interface Write' incorporates:
-   *  Terminate for MATLABSystem: '<S15>/AXI4-Interface Write'
+  /* Start for MATLABSystem: '<S22>/AXI4-Interface Write' incorporates:
+   *  Terminate for MATLABSystem: '<S22>/AXI4-Interface Write'
    */
   if (BasicQuadrotorControl_interf_DW.obj_k.isInitialized) {
     BasicQuadrotorControl_interf_DW.obj_k.isReleased = true;
     AXI4LITE_TERMINATE();
   }
 
-  /* End of Start for MATLABSystem: '<S15>/AXI4-Interface Write' */
+  /* End of Start for MATLABSystem: '<S22>/AXI4-Interface Write' */
 
-  /* Start for MATLABSystem: '<S8>/AXI4-Interface Read' incorporates:
-   *  Terminate for MATLABSystem: '<S8>/AXI4-Interface Read'
+  /* Start for MATLABSystem: '<S18>/AXI4-Interface Write' incorporates:
+   *  Terminate for MATLABSystem: '<S18>/AXI4-Interface Write'
    */
-  if (BasicQuadrotorControl_interf_DW.obj_l.isInitialized) {
-    BasicQuadrotorControl_interf_DW.obj_l.isReleased = true;
+  if (BasicQuadrotorControl_interf_DW.obj_n.isInitialized) {
+    BasicQuadrotorControl_interf_DW.obj_n.isReleased = true;
     AXI4LITE_TERMINATE();
   }
 
-  /* End of Start for MATLABSystem: '<S8>/AXI4-Interface Read' */
+  /* End of Start for MATLABSystem: '<S18>/AXI4-Interface Write' */
+
+  /* Start for MATLABSystem: '<S23>/AXI4-Interface Write' incorporates:
+   *  Terminate for MATLABSystem: '<S23>/AXI4-Interface Write'
+   */
+  if (BasicQuadrotorControl_interf_DW.obj.isInitialized) {
+    BasicQuadrotorControl_interf_DW.obj.isReleased = true;
+    AXI4LITE_TERMINATE();
+  }
+
+  /* End of Start for MATLABSystem: '<S23>/AXI4-Interface Write' */
+
+  /* Start for MATLABSystem: '<S19>/AXI4-Interface Write' incorporates:
+   *  Terminate for MATLABSystem: '<S19>/AXI4-Interface Write'
+   */
+  if (BasicQuadrotorControl_interf_DW.obj_h2.isInitialized) {
+    BasicQuadrotorControl_interf_DW.obj_h2.isReleased = true;
+    AXI4LITE_TERMINATE();
+  }
+
+  /* End of Start for MATLABSystem: '<S19>/AXI4-Interface Write' */
 
   /* Start for MATLABSystem: '<S10>/AXI4-Interface Read' incorporates:
    *  Terminate for MATLABSystem: '<S10>/AXI4-Interface Read'
    */
-  if (BasicQuadrotorControl_interf_DW.obj_g.isInitialized) {
-    BasicQuadrotorControl_interf_DW.obj_g.isReleased = true;
+  if (BasicQuadrotorControl_interf_DW.obj_o.isInitialized) {
+    BasicQuadrotorControl_interf_DW.obj_o.isReleased = true;
     AXI4LITE_TERMINATE();
   }
 
   /* End of Start for MATLABSystem: '<S10>/AXI4-Interface Read' */
 
+  /* Start for MATLABSystem: '<S12>/AXI4-Interface Read' incorporates:
+   *  Terminate for MATLABSystem: '<S12>/AXI4-Interface Read'
+   */
+  if (BasicQuadrotorControl_interf_DW.obj_d.isInitialized) {
+    BasicQuadrotorControl_interf_DW.obj_d.isReleased = true;
+    AXI4LITE_TERMINATE();
+  }
+
+  /* End of Start for MATLABSystem: '<S12>/AXI4-Interface Read' */
+
+  /* Start for MATLABSystem: '<S13>/AXI4-Interface Read' incorporates:
+   *  Terminate for MATLABSystem: '<S13>/AXI4-Interface Read'
+   */
+  if (BasicQuadrotorControl_interf_DW.obj_nh.isInitialized) {
+    BasicQuadrotorControl_interf_DW.obj_nh.isReleased = true;
+    AXI4LITE_TERMINATE();
+  }
+
+  /* End of Start for MATLABSystem: '<S13>/AXI4-Interface Read' */
+
   /* Start for MATLABSystem: '<S11>/AXI4-Interface Read' incorporates:
    *  Terminate for MATLABSystem: '<S11>/AXI4-Interface Read'
    */
-  if (BasicQuadrotorControl_interf_DW.obj_kl.isInitialized) {
-    BasicQuadrotorControl_interf_DW.obj_kl.isReleased = true;
+  if (BasicQuadrotorControl_interf_DW.obj_i.isInitialized) {
+    BasicQuadrotorControl_interf_DW.obj_i.isReleased = true;
     AXI4LITE_TERMINATE();
   }
 
   /* End of Start for MATLABSystem: '<S11>/AXI4-Interface Read' */
 
-  /* Start for MATLABSystem: '<S9>/AXI4-Interface Read' incorporates:
-   *  Terminate for MATLABSystem: '<S9>/AXI4-Interface Read'
-   */
-  if (BasicQuadrotorControl_interf_DW.obj_i1.isInitialized) {
-    BasicQuadrotorControl_interf_DW.obj_i1.isReleased = true;
-    AXI4LITE_TERMINATE();
-  }
-
-  /* End of Start for MATLABSystem: '<S9>/AXI4-Interface Read' */
-
-  /* End of Terminate for SubSystem: '<Root>/hdl_dut' */
+  /* End of Terminate for SubSystem: '<Root>/hdl_dut1' */
 }
 
 /*

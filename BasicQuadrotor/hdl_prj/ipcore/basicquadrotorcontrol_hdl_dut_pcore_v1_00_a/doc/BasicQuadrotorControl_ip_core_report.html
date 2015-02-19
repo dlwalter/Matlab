@@ -100,7 +100,7 @@ thead.reportTableHeader {
 <tr>
 <td class="distinctCellColor">Model version
 </td>
-<td class="summaryTableSndColOddRow">1.142
+<td class="summaryTableSndColOddRow">1.144
 </td>
 </tr>
 <tr>
@@ -112,7 +112,7 @@ thead.reportTableHeader {
 <tr>
 <td class="distinctCellColor">IP core generated on
 </td>
-<td class="summaryTableSndColOddRow">17-Feb-2015 18:38:43
+<td class="summaryTableSndColOddRow">18-Feb-2015 16:31:57
 </td>
 </tr>
 <tr>
@@ -196,7 +196,7 @@ Target platform interface table:
 </td>
 <td class="distinctCellColor">AXI4-Lite
 </td>
-<td class="distinctCellColor">x"118"
+<td class="distinctCellColor">x"108"
 </td>
 </tr>
 <tr>
@@ -208,7 +208,7 @@ Target platform interface table:
 </td>
 <td>AXI4-Lite
 </td>
-<td>x"11C"
+<td>x"10C"
 </td>
 </tr>
 <tr>
@@ -220,11 +220,59 @@ Target platform interface table:
 </td>
 <td class="distinctCellColor">AXI4-Lite
 </td>
-<td class="distinctCellColor">x"120"
+<td class="distinctCellColor">x"110"
 </td>
 </tr>
 <tr>
 <td><a class="code2model" id="code2model" href="matlab:Simulink.ID.hilite('BasicQuadrotorControl:236')">duty_motor2</a>
+</td>
+<td>Inport
+</td>
+<td>uint8
+</td>
+<td>AXI4-Lite
+</td>
+<td>x"114"
+</td>
+</tr>
+<tr>
+<td class="distinctCellColor"><a class="code2model" id="code2model" href="matlab:Simulink.ID.hilite('BasicQuadrotorControl:416')">en_motor3</a>
+</td>
+<td class="distinctCellColor">Inport
+</td>
+<td class="distinctCellColor">boolean
+</td>
+<td class="distinctCellColor">AXI4-Lite
+</td>
+<td class="distinctCellColor">x"118"
+</td>
+</tr>
+<tr>
+<td><a class="code2model" id="code2model" href="matlab:Simulink.ID.hilite('BasicQuadrotorControl:417')">duty_motor3</a>
+</td>
+<td>Inport
+</td>
+<td>uint8
+</td>
+<td>AXI4-Lite
+</td>
+<td>x"11C"
+</td>
+</tr>
+<tr>
+<td class="distinctCellColor"><a class="code2model" id="code2model" href="matlab:Simulink.ID.hilite('BasicQuadrotorControl:418')">en_motor4</a>
+</td>
+<td class="distinctCellColor">Inport
+</td>
+<td class="distinctCellColor">boolean
+</td>
+<td class="distinctCellColor">AXI4-Lite
+</td>
+<td class="distinctCellColor">x"120"
+</td>
+</tr>
+<tr>
+<td><a class="code2model" id="code2model" href="matlab:Simulink.ID.hilite('BasicQuadrotorControl:419')">duty_motor4</a>
 </td>
 <td>Inport
 </td>
@@ -244,7 +292,7 @@ Target platform interface table:
 </td>
 <td class="distinctCellColor">AXI4-Lite
 </td>
-<td class="distinctCellColor">x"108"
+<td class="distinctCellColor">x"128"
 </td>
 </tr>
 <tr>
@@ -256,7 +304,7 @@ Target platform interface table:
 </td>
 <td>AXI4-Lite
 </td>
-<td>x"10C"
+<td>x"12C"
 </td>
 </tr>
 <tr>
@@ -268,7 +316,7 @@ Target platform interface table:
 </td>
 <td class="distinctCellColor">AXI4-Lite
 </td>
-<td class="distinctCellColor">x"110"
+<td class="distinctCellColor">x"130"
 </td>
 </tr>
 <tr>
@@ -280,7 +328,7 @@ Target platform interface table:
 </td>
 <td>AXI4-Lite
 </td>
-<td>x"114"
+<td>x"134"
 </td>
 </tr>
 <tr>
@@ -340,7 +388,31 @@ Target platform interface table:
 </td>
 <td class="distinctCellColor">Pmod Connector JB1 [0:7]
 </td>
-<td class="distinctCellColor">[2]
+<td class="distinctCellColor">[1]
+</td>
+</tr>
+<tr>
+<td><a class="code2model" id="code2model" href="matlab:Simulink.ID.hilite('BasicQuadrotorControl:413')">PWM_motor3</a>
+</td>
+<td>Outport
+</td>
+<td>boolean
+</td>
+<td>Pmod Connector JB1 [0:7]
+</td>
+<td>[2]
+</td>
+</tr>
+<tr>
+<td class="distinctCellColor"><a class="code2model" id="code2model" href="matlab:Simulink.ID.hilite('BasicQuadrotorControl:414')">PWM_motor4</a>
+</td>
+<td class="distinctCellColor">Outport
+</td>
+<td class="distinctCellColor">boolean
+</td>
+<td class="distinctCellColor">Pmod Connector JB1 [0:7]
+</td>
+<td class="distinctCellColor">[3]
 </td>
 </tr>
 </tbody>
@@ -395,41 +467,9 @@ The following AXI4-Lite bus accessible registers were generated for this IP core
 </td>
 </tr>
 <tr>
-<td>X_Data
-</td>
-<td>0x108
-</td>
-<td>data register for port X
-</td>
-</tr>
-<tr>
-<td class="distinctCellColor">Y_Data
-</td>
-<td class="distinctCellColor">0x10C
-</td>
-<td class="distinctCellColor">data register for port Y
-</td>
-</tr>
-<tr>
-<td>Z_Data
-</td>
-<td>0x110
-</td>
-<td>data register for port Z
-</td>
-</tr>
-<tr>
-<td class="distinctCellColor">XYZ_Valid_Data
-</td>
-<td class="distinctCellColor">0x114
-</td>
-<td class="distinctCellColor">data register for port XYZ_Valid
-</td>
-</tr>
-<tr>
 <td>en_motor1_Data
 </td>
-<td>0x118
+<td>0x108
 </td>
 <td>data register for port en_motor1
 </td>
@@ -437,7 +477,7 @@ The following AXI4-Lite bus accessible registers were generated for this IP core
 <tr>
 <td class="distinctCellColor">duty_motor1_Data
 </td>
-<td class="distinctCellColor">0x11C
+<td class="distinctCellColor">0x10C
 </td>
 <td class="distinctCellColor">data register for port duty_motor1
 </td>
@@ -445,7 +485,7 @@ The following AXI4-Lite bus accessible registers were generated for this IP core
 <tr>
 <td>en_motor2_Data
 </td>
-<td>0x120
+<td>0x110
 </td>
 <td>data register for port en_motor2
 </td>
@@ -453,9 +493,73 @@ The following AXI4-Lite bus accessible registers were generated for this IP core
 <tr>
 <td class="distinctCellColor">duty_motor2_Data
 </td>
-<td class="distinctCellColor">0x124
+<td class="distinctCellColor">0x114
 </td>
 <td class="distinctCellColor">data register for port duty_motor2
+</td>
+</tr>
+<tr>
+<td>en_motor3_Data
+</td>
+<td>0x118
+</td>
+<td>data register for port en_motor3
+</td>
+</tr>
+<tr>
+<td class="distinctCellColor">duty_motor3_Data
+</td>
+<td class="distinctCellColor">0x11C
+</td>
+<td class="distinctCellColor">data register for port duty_motor3
+</td>
+</tr>
+<tr>
+<td>en_motor4_Data
+</td>
+<td>0x120
+</td>
+<td>data register for port en_motor4
+</td>
+</tr>
+<tr>
+<td class="distinctCellColor">duty_motor4_Data
+</td>
+<td class="distinctCellColor">0x124
+</td>
+<td class="distinctCellColor">data register for port duty_motor4
+</td>
+</tr>
+<tr>
+<td>X_Data
+</td>
+<td>0x128
+</td>
+<td>data register for port X
+</td>
+</tr>
+<tr>
+<td class="distinctCellColor">Y_Data
+</td>
+<td class="distinctCellColor">0x12C
+</td>
+<td class="distinctCellColor">data register for port Y
+</td>
+</tr>
+<tr>
+<td>Z_Data
+</td>
+<td>0x130
+</td>
+<td>data register for port Z
+</td>
+</tr>
+<tr>
+<td class="distinctCellColor">XYZ_Valid_Data
+</td>
+<td class="distinctCellColor">0x134
+</td>
+<td class="distinctCellColor">data register for port XYZ_Valid
 </td>
 </tr>
 </tbody>
@@ -556,6 +660,14 @@ Following files are generated under this folder:
 <a href="matlab:edit('hdl_prj\ipcore\basicquadrotorcontrol_hdl_dut_pcore_v1_00_a\hdl\vhdl\Calculate_f_coeff_block.vhd')">hdl\vhdl\Calculate_f_coeff_block.vhd</a>
 <br/>
 <a href="matlab:edit('hdl_prj\ipcore\basicquadrotorcontrol_hdl_dut_pcore_v1_00_a\hdl\vhdl\PWM_Motor2.vhd')">hdl\vhdl\PWM_Motor2.vhd</a>
+<br/>
+<a href="matlab:edit('hdl_prj\ipcore\basicquadrotorcontrol_hdl_dut_pcore_v1_00_a\hdl\vhdl\Calculate_f_coeff_block1.vhd')">hdl\vhdl\Calculate_f_coeff_block1.vhd</a>
+<br/>
+<a href="matlab:edit('hdl_prj\ipcore\basicquadrotorcontrol_hdl_dut_pcore_v1_00_a\hdl\vhdl\PWM_Motor3.vhd')">hdl\vhdl\PWM_Motor3.vhd</a>
+<br/>
+<a href="matlab:edit('hdl_prj\ipcore\basicquadrotorcontrol_hdl_dut_pcore_v1_00_a\hdl\vhdl\Calculate_f_coeff_block2.vhd')">hdl\vhdl\Calculate_f_coeff_block2.vhd</a>
+<br/>
+<a href="matlab:edit('hdl_prj\ipcore\basicquadrotorcontrol_hdl_dut_pcore_v1_00_a\hdl\vhdl\PWM_Motor4.vhd')">hdl\vhdl\PWM_Motor4.vhd</a>
 <br/>
 <a href="matlab:edit('hdl_prj\ipcore\basicquadrotorcontrol_hdl_dut_pcore_v1_00_a\hdl\vhdl\hdl_dut.vhd')">hdl\vhdl\hdl_dut.vhd</a>
 <br/>

@@ -3,7 +3,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: system_stub.prj
 
@@ -169,26 +169,26 @@ Top Level Output File Name         : system_stub.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 984
+# BELS                             : 1348
 #      GND                         : 6
-#      INV                         : 125
-#      LUT1                        : 32
-#      LUT2                        : 146
-#      LUT3                        : 70
-#      LUT4                        : 185
-#      LUT5                        : 91
-#      LUT6                        : 187
-#      MUXCY                       : 94
-#      MUXF7                       : 8
+#      INV                         : 143
+#      LUT1                        : 64
+#      LUT2                        : 214
+#      LUT3                        : 67
+#      LUT4                        : 236
+#      LUT5                        : 134
+#      LUT6                        : 227
+#      MUXCY                       : 180
+#      MUXF7                       : 5
 #      VCC                         : 4
-#      XORCY                       : 36
-# FlipFlops/Latches                : 510
+#      XORCY                       : 68
+# FlipFlops/Latches                : 566
 #      FD                          : 72
-#      FDC                         : 70
-#      FDCE                        : 211
-#      FDE                         : 98
-#      FDP                         : 4
-#      FDPE                        : 7
+#      FDC                         : 71
+#      FDCE                        : 232
+#      FDE                         : 132
+#      FDP                         : 3
+#      FDPE                        : 8
 #      FDR                         : 18
 #      FDRE                        : 30
 # Shift Registers                  : 4
@@ -199,8 +199,8 @@ Primitive and Black Box Usage:
 # IO Buffers                       : 15
 #      IBUF                        : 4
 #      OBUF                        : 11
-# DSPs                             : 8
-#      DSP48E1                     : 8
+# DSPs                             : 16
+#      DSP48E1                     : 16
 # Others                           : 2
 #      MMCME2_ADV                  : 1
 #      PS7                         : 1
@@ -212,18 +212,18 @@ Selected Device : 7z020clg484-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             510  out of  106400     0%  
- Number of Slice LUTs:                  840  out of  53200     1%  
-    Number used as Logic:               836  out of  53200     1%  
+ Number of Slice Registers:             566  out of  106400     0%  
+ Number of Slice LUTs:                 1089  out of  53200     2%  
+    Number used as Logic:              1085  out of  53200     2%  
     Number used as Memory:                4  out of  17400     0%  
        Number used as SRL:                4
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1059
-   Number with an unused Flip Flop:     549  out of   1059    51%  
-   Number with an unused LUT:           219  out of   1059    20%  
-   Number of fully used LUT-FF pairs:   291  out of   1059    27%  
-   Number of unique control sets:        36
+ Number of LUT Flip Flop pairs used:   1347
+   Number with an unused Flip Flop:     781  out of   1347    57%  
+   Number with an unused LUT:           258  out of   1347    19%  
+   Number of fully used LUT-FF pairs:   308  out of   1347    22%  
+   Number of unique control sets:        46
 
 IO Utilization: 
  Number of IOs:                         142
@@ -231,7 +231,7 @@ IO Utilization:
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                3  out of     32     9%  
- Number of DSP48E1s:                      8  out of    220     3%  
+ Number of DSP48E1s:                     16  out of    220     7%  
 
 ---------------------------
 Partition Resource Summary:
@@ -254,7 +254,7 @@ Clock Information:
 --------------------------------------------------------------+------------------------+-------+
 Clock Signal                                                  | Clock buffer(FF name)  | Load  |
 --------------------------------------------------------------+------------------------+-------+
-system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKOUT0| BUFG                   | 514   |
+system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKOUT0| BUFG                   | 570   |
 --------------------------------------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -265,7 +265,7 @@ Timing Summary:
 ---------------
 Speed Grade: -1
 
-   Minimum period: 5.080ns (Maximum Frequency: 196.842MHz)
+   Minimum period: 5.161ns (Maximum Frequency: 193.761MHz)
    Minimum input arrival time before clock: 2.086ns
    Maximum output required time after clock: 3.049ns
    Maximum combinational path delay: 0.472ns
@@ -276,10 +276,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKOUT0'
-  Clock period: 5.080ns (frequency: 196.842MHz)
-  Total number of paths / destination ports: 25335 / 1166
+  Clock period: 5.161ns (frequency: 193.761MHz)
+  Total number of paths / destination ports: 37867 / 1300
 -------------------------------------------------------------------------
-Delay:               5.080ns (Levels of Logic = 8)
+Delay:               5.161ns (Levels of Logic = 8)
   Source:            system_i/axi4_lite/axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (FF)
   Destination:       system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_0 (FF)
   Source Clock:      system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKOUT0 rising
@@ -291,18 +291,18 @@ Delay:               5.080ns (Levels of Logic = 8)
     ----------------------------------------  ------------
      FD:C->Q               7   0.282   0.642  axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_1 (axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d<1>)
      LUT3:I0->O            2   0.053   0.745  axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_valid_i<1>1 (axi4_lite/crossbar_samd/gen_sasd.crossbar_sasd_0/n0369<1>)
-     LUT6:I0->O           26   0.053   0.753  axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1 (DEBUG_MP_MR_ARADDRCONTROL<0>)
+     LUT6:I0->O           19   0.053   0.721  axi4_lite/mi_protocol_conv_bank/gen_protocol_slot[0].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_req1 (DEBUG_MP_MR_ARADDRCONTROL<0>)
      end scope: 'system_i/axi4_lite:M_AXI_ARVALID<0>'
      begin scope: 'system_i/basicquadrotorcontrol_hdl_dut_pcore_0:AXI4_Lite_ARVALID'
-     LUT3:I0->O            3   0.053   0.753  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/mux1211 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/top_addr_sel<8>)
-     LUT6:I0->O           17   0.053   0.519  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid112 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid111)
-     LUT6:I5->O           17   0.053   0.519  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o3 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/decode_sel_Z_INV_4_o)
-     LUT5:I4->O            1   0.053   0.485  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid11 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid1)
-     LUT4:I2->O            1   0.053   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid12 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/top_data_read<0>)
+     LUT3:I0->O            5   0.053   0.752  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/mux311 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/top_addr_sel<12>)
+     LUT5:I0->O            1   0.053   0.485  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid111 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid11)
+     LUT5:I3->O           16   0.053   0.733  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid113 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid112)
+     LUT4:I0->O            2   0.053   0.419  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid114 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/top_data_read<16>)
+     LUT6:I5->O            1   0.053   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/Mmux_decode_rd_XYZ_Valid1 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/top_data_read<0>)
      FDCE:D                    0.011          basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_0
     ----------------------------------------
-    Total                      5.080ns (0.664ns logic, 4.416ns route)
-                                       (13.1% logic, 86.9% route)
+    Total                      5.161ns (0.664ns logic, 4.497ns route)
+                                       (12.9% logic, 87.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKOUT0'
@@ -330,25 +330,25 @@ Offset:              2.086ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKOUT0'
-  Total number of paths / destination ports: 304 / 71
+  Total number of paths / destination ports: 482 / 73
 -------------------------------------------------------------------------
 Offset:              3.049ns (Levels of Logic = 6)
-  Source:            system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor2_3 (FF)
-  Destination:       basicquadrotorcontrol_hdl_dut_pcore_0_PmodJB1_pin<2> (PAD)
+  Source:            system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor4_3 (FF)
+  Destination:       basicquadrotorcontrol_hdl_dut_pcore_0_PmodJB1_pin<3> (PAD)
   Source Clock:      system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKOUT0 rising
 
-  Data Path: system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor2_3 to basicquadrotorcontrol_hdl_dut_pcore_0_PmodJB1_pin<2>
+  Data Path: system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor4_3 to basicquadrotorcontrol_hdl_dut_pcore_0_PmodJB1_pin<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             3   0.282   0.649  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor2_3 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor2<3>)
-     LUT4:I0->O            1   0.053   0.413  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/PWR_23_o_duty_unsigned[7]_AND_1065_o_SW0 (N154)
-     LUT5:I4->O            1   0.053   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/PWR_23_o_duty_unsigned[7]_AND_1065_o_lut (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/PWR_23_o_duty_unsigned[7]_AND_1065_o_lut)
-     MUXCY:S->O           20   0.291   0.850  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/PWR_23_o_duty_unsigned[7]_AND_1065_o_cy (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/PWR_23_o_duty_unsigned[7]_AND_1065_o)
-     LUT6:I1->O            2   0.053   0.405  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/Mmux_PWM_reg_next1 (PmodJB1<2>)
-     end scope: 'system_i/basicquadrotorcontrol_hdl_dut_pcore_0:PmodJB1<2>'
-     end scope: 'system_i:basicquadrotorcontrol_hdl_dut_pcore_0_PmodJB1_pin<2>'
-     OBUF:I->O                 0.000          basicquadrotorcontrol_hdl_dut_pcore_0_PmodJB1_pin_2_OBUF (basicquadrotorcontrol_hdl_dut_pcore_0_PmodJB1_pin<2>)
+     FDCE:C->Q             3   0.282   0.649  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor4_3 (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor4<3>)
+     LUT4:I0->O            1   0.053   0.413  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/PWR_23_o_duty_unsigned[7]_AND_1073_o_SW0 (N308)
+     LUT5:I4->O            1   0.053   0.000  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/PWR_23_o_duty_unsigned[7]_AND_1073_o_lut (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/PWR_23_o_duty_unsigned[7]_AND_1073_o_lut)
+     MUXCY:S->O           20   0.291   0.850  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/PWR_23_o_duty_unsigned[7]_AND_1073_o_cy (basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/PWR_23_o_duty_unsigned[7]_AND_1073_o)
+     LUT6:I1->O            2   0.053   0.405  basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/Mmux_PWM_reg_next1 (PmodJB1<3>)
+     end scope: 'system_i/basicquadrotorcontrol_hdl_dut_pcore_0:PmodJB1<3>'
+     end scope: 'system_i:basicquadrotorcontrol_hdl_dut_pcore_0_PmodJB1_pin<3>'
+     OBUF:I->O                 0.000          basicquadrotorcontrol_hdl_dut_pcore_0_PmodJB1_pin_3_OBUF (basicquadrotorcontrol_hdl_dut_pcore_0_PmodJB1_pin<3>)
     ----------------------------------------
     Total                      3.049ns (0.732ns logic, 2.317ns route)
                                        (24.0% logic, 76.0% route)
@@ -384,18 +384,18 @@ Clock to Setup on destination clock system_i/clock_generator_0/clock_generator_0
                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                                  |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------------------------------------+---------+---------+---------+---------+
-system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKOUT0|    5.080|         |         |         |
+system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKOUT0|    5.161|         |         |         |
 --------------------------------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 17.00 secs
-Total CPU time to Xst completion: 16.95 secs
+Total REAL time to Xst completion: 18.00 secs
+Total CPU time to Xst completion: 18.58 secs
  
 --> 
 
-Total memory usage is 459004 kilobytes
+Total memory usage is 462652 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    3 (   0 filtered)

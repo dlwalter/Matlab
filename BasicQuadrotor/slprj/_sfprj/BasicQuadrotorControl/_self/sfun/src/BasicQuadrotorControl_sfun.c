@@ -7,6 +7,8 @@
 #include "c3_BasicQuadrotorControl.h"
 #include "c4_BasicQuadrotorControl.h"
 #include "c5_BasicQuadrotorControl.h"
+#include "c6_BasicQuadrotorControl.h"
+#include "c7_BasicQuadrotorControl.h"
 
 /* Type Definitions */
 
@@ -57,6 +59,16 @@ unsigned int sf_BasicQuadrotorControl_method_dispatcher(SimStruct *simstructPtr,
     return 1;
   }
 
+  if (chartFileNumber==6) {
+    c6_BasicQuadrotorControl_method_dispatcher(simstructPtr, method, data);
+    return 1;
+  }
+
+  if (chartFileNumber==7) {
+    c7_BasicQuadrotorControl_method_dispatcher(simstructPtr, method, data);
+    return 1;
+  }
+
   return 0;
 }
 
@@ -96,10 +108,10 @@ unsigned int sf_BasicQuadrotorControl_process_check_sum_call( int nlhs, mxArray 
       ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(0U);
       ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(0U);
     } else if (!strcmp(commandName,"makefile")) {
-      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(1041513076U);
-      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1120795444U);
-      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(1487761323U);
-      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(2217279176U);
+      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2038870083U);
+      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(2214598575U);
+      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3666956225U);
+      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3263921520U);
     } else if (nrhs==3 && !strcmp(commandName,"chart")) {
       unsigned int chartFileNumber;
       chartFileNumber = (unsigned int)mxGetScalar(prhs[2]);
@@ -139,6 +151,20 @@ unsigned int sf_BasicQuadrotorControl_process_check_sum_call( int nlhs, mxArray 
           break;
         }
 
+       case 6:
+        {
+          extern void sf_c6_BasicQuadrotorControl_get_check_sum(mxArray *plhs[]);
+          sf_c6_BasicQuadrotorControl_get_check_sum(plhs);
+          break;
+        }
+
+       case 7:
+        {
+          extern void sf_c7_BasicQuadrotorControl_get_check_sum(mxArray *plhs[]);
+          sf_c7_BasicQuadrotorControl_get_check_sum(plhs);
+          break;
+        }
+
        default:
         ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(0.0);
         ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(0.0);
@@ -154,10 +180,10 @@ unsigned int sf_BasicQuadrotorControl_process_check_sum_call( int nlhs, mxArray 
       return 0;
     }
   } else {
-    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(1367414051U);
-    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(137511515U);
-    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(13766878U);
-    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(299046174U);
+    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3534585374U);
+    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(593663901U);
+    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3386639438U);
+    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3125643044U);
   }
 
   return 1;
@@ -258,6 +284,32 @@ unsigned int sf_BasicQuadrotorControl_autoinheritance_info( int nlhs, mxArray *
         break;
       }
 
+     case 6:
+      {
+        if (strcmp(aiChksum, "6rHY4bsjGnGRaUi1v5ezHC") == 0) {
+          extern mxArray *sf_c6_BasicQuadrotorControl_get_autoinheritance_info
+            (void);
+          plhs[0] = sf_c6_BasicQuadrotorControl_get_autoinheritance_info();
+          break;
+        }
+
+        plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
+        break;
+      }
+
+     case 7:
+      {
+        if (strcmp(aiChksum, "6rHY4bsjGnGRaUi1v5ezHC") == 0) {
+          extern mxArray *sf_c7_BasicQuadrotorControl_get_autoinheritance_info
+            (void);
+          plhs[0] = sf_c7_BasicQuadrotorControl_get_autoinheritance_info();
+          break;
+        }
+
+        plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
+        break;
+      }
+
      default:
       plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
     }
@@ -348,6 +400,28 @@ unsigned int sf_BasicQuadrotorControl_get_eml_resolved_functions_info( int nlhs,
         break;
       }
 
+     case 6:
+      {
+        extern const mxArray
+          *sf_c6_BasicQuadrotorControl_get_eml_resolved_functions_info(void);
+        mxArray *persistentMxArray = (mxArray *)
+          sf_c6_BasicQuadrotorControl_get_eml_resolved_functions_info();
+        plhs[0] = mxDuplicateArray(persistentMxArray);
+        mxDestroyArray(persistentMxArray);
+        break;
+      }
+
+     case 7:
+      {
+        extern const mxArray
+          *sf_c7_BasicQuadrotorControl_get_eml_resolved_functions_info(void);
+        mxArray *persistentMxArray = (mxArray *)
+          sf_c7_BasicQuadrotorControl_get_eml_resolved_functions_info();
+        plhs[0] = mxDuplicateArray(persistentMxArray);
+        mxDestroyArray(persistentMxArray);
+        break;
+      }
+
      default:
       plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
     }
@@ -428,6 +502,24 @@ unsigned int sf_BasicQuadrotorControl_third_party_uses_info( int nlhs, mxArray *
         }
       }
 
+     case 6:
+      {
+        if (strcmp(tpChksum, "YtJRe84wdBILjz4PmpKAqF") == 0) {
+          extern mxArray *sf_c6_BasicQuadrotorControl_third_party_uses_info(void);
+          plhs[0] = sf_c6_BasicQuadrotorControl_third_party_uses_info();
+          break;
+        }
+      }
+
+     case 7:
+      {
+        if (strcmp(tpChksum, "YtJRe84wdBILjz4PmpKAqF") == 0) {
+          extern mxArray *sf_c7_BasicQuadrotorControl_third_party_uses_info(void);
+          plhs[0] = sf_c7_BasicQuadrotorControl_third_party_uses_info();
+          break;
+        }
+      }
+
      default:
       plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
     }
@@ -497,6 +589,24 @@ unsigned int sf_BasicQuadrotorControl_jit_fallback_info( int nlhs, mxArray *
         if (strcmp(tpChksum, "YtJRe84wdBILjz4PmpKAqF") == 0) {
           extern mxArray *sf_c5_BasicQuadrotorControl_jit_fallback_info(void);
           plhs[0] = sf_c5_BasicQuadrotorControl_jit_fallback_info();
+          break;
+        }
+      }
+
+     case 6:
+      {
+        if (strcmp(tpChksum, "YtJRe84wdBILjz4PmpKAqF") == 0) {
+          extern mxArray *sf_c6_BasicQuadrotorControl_jit_fallback_info(void);
+          plhs[0] = sf_c6_BasicQuadrotorControl_jit_fallback_info();
+          break;
+        }
+      }
+
+     case 7:
+      {
+        if (strcmp(tpChksum, "YtJRe84wdBILjz4PmpKAqF") == 0) {
+          extern mxArray *sf_c7_BasicQuadrotorControl_jit_fallback_info(void);
+          plhs[0] = sf_c7_BasicQuadrotorControl_jit_fallback_info();
           break;
         }
       }
@@ -579,6 +689,26 @@ unsigned int sf_BasicQuadrotorControl_updateBuildInfo_args_info( int nlhs,
         }
       }
 
+     case 6:
+      {
+        if (strcmp(tpChksum, "YtJRe84wdBILjz4PmpKAqF") == 0) {
+          extern mxArray *sf_c6_BasicQuadrotorControl_updateBuildInfo_args_info
+            (void);
+          plhs[0] = sf_c6_BasicQuadrotorControl_updateBuildInfo_args_info();
+          break;
+        }
+      }
+
+     case 7:
+      {
+        if (strcmp(tpChksum, "YtJRe84wdBILjz4PmpKAqF") == 0) {
+          extern mxArray *sf_c7_BasicQuadrotorControl_updateBuildInfo_args_info
+            (void);
+          plhs[0] = sf_c7_BasicQuadrotorControl_updateBuildInfo_args_info();
+          break;
+        }
+      }
+
      default:
       plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
     }
@@ -645,6 +775,26 @@ void sf_BasicQuadrotorControl_get_post_codegen_info( int nlhs, mxArray * plhs[],
     }
     break;
 
+   case 6:
+    {
+      if (strcmp(tpChksum, "YtJRe84wdBILjz4PmpKAqF") == 0) {
+        extern mxArray *sf_c6_BasicQuadrotorControl_get_post_codegen_info(void);
+        plhs[0] = sf_c6_BasicQuadrotorControl_get_post_codegen_info();
+        return;
+      }
+    }
+    break;
+
+   case 7:
+    {
+      if (strcmp(tpChksum, "YtJRe84wdBILjz4PmpKAqF") == 0) {
+        extern mxArray *sf_c7_BasicQuadrotorControl_get_post_codegen_info(void);
+        plhs[0] = sf_c7_BasicQuadrotorControl_get_post_codegen_info();
+        return;
+      }
+    }
+    break;
+
    default:
     break;
   }
@@ -656,7 +806,7 @@ void BasicQuadrotorControl_debug_initialize(struct SfDebugInstanceStruct*
   debugInstance)
 {
   _BasicQuadrotorControlMachineNumber_ = sf_debug_initialize_machine
-    (debugInstance,"BasicQuadrotorControl","sfun",0,5,0,0,0);
+    (debugInstance,"BasicQuadrotorControl","sfun",0,7,0,0,0);
   sf_debug_set_machine_event_thresholds(debugInstance,
     _BasicQuadrotorControlMachineNumber_,0,0);
   sf_debug_set_machine_data_thresholds(debugInstance,

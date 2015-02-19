@@ -1,8 +1,8 @@
 #-----------------------------------------------------------
 # PlanAhead v14.7 (64-bit)
 # Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
-# Start of session at: Tue Feb 17 18:45:41 2015
-# Process ID: 6504
+# Start of session at: Wed Feb 18 16:32:53 2015
+# Process ID: 5880
 # Log file: C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/pa_prj/planAhead.log
 # Journal file: C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/pa_prj\planAhead.jou
 #-----------------------------------------------------------
@@ -265,6 +265,19 @@ Creating hardware output directories ...
 Managing hardware (BBD-specified) netlist files ...
 
 Managing cache ...
+IPNAME:processing_system7 INSTANCE:ps7_0 -
+C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 31 -
+Copying cache implementation netlist
+IPNAME:axi_interconnect INSTANCE:axi4_lite -
+C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 118 -
+Copying cache implementation netlist
+IPNAME:proc_sys_reset INSTANCE:reset_0 -
+C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 126 -
+Copying cache implementation netlist
+IPNAME:basicquadrotorcontrol_hdl_dut_pcore
+INSTANCE:basicquadrotorcontrol_hdl_dut_pcore_0 -
+C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 149 -
+Copying cache implementation netlist
 
 Elaborating instances ...
 IPNAME:clock_generator INSTANCE:clock_generator_0 -
@@ -277,7 +290,7 @@ ClkGen elaborate status: PASSED
 Writing HDL for elaborated instances ...
 
 Inserting wrapper level ...
-Completion time: 1.00 seconds
+Completion time: 0.00 seconds
 
 Constructing platform-level connectivity ...
 Completion time: 0.00 seconds
@@ -294,65 +307,18 @@ INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
    IMP_NETLIST=TRUE indicates that a NGC file is to be produced using XST
    synthesis. IMP_NETLIST=FALSE (default) instances are not synthesized. 
 INFO:EDK:4194 - Running XST parallelly on 4 processors
-INSTANCE:ps7_0 -
-C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 31 -
-Running XST synthesis
-INSTANCE:axi4_lite -
-C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 118 -
-Running XST synthesis
-INSTANCE:reset_0 -
-C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 126 -
-Running XST synthesis
 INSTANCE:clock_generator_0 -
 C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 137 -
 Running XST synthesis
-PMSPEC -- Overriding Xilinx file <C:/Xilinx/14.7/ISE_DS/EDK/zynq/data/zynq.acd>
-with local file <C:/Xilinx/14.7/ISE_DS/ISE/zynq/data/zynq.acd>
-PMSPEC -- Overriding Xilinx file <C:/Xilinx/14.7/ISE_DS/EDK/zynq/data/zynq.acd>
-with local file <C:/Xilinx/14.7/ISE_DS/ISE/zynq/data/zynq.acd>
-PMSPEC -- Overriding Xilinx file <C:/Xilinx/14.7/ISE_DS/EDK/zynq/data/zynq.acd>
-with local file <C:/Xilinx/14.7/ISE_DS/ISE/zynq/data/zynq.acd>
-PMSPEC -- Overriding Xilinx file <C:/Xilinx/14.7/ISE_DS/EDK/zynq/data/zynq.acd>
-with local file <C:/Xilinx/14.7/ISE_DS/ISE/zynq/data/zynq.acd>
 INSTANCE:basicquadrotorcontrol_hdl_dut_pcore_0 -
 C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 149 -
 Running XST synthesis
 PMSPEC -- Overriding Xilinx file <C:/Xilinx/14.7/ISE_DS/EDK/zynq/data/zynq.acd>
 with local file <C:/Xilinx/14.7/ISE_DS/ISE/zynq/data/zynq.acd>
-
-Running NGCBUILD ...
-IPNAME:system_axi4_lite_wrapper INSTANCE:axi4_lite -
-C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 118 -
-Running NGCBUILD
 PMSPEC -- Overriding Xilinx file <C:/Xilinx/14.7/ISE_DS/EDK/zynq/data/zynq.acd>
 with local file <C:/Xilinx/14.7/ISE_DS/ISE/zynq/data/zynq.acd>
 
-Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngcbuild.exe -p
-xc7z020clg484-1 -intstyle silent -i -sd .. system_axi4_lite_wrapper.ngc
-../system_axi4_lite_wrapper
-
-Reading NGO file
-"C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/implementation/axi4_lite_
-wrapper/system_axi4_lite_wrapper.ngc" ...
-
-Partition Implementation Status
--------------------------------
-
-  No Partitions were found in this design.
-
--------------------------------
-
-NGCBUILD Design Results Summary:
-  Number of errors:     0
-  Number of warnings:   0
-
-Writing NGC file "../system_axi4_lite_wrapper.ngc" ...
-Total REAL time to NGCBUILD completion:  5 sec
-Total CPU time to NGCBUILD completion:   5 sec
-
-Writing NGCBUILD log file "../system_axi4_lite_wrapper.blc"...
-
-NGCBUILD done.
+Running NGCBUILD ...
 IPNAME:system_clock_generator_0_wrapper INSTANCE:clock_generator_0 -
 C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 137 -
 Running NGCBUILD
@@ -379,8 +345,8 @@ NGCBUILD Design Results Summary:
   Number of warnings:   0
 
 Writing NGC file "../system_clock_generator_0_wrapper.ngc" ...
-Total REAL time to NGCBUILD completion:  5 sec
-Total CPU time to NGCBUILD completion:   5 sec
+Total REAL time to NGCBUILD completion:  6 sec
+Total CPU time to NGCBUILD completion:   6 sec
 
 Writing NGCBUILD log file "../system_clock_generator_0_wrapper.blc"...
 
@@ -391,7 +357,7 @@ INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
 
 Rebuilding cache ...
 
-Total run time: 71.00 seconds
+Total run time: 64.00 seconds
 "Running synthesis..."
 cd synthesis & synthesis.cmd
 "xst -ifn "system_xst.scr" -intstyle silent"
@@ -450,11 +416,11 @@ Checking platform address map ...
 
 INFO: [Edk 24-137] Netlists generated
 WARNING: [Runs 36-53] Possible issues detected after target generation. Generation state is unexpected for target 'Synthesis'. Expected 'Generated', got 'Stale' for source 'C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/system.xmp'
-[Tue Feb 17 18:47:22 2015] Launched synth_1...
+[Wed Feb 18 16:34:29 2015] Launched synth_1...
 Run output will be captured here: C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/pa_prj/pa_prj.runs/synth_1/runme.log
-launch_runs: Time (s): elapsed = 00:01:40 . Memory (MB): peak = 138.234 ; gain = 2.148
+launch_runs: Time (s): elapsed = 00:01:35 . Memory (MB): peak = 138.363 ; gain = 2.156
 # wait_on_run synth_1
-[Tue Feb 17 18:47:22 2015] Waiting for synth_1 to finish...
+[Wed Feb 18 16:34:29 2015] Waiting for synth_1 to finish...
 
 *** Running xst
     with args -ifn "system_stub.xst" -ofn "system_stub.srp" -intstyle ise
@@ -578,7 +544,7 @@ Clock Information:
 --------------------------------------------------------------+------------------------+-------+
 Clock Signal                                                  | Clock buffer(FF name)  | Load  |
 --------------------------------------------------------------+------------------------+-------+
-system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKOUT0| BUFG                   | 514   |
+system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKOUT0| BUFG                   | 570   |
 --------------------------------------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -589,14 +555,14 @@ Timing Summary:
 ---------------
 Speed Grade: -1
 
-   Minimum period: 5.080ns (Maximum Frequency: 196.842MHz)
+   Minimum period: 5.161ns (Maximum Frequency: 193.761MHz)
    Minimum input arrival time before clock: 2.086ns
    Maximum output required time after clock: 3.049ns
    Maximum combinational path delay: 0.472ns
 
 =========================================================================
-[Tue Feb 17 18:47:42 2015] synth_1 finished
-wait_on_run: Time (s): elapsed = 00:00:20 . Memory (MB): peak = 138.234 ; gain = 0.000
+[Wed Feb 18 16:34:49 2015] synth_1 finished
+wait_on_run: Time (s): elapsed = 00:00:20 . Memory (MB): peak = 138.363 ; gain = 0.000
 # launch_runs impl_1 -to_step Bitgen
 Release 14.7 - ngc2edif P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
@@ -620,7 +586,7 @@ Processing design ...
    Preping design's macros ...
   finished :Prep
 Writing EDIF netlist file system.edif ...
-ngc2edif: Total memory usage is 78340 kilobytes
+ngc2edif: Total memory usage is 78404 kilobytes
 
 Reading core file 'C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/implementation/system.ngc' for (cell view 'system', library 'system_stub_lib', file 'system_stub.ngc')
 Parsing EDIF File [./pa_prj.data/cache/system_ngc_zx.edif]
@@ -635,7 +601,7 @@ Processing design ...
    Preping design's macros ...
   finished :Prep
 Writing EDIF netlist file system_ps7_0_wrapper.edif ...
-ngc2edif: Total memory usage is 80452 kilobytes
+ngc2edif: Total memory usage is 80004 kilobytes
 
 Reading core file 'C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/implementation/system_ps7_0_wrapper.ngc' for (cell view 'system_ps7_0_wrapper', library 'system_lib', file 'system.ngc')
 Parsing EDIF File [./pa_prj.data/cache/system_ps7_0_wrapper_ngc_zx.edif]
@@ -667,7 +633,7 @@ WARNING:NetListWriters:306 - Signal bus
   finished :Prep
 Writing EDIF netlist file
 system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper.edif ...
-ngc2edif: Total memory usage is 79428 kilobytes
+ngc2edif: Total memory usage is 81476 kilobytes
 
 Reading core file 'C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/implementation/system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper.ngc' for (cell view 'system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper', library 'system_lib', file 'system.ngc')
 Parsing EDIF File [./pa_prj.data/cache/system_basicquadrotorcontrol_hdl_dut_pcore_0_wrapper_ngc_zx.edif]
@@ -690,7 +656,7 @@ WARNING:NetListWriters:306 - Signal bus
    because there are some missing bus signals.
   finished :Prep
 Writing EDIF netlist file system_axi4_lite_wrapper.edif ...
-ngc2edif: Total memory usage is 78212 kilobytes
+ngc2edif: Total memory usage is 77380 kilobytes
 
 Reading core file 'C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/implementation/system_axi4_lite_wrapper.ngc' for (cell view 'system_axi4_lite_wrapper', library 'system_lib', file 'system.ngc')
 Parsing EDIF File [./pa_prj.data/cache/system_axi4_lite_wrapper_ngc_zx.edif]
@@ -731,7 +697,7 @@ ngc2edif: Total memory usage is 76356 kilobytes
 Reading core file 'C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/implementation/system_reset_0_wrapper.ngc' for (cell view 'system_reset_0_wrapper', library 'system_lib', file 'system.ngc')
 Parsing EDIF File [./pa_prj.data/cache/system_reset_0_wrapper_ngc_zx.edif]
 Finished Parsing EDIF File [./pa_prj.data/cache/system_reset_0_wrapper_ngc_zx.edif]
-INFO: [Netlist 29-17] Analyzing 264 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 298 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/zynq/zynq/xc7z020/ClockRegion.xml
 Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/zynq/zynq/xc7z020/ClockBuffers.xml
@@ -762,11 +728,11 @@ Finished Parsing UCF File [C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj
 Parsing UCF File [C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/implementation/system_clock_generator_0_wrapper.ncf]
 Finished Parsing UCF File [C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/edk_prj/implementation/system_clock_generator_0_wrapper.ncf]
 INFO: [Designutils 20-20] Invalid constraints found, use command 'write_ucf -constraints invalid <file>' to save all the invalid constraints to a file
-[Tue Feb 17 18:48:03 2015] Launched impl_1...
+[Wed Feb 18 16:35:10 2015] Launched impl_1...
 Run output will be captured here: C:/Projects/Quadcopter/BasicQuadrotor/hdl_prj/pa_prj/pa_prj.runs/impl_1/runme.log
-launch_runs: Time (s): elapsed = 00:00:20 . Memory (MB): peak = 459.895 ; gain = 321.660
+launch_runs: Time (s): elapsed = 00:00:21 . Memory (MB): peak = 462.230 ; gain = 323.867
 # wait_on_run impl_1
-[Tue Feb 17 18:48:03 2015] Waiting for impl_1 to finish...
+[Wed Feb 18 16:35:10 2015] Waiting for impl_1 to finish...
 
 *** Running ngdbuild
     with args -intstyle ise -p xc7z020clg484-1 -dd _ngo -uc "system_stub.ucf" "system_stub.edf"
@@ -811,8 +777,8 @@ NGDBUILD Design Results Summary:
   Number of warnings:   2
 
 Writing NGD file "system_stub.ngd" ...
-Total REAL time to NGDBUILD completion:  20 sec
-Total CPU time to NGDBUILD completion:   14 sec
+Total REAL time to NGDBUILD completion:  23 sec
+Total CPU time to NGDBUILD completion:   15 sec
 
 Writing NGDBUILD log file "system_stub.bld"...
 
@@ -831,54 +797,54 @@ Updating timing models...
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 28 secs 
-Total CPU  time at the beginning of Placer: 28 secs 
+Total REAL time at the beginning of Placer: 32 secs 
+Total CPU  time at the beginning of Placer: 32 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:7bfba768) REAL time: 30 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:37dc8ee6) REAL time: 34 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:7bfba768) REAL time: 30 secs 
+Phase 2.7  Design Feasibility Check (Checksum:37dc8ee6) REAL time: 34 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:7bfba768) REAL time: 30 secs 
+Phase 3.31  Local Placement Optimization (Checksum:37dc8ee6) REAL time: 34 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:4e9bb02) REAL time: 34 secs 
+(Checksum:1af99dd5) REAL time: 38 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:4e9bb02) REAL time: 34 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:1af99dd5) REAL time: 38 secs 
 
 Phase 6.3  Local Placement Optimization
-Phase 6.3  Local Placement Optimization (Checksum:4e9bb02) REAL time: 34 secs 
+Phase 6.3  Local Placement Optimization (Checksum:1af99dd5) REAL time: 38 secs 
 
 Phase 7.5  Local Placement Optimization
-Phase 7.5  Local Placement Optimization (Checksum:4e9bb02) REAL time: 34 secs 
+Phase 7.5  Local Placement Optimization (Checksum:1af99dd5) REAL time: 38 secs 
 
 Phase 8.8  Global Placement
 ........................................
-..
-..................
-................................................................................................................................................................................................
-...............................................................................................................................................................
-Phase 8.8  Global Placement (Checksum:96b793e8) REAL time: 1 mins 2 secs 
+..........
+...................................
+..........................................................................................................................................................
+........................
+Phase 8.8  Global Placement (Checksum:cc5e65ee) REAL time: 1 mins 6 secs 
 
 Phase 9.5  Local Placement Optimization
-Phase 9.5  Local Placement Optimization (Checksum:96b793e8) REAL time: 1 mins 2 secs 
+Phase 9.5  Local Placement Optimization (Checksum:cc5e65ee) REAL time: 1 mins 6 secs 
 
 Phase 10.18  Placement Optimization
-Phase 10.18  Placement Optimization (Checksum:160b4c73) REAL time: 1 mins 5 secs 
+Phase 10.18  Placement Optimization (Checksum:d313a71d) REAL time: 1 mins 9 secs 
 
 Phase 11.5  Local Placement Optimization
-Phase 11.5  Local Placement Optimization (Checksum:160b4c73) REAL time: 1 mins 5 secs 
+Phase 11.5  Local Placement Optimization (Checksum:d313a71d) REAL time: 1 mins 9 secs 
 
 Phase 12.34  Placement Validation
-Phase 12.34  Placement Validation (Checksum:160b4c73) REAL time: 1 mins 5 secs 
+Phase 12.34  Placement Validation (Checksum:d313a71d) REAL time: 1 mins 9 secs 
 
-Total REAL time to Placer completion: 1 mins 5 secs 
-Total CPU  time to Placer completion: 1 mins 5 secs 
+Total REAL time to Placer completion: 1 mins 9 secs 
+Total CPU  time to Placer completion: 1 mins 9 secs 
 Running post-placement packing...
 Writing output files...
 
@@ -886,16 +852,16 @@ Design Summary:
 Number of errors:      0
 Number of warnings:    1
 Slice Logic Utilization:
-  Number of Slice Registers:                   442 out of 106,400    1%
-    Number used as Flip Flops:                 440
+  Number of Slice Registers:                   500 out of 106,400    1%
+    Number used as Flip Flops:                 496
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
-    Number used as AND/OR logics:                2
-  Number of Slice LUTs:                        582 out of  53,200    1%
-    Number used as logic:                      560 out of  53,200    1%
-      Number using O6 output only:             387
-      Number using O5 output only:              32
-      Number using O5 and O6:                  141
+    Number used as AND/OR logics:                4
+  Number of Slice LUTs:                        747 out of  53,200    1%
+    Number used as logic:                      741 out of  53,200    1%
+      Number using O6 output only:             460
+      Number using O5 output only:              64
+      Number using O5 and O6:                  217
       Number used as ROM:                        0
     Number used as Memory:                       2 out of  17,400    1%
       Number used as Dual Port RAM:              0
@@ -904,20 +870,20 @@ Slice Logic Utilization:
         Number using O6 output only:             2
         Number using O5 output only:             0
         Number using O5 and O6:                  0
-    Number used exclusively as route-thrus:     20
-      Number with same-slice register load:     20
+    Number used exclusively as route-thrus:      4
+      Number with same-slice register load:      4
       Number with same-slice carry load:         0
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   244 out of  13,300    1%
-  Number of LUT Flip Flop pairs used:          693
-    Number with an unused Flip Flop:           295 out of     693   42%
-    Number with an unused LUT:                 111 out of     693   16%
-    Number of fully used LUT-FF pairs:         287 out of     693   41%
-    Number of unique control sets:              29
+  Number of occupied Slices:                   366 out of  13,300    2%
+  Number of LUT Flip Flop pairs used:          941
+    Number with an unused Flip Flop:           458 out of     941   48%
+    Number with an unused LUT:                 194 out of     941   20%
+    Number of fully used LUT-FF pairs:         289 out of     941   30%
+    Number of unique control sets:              39
     Number of slice register sites lost
-      to control set restrictions:              86 out of 106,400    1%
+      to control set restrictions:             126 out of 106,400    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -949,7 +915,7 @@ Specific Feature Utilization:
   Number of BUFRs:                               0 out of      16    0%
   Number of CAPTUREs:                            0 out of       1    0%
   Number of DNA_PORTs:                           0 out of       1    0%
-  Number of DSP48E1s:                            8 out of     220    3%
+  Number of DSP48E1s:                           16 out of     220    7%
   Number of EFUSE_USRs:                          0 out of       1    0%
   Number of FRAME_ECCs:                          0 out of       1    0%
   Number of ICAPs:                               0 out of       2    0%
@@ -964,11 +930,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of XADCs:                               0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                2.29
+Average Fanout of Non-Clock Nets:                2.07
 
-Peak Memory Usage:  847 MB
-Total REAL time to MAP completion:  1 mins 7 secs 
-Total CPU time to MAP completion:   1 mins 7 secs 
+Peak Memory Usage:  853 MB
+Total REAL time to MAP completion:  1 mins 11 secs 
+Total CPU time to MAP completion:   1 mins 11 secs 
 
 Mapping completed.
 See MAP report file "system_stub.mrp" for details.
@@ -994,7 +960,7 @@ Device speed data version:  "PRODUCTION 1.08 2013-10-13".
 Device Utilization Summary:
 
    Number of BUFGs                           2 out of 32      6%
-   Number of DSP48E1s                        8 out of 220     3%
+   Number of DSP48E1s                       16 out of 220     7%
    Number of External IOB33s                12 out of 200     6%
       Number of LOCed IOB33s                12 out of 12    100%
 
@@ -1003,14 +969,14 @@ Device Utilization Summary:
 
    Number of MMCME2_ADVs                     1 out of 4      25%
    Number of PS7s                            1 out of 1     100%
-   Number of Slices                        244 out of 13300   1%
-   Number of Slice Registers               442 out of 106400  1%
-      Number used as Flip Flops            442
+   Number of Slices                        366 out of 13300   2%
+   Number of Slice Registers               500 out of 106400  1%
+      Number used as Flip Flops            500
       Number used as Latches                 0
       Number used as LatchThrus              0
 
-   Number of Slice LUTS                    582 out of 53200   1%
-   Number of Slice LUT-Flip Flop pairs     683 out of 53200   1%
+   Number of Slice LUTS                    747 out of 53200   1%
+   Number of Slice LUT-Flip Flop pairs     920 out of 53200   1%
 
 
 Overall effort level (-ol):   Standard 
@@ -1018,33 +984,33 @@ Router effort level (-rl):    High
 
 INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more information, see the TSI report.  Please consult the Xilinx
    Command Line Tools User Guide for information on generating a TSI report.
-Starting initial Timing Analysis.  REAL time: 17 secs 
-Finished initial Timing Analysis.  REAL time: 17 secs 
+Starting initial Timing Analysis.  REAL time: 19 secs 
+Finished initial Timing Analysis.  REAL time: 19 secs 
 
 Starting Router
 
 
-Phase  1  : 6284 unrouted;      REAL time: 18 secs 
+Phase  1  : 8497 unrouted;      REAL time: 21 secs 
 
-Phase  2  : 2877 unrouted;      REAL time: 19 secs 
+Phase  2  : 3637 unrouted;      REAL time: 21 secs 
 
-Phase  3  : 1043 unrouted;      REAL time: 20 secs 
+Phase  3  : 1218 unrouted;      REAL time: 23 secs 
 
-Phase  4  : 1043 unrouted; (Setup:0, Hold:4155, Component Switching Limit:0)     REAL time: 23 secs 
+Phase  4  : 1218 unrouted; (Setup:0, Hold:2311, Component Switching Limit:0)     REAL time: 27 secs 
 
 Updating file: system_stub_routed.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:3684, Component Switching Limit:0)     REAL time: 25 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:2201, Component Switching Limit:0)     REAL time: 28 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:3684, Component Switching Limit:0)     REAL time: 25 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:2201, Component Switching Limit:0)     REAL time: 28 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:3684, Component Switching Limit:0)     REAL time: 25 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:2201, Component Switching Limit:0)     REAL time: 28 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:3684, Component Switching Limit:0)     REAL time: 25 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:2201, Component Switching Limit:0)     REAL time: 28 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 25 secs 
-Total REAL time to Router completion: 25 secs 
-Total CPU time to Router completion: 25 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 29 secs 
+Total REAL time to Router completion: 29 secs 
+Total CPU time to Router completion: 29 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -1062,7 +1028,7 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|   system_i/FPGA_CLK | BUFGCTRL_X0Y0| No   |  150 |  0.258     |  1.895      |
+|   system_i/FPGA_CLK | BUFGCTRL_X0Y0| No   |  179 |  0.287     |  1.918      |
 +---------------------+--------------+------+------+------------+-------------+
 |system_i/PROCESSOR_C |              |      |      |            |             |
 |                 LK0 |BUFGCTRL_X0Y31| No   |    1 |  0.000     |  1.762      |
@@ -1092,8 +1058,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  TS_system_i_clock_generator_0_clock_gener | SETUP       |     2.369ns|    17.631ns|       0|           0
-  ator_0_SIG_MMCM1_CLKOUT0 = PERIOD         | HOLD        |     0.020ns|            |       0|           0
+  TS_system_i_clock_generator_0_clock_gener | SETUP       |     2.748ns|    17.252ns|       0|           0
+  ator_0_SIG_MMCM1_CLKOUT0 = PERIOD         | HOLD        |     0.009ns|            |       0|           0
    TIMEGRP         "system_i_clock_generato |             |            |            |        |            
   r_0_clock_generator_0_SIG_MMCM1_CLKOUT0"  |             |            |            |        |            
           TS_clk_fpga_0 * 0.5 HIGH 50%      |             |            |            |        |            
@@ -1101,7 +1067,7 @@ Asterisk (*) preceding a constraint indicates it was not met.
   TS_clk_fpga_0 = PERIOD TIMEGRP "clk_fpga_ | MINLOWPULSE |     6.000ns|     4.000ns|       0|           0
   0" 100 MHz HIGH 50%                       |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  PATH "TS_axi4_lite_reset_resync_path" TIG | SETUP       |         N/A|     2.477ns|     N/A|           0
+  PATH "TS_axi4_lite_reset_resync_path" TIG | SETUP       |         N/A|     3.087ns|     N/A|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -1115,8 +1081,8 @@ Derived Constraints for TS_clk_fpga_0
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_clk_fpga_0                  |     10.000ns|      4.000ns|      8.816ns|            0|            0|            0|      4423986|
-| TS_system_i_clock_generator_0_|     20.000ns|     17.631ns|          N/A|            0|            0|      4423986|            0|
+|TS_clk_fpga_0                  |     10.000ns|      4.000ns|      8.626ns|            0|            0|            0|      8835142|
+| TS_system_i_clock_generator_0_|     20.000ns|     17.252ns|          N/A|            0|            0|      8835142|            0|
 | clock_generator_0_SIG_MMCM1_CL|             |             |             |             |             |             |             |
 | KOUT0                         |             |             |             |             |             |             |             |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
@@ -1133,10 +1099,10 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 26 secs 
-Total CPU time to PAR completion: 26 secs 
+Total REAL time to PAR completion: 30 secs 
+Total CPU time to PAR completion: 30 secs 
 
-Peak Memory Usage:  688 MB
+Peak Memory Usage:  691 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.
@@ -1160,13 +1126,13 @@ C:\Xilinx\14.7\ISE_DS\ISE\.
    "system_stub" is an NCD, version 3.2, device xc7z020, package clg484, speed
 -1
 
-Analysis completed Tue Feb 17 18:50:21 2015
+Analysis completed Wed Feb 18 16:37:42 2015
 --------------------------------------------------------------------------------
 
 Generating Report ...
 
 Number of warnings: 0
-Total time: 18 secs 
+Total time: 21 secs 
 
 *** Running xdl
     with args -secure -ncd2xdl -nopips "system_stub_routed.ncd" "system_stub_routed.xdl"
@@ -1182,8 +1148,8 @@ Successfully converted design 'system_stub_routed.ncd' to 'system_stub_routed.xd
 *** Running bitgen
     with args "system_stub_routed.ncd" "system_stub.bit" "system_stub.pcf" -w -intstyle pa
 
-[Tue Feb 17 18:51:14 2015] impl_1 finished
-wait_on_run: Time (s): elapsed = 00:03:11 . Memory (MB): peak = 459.895 ; gain = 0.000
+[Wed Feb 18 16:38:36 2015] impl_1 finished
+wait_on_run: Time (s): elapsed = 00:03:26 . Memory (MB): peak = 462.230 ; gain = 0.000
 # close_project
 # puts "------------------------------------"
 ------------------------------------
@@ -1194,5 +1160,5 @@ You may close this shell.
 # puts "------------------------------------"
 ------------------------------------
 # exit
-INFO: [Common 17-206] Exiting PlanAhead at Tue Feb 17 18:51:14 2015...
+INFO: [Common 17-206] Exiting PlanAhead at Wed Feb 18 16:38:36 2015...
 INFO: [Common 17-83] Releasing license: PlanAhead

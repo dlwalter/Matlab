@@ -12,6 +12,8 @@ OBJECTS = \
 	"c3_BasicQuadrotorControl.obj"\
 	"c4_BasicQuadrotorControl.obj"\
 	"c5_BasicQuadrotorControl.obj"\
+	"c6_BasicQuadrotorControl.obj"\
+	"c7_BasicQuadrotorControl.obj"\
 	"BasicQuadrotorControl_sfun_registry.obj"\
 	"lccstub.obj"\
 	"BasicQuadrotorControl_sfun.def"\
@@ -47,6 +49,10 @@ c4_BasicQuadrotorControl.obj :	"c4_BasicQuadrotorControl.c"
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c4_BasicQuadrotorControl.c"
 c5_BasicQuadrotorControl.obj :	"c5_BasicQuadrotorControl.c"
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c5_BasicQuadrotorControl.c"
+c6_BasicQuadrotorControl.obj :	"c6_BasicQuadrotorControl.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c6_BasicQuadrotorControl.c"
+c7_BasicQuadrotorControl.obj :	"c7_BasicQuadrotorControl.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c7_BasicQuadrotorControl.c"
 BasicQuadrotorControl_sfun_registry.obj :	"BasicQuadrotorControl_sfun_registry.c"
 	$(CC) $(CFLAGS) $(INCLUDE_PATH) "BasicQuadrotorControl_sfun_registry.c"
 lccstub.obj :	"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\mex\lccstub.c"

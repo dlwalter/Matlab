@@ -12,4 +12,8 @@ vcom  Chart.vhd
 vcom  PWM_Motor1.vhd
 vcom  Calculate_f_coeff_block.vhd
 vcom  PWM_Motor2.vhd
+vcom  Calculate_f_coeff_block1.vhd
+vcom  PWM_Motor3.vhd
+vcom  Calculate_f_coeff_block2.vhd
+vcom  PWM_Motor4.vhd
 vcom  hdl_dut.vhd

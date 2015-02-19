@@ -121,7 +121,7 @@ Clock Information:
 --------------------------------------------------------------+------------------------+-------+
 Clock Signal                                                  | Clock buffer(FF name)  | Load  |
 --------------------------------------------------------------+------------------------+-------+
-system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKOUT0| BUFG                   | 514   |
+system_i/clock_generator_0/clock_generator_0/SIG_MMCM1_CLKOUT0| BUFG                   | 570   |
 --------------------------------------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -132,7 +132,7 @@ Timing Summary:
 ---------------
 Speed Grade: -1
 
-   Minimum period: 5.080ns (Maximum Frequency: 196.842MHz)
+   Minimum period: 5.161ns (Maximum Frequency: 193.761MHz)
    Minimum input arrival time before clock: 2.086ns
    Maximum output required time after clock: 3.049ns
    Maximum combinational path delay: 0.472ns

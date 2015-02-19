@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'BasicQuadrotorControl_interface'.
  *
- * Model version                  : 1.152
+ * Model version                  : 1.153
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Tue Feb 17 19:03:15 2015
+ * C/C++ source code generated on : Wed Feb 18 16:51:35 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex

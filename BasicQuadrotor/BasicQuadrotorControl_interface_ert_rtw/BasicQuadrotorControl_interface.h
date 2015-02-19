@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'BasicQuadrotorControl_interface'.
  *
- * Model version                  : 1.152
+ * Model version                  : 1.153
  * Simulink Coder version         : 8.7 (R2014b) 08-Sep-2014
- * C/C++ source code generated on : Tue Feb 17 19:03:15 2015
+ * C/C++ source code generated on : Wed Feb 18 16:51:35 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -87,12 +87,16 @@ typedef struct {
 
 /* Block states (auto storage) for system '<Root>' */
 typedef struct {
-  zynq_AXIWrite_BasicQuadrotorC_T obj; /* '<S17>/AXI4-Interface Write' */
-  zynq_AXIWrite_BasicQuadrotorC_T obj_i;/* '<S16>/AXI4-Interface Write' */
-  zynq_AXIWrite_BasicQuadrotorC_T obj_k;/* '<S15>/AXI4-Interface Write' */
-  zynq_AXIWrite_BasicQuadrotorC_T obj_o;/* '<S14>/AXI4-Interface Write' */
-  zynq_AXIWrite_BasicQuadrotorC_T obj_m;/* '<S13>/AXI4-Interface Write' */
-  zynq_AXIWrite_BasicQuadrotorC_T obj_a;/* '<S12>/AXI4-Interface Write' */
+  zynq_AXIWrite_BasicQuadrotorC_T obj; /* '<S23>/AXI4-Interface Write' */
+  zynq_AXIWrite_BasicQuadrotorC_T obj_k;/* '<S22>/AXI4-Interface Write' */
+  zynq_AXIWrite_BasicQuadrotorC_T obj_h;/* '<S21>/AXI4-Interface Write' */
+  zynq_AXIWrite_BasicQuadrotorC_T obj_p;/* '<S20>/AXI4-Interface Write' */
+  zynq_AXIWrite_BasicQuadrotorC_T obj_h2;/* '<S19>/AXI4-Interface Write' */
+  zynq_AXIWrite_BasicQuadrotorC_T obj_n;/* '<S18>/AXI4-Interface Write' */
+  zynq_AXIWrite_BasicQuadrotorC_T obj_pv;/* '<S17>/AXI4-Interface Write' */
+  zynq_AXIWrite_BasicQuadrotorC_T obj_c;/* '<S16>/AXI4-Interface Write' */
+  zynq_AXIWrite_BasicQuadrotorC_T obj_m;/* '<S15>/AXI4-Interface Write' */
+  zynq_AXIWrite_BasicQuadrotorC_T obj_ku;/* '<S14>/AXI4-Interface Write' */
   struct {
     void *TimePtr;
     void *DataPtr;
@@ -103,34 +107,42 @@ typedef struct {
     void *LoggedData;
   } Scope1_PWORK;                      /* '<Root>/Scope1' */
 
-  void *AXI4InterfaceWrite_PWORK;      /* '<S17>/AXI4-Interface Write' */
-  void *AXI4InterfaceWrite_PWORK_k;    /* '<S16>/AXI4-Interface Write' */
-  void *AXI4InterfaceWrite_PWORK_i;    /* '<S15>/AXI4-Interface Write' */
-  void *AXI4InterfaceWrite_PWORK_c;    /* '<S14>/AXI4-Interface Write' */
-  void *AXI4InterfaceWrite_PWORK_e;    /* '<S13>/AXI4-Interface Write' */
-  void *AXI4InterfaceWrite_PWORK_ej;   /* '<S12>/AXI4-Interface Write' */
-  void *AXI4InterfaceRead_PWORK;       /* '<S11>/AXI4-Interface Read' */
-  void *AXI4InterfaceRead_PWORK_l;     /* '<S10>/AXI4-Interface Read' */
-  void *AXI4InterfaceRead_PWORK_n;     /* '<S9>/AXI4-Interface Read' */
-  void *AXI4InterfaceRead_PWORK_c;     /* '<S8>/AXI4-Interface Read' */
+  void *AXI4InterfaceWrite_PWORK;      /* '<S23>/AXI4-Interface Write' */
+  void *AXI4InterfaceWrite_PWORK_f;    /* '<S22>/AXI4-Interface Write' */
+  void *AXI4InterfaceWrite_PWORK_l;    /* '<S21>/AXI4-Interface Write' */
+  void *AXI4InterfaceWrite_PWORK_k;    /* '<S20>/AXI4-Interface Write' */
+  void *AXI4InterfaceWrite_PWORK_b;    /* '<S19>/AXI4-Interface Write' */
+  void *AXI4InterfaceWrite_PWORK_h;    /* '<S18>/AXI4-Interface Write' */
+  void *AXI4InterfaceWrite_PWORK_f0;   /* '<S17>/AXI4-Interface Write' */
+  void *AXI4InterfaceWrite_PWORK_g;    /* '<S16>/AXI4-Interface Write' */
+  void *AXI4InterfaceWrite_PWORK_e;    /* '<S15>/AXI4-Interface Write' */
+  void *AXI4InterfaceWrite_PWORK_d;    /* '<S14>/AXI4-Interface Write' */
+  void *AXI4InterfaceRead_PWORK;       /* '<S13>/AXI4-Interface Read' */
+  void *AXI4InterfaceRead_PWORK_a;     /* '<S12>/AXI4-Interface Read' */
+  void *AXI4InterfaceRead_PWORK_f;     /* '<S11>/AXI4-Interface Read' */
+  void *AXI4InterfaceRead_PWORK_k;     /* '<S10>/AXI4-Interface Read' */
   struct {
     int_T PrevIndex;
   } FromWorkspace_IWORK;               /* '<S1>/From Workspace' */
 
-  zynq_AXIRead_BasicQuadrotorCo_T obj_kl;/* '<S11>/AXI4-Interface Read' */
-  zynq_AXIRead_BasicQuadrotorCo_T obj_g;/* '<S10>/AXI4-Interface Read' */
-  zynq_AXIRead_BasicQuadrotorCo_T obj_i1;/* '<S9>/AXI4-Interface Read' */
-  zynq_AXIRead_BasicQuadrotorCo_T obj_l;/* '<S8>/AXI4-Interface Read' */
-  boolean_T objisempty;                /* '<S17>/AXI4-Interface Write' */
-  boolean_T objisempty_f;              /* '<S16>/AXI4-Interface Write' */
-  boolean_T objisempty_p;              /* '<S15>/AXI4-Interface Write' */
-  boolean_T objisempty_l;              /* '<S14>/AXI4-Interface Write' */
-  boolean_T objisempty_o;              /* '<S13>/AXI4-Interface Write' */
-  boolean_T objisempty_e;              /* '<S12>/AXI4-Interface Write' */
-  boolean_T objisempty_px;             /* '<S11>/AXI4-Interface Read' */
-  boolean_T objisempty_d;              /* '<S10>/AXI4-Interface Read' */
-  boolean_T objisempty_or;             /* '<S9>/AXI4-Interface Read' */
-  boolean_T objisempty_fl;             /* '<S8>/AXI4-Interface Read' */
+  zynq_AXIRead_BasicQuadrotorCo_T obj_nh;/* '<S13>/AXI4-Interface Read' */
+  zynq_AXIRead_BasicQuadrotorCo_T obj_d;/* '<S12>/AXI4-Interface Read' */
+  zynq_AXIRead_BasicQuadrotorCo_T obj_i;/* '<S11>/AXI4-Interface Read' */
+  zynq_AXIRead_BasicQuadrotorCo_T obj_o;/* '<S10>/AXI4-Interface Read' */
+  boolean_T objisempty;                /* '<S23>/AXI4-Interface Write' */
+  boolean_T objisempty_n;              /* '<S22>/AXI4-Interface Write' */
+  boolean_T objisempty_h;              /* '<S21>/AXI4-Interface Write' */
+  boolean_T objisempty_f;              /* '<S20>/AXI4-Interface Write' */
+  boolean_T objisempty_m;              /* '<S19>/AXI4-Interface Write' */
+  boolean_T objisempty_i;              /* '<S18>/AXI4-Interface Write' */
+  boolean_T objisempty_c;              /* '<S17>/AXI4-Interface Write' */
+  boolean_T objisempty_b;              /* '<S16>/AXI4-Interface Write' */
+  boolean_T objisempty_o;              /* '<S15>/AXI4-Interface Write' */
+  boolean_T objisempty_k;              /* '<S14>/AXI4-Interface Write' */
+  boolean_T objisempty_fm;             /* '<S13>/AXI4-Interface Read' */
+  boolean_T objisempty_ii;             /* '<S12>/AXI4-Interface Read' */
+  boolean_T objisempty_j;              /* '<S11>/AXI4-Interface Read' */
+  boolean_T objisempty_h2;             /* '<S10>/AXI4-Interface Read' */
 } DW_BasicQuadrotorControl_inte_T;
 
 /* Parameters (auto storage) */
@@ -147,8 +159,14 @@ struct P_BasicQuadrotorControl_inter_T_ {
   uint8_T SliderGain1_gain;            /* Mask Parameter: SliderGain1_gain
                                         * Referenced by: '<S3>/Slider Gain'
                                         */
+  uint8_T SliderGain2_gain;            /* Mask Parameter: SliderGain2_gain
+                                        * Referenced by: '<S4>/Slider Gain'
+                                        */
+  uint8_T SliderGain3_gain;            /* Mask Parameter: SliderGain3_gain
+                                        * Referenced by: '<S5>/Slider Gain'
+                                        */
   real_T Constant_Value;               /* Expression: 0
-                                        * Referenced by: '<S5>/Constant'
+                                        * Referenced by: '<S7>/Constant'
                                         */
   real_T Constant1_Value;              /* Expression: 1
                                         * Referenced by: '<Root>/Constant1'
@@ -161,6 +179,12 @@ struct P_BasicQuadrotorControl_inter_T_ {
                                         */
   uint8_T Constant3_Value;             /* Computed Parameter: Constant3_Value
                                         * Referenced by: '<Root>/Constant3'
+                                        */
+  uint8_T Constant4_Value;             /* Computed Parameter: Constant4_Value
+                                        * Referenced by: '<Root>/Constant4'
+                                        */
+  uint8_T Constant5_Value;             /* Computed Parameter: Constant5_Value
+                                        * Referenced by: '<Root>/Constant5'
                                         */
   boolean_T Constant_Value_a;          /* Computed Parameter: Constant_Value_a
                                         * Referenced by: '<Root>/Constant'
@@ -240,20 +264,26 @@ extern RT_MODEL_BasicQuadrotorContro_T *const BasicQuadrotorControl_interf_M;
  * '<S1>'   : 'BasicQuadrotorControl_interface/ADXL345_axi_control'
  * '<S2>'   : 'BasicQuadrotorControl_interface/Slider Gain'
  * '<S3>'   : 'BasicQuadrotorControl_interface/Slider Gain1'
- * '<S4>'   : 'BasicQuadrotorControl_interface/hdl_dut'
- * '<S5>'   : 'BasicQuadrotorControl_interface/ADXL345_axi_control/Compare To Zero'
- * '<S6>'   : 'BasicQuadrotorControl_interface/hdl_dut/AXI4LiteRead'
- * '<S7>'   : 'BasicQuadrotorControl_interface/hdl_dut/AXI4LiteWrite'
- * '<S8>'   : 'BasicQuadrotorControl_interface/hdl_dut/AXI4LiteRead/AXI4Lite_Read_X'
- * '<S9>'   : 'BasicQuadrotorControl_interface/hdl_dut/AXI4LiteRead/AXI4Lite_Read_XYZ_Valid'
- * '<S10>'  : 'BasicQuadrotorControl_interface/hdl_dut/AXI4LiteRead/AXI4Lite_Read_Y'
- * '<S11>'  : 'BasicQuadrotorControl_interface/hdl_dut/AXI4LiteRead/AXI4Lite_Read_Z'
- * '<S12>'  : 'BasicQuadrotorControl_interface/hdl_dut/AXI4LiteWrite/AXI4Lite_Write_CMD'
- * '<S13>'  : 'BasicQuadrotorControl_interface/hdl_dut/AXI4LiteWrite/AXI4Lite_Write_CMD_VLD'
- * '<S14>'  : 'BasicQuadrotorControl_interface/hdl_dut/AXI4LiteWrite/AXI4Lite_Write_duty_motor1'
- * '<S15>'  : 'BasicQuadrotorControl_interface/hdl_dut/AXI4LiteWrite/AXI4Lite_Write_duty_motor2'
- * '<S16>'  : 'BasicQuadrotorControl_interface/hdl_dut/AXI4LiteWrite/AXI4Lite_Write_en_motor1'
- * '<S17>'  : 'BasicQuadrotorControl_interface/hdl_dut/AXI4LiteWrite/AXI4Lite_Write_en_motor2'
+ * '<S4>'   : 'BasicQuadrotorControl_interface/Slider Gain2'
+ * '<S5>'   : 'BasicQuadrotorControl_interface/Slider Gain3'
+ * '<S6>'   : 'BasicQuadrotorControl_interface/hdl_dut1'
+ * '<S7>'   : 'BasicQuadrotorControl_interface/ADXL345_axi_control/Compare To Zero'
+ * '<S8>'   : 'BasicQuadrotorControl_interface/hdl_dut1/AXI4LiteRead'
+ * '<S9>'   : 'BasicQuadrotorControl_interface/hdl_dut1/AXI4LiteWrite'
+ * '<S10>'  : 'BasicQuadrotorControl_interface/hdl_dut1/AXI4LiteRead/AXI4Lite_Read_X'
+ * '<S11>'  : 'BasicQuadrotorControl_interface/hdl_dut1/AXI4LiteRead/AXI4Lite_Read_XYZ_Valid'
+ * '<S12>'  : 'BasicQuadrotorControl_interface/hdl_dut1/AXI4LiteRead/AXI4Lite_Read_Y'
+ * '<S13>'  : 'BasicQuadrotorControl_interface/hdl_dut1/AXI4LiteRead/AXI4Lite_Read_Z'
+ * '<S14>'  : 'BasicQuadrotorControl_interface/hdl_dut1/AXI4LiteWrite/AXI4Lite_Write_CMD'
+ * '<S15>'  : 'BasicQuadrotorControl_interface/hdl_dut1/AXI4LiteWrite/AXI4Lite_Write_CMD_VLD'
+ * '<S16>'  : 'BasicQuadrotorControl_interface/hdl_dut1/AXI4LiteWrite/AXI4Lite_Write_duty_motor1'
+ * '<S17>'  : 'BasicQuadrotorControl_interface/hdl_dut1/AXI4LiteWrite/AXI4Lite_Write_duty_motor2'
+ * '<S18>'  : 'BasicQuadrotorControl_interface/hdl_dut1/AXI4LiteWrite/AXI4Lite_Write_duty_motor3'
+ * '<S19>'  : 'BasicQuadrotorControl_interface/hdl_dut1/AXI4LiteWrite/AXI4Lite_Write_duty_motor4'
+ * '<S20>'  : 'BasicQuadrotorControl_interface/hdl_dut1/AXI4LiteWrite/AXI4Lite_Write_en_motor1'
+ * '<S21>'  : 'BasicQuadrotorControl_interface/hdl_dut1/AXI4LiteWrite/AXI4Lite_Write_en_motor2'
+ * '<S22>'  : 'BasicQuadrotorControl_interface/hdl_dut1/AXI4LiteWrite/AXI4Lite_Write_en_motor3'
+ * '<S23>'  : 'BasicQuadrotorControl_interface/hdl_dut1/AXI4LiteWrite/AXI4Lite_Write_en_motor4'
  */
 #endif                                 /* RTW_HEADER_BasicQuadrotorControl_interface_h_ */
 

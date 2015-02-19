@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Feb 17 18:49:31 2015
+// Written by: Map P.20131013 on Wed Feb 18 16:36:45 2015
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -279,9 +279,9 @@ TIMEGRP system_i_clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0 = BEL
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/read_reg_X_13"
         BEL
-        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_CMD_11"
-        BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/read_reg_X_14"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_CMD_11"
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_CMD_12"
         BEL
@@ -290,6 +290,8 @@ TIMEGRP system_i_clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0 = BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_CMD_13"
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_CMD_15"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/PWM_reg"
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/Unit_Delay_Enabled2_out1_10"
         BEL
@@ -303,7 +305,13 @@ TIMEGRP system_i_clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0 = BEL
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/Unit_Delay_Enabled2_out1_15"
         BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/PWM_reg"
+        BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/soft_reset"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/is_Chart_FSM_FFd1"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/is_Chart_FSM_FFd2"
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/read_reg_Y_10"
         BEL
@@ -316,6 +324,26 @@ TIMEGRP system_i_clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0 = BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/read_reg_Y_14"
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/read_reg_Y_15"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/count_0"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/count_1"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/count_2"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/count_3"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/count_4"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/count_5"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/count_6"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/count_7"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/count_8"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/count_9"
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/Unit_Delay_Enabled_out1_0"
         BEL
@@ -348,6 +376,30 @@ TIMEGRP system_i_clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0 = BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/read_reg_Z_14"
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/read_reg_Z_15"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/is_Chart_FSM_FFd1"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/is_Chart_FSM_FFd2"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/count_0"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/count_1"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/count_2"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/count_3"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/count_4"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/count_5"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/count_6"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/count_7"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/count_8"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/count_9"
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/read_reg_X_0"
         BEL
@@ -471,6 +523,18 @@ TIMEGRP system_i_clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0 = BEL
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Control_Signals/Unit_Delay_Enabled_Resettable_zero_delay"
         BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/count_10"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/count_11"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/count_12"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/count_13"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/count_14"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor4/u_Chart/count_15"
+        BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Write/is_Write_FSM_FFd1"
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Write/is_Write_FSM_FFd2"
@@ -478,6 +542,18 @@ TIMEGRP system_i_clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0 = BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Write/is_Write_FSM_FFd3"
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Control_Signals/Unit_Delay_Enabled_Resettable_switch_delay"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/count_10"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/count_11"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/count_12"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/count_13"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/count_14"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor3/u_Chart/count_15"
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/AXI4_Lite_RDATA_tmp_10"
         BEL
@@ -539,11 +615,15 @@ TIMEGRP system_i_clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0 = BEL
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor1/u_Chart/PWM_reg"
         BEL
-        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Write/CSn_CONV_reg"
-        BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_en_motor1"
         BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Write/CSn_CONV_reg"
+        BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_en_motor2"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_en_motor3"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_en_motor4"
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor1_0"
         BEL
@@ -585,6 +665,22 @@ TIMEGRP system_i_clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0 = BEL
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor2/u_Chart/is_Chart_FSM_FFd2"
         BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor3_0"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor3_1"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor3_2"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor3_3"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor3_4"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor3_5"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor3_6"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor3_7"
+        BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_10"
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_11"
@@ -595,13 +691,29 @@ TIMEGRP system_i_clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0 = BEL
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module_inst/wdata_15"
         BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor4_0"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor4_1"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor4_2"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor4_3"
+        BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/clock_cnt_0"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor4_4"
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/clock_cnt_1"
         BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor4_5"
+        BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/clock_cnt_2"
         BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor4_6"
+        BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/clock_cnt_3"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_axi_lite_inst/u_basicquadrotorcontrol_hdl_dut_pcore_addr_decoder_inst/write_reg_duty_motor4_7"
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_Read_X_Y_Z/clock_cnt_4"
         BEL
@@ -687,9 +799,9 @@ TIMEGRP system_i_clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0 = BEL
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_XYZ_shiftRegister/u_shiftRegister_48/XYZ_int_29"
         BEL
-        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_XYZ_shiftRegister/u_shiftRegister_48/XYZ_int_35"
-        BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor1/u_Chart/count_7"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_XYZ_shiftRegister/u_shiftRegister_48/XYZ_int_35"
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_XYZ_shiftRegister/u_shiftRegister_48/XYZ_int_40"
         BEL
@@ -699,9 +811,9 @@ TIMEGRP system_i_clock_generator_0_clock_generator_0_SIG_MMCM1_CLKOUT0 = BEL
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_XYZ_shiftRegister/u_shiftRegister_48/XYZ_int_36"
         BEL
-        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_XYZ_shiftRegister/u_shiftRegister_48/XYZ_int_42"
-        BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_PWM_Motor1/u_Chart/count_9"
+        BEL
+        "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_XYZ_shiftRegister/u_shiftRegister_48/XYZ_int_42"
         BEL
         "system_i/basicquadrotorcontrol_hdl_dut_pcore_0/basicquadrotorcontrol_hdl_dut_pcore_0/u_basicquadrotorcontrol_hdl_dut_pcore_dut_inst/u_hdl_dut/u_ADXL345_read/u_XYZ_shiftRegister/u_shiftRegister_48/XYZ_int_37"
         BEL

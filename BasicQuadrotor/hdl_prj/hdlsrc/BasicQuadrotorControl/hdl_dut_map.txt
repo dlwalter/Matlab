@@ -11,4 +11,8 @@ BasicQuadrotorControl/hdl_dut/PWM_Motor1/Chart --> Chart
 BasicQuadrotorControl/hdl_dut/PWM_Motor1 --> PWM_Motor1
 BasicQuadrotorControl/hdl_dut/PWM_Motor2/Calculate f_coeff --> Calculate_f_coeff_block
 BasicQuadrotorControl/hdl_dut/PWM_Motor2 --> PWM_Motor2
+BasicQuadrotorControl/hdl_dut/PWM_Motor3/Calculate f_coeff --> Calculate_f_coeff_block1
+BasicQuadrotorControl/hdl_dut/PWM_Motor3 --> PWM_Motor3
+BasicQuadrotorControl/hdl_dut/PWM_Motor4/Calculate f_coeff --> Calculate_f_coeff_block2
+BasicQuadrotorControl/hdl_dut/PWM_Motor4 --> PWM_Motor4
 BasicQuadrotorControl/hdl_dut --> hdl_dut

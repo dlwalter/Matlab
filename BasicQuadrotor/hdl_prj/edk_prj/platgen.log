@@ -124,6 +124,19 @@ Creating hardware output directories ...
 Managing hardware (BBD-specified) netlist files ...
 
 Managing cache ...
+IPNAME:processing_system7 INSTANCE:ps7_0 -
+C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 31 -
+Copying cache implementation netlist
+IPNAME:axi_interconnect INSTANCE:axi4_lite -
+C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 118 -
+Copying cache implementation netlist
+IPNAME:proc_sys_reset INSTANCE:reset_0 -
+C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 126 -
+Copying cache implementation netlist
+IPNAME:basicquadrotorcontrol_hdl_dut_pcore
+INSTANCE:basicquadrotorcontrol_hdl_dut_pcore_0 -
+C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 149 -
+Copying cache implementation netlist
 
 Elaborating instances ...
 IPNAME:clock_generator INSTANCE:clock_generator_0 -
@@ -136,7 +149,7 @@ ClkGen elaborate status: PASSED
 Writing HDL for elaborated instances ...
 
 Inserting wrapper level ...
-Completion time: 1.00 seconds
+Completion time: 0.00 seconds
 
 Constructing platform-level connectivity ...
 Completion time: 0.00 seconds
@@ -153,15 +166,6 @@ INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
    IMP_NETLIST=TRUE indicates that a NGC file is to be produced using XST
    synthesis. IMP_NETLIST=FALSE (default) instances are not synthesized. 
 INFO:EDK:4194 - Running XST parallelly on 4 processors
-INSTANCE:ps7_0 -
-C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 31 -
-Running XST synthesis
-INSTANCE:axi4_lite -
-C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 118 -
-Running XST synthesis
-INSTANCE:reset_0 -
-C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 126 -
-Running XST synthesis
 INSTANCE:clock_generator_0 -
 C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 137 -
 Running XST synthesis
@@ -170,9 +174,6 @@ C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 149 -
 Running XST synthesis
 
 Running NGCBUILD ...
-IPNAME:system_axi4_lite_wrapper INSTANCE:axi4_lite -
-C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 118 -
-Running NGCBUILD
 IPNAME:system_clock_generator_0_wrapper INSTANCE:clock_generator_0 -
 C:\Projects\Quadcopter\BasicQuadrotor\hdl_prj\edk_prj\system.mhs line 137 -
 Running NGCBUILD
@@ -182,4 +183,4 @@ INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
 
 Rebuilding cache ...
 
-Total run time: 71.00 seconds
+Total run time: 64.00 seconds

@@ -3,9 +3,9 @@
  *
  * Code generation for model "BasicQuadrotorControl_interface".
  *
- * Model version              : 1.152
+ * Model version              : 1.153
  * Simulink Coder version : 8.7 (R2014b) 08-Sep-2014
- * C source code generated on : Tue Feb 17 19:03:15 2015
+ * C source code generated on : Wed Feb 18 16:51:35 2015
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -62,17 +62,17 @@ static DataTypeTransition rtBTransitions[] = {
   { (char_T *)(&BasicQuadrotorControl_interfa_B.DataTypeConversion1), 4, 0, 3 }
   ,
 
-  { (char_T *)(&BasicQuadrotorControl_interf_DW.obj), 15, 0, 6 },
+  { (char_T *)(&BasicQuadrotorControl_interf_DW.obj), 15, 0, 10 },
 
   { (char_T *)(&BasicQuadrotorControl_interf_DW.FromWorkspace_PWORK.TimePtr), 11,
-    0, 12 },
+    0, 16 },
 
   { (char_T *)(&BasicQuadrotorControl_interf_DW.FromWorkspace_IWORK.PrevIndex),
     10, 0, 1 },
 
-  { (char_T *)(&BasicQuadrotorControl_interf_DW.obj_kl), 14, 0, 4 },
+  { (char_T *)(&BasicQuadrotorControl_interf_DW.obj_nh), 14, 0, 4 },
 
-  { (char_T *)(&BasicQuadrotorControl_interf_DW.objisempty), 8, 0, 10 }
+  { (char_T *)(&BasicQuadrotorControl_interf_DW.objisempty), 8, 0, 14 }
 };
 
 /* data type transition table for block I/O structure */
@@ -85,12 +85,12 @@ static DataTypeTransitionTable rtBTransTable = {
 static DataTypeTransition rtPTransitions[] = {
   { (char_T *)(&BasicQuadrotorControl_interfa_P.DATA_FORMAT), 5, 0, 2 },
 
-  { (char_T *)(&BasicQuadrotorControl_interfa_P.SliderGain_gain), 3, 0, 2 },
+  { (char_T *)(&BasicQuadrotorControl_interfa_P.SliderGain_gain), 3, 0, 4 },
 
   { (char_T *)(&BasicQuadrotorControl_interfa_P.Constant_Value), 0, 0, 2 },
 
   { (char_T *)(&BasicQuadrotorControl_interfa_P.ManualSwitch_CurrentSetting), 3,
-    0, 3 },
+    0, 5 },
 
   { (char_T *)(&BasicQuadrotorControl_interfa_P.Constant_Value_a), 8, 0, 1 }
 };

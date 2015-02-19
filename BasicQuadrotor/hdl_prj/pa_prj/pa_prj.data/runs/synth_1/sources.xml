@@ -12,7 +12,7 @@
     <File Path="$PSRCDIR/sources_1/imports/edk_prj/system_stub.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../edk_prj/system_stub.vhd"/>
-        <Attr Name="ImportTime" Val="1424227168"/>
+        <Attr Name="ImportTime" Val="1424305952"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>
       </FileInfo>

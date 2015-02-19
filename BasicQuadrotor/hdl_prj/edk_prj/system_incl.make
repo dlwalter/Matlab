@@ -73,6 +73,10 @@ pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/Chart.vhd \
 pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/PWM_Motor1.vhd \
 pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/Calculate_f_coeff_block.vhd \
 pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/PWM_Motor2.vhd \
+pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/Calculate_f_coeff_block1.vhd \
+pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/PWM_Motor3.vhd \
+pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/Calculate_f_coeff_block2.vhd \
+pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/PWM_Motor4.vhd \
 pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/hdl_dut.vhd \
 pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/basicquadrotorcontrol_hdl_dut_pcore_dut.vhd \
 pcores/basicquadrotorcontrol_hdl_dut_pcore_v1_00_a/hdl/vhdl/basicquadrotorcontrol_hdl_dut_pcore_axi_lite_module.vhd \
