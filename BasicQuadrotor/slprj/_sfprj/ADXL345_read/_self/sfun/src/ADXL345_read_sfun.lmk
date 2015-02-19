@@ -1,0 +1,47 @@
+CC     = "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\bin\lcc64.exe"
+LD     = "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\bin\lcclnk64.exe"
+LIBCMD = "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\bin\lcclib64.exe"
+CFLAGS = -dll -noregistrylookup  -c -Zp8 -DLCC_WIN64 -DMATLAB_MEX_FILE -DMX_COMPAT_32 -nodeclspec 
+LDFLAGS = -s -dll -L"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\lib64" -entry LibMain -map sfun.map 
+LIBFLAGS = 
+
+OBJECTS = \
+	"ADXL345_read_sfun.obj"\
+	"c1_ADXL345_read.obj"\
+	"c2_ADXL345_read.obj"\
+	"c3_ADXL345_read.obj"\
+	"ADXL345_read_sfun_registry.obj"\
+	"lccstub.obj"\
+	"ADXL345_read_sfun.def"\
+	"C:\Projects\Quadcopter\BasicQuadrotor\slprj\_sfprj\ADXL345_read\hdlsllib\sfun\src\hdlsllib_sfun.lib"\
+	"C:\Projects\Quadcopter\BasicQuadrotor\slprj\_sfprj\ADXL345_read\hdlmdlgenlib\sfun\src\hdlmdlgenlib_sfun.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\sf_runtime.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwblas.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmx.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmex.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmat.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libfixedpoint.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libut.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwmathutil.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libemlrt.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwsl_log_load_blocks.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwsimulink.lib"\
+	"C:\Program Files\MATLAB\R2014b\lib\win64\libmwipp.lib"\
+
+INCLUDE_PATH= -I"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\include64"  -I"C:\Program Files\MATLAB\R2014b\extern\include"  -I"C:\Program Files\MATLAB\R2014b\simulink\include"  -I"C:\Program Files\MATLAB\R2014b\stateflow\c\mex\include"  -I"C:\Program Files\MATLAB\R2014b\rtw\c\src"  -I"C:\Projects\Quadcopter\BasicQuadrotor\slprj\_sfprj\ADXL345_read\_self\sfun\src" 
+ 
+
+ADXL345_read_sfun.mexw64 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o ADXL345_read_sfun.mexw64 @ADXL345_read_sfun.lmko
+ADXL345_read_sfun.obj :	"ADXL345_read_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "ADXL345_read_sfun.c"
+c1_ADXL345_read.obj :	"c1_ADXL345_read.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c1_ADXL345_read.c"
+c2_ADXL345_read.obj :	"c2_ADXL345_read.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c2_ADXL345_read.c"
+c3_ADXL345_read.obj :	"c3_ADXL345_read.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c3_ADXL345_read.c"
+ADXL345_read_sfun_registry.obj :	"ADXL345_read_sfun_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "ADXL345_read_sfun_registry.c"
+lccstub.obj :	"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\mex\lccstub.c"

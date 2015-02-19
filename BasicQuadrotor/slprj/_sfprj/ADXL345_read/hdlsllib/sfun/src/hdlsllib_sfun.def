@@ -1,0 +1,3 @@
+LIBRARY hdlsllib_sfun.lib
+EXPORTS
+mexFunction
